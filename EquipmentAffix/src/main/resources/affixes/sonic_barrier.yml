@@ -1,0 +1,13 @@
+
+# 音波屏障词条配置
+id: sonic_barrier
+display_name: "<#9A5CC6>音波屏障"
+description: "<#9A5CC6>受到攻击时，对周围所有敌人造成一次击退效果"
+simple_description: "&7受到攻击时，对周围&a2格&7所有敌人造成击退&a{0.5+0.5*level}格"
+max_level: 3
+applicable_to:
+  - HEAVY_ARMOR
+  - LIGHT_ARMOR
+equipment_slot:
+  - CHEST
+calculation_mode: HIGHEST

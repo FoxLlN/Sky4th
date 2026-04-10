@@ -1,0 +1,11 @@
+# 铁颅词条配置
+id: iron_skull
+display_name: "<#A2B0B3>铁颅"
+description: "<#A2B0B3>减少头部受到的伤害"
+simple_description: "&7头部受到的伤害减少&a{5+5*level}%&7"
+max_level: 3
+applicable_to:
+  - HEAVY_ARMOR
+equipment_slot:
+  - HEAD
+calculation_mode: HIGHEST

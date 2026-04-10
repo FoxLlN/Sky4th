@@ -1,0 +1,18 @@
+# 下界合金重型护腿
+id: heavy_netherite_leggings
+material: NETHERITE_LEGGINGS
+categories:
+  - HEAVY_ARMOR
+display_name: "下界合金重型护腿"
+material_effect: coercion
+armor: 7.0
+toughness: 4.0
+max_enchantment_slots: 2
+max_affix_slots: 2
+max_durability: 721
+knockback_resistance: 0.12
+hunger_penalty: 0.06
+movement_penalty: 0.048
+affixes: {}
+enchantments: {}
+

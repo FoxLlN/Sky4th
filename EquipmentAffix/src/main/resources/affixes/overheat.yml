@@ -1,0 +1,20 @@
+# 过热词条配置
+id: overheat
+display_name: "<#FC9600>过热"
+description: "<#FC9600>对处于点燃状态下的实体造成的伤害更高"
+simple_description: "&7对处于点燃状态下的实体额外造成&a{5+5*level}%&7的伤害"
+max_level: 3
+applicable_to:
+  - WEAPON
+equipment_slot:
+  - SWORD
+  - AXE
+calculation_mode: HIGHEST
+conflicting_affixes:
+  - iron_blood
+  - emerald_edge
+  - resonance_mark
+  - nether_bane
+  - sibling
+  - thermal_conduct
+trigger_slot: MAIN_HAND

@@ -1,0 +1,23 @@
+# 重锤
+id: mace
+material: MACE
+categories:
+  - WEAPON
+display_name: "重锤"
+material_effect: dense
+attack_damage: 6.0
+attack_speed: 0.6
+max_enchantment_slots: 1
+max_affix_slots: 1
+max_durability: 500
+affixes: {}
+enchantments: {}
+
+recipe:
+  type: shaped
+  shape:
+    - "H"
+    - "B"
+  ingredients:
+    B: BREEZE_ROD
+    H: HEAVY_CORE

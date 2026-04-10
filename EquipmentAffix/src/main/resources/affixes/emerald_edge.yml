@@ -1,0 +1,27 @@
+# 翠刃词条配置
+id: emerald_edge
+display_name: "<#0EC754>翠刃"
+description: "<#0EC754>消耗存储的绿宝石提升伤害"
+simple_description: "&7消耗存储的&a{4*level}个&7绿宝石提升&a{15+5*level}%&7伤害"
+max_level: 3
+applicable_to:
+  - WEAPON
+equipment_slot:
+  - SWORD
+  - AXE
+calculation_mode: HIGHEST
+is_chargeable: true
+charge_resource: "EMERALD"
+charge_resource_name: "<#0EC754>绿宝石"
+charge_max_storage:
+  1: 64
+  2: 128
+  3: 256
+conflicting_affixes:
+  - iron_blood
+  - resonance_mark
+  - nether_bane
+  - overheat
+  - sibling
+  - thermal_conduct
+trigger_slot: MAIN_HAND

@@ -1,0 +1,20 @@
+# 词条模板配置
+id: cooking
+max_level: 1
+unlock_stage: "主世界"
+upgrade_materials:
+  1:
+    - "CHARCOAL*8"
+custom_model_data: 1090
+
+# 合成配方
+recipe:
+  type: shaped
+  shape:
+    - "BMB"
+    - "MDM"
+    - "BMB"
+  ingredients:
+    M: COAL
+    B: CHARCOAL
+    D: FISHING_ROD

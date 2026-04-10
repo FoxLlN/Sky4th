@@ -1,0 +1,25 @@
+# 金质 轻型胸甲
+id: light_gold_chestplate
+material: GOLDEN_CHESTPLATE
+categories:
+  - LIGHT_ARMOR
+display_name: "金质 轻型胸甲"
+material_effect: dazzling
+armor: 3.0
+toughness: 0.0
+max_enchantment_slots: 3
+max_affix_slots: 1
+max_durability: 112
+dodge_chance: 0.08
+affixes: {}
+enchantments: {}
+
+# 配方配置
+recipe:
+  type: shaped
+  shape:
+    - "G G"
+    - "GGG"
+    - "GGG"
+  ingredients:
+    G: GOLD_INGOT

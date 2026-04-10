@@ -1,0 +1,11 @@
+# 冲刺词条配置
+id: sprint
+display_name: "<#BD2008>冲刺"
+description: "<#BD2008>提升疾跑时的速度"
+simple_description: "&7疾跑时的速度增加&a{4*level}%&7"
+max_level: 3
+applicable_to:
+  - LIGHT_ARMOR
+equipment_slot:
+  - FEET
+calculation_mode: HIGHEST

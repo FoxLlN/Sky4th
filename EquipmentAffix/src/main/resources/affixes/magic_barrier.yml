@@ -1,0 +1,10 @@
+# 魔法屏障词条配置
+id: magic_barrier
+display_name: "<#345EC3>魔法屏障"
+description: "<#345EC3>降低受到的魔法伤害"
+simple_description: "&7降低&a{4*level}%&7魔法伤害"
+max_level: 3
+applicable_to:
+  - LIGHT_ARMOR
+  - HEAVY_ARMOR
+calculation_mode: SUM

@@ -1,0 +1,17 @@
+# 漩涡词条配置
+id: vortex
+display_name: "<#5AAFA4>漩涡"
+description: "<#5AAFA4>命中目标后牵引目标周围的生物到目标"
+simple_description: "&7命中目标后牵引目标周围的生物到目标"
+max_level: 3
+applicable_to:
+  - WEAPON
+equipment_slot:
+  - TRIDENT
+calculation_mode: HIGHEST
+conflicting_affixes:
+  - heavy_thrust
+  - surge
+conflicting_enchantments:
+  - riptide
+trigger_slot: MAIN_HAND

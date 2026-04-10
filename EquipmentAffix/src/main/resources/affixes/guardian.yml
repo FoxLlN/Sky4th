@@ -1,0 +1,10 @@
+id: guardian
+display_name: "<#DEB12D>守护"
+description: "<#DEB12D>周围队友受到伤害时，为其承担一定伤害"
+simple_description: "&7周围&a{2+level}格&7内队友受到伤害时，为其承担&a{12+3*level}%&7伤害"
+max_level: 3
+applicable_to:
+  - HEAVY_ARMOR
+equipment_slot:
+  - LEGS
+calculation_mode: HIGHEST

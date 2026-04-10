@@ -1,0 +1,12 @@
+# 猎潮词条配置
+id: tide_hunter
+display_name: "<#5AAFA4>猎潮"
+description: "<#5AAFA4>对水生生物伤害增加"
+simple_description: "&7对水生生物伤害增加&a{20+10*level}%&7"
+max_level: 3
+applicable_to:
+  - WEAPON
+equipment_slot:
+  - TRIDENT
+calculation_mode: HIGHEST
+trigger_slot: HAND

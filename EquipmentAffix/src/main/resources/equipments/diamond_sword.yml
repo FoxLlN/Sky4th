@@ -1,0 +1,25 @@
+# 钻石剑
+id: diamond_sword
+material: DIAMOND_SWORD
+categories:
+  - WEAPON
+display_name: "钻石剑"
+material_effect: sharp
+attack_damage: 7.0
+attack_speed: 1.6
+max_enchantment_slots: 2
+max_affix_slots: 1
+max_durability: 1561
+affixes: {}
+enchantments: {}
+
+# 配方配置
+recipe:
+  type: shaped
+  shape:
+    - "D"
+    - "D"
+    - "S"
+  ingredients:
+    D: DIAMOND
+    S: STICK

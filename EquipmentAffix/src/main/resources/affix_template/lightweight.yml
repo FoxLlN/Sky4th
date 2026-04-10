@@ -1,0 +1,24 @@
+# 词条模板配置
+id: lightweight
+max_level: 3
+unlock_stage: "主世界"
+upgrade_materials:
+  1:
+    - "FEATHER*8"
+  2:
+    - "FEATHER*16"
+  3:
+    - "FEATHER*32"
+custom_model_data: 1078
+
+# 合成配方
+recipe:
+  type: shaped
+  shape:
+    - "RPR"
+    - "PIP"
+    - "RPR"
+  ingredients:
+    R: RABBIT_FOOT
+    P: FEATHER
+    I: IRON_BLOCK

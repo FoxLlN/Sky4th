@@ -1,0 +1,24 @@
+# 皮革裤子
+id: leather_leggings
+material: LEATHER_LEGGINGS
+categories:
+  - LIGHT_ARMOR
+display_name: "皮革裤子"
+material_effect: fitting
+armor: 2.0
+toughness: 0.0
+max_enchantment_slots: 1
+max_affix_slots: 0
+max_durability: 75
+affixes: {}
+enchantments: {}
+
+# 配方配置
+recipe:
+  type: shaped
+  shape:
+    - "LLL"
+    - "L L"
+    - "L L"
+  ingredients:
+    L: LEATHER

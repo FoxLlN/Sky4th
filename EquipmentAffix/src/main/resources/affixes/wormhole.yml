@@ -1,0 +1,14 @@
+# 虫洞词条配置
+id: wormhole
+display_name: "<#349988>虫洞"
+description: "<#349988>未命中后，消耗10点耐久传送到箭矢落点，冷却30秒"
+simple_description: "&7未命中后，消耗&a10点&7耐久传送到箭矢落点，冷却&a30秒&7"
+max_level: 1
+applicable_to:
+  - BOW
+equipment_slot:
+  - BOW
+calculation_mode: HIGHEST
+conflicting_affixes:
+  - swap
+trigger_slot: MAIN_HAND

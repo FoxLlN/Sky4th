@@ -1,0 +1,24 @@
+# 词条模板配置
+id: greed
+max_level: 3
+unlock_stage: "主世界"
+upgrade_materials:
+  1:
+    - "GOLD_INGOT*8"
+  2:
+    - "GOLD_INGOT*16"
+  3:
+    - "GOLD_INGOT*32"
+custom_model_data: 1012
+
+# 合成配方
+recipe:
+  type: shaped
+  shape:
+    - "GNG"
+    - "NIN"
+    - "GNG"
+  ingredients:
+    G: GOLD_INGOT
+    N: GOLD_NUGGET
+    I: IRON_SWORD

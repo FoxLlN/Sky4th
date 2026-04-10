@@ -1,0 +1,24 @@
+# 词条模板配置
+id: leech
+max_level: 3
+unlock_stage: "主世界"
+upgrade_materials:
+  1:
+    - "ROTTEN_FLESH*8"
+  2:
+    - "ROTTEN_FLESH*16"
+  3:
+    - "ROTTEN_FLESH*32"
+custom_model_data: 1037
+
+# 合成配方
+recipe:
+  type: shaped
+  shape:
+    - "ABA"
+    - "BCB"
+    - "ABA"
+  ingredients:
+    A: REDSTONE
+    B: ROTTEN_FLESH
+    C: BOW

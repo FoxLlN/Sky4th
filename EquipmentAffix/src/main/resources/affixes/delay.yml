@@ -1,0 +1,12 @@
+# 延付词条配置
+id: delay
+display_name: "<#DBDBDB>延付"
+description: "<#DBDBDB>受到伤害时，将部分伤害延迟3秒后触发"
+simple_description: "&7受到伤害时，将&a{5+5*level}%&7伤害延迟到&a3秒&7后触发"
+max_level: 3
+applicable_to:
+  - LIGHT_ARMOR
+  - HEAVY_ARMOR
+equipment_slot:
+  - LEGS
+calculation_mode: HIGHEST

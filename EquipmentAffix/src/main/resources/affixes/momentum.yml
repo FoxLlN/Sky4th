@@ -1,0 +1,13 @@
+# 动力词条配置
+id: momentum
+display_name: "<#BD2008>动力"
+description: "<#BD2008>增加武器击退距离"
+simple_description: "&7武器击退距离增加&a{level}格"
+max_level: 3
+applicable_to:
+  - WEAPON
+equipment_slot:
+  - SWORD
+calculation_mode: HIGHEST
+is_init: true
+trigger_slot: MAIN_HAND

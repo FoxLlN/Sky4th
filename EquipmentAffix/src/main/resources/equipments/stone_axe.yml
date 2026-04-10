@@ -1,0 +1,29 @@
+# 石斧
+id: stone_axe
+material: STONE_AXE
+categories:
+  - TOOL
+  - WEAPON
+display_name: "石斧"
+material_effect: stone_sharp
+attack_damage: 9.0
+attack_speed: 0.8
+max_enchantment_slots: 1
+max_affix_slots: 0
+max_durability: 131
+affixes: {}
+enchantments: {}
+
+recipe:
+  type: shaped
+  shape:
+    - "CC"
+    - "CS"
+    - " S"
+  ingredients:
+    C: 
+      - COBBLESTONE
+      - STONE
+      - BLACKSTONE
+      - COBBLED_DEEPSLATE
+    S: STICK

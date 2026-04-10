@@ -1,0 +1,10 @@
+# 反震词条配置
+id: shock
+display_name: "<#DEB12D>反震"
+description: "<#DEB12D>格挡近战攻击后有概率击晕敌人"
+simple_description: "&7格挡近战攻击后有&a{15+5*level}%&7概率击晕敌人&a{0.5+0.5*level}秒"
+max_level: 3
+applicable_to:
+  - SHIELD
+calculation_mode: HIGHEST
+trigger_slot: HAND

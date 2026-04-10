@@ -1,0 +1,19 @@
+# 点金词条配置
+id: gold_touch
+display_name: "<#DEB12D>点金"
+description: "<#DEB12D>破坏时，消耗一定耐久度将掉落物都转换成金粒"
+simple_description: "&7破坏时，每个掉落物消耗&a20点&7耐久度转换成金粒"
+max_level: 1
+applicable_to:
+  - TOOL
+equipment_slot:
+  - PICKAXE
+  - AXE
+  - SHOVEL
+calculation_mode: HIGHEST
+priority: 2
+conflicting_affixes:
+  - auto_smelting
+  - void
+  - scavenge
+trigger_slot: MAIN_HAND

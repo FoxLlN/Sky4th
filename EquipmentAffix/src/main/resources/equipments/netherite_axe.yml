@@ -1,0 +1,16 @@
+# 下届合金斧
+id: netherite_axe
+material: NETHERITE_AXE
+categories:
+  - TOOL
+  - WEAPON
+display_name: "下届合金斧"
+material_effect: desperate
+attack_damage: 10.0
+attack_speed: 1.0
+max_enchantment_slots: 2
+max_affix_slots: 2
+max_durability: 2031
+affixes: {}
+enchantments: {}
+

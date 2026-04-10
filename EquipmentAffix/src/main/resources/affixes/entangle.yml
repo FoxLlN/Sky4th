@@ -1,0 +1,14 @@
+# 缠绕词条配置
+id: entangle
+display_name: "<#DBDBDB>缠绕"
+description: "<#DBDBDB>攻击时有概率缠绕目标造成减速"
+simple_description: "&7攻击时有&a{12+3*level}%&7概率缠绕目标造成&a缓慢2&7，持续&a{1.5+0.5*level}秒"
+max_level: 3
+applicable_to:
+  - WEAPON
+equipment_slot:
+  - SWORD
+calculation_mode: HIGHEST
+conflicting_affixes:
+  - freeze
+trigger_slot: MAIN_HAND

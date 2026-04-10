@@ -1,0 +1,22 @@
+# 弓
+id: bow
+material: BOW
+categories:
+  - BOW
+display_name: "弓"
+max_enchantment_slots: 2
+max_affix_slots: 1
+max_durability: 384
+affixes: {}
+enchantments: {}
+
+# 配方配置
+recipe:
+  type: shaped
+  shape:
+    - " BS"
+    - "B S"
+    - " BS"
+  ingredients:
+    S: STRING
+    B: STICK

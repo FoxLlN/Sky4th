@@ -1,0 +1,24 @@
+# 词条模板配置
+id: iron_skull
+max_level: 3
+unlock_stage: "主世界"
+upgrade_materials:
+  1:
+    - "IRON_INGOT*8"
+  2:
+    - "IRON_INGOT*16"
+  3:
+    - "IRON_INGOT*32"
+custom_model_data: 1053
+
+# 合成配方
+recipe:
+  type: shaped
+  shape:
+    - "BIB"
+    - "IRI"
+    - "BIB"
+  ingredients:
+    I: IRON_INGOT
+    B: IRON_BLOCK
+    R: IRON_HELMET

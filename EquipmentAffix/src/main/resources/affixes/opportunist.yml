@@ -1,0 +1,14 @@
+
+# 趁势词条配置
+id: opportunist
+display_name: "<#F5F5F5>趁势"
+description: "<#F5F5F5>成功闪避后，下一次攻击伤害提升"
+simple_description: "&7成功闪避后，下一次攻击伤害提升&a{5+5*level}%&7"
+max_level: 3
+applicable_to:
+  - LIGHT_ARMOR
+equipment_slot:
+  - LEGS
+calculation_mode: HIGHEST
+conflicting_affixes:
+  - gale_wind

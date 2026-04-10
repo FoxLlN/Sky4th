@@ -1,0 +1,11 @@
+# 迅捷材质词条配置
+id: swift
+display_name: "<underlined><#C65C35>迅捷</underlined>"
+description: "<#C65C35>攻击速度小幅提升"
+simple_description: "&7攻击速度增加&a10%&7"
+max_level: 1
+applicable_to:
+  - WEAPON
+calculation_mode: HIGHEST
+is_init: true
+trigger_slot: MAIN_HAND

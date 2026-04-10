@@ -1,0 +1,10 @@
+# 博学词条配置
+id: knowledge_drain
+display_name: "<#345EC3>博学"
+description: "<#345EC3>获得的经验增加"
+simple_description: "&7获得的经验增加&a{5*level}%&7"
+max_level: 3
+applicable_to:
+  - TOOL
+calculation_mode: HIGHEST
+trigger_slot: MAIN_HAND

@@ -1,0 +1,24 @@
+name: Infrastructure
+version: ${version}
+main: sky4th.infrastructure.Infrastructure
+api-version: '1.21'
+description: Sky4th 基建系统 - 处理建筑和基础设施管理
+author: HXS__
+depend: [SkyCore]
+softdepend: []
+
+commands:
+  infrastructure:
+    description: 基建系统主命令
+    usage: /<command> [参数]
+    aliases: [infra, build]
+
+permissions:
+  infrastructure.use:
+    description: 使用基建系统的基本权限
+    default: true
+  infrastructure.admin:
+    description: 基建系统管理员权限
+    default: op
+    children:
+      infrastructure.use: true

@@ -1,0 +1,20 @@
+name: ParallelDungeon
+version: ${version}
+main: sky4th.dungeon.Dungeon
+api-version: '1.21'
+description: 副本系统插件 - 支持独立世界和随机出生点
+depend: [SkyCore]
+
+commands:
+  dungeon:
+    description: 地牢命令
+    usage: /<command> <help|enter|exit|shop|cost|level|setlevel|reload|reset>
+    permission: dungeon.use
+
+permissions:
+  dungeon.use:
+    description: 使用地牢基本命令（进入、离开、帮助）
+    default: true
+  dungeon.admin:
+    description: 地牢管理（设置费用、重载、重置）
+    default: op

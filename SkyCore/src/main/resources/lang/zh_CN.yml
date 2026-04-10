@@ -1,0 +1,89 @@
+# SkyCore 默认语言文件（中文）
+# 支持参数替换，使用 {参数名} 格式
+# 支持颜色代码，同时支持旧版 & 格式（如 &a、&b）和新版 MiniMessage 格式（如 <gray>、<#FF0000>、<gradient:#55FF55:#AAFFAA>）
+
+# 前缀（可选，如果设置了会自动添加到所有消息前）
+prefix: "<gray>[<blue>Sky4th</blue>] </gray>"
+
+# 通用消息
+common:
+  no-permission: "<red>你没有权限执行此操作！</red>"
+  player-only: "<red>只有玩家可以使用此命令！</red>"
+  unknown-command: "<red>未知命令！</red>"
+  reload-success: "<green>配置已重新加载！</green>"
+  reload-failed: "<red>配置重载失败！</red>"
+
+# 命令相关
+command:
+  usage: "<red>用法: /{command} {args}</red>"
+  unknown: "<red>未知命令: {command}</red>"
+  no-permission: "<red>你没有权限执行此操作！</red>"
+  player-only: "<red>只有玩家可以使用此命令！</red>"
+  help:
+    - "<gold>===== <blue>SkyCore</blue> <gold>帮助 =====</gold>"
+    - "<yellow>/sky help</yellow> <gray>- 显示帮助信息</gray>"
+    - "<yellow>/sky info</yellow> <gray>- 查看 API 信息</gray>"
+    - "<yellow>/sky status</yellow> <gray>- 查看系统状态</gray>"
+    - "<yellow>/sky player <玩家> <info|economy|time></yellow> <gray>- 查看玩家数据</gray>"
+    - "<yellow>/sky economy <status|balance></yellow> <gray>- 查看经济系统</gray>"
+    - "<yellow>/sky permission <add|remove> <玩家> <权限名></yellow> <gray>- 管理玩家权限</gray>"
+    - "<yellow>/sky reload</yellow> <gray>- 重载配置</gray>"
+  info:
+    version: "<gray>版本: <yellow>{version}</yellow></gray>"
+    author: "<gray>作者: <yellow>{author}</yellow></gray>"
+    initialized: "<gray>已初始化: <yellow>{status}</yellow></gray>"
+  reload:
+    success: "<green>配置已重新加载！</green>"
+  status:
+    header: "<gold>===== <blue>系统状态</blue> <gold>=====</gold>"
+    initialized: "<gray>API 已初始化: <yellow>{status}</yellow></gray>"
+    database: "<gray>数据库: <yellow>{status}</yellow></gray>"
+    player-service: "<gray>玩家服务: <yellow>{status}</yellow></gray>"
+    economy: "<gray>经济系统: <yellow>{status}</yellow></gray>"
+    language: "<gray>语言系统: <yellow>{status}</yellow></gray>"
+  player:
+    usage: "<red>用法: /sky player <玩家> <info|economy|time></red>"
+    not-found: "<red>找不到玩家: {player}</red>"
+    info:
+      header: "<gold>===== <blue>玩家信息: {player}</blue> <gold>=====</gold>"
+      level: "<gray>等级: <yellow>{level}</yellow></gray>"
+      tier: "<gray>阶段: <yellow>{tier}</yellow></gray>"
+      experience: "<gray>经验值: <yellow>{exp}</yellow></gray>"
+      total-exp: "<gray>总经验: <yellow>{total}</yellow></gray>"
+      skill-points: "<gray>技能点: <yellow>{points}</yellow></gray>"
+    economy:
+      header: "<gold>===== <blue>经济信息: {player}</blue> <gold>=====</gold>"
+      credits: "<gray>信用点: <yellow>{credits}</yellow></gray>"
+      daily-earned: "<gray>今日获得: <yellow>{earned}</yellow></gray>"
+      daily-spent: "<gray>今日消费: <yellow>{spent}</yellow></gray>"
+      daily-limit: "<gray>每日上限: <yellow>{limit}</yellow></gray>"
+    time:
+      header: "<gold>===== <blue>时间统计: {player}</blue> <gold>=====</gold>"
+      online: "<gray>今日在线: <yellow>{time}</yellow></gray>"
+      consecutive: "<gray>连续登录: <yellow>{days}</yellow> 天</gray>"
+      deaths: "<gray>今日死亡: <yellow>{count}</yellow> 次</gray>"
+  economy:
+    usage: "<red>用法: /sky economy <status|balance></red>"
+    status: "<gray>经济系统状态: <yellow>{status}</yellow></gray>"
+    provider: "<gray>提供者: <yellow>{provider}</yellow></gray>"
+    currency: "<gray>货币名称: <yellow>{currency}</yellow></gray>"
+    balance: "<gray>余额: <yellow>{balance}</yellow> {currency}</gray>"
+  permission:
+    usage: "<red>用法: /sky permission <add|remove> <玩家> <权限名></red>"
+    add:
+      usage: "<red>用法: /sky permission add <玩家> <权限名></red>"
+      success: "<green>已成功给玩家 {player} 添加权限: {permission}</green>"
+      exists: "<yellow>玩家 {player} 已拥有权限: {permission}</yellow>"
+    remove:
+      usage: "<red>用法: /sky permission remove <玩家> <权限名></red>"
+      success: "<green>已成功移除玩家 {player} 的权限: {permission}</green>"
+      not-found: "<yellow>玩家 {player} 没有权限: {permission}</yellow>"
+
+# 语言系统
+lang:
+  reloaded: "<green>语言文件已重新加载！</green>"
+  not-found: "<red>语言节点不存在: {node}</red>"
+
+# 变量系统
+variable:
+  not-found: "<red>变量不存在: {name}</red>"

@@ -1,0 +1,23 @@
+# 词条模板配置
+id: entangle
+max_level: 3
+unlock_stage: "主世界"
+upgrade_materials:
+  1:
+    - "STRING*12"
+  2:
+    - "STRING*24"
+  3:
+    - "STRING*48"
+custom_model_data: 1023
+
+# 合成配方
+recipe:
+  type: shaped
+  shape:
+    - "SSS"
+    - "SIS"
+    - "SSS"
+  ingredients:
+    S: STRING
+    I: IRON_SWORD

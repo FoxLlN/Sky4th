@@ -1,0 +1,10 @@
+# 铁质词条配置
+id: iron_quality
+display_name: "<#A2B0B3>铁质"
+description: "<#A2B0B3>每次使用耐久度消耗降低"
+simple_description: "&7每次使用耐久度消耗降低&a{5+15*level}%&7"
+max_level: 3
+applicable_to:
+  - SHIELD
+calculation_mode: HIGHEST
+trigger_slot: HAND

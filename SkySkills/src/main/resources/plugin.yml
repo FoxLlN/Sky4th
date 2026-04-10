@@ -1,0 +1,24 @@
+name: SkySkills
+version: ${version}
+main: sky4th.skills.SkySkills
+api-version: '1.21'
+description: Sky4th 技能盘系统
+author: HXS__
+depend: [SkyCore]
+softdepend: []
+
+commands:
+  skill:
+    description: 技能系统主命令
+    usage: /<command> [参数]
+    aliases: [skills, sk]
+
+permissions:
+  skill.use:
+    description: 使用技能系统的基本权限
+    default: true
+  skill.admin:
+    description: 技能系统管理员权限
+    default: op
+    children:
+      skill.use: true

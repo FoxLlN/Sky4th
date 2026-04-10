@@ -1,0 +1,20 @@
+# 词条模板配置
+id: auto_smelting
+max_level: 1
+unlock_stage: "地狱"
+upgrade_materials:
+  1:
+    - "BLAZE_POWDER*8"
+custom_model_data: 1009
+
+# 合成配方
+recipe:
+  type: shaped
+  shape:
+    - "MBM"
+    - "BFB"
+    - "MBM"
+  ingredients:
+    M: MAGMA_BLOCK
+    B: BLAZE_POWDER
+    F: BLAST_FURNACE

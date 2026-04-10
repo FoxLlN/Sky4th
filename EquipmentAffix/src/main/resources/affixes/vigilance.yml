@@ -1,0 +1,11 @@
+# 警觉词条配置
+id: vigilance
+display_name: "<#DEB12D>警觉"
+description: "<#DEB12D>减少来自背后的伤害"
+simple_description: "&7减少&a{5*level}%&7来自背后的伤害"
+max_level: 3
+applicable_to:
+  - HEAVY_ARMOR
+equipment_slot:
+  - CHEST
+calculation_mode: HIGHEST

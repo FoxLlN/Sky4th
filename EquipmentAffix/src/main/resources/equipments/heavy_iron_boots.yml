@@ -1,0 +1,27 @@
+# 铁质 重型靴子
+id: heavy_iron_boots
+material: IRON_BOOTS
+categories:
+  - HEAVY_ARMOR
+display_name: "铁质 重型靴子"
+material_effect: iron_bone
+armor: 2.0
+toughness: 0.2
+max_enchantment_slots: 1
+max_affix_slots: 1
+max_durability: 250
+knockback_resistance: 0.02
+hunger_penalty: 0.02
+movement_penalty: 0.01
+affixes: {}
+enchantments: {}
+
+# 配方配置
+recipe:
+  type: shaped  # 配方类型：shaped（成型）或 shapeless（无序）
+  shape:
+    - "B I"
+    - "I I"
+  ingredients:
+    I: IRON_INGOT  # I代表铁锭
+    B: IRON_BLOCK  # B代表铁块

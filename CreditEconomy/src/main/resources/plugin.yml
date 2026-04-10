@@ -1,0 +1,24 @@
+name: CreditEconomy
+version: ${version}
+main: sky4th.economy.CreditEconomy
+api-version: '1.21'
+description: Sky4th 经济系统 - 处理游戏内货币和交易
+author: HXS__
+depend: [SkyCore]
+softdepend: []
+
+commands:
+  credit:
+    description: 经济系统主命令
+    usage: /<command> [参数]
+    aliases: [eco, money]
+
+permissions:
+  credit.use:
+    description: 使用经济系统的基本权限
+    default: true
+  credit.admin:
+    description: 经济系统管理员权限
+    default: op
+    children:
+      credit.use: true

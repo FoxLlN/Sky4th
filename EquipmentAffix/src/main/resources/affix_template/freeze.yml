@@ -1,0 +1,24 @@
+# 词条模板配置
+id: freeze
+max_level: 3
+unlock_stage: "主世界"
+upgrade_materials:
+  1:
+    - "ICE*12"
+  2:
+    - "ICE*24"
+  3:
+    - "ICE*48"
+custom_model_data: 1024
+
+# 合成配方
+recipe:
+  type: shaped
+  shape:
+    - "BPB"
+    - "PIP"
+    - "BPB"
+  ingredients:
+    P: PACKED_ICE
+    B: BLUE_ICE
+    I: IRON_SWORD

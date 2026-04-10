@@ -1,0 +1,1828 @@
+# ==============================
+# ParallelDungeon 配置文件
+# ==============================
+# 本配置文件分为两个主要部分：
+# 1. 通用配置（所有地牢共享）
+# 2. 地牢配置（每个地牢独立）
+
+# 1. 通用配置（所有地牢共享）
+common:
+  # UI头颅纹理配置
+  # 用于各种界面按钮的头颅皮肤纹理（Base64编码）
+  ui-heads:
+    # 信用点头颅
+    credits: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjA5Mjk5YTExN2JlZTg4ZDMyNjJmNmFiOTgyMTFmYmEzNDRlY2FlMzliNDdlYzg0ODEyOTcwNmRlZGM4MWU0ZiJ9fX0="
+    # 满钱包头颅
+    full-wallet: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjdmOGQ4YzM5Zjk5MjFhNjRkN2I3NTVkZTMyMmU0NDFmZGVkNGI3NzVhNzY1N2UwYjMxOTZiNmZkYTg2MzY0NiJ9fX0="
+    # 空钱包头颅
+    empty-wallet: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWQyZWI1MmE2MGMxMmVkMmZiNGEyYjkxMmQ0NDIwZmUxZWI3YzY5ODIxZDllODY4ZDA2NTViMjk3MzdlMmEyYyJ9fX0="
+    # 装备界面头颅
+    equipment-back: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGExZDU1YjNmOTg5NDEwYTM0NzUyNjUwZTI0OGM5YjZjMTc4M2E3ZWMyYWEzZmQ3Nzg3YmRjNGQwZTYzN2QzOSJ9fX0="
+    # 商店界面头颅
+    shop-open: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWY2MmZiNTAwODhiNjVlOThmY2M5MWExODE2MjNlZjlhMGQ4MmM4OGZjMGUwZjdmNTdmZWVkZWEzNDg3MWFiNSJ9fX0="
+    # 出售界面头颅
+    sell-default: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGNhOGVmMjQ1OGEyYjEwMjYwYjg3NTY1NThmNzY3OWJjYjdlZjY5MWQ0MWY1MzRlZmVhMmJhNzUxMDczMTVjYyJ9fX0="
+    sell-confirm: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWNmMjY2NTNmYjU3M2Q3MDM0ZmZhMzZiNTE0Nzk1MDY0ZTc3Njc5YzBkOGI1YTkwZjc0ODUwYTExODhiNzBiNCJ9fX0="
+    # 安全箱头颅
+    safe-slot: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTFkZGIyZmQ3NzIwMDcxNjk0ZTllODBhNmY0YThiOGFiYTc3NjBiYjFkYTQ2OGRlNjM3YTZiZjljODVlYTVhZSJ9fX0="
+    # 背包价值头颅
+    backpack-value: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjVmNTIxZGQyMTVhOTU4NjIxYTAwZmMwOGRmYTU1NTIyZTEzODNlNTNmZGM3ODFhOTMxNzY2ZDQ2ZDAyYWMwNyJ9fX0="
+
+  # ==============================
+  # 现金物品配置
+  # ==============================
+  # 现金物品列表，拾取后自动转换为信用点
+  # - id: 物品唯一标识
+  # - name: 显示名称
+  # - texture: 头颅皮肤纹理（Base64编码）
+  # - min-credits: 最小信用点数量
+  # - max-credits: 最大信用点数量
+  cash-items:
+    - id: "small_copper_coins"
+      name: "&f一小堆铜币"
+      description: "散落的一小堆铜币 (拾取后自动转换为信用点)"
+      texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOWRiOTZmYTMwNjNiNzkwNWFiYzA5YjRjOTAzODllYWRmYTFiZTFiZGVhMDZiMGVjNGFlOGQwZDA1ZTliZmRiMSJ9fX0="
+      min-credits: 1
+      max-credits: 20
+    - id: "small_silver_coins"
+      name: "&a一小堆银币"
+      description: "散落的一小堆银币 (拾取后自动转换为信用点)"
+      texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjAxNDExMmMzN2QxNTEwMTI4NTdkOWYyYTUzMzI4OTg3MzFhMDE0NzNiNGY0YmM2OTA5ZDIzY2YyNjRkYmVlYiJ9fX0="
+      min-credits: 20
+      max-credits: 50
+    - id: "small_gold_coins"
+      name: "&b一小堆金币"
+      description: "散落的一小堆金币 (拾取后自动转换为信用点)"
+      texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjMxMWU4NDIyNDk3NDUxMTMzMzM4NzhmZDVhOGQ4ZWIyMjgwYmNiYWI3Njg5ZTQ3M2YxNjY5NjIzYTExYzk5NyJ9fX0="
+      min-credits: 50
+      max-credits: 90
+    - id: "bag_of_gold_coins"
+      name: "&5一包金币"
+      description: "满满一包金币 (拾取后自动转换为信用点)"
+      texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTVmZDY3ZDU2ZmZjNTNmYjM2MGExNzg3OWQ5YjUzMzhkNzMzMmQ4ZjEyOTQ5MWE1ZTE3ZThkNmU4YWVhNmMzYSJ9fX0="
+      min-credits: 100
+      max-credits: 200
+    - id: "stack_of_cash"
+      name: "&6一摞现金"
+      description: "堆在一起的一摞现金，数额不小 (拾取后自动转换为信用点)"
+      texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjZlYTk5YzhjNjIxMzZmNDlkOWMyOTQ3YzQ0Y2Y0YjFmYzkzNzI0OWRjMWVlMjAxZjUxMTA5NjA4NGIyMTQwNiJ9fX0="
+      min-credits: 300
+      max-credits: 800
+    - id: "bundle_of_cash"
+      name: "&c一大捆现金"
+      description: "一大捆现金，数额巨大 (拾取后自动转换为信用点)"
+      texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTllNzdmYWU1MzEzYmFjMTliZjE0NTc3ZDUwMDkzZTQ3MzhlYmQ3MGZkNTRhNGRlMWEyNzQ3NWQwZWM5NTM4ZiJ9fX0="
+      min-credits: 1000
+      max-credits: 2000
+
+
+  # 补给品携带上限（超过上限时无法进入地牢；在装配界面会有提示，0为无上限）
+  supplies-carry-limit: 0
+
+  # 装配页可装备的补给品 id 列表（与 loadout-shop.supplies 的 id 对应；不包含箭矢等）
+  # 仅在此列表中的补给品会在装配页「补给」分类中展示
+  equippable-supplies:
+    - "first_aid_kit"
+    - "bandage"
+    - "antidote"
+    - "standard_ration"
+    - "pumpkin_pie"
+    - "golden_carrot"
+    - "whetstone_flint"
+
+  # ==============================
+  # 配装商店（进入地牢前购买：装备 / 近战 / 远程 / 补给）
+  # ==============================
+  # 未来可配合地图上的 NPC 或区域触发打开同一商店 API
+  loadout-shop:
+    equipment:
+      - id: "ironwall"
+        name: "&f&l铁壁"
+        material: "IRON_CHESTPLATE"
+        buy-price: 0
+        sell-price: 800
+        shop-lore:
+          - "&7坦克防御型"
+          - "&f血量提升 & 受击加速"
+          - "&6技能: 40秒高额抗性"
+          - "&8每局限用2次"
+        normal-lore:
+          - "&7坦克防御型"
+          - "&f血量提升 & 受击加速"
+          - "&6技能: 40秒高额抗性"
+          - "&8每局限用2次"
+      - id: "scout"
+        name: "&a&l斥候"
+        material: "LEATHER_BOOTS"
+        buy-price: 0
+        sell-price: 560
+        shop-lore:
+          - "&7机动搜刮型"
+          - "&f常驻速度 & 闪避灵活"
+          - "&a技能: 提升下次搜索品质"
+          - "&8每局限用2次"
+        normal-lore:
+          - "&7机动搜刮型"
+          - "&f常驻速度 & 闪避灵活"
+          - "&a技能: 提升下次搜索品质"
+          - "&8每局限用2次"
+      - id: "scholar"
+        name: "&6&l学者"
+        material: "GOLDEN_HELMET"
+        buy-price: 0
+        sell-price: 640
+        shop-lore:
+          - "&7高效搜刮型"
+          - "&f大幅减少搜索时间"
+          - "&6技能: 刷新最近容器"
+          - "&8每局限用2次"
+        normal-lore:
+          - "&7高效搜刮型"
+          - "&f大幅减少搜索时间"
+          - "&6技能: 刷新最近容器"
+          - "&8每局限用2次"
+      - id: "ranger"
+        name: "&9&l游侠"
+        material: "CHAINMAIL_LEGGINGS"
+        buy-price: 0
+        sell-price: 960
+        shop-lore:
+          - "&7远程特化型"
+          - "&f提升远程伤害"
+          - "&9技能: 远程伤害大幅提升"
+          - "&8每局限用2次"
+        normal-lore:
+          - "&7远程特化型"
+          - "&f提升远程伤害"
+          - "&9技能: 远程伤害大幅提升"
+          - "&8每局限用2次"
+      - id: "shaman"
+        name: "&d&l萨满"
+        material: "IRON_CHESTPLATE"
+        buy-price: 0
+        sell-price: 600
+        shop-lore:
+          - "&7生存恢复型"
+          - "&f被动回血 & 续航强"
+          - "&d技能: 清理负面状态并治疗"
+          - "&8每局限用2次"
+        normal-lore:
+          - "&7生存恢复型"
+          - "&f被动回血 & 续航强"
+          - "&d技能: 清理负面状态并治疗"
+          - "&8每局限用2次"
+    melee:
+      - id: "broadsword"
+        name: "&f&l阔剑"
+        material: "IRON_SWORD"
+        buy-price: 600
+        sell-price: 480
+        shop-lore:
+          - "&7群体清怪型"
+          - "&f攻击3个以上目标时&c伤害提升"
+          - "&f攻击5个以上目标时&a伤害进一步提升"
+        normal-lore:
+          - "&f攻击3-4个目标: "
+          - "&f主目标&c+40%&f 副目标&c+20%"
+          - "&f攻击5+个目标: "
+          - "&f主目标&a+60%&f 副目标&a+40%"
+      - id: "execution"
+        name: "&c&l处决"
+        material: "IRON_SWORD"
+        buy-price: 900
+        sell-price: 720
+        shop-lore:
+          - "&7单体爆发型"
+          - "&f对敌人首次攻击&c伤害提升"
+          - "&f对精英怪&4进一步提升"
+        normal-lore:
+          - "&f对敌人首次攻击&c伤害+60%"
+          - "&f对精英及以上怪物&4伤害+100%"
+      - id: "flame_blade"
+        name: "&e&l烈焰"
+        material: "IRON_SWORD"
+        buy-price: 650
+        sell-price: 520
+        shop-lore:
+          - "&7持续伤害型"
+          - "&f攻击附加&6火焰伤害"
+          - "&f击退敌人保持距离"
+        normal-lore:
+          - "&f攻击附带&6火焰伤害"
+          - "&f击退敌人保持距离"
+      - id: "venom_blade"
+        name: "&a&l凋零"
+        material: "IRON_SWORD"
+        buy-price: 700
+        sell-price: 560
+        shop-lore:
+          - "&7持续消耗型"
+          - "&f攻击附加&a凋零效果"
+          - "&f长时间持续伤害"
+        normal-lore:
+          - "&f攻击敌方施加&a凋零II&f 6秒"
+          - "&f长时间持续伤害"
+      - id: "suppression_axe"
+        name: "&c&l压制"
+        material: "IRON_AXE"
+        buy-price: 680
+        sell-price: 550
+        shop-lore:
+          - "&7控制型"
+          - "&f攻击有&e80%&f概率使目标停顿"
+          - "&f打断怪物蓄力"
+        normal-lore:
+          - "&f攻击有&e80%&f概率使目标停顿&e0.35秒"
+          - "&f必定打断拉弓/施法/装填"
+          - "&f同一目标每&e5秒&f最多触发一次"
+    ranged:
+      - id: "infinite_bow"
+        name: "&f&l无限弓"
+        material: "BOW"
+        buy-price: 0
+        sell-price: 560
+        shop-lore:
+          - "&7持续输出型"
+          - "&f无限附魔 &b无需箭矢"
+          - "&f无限续航 稳定压制"
+        normal-lore:
+          - "&f&b无需箭矢"
+          - "&f无限续航"
+      - id: "burst_crossbow"
+        name: "&c&l爆发弩"
+        material: "CROSSBOW"
+        buy-price: 0
+        sell-price: 640
+        shop-lore:
+          - "&7爆发清怪型"
+          - "&f快速装填 &c三箭齐发"
+          - "&f赠送&c36支箭矢&f 瞬间清场"
+        normal-lore:
+          - "&f快速装填 多重射击"
+          - "&f瞬间三连发射击"
+      - id: "wind_crossbow"
+        name: "&c&l风弹弩"
+        material: "CROSSBOW"
+        buy-price: 0
+        sell-price: 680
+        shop-lore:
+          - "&7战术控场型"
+          - "&f发射&a风弹&f 范围击退聚敌"
+          - "&f与近战武器&e完美配合&f 创造输出时机"
+        normal-lore:
+          - "&f发射&a风弹&f 范围击退"
+          - "&f创造输出时机"
+      - id: "explosive_crossbow"
+        name: "&4&l爆破弩"
+        material: "CROSSBOW"
+        buy-price: 1000
+        sell-price: 800
+        shop-lore:
+          - "&7范围爆破型"
+          - "&f&4爆炸范围伤害&f 群体压制"
+          - "&f赠送&412爆炸箭&f 命中产生TNT爆炸"
+        normal-lore:
+          - "&7范围爆破型"
+          - "&f装配&4爆炸箭&f 命中产生TNT爆炸"
+      - id: "special_bow"
+        name: "&5&l特种弓"
+        material: "BOW"
+        buy-price: 0
+        sell-price: 680
+        shop-lore:
+          - "&7多功能特化型"
+          - "&f可装备&5特种箭矢&7（普通/光灵/缓慢/中毒/治疗/迅捷）"
+          - "&f赠送5种特殊箭各8支"
+        normal-lore:
+          - "&7多功能特化型"
+          - "&7可装备任意箭矢"
+    supplies:
+      - id: "first_aid_kit"
+        name: "&b急救包 "
+        material: "WHITE_WOOL"
+        buy-price: 40
+        sell-price: 32
+        shop-lore:
+          - "&7恢复&c❤*5(10HP)"
+        normal-lore:
+          - "&f4秒读条后恢复&c❤*5"
+          - "&7读条期间受攻击会中断"
+        tier: "rare"
+      - id: "bandage"
+        name: "&a绷带"
+        material: "PAPER"
+        buy-price: 15
+        sell-price: 12
+        shop-lore:
+          - "&7恢复&c❤*2(4HP)"
+        normal-lore:
+          - "&f2秒读条后恢复&c❤*2"
+          - "&7读条期间受攻击会中断"
+        tier: "uncommon"
+      - id: "antidote"
+        name: "&b解毒剂"
+        material: "HONEY_BOTTLE"
+        buy-price: 20
+        sell-price: 16
+        shop-lore:
+          - "&7解除中毒效果"
+        normal-lore:
+          - "&f2.5秒读条后解除中毒效果"
+          - "&7读条期间受攻击会中断"
+        tier: "uncommon"
+      - id: "normal_arrow"
+        name: "&f普通箭矢"
+        material: "ARROW"
+        buy-price: 48
+        sell-price: 2
+        shop-lore:
+          - "&73信用点/支，16支一捆"
+        normal-lore:
+          - "&7最常见普通的箭矢"
+        min-amount: 1
+        max-amount: 64
+        tier: "common"
+      - id: "baozha_jian"
+        name: "&4爆炸箭"
+        material: "SPECTRAL_ARROW"
+        buy-price: 12
+        sell-price: 10
+        shop-lore:
+          - "&7爆破弩专用，命中产生TNT爆炸"
+        normal-lore:
+          - "&7爆破弩专用，命中产生TNT爆炸"
+      - id: "guangling_jian"
+        name: "&b光灵箭"
+        material: "SPECTRAL_ARROW"
+        buy-price: 5
+        sell-price: 4
+        shop-lore:
+          - "&7特种弓专用，命中目标发光"
+        normal-lore:
+          - "&7特种弓专用，命中目标发光"
+      - id: "huanman_jian"
+        name: "&e缓慢箭"
+        material: "TIPPED_ARROW"
+        buy-price: 6
+        sell-price: 5
+        shop-lore:
+          - "&7特种弓专用，命中造成缓慢效果"
+        normal-lore:
+          - "&7特种弓专用，命中造成缓慢效果"
+      - id: "zhongdu_jian"
+        name: "&2中毒箭"
+        material: "TIPPED_ARROW"
+        buy-price: 7
+        sell-price: 5
+        shop-lore:
+          - "&7特种弓专用，命中造成中毒效果"
+        normal-lore:
+          - "&7特种弓专用，命中造成中毒效果"
+      - id: "zhiliao_jian"
+        name: "&c治疗箭"
+        material: "TIPPED_ARROW"
+        buy-price: 15
+        sell-price: 12
+        shop-lore:
+          - "&7特种弓专用，命中造成治疗效果"
+        normal-lore:
+          - "&7特种弓专用，命中造成治疗效果"
+      - id: "xunjie_jian"
+        name: "&d迅捷箭"
+        material: "TIPPED_ARROW"
+        buy-price: 10
+        sell-price: 8
+        shop-lore:
+          - "&7特种弓专用，命中造成迅捷效果"
+        normal-lore:
+          - "&7特种弓专用，命中造成迅捷效果"
+      - id: "standard_ration"
+        name: "&a标准口粮"
+        material: "BREAD"
+        buy-price: 20
+        sell-price: 16
+        shop-lore:
+          - "&7恢复少量饥饿值，维持体力"
+        normal-lore:
+          - "&7恢复少量饥饿值，维持体力"
+        tier: "uncommon"
+      - id: "pumpkin_pie"
+        name: "&b南瓜派"
+        material: "PUMPKIN_PIE"
+        buy-price: 40
+        sell-price: 32
+        shop-lore:
+          - "&7恢复中等饥饿值，维持体力"
+        normal-lore:
+          - "&7恢复中等饥饿值，维持体力"
+        tier: "rare"
+      - id: "golden_carrot"
+        name: "&b金胡萝卜"
+        material: "GOLDEN_CARROT"
+        buy-price: 60
+        sell-price: 50
+        shop-lore:
+          - "&7恢复大量饱和度，维持体力"
+        normal-lore:
+          - "&7恢复大量饱和度，维持体力"
+        tier: "epic"
+    repair: 
+      - id: "whetstone_flint"
+        name: "&a磨刀石"
+        material: "FLINT"
+        buy-price: 40
+        sell-price: 32
+        shop-lore:
+          - "&7修复武器少量耐久"
+        normal-lore:
+          - "&72s读条后修复武器30点耐久"
+          - "&7读条期间受攻击会中断"
+        tier: "uncommon"
+  
+  # 模板忽略规则
+  template-ignore:
+    - "entities"
+    - "poi"
+    - "playerdata"
+    - "advancements"
+    - "stats"
+    - "session.lock"
+
+  # ==============================
+  # 可搜索容器 & 掉落物配置
+  # ==============================
+
+  # 容器物品数量范围配置（根据容器体积决定）
+  # volume-range: 容器体积范围（方块数）
+  # min-items: 最少物品数量
+  # max-items: 最多物品数量
+  container-item-counts:
+    - volume-range: 1
+      min-items: 1
+      max-items: 3
+    - volume-range: 2-3
+      min-items: 2
+      max-items: 4
+    - volume-range: 4-6
+      min-items: 3
+      max-items: 5
+    - volume-range: 7-9
+      min-items: 4
+      max-items: 6
+    - volume-range: 10+
+      min-items: 4
+      max-items: 6
+
+  # 各个物品等级（品级）的基础搜索时间（秒）
+  # search-time 保持不变
+  # 同时在这里按"容器等级"配置权重：
+  #   weight-level-1: 等级1容器中的权重
+  #   weight-level-2: 等级2容器中的权重
+  #   weight-level-3: 等级3容器中的权重
+  loot-tiers:
+    common:
+      search-time: 4
+      weight-level-1: 60
+      weight-level-2: 30
+      weight-level-3: 0
+    uncommon:
+      search-time: 6
+      weight-level-1: 20
+      weight-level-2: 20
+      weight-level-3: 30
+    rare:
+      search-time: 8
+      weight-level-1: 13
+      weight-level-2: 36
+      weight-level-3: 48
+    epic:
+      search-time: 10
+      weight-level-1: 6
+      weight-level-2: 12
+      weight-level-3: 18
+    legendary:
+      search-time: 15
+      weight-level-1: 0.5
+      weight-level-2: 1
+      weight-level-3: 3
+    mythic:
+      search-time: 20
+      weight-level-1: 0.5
+      weight-level-2: 1
+      weight-level-3: 2
+
+  # 斥候技能「下次搜索高品质概率提升」：各品级权重的比例系数（相对当前容器等级权重的倍数）
+  # 小于 1 降低该品级概率，大于 1 提高；未配置的品级按 1.0 计算
+  scout-quality-boost:
+    common: 0.6
+    uncommon: 0.8
+    rare: 1.5
+    epic: 2.0
+    legendary: 3.0
+    mythic: 3.5
+
+  # ==============================
+  # 实际装备（进入地牢时发放的真实物品）
+  # ==============================
+  # 键为 loadout-shop 中的 id（商品简介），值为实际发放的物品配置。
+  # 未在此配置的 loadoutId 将沿用商店简介物品（与展示一致）。
+  # 套装用 items 列表写多件；单件用顶层 material。
+  actual-equipment:
+    # 铁壁套装：保护2 铁头盔+胸甲+裤子+鞋子；2件套+3心 4件套+4心+受远程攻击后5s速度I；主动蹲下3秒获得抗性II 40秒（每局2次）
+    ironwall:
+      items:
+        - material: IRON_HELMET
+          name: "&f&l铁壁·头盔"
+          normal-lore:
+            - "&7铁壁套装部件"
+            - "&7套装效果："
+            - "&f2件：&e最大生命值+6"
+            - "&f4件：&a最大生命值+8 &f| &a远程受击加速"
+            - "&f主动：&640秒抗性II &7(2次/局)"
+          enchants: { PROTECTION: 2 }
+          sell-price: 160
+        - material: IRON_CHESTPLATE
+          name: "&f&l铁壁·胸甲"
+          normal-lore:
+            - "&7铁壁套装部件"
+            - "&7套装效果："
+            - "&f2件：&e最大生命值+6"
+            - "&f4件：&a最大生命值+8 &f| &a远程受击加速"
+            - "&f主动：&640秒抗性II &7(2次/局)"
+          enchants: { PROTECTION: 2 }
+          sell-price: 320
+        - material: IRON_LEGGINGS
+          name: "&f&l铁壁·护腿"
+          normal-lore:
+            - "&7铁壁套装部件"
+            - "&7套装效果："
+            - "&f2件：&e最大生命值+6"
+            - "&f4件：&a最大生命值+8 &f| &a远程受击加速"
+            - "&f主动：&640秒抗性II &7(2次/局)"
+          enchants: { PROTECTION: 2 }
+          sell-price: 160
+        - material: IRON_BOOTS
+          name: "&f&l铁壁·靴子"
+          normal-lore:
+            - "&7铁壁套装部件"
+            - "&7套装效果："
+            - "&f2件：&e最大生命值+6"
+            - "&f4件：&a最大生命值+8 &f| &a远程受击加速"
+            - "&f主动：&640秒抗性II &7(2次/局)"
+          enchants: { PROTECTION: 2 }
+          sell-price: 160
+    # 斥候套装：弹射物保护II皮甲；1件速度I；3件主动蹲下5秒下次搜索高品质概率提升（每局2次，激活中不可重复使用）
+    scout:
+      items:
+        - material: LEATHER_HELMET
+          name: "&a&l斥候·风帽"
+          normal-lore:
+            - "&7斥候套装部件"
+            - "&7套装效果："
+            - "&f2件：&e移动速度 +20%"
+            - "&f4件：&a移动速度 +20%" 
+            - "&f主动：&6下次搜索高品质概率提升 &7(2次/局)"
+          enchants: { PROJECTILE_PROTECTION: 2 }
+          sell-price: 112
+        - material: LEATHER_CHESTPLATE
+          name: "&a&l斥候·轻甲"
+          normal-lore:
+            - "&7斥候套装部件"
+            - "&7套装效果："
+            - "&f2件：&e移动速度 +20%"
+            - "&f4件：&a移动速度 +20%" 
+            - "&f主动：&6下次搜索高品质概率提升 &7(2次/局)"
+          enchants: { PROJECTILE_PROTECTION: 2 }
+          sell-price: 224
+        - material: LEATHER_LEGGINGS
+          name: "&a&l斥候·护腿"
+          normal-lore:
+            - "&7斥候套装部件"
+            - "&7套装效果："
+            - "&f2件：&e移动速度 +20%"
+            - "&f4件：&a移动速度 +20%" 
+            - "&f主动：&6下次搜索高品质概率提升 &7(2次/局)"
+          enchants: { PROJECTILE_PROTECTION: 2 }
+          sell-price: 112
+        - material: LEATHER_BOOTS
+          name: "&a&l斥候·软靴"
+          normal-lore:
+            - "&7斥候套装部件"
+            - "&7套装效果："
+            - "&f2件：&e移动速度 +20%"
+            - "&f4件：&a移动速度 +20%" 
+            - "&f主动：&6下次搜索高品质概率提升 &7(2次/局)"
+          enchants: { PROJECTILE_PROTECTION: 2 }
+          sell-price: 112
+    # 学者套装：保护1 金头盔+胸甲+裤子+鞋子；被动搜索时间-3秒；主动可刷新容器重新搜索（每局2次）
+    scholar:
+      items:
+        - material: GOLDEN_HELMET
+          name: "&6&l学者·金冠"
+          normal-lore:
+            - "&7学者套装部件"
+            - "&7套装效果："
+            - "&f2件：&e搜索时间-2秒"
+            - "&f4件：&a搜索时间-3秒"
+            - "&f主动：&6刷新最近容器可重新搜索 &7(2次/局)"
+          enchants: { PROTECTION: 1 }
+          sell-price: 128
+        - material: GOLDEN_CHESTPLATE
+          name: "&6&l学者·法袍"
+          normal-lore:
+            - "&7学者套装部件"
+            - "&7套装效果："
+            - "&f2件：&e搜索时间-2秒"
+            - "&f4件：&a搜索时间-3秒"
+            - "&f主动：&6刷新最近容器可重新搜索 &7(2次/局)"
+          enchants: { PROTECTION: 1 }
+          sell-price: 256
+        - material: GOLDEN_LEGGINGS
+          name: "&6&l学者·长裤"
+          normal-lore:
+            - "&7学者套装部件"
+            - "&7套装效果："
+            - "&f2件：&e搜索时间-2秒"
+            - "&f4件：&a搜索时间-3秒"
+            - "&f主动：&6刷新最近容器可重新搜索 &7(2次/局)"
+          enchants: { PROTECTION: 1 }
+          sell-price: 128
+        - material: GOLDEN_BOOTS
+          name: "&6&l学者·金靴"
+          normal-lore:
+            - "&7学者套装部件"
+            - "&7套装效果："
+            - "&f2件：&e搜索时间-2秒"
+            - "&f4件：&a搜索时间-3秒"
+            - "&f主动：&6刷新最近容器可重新搜索 &7(2次/局)"
+          enchants: { PROTECTION: 1 }
+          sell-price: 128
+    # 游侠套装：弹射物保护4 锁链头盔+胸甲+裤子+鞋子；被动远程伤害+10%/25%（同类取最高）；主动蹲下5秒后下次远程伤害+60%（每局2次）
+    ranger:
+      items:
+        - material: CHAINMAIL_HELMET
+          name: "&9&l游侠·兜帽"
+          normal-lore:
+            - "&7游侠套装部件"
+            - "&7套装效果："
+            - "&f2件：&e远程伤害+10%"
+            - "&f4件：&a远程伤害+25%"
+            - "&f主动：&6下次远程伤害+60% &7(2次/局)"
+          enchants: { PROJECTILE_PROTECTION: 4 }
+          sell-price: 192
+        - material: CHAINMAIL_CHESTPLATE
+          name: "&9&l游侠·锁甲"
+          normal-lore:
+            - "&7游侠套装部件"
+            - "&7套装效果："
+            - "&f2件：&e远程伤害+10%"
+            - "&f4件：&a远程伤害+25%"
+            - "&f主动：&6下次远程伤害+60% &7(2次/局)"
+          enchants: { PROJECTILE_PROTECTION: 4 }
+          sell-price: 384
+        - material: CHAINMAIL_LEGGINGS
+          name: "&9&l游侠·腿甲"
+          normal-lore:
+            - "&7游侠套装部件"
+            - "&7套装效果："
+            - "&f2件：&e远程伤害+10%"
+            - "&f4件：&a远程伤害+25%"
+            - "&f主动：&6下次远程伤害+60% &7(2次/局)"
+          enchants: { PROJECTILE_PROTECTION: 4 }
+          sell-price: 192
+        - material: CHAINMAIL_BOOTS
+          name: "&9&l游侠·锁靴"
+          normal-lore:
+            - "&7游侠套装部件"
+            - "&7套装效果："
+            - "&f2件：&e远程伤害+10%"
+            - "&f4件：&a远程伤害+25%"
+            - "&f主动：&6下次远程伤害+60% &7(2次/局)"
+          enchants: { PROJECTILE_PROTECTION: 4 }
+          sell-price: 192
+    # 萨满套装：保护1 铁头盔+胸甲+裤子+鞋子；被动10/5秒未受伤生命恢复I；主动蹲下5秒清除负面效果+6血（每局2次）
+    shaman:
+      items:
+        - material: IRON_HELMET
+          name: "&d&l萨满·头环"
+          normal-lore:
+            - "&7萨满套装部件"
+            - "&7套装效果："
+            - "&f2件：&e10秒未受伤获得生命恢复I"
+            - "&f4件：&a5秒未受伤获得生命恢复I"
+            - "&f主动：&6清除负面并恢复&c❤❤❤ &7(2次/局)"
+          enchants: { PROTECTION: 1 }
+          sell-price: 120
+        - material: IRON_CHESTPLATE
+          name: "&d&l萨满·祭袍"
+          normal-lore:
+            - "&7萨满套装部件"
+            - "&7套装效果："
+            - "&f2件：&e10秒未受伤获得生命恢复I"
+            - "&f4件：&a5秒未受伤获得生命恢复I"
+            - "&f主动：&6清除负面并恢复&c❤❤❤ &7(2次/局)"
+          enchants: { PROTECTION: 1 }
+          sell-price: 240
+        - material: IRON_LEGGINGS
+          name: "&d&l萨满·裹腿"
+          normal-lore:
+            - "&7萨满套装部件"
+            - "&7套装效果："
+            - "&f2件：&e10秒未受伤获得生命恢复I"
+            - "&f4件：&a5秒未受伤获得生命恢复I"
+            - "&f主动：&6清除负面并恢复&c❤❤❤ &7(2次/局)"
+          enchants: { PROTECTION: 1 }
+          sell-price: 120
+        - material: IRON_BOOTS
+          name: "&d&l萨满·祭靴"
+          normal-lore:
+            - "&7萨满套装部件"
+            - "&7套装效果："
+            - "&f2件：&e10秒未受伤获得生命恢复I"
+            - "&f4件：&a5秒未受伤获得生命恢复I"
+            - "&f主动：&6清除负面并恢复&c❤❤❤ &7(2次/局)"
+          enchants: { PROTECTION: 1 }
+          sell-price: 120
+    # 阔剑：锋利3横扫之刃2铁剑；3-4目标主+40%副+20%，5+目标主+60%副+40%
+    broadsword:
+      material: IRON_SWORD
+      name: "&f&l阔剑"
+      normal-lore:
+        - "&f攻击3-4个目标: "
+        - "&f主目标&c+40%&f 副目标&c+20%"
+        - "&f攻击5+个目标: "
+        - "&f主目标&a+60%&f 副目标&a+40%"
+      enchants: { SHARPNESS: 3, SWEEPING_EDGE: 2 }
+      sell-price: 480
+    # 处决：锋利4铁剑；对任意敌人第一次伤害+60%，对精英及以上怪物+100%（总计200%）
+    execution:
+      material: IRON_SWORD
+      name: "&c&l处决"
+      normal-lore:
+        - "&f对敌人首次攻击&c伤害+60%"
+        - "&f对精英及以上怪物&4伤害+100%"
+      enchants: { SHARPNESS: 4 }
+      sell-price: 720
+    # 烈焰：锋利1击退1火焰附加 铁剑；攻击附带火焰附加
+    flame_blade:
+      material: IRON_SWORD
+      name: "&e&l烈焰"
+      normal-lore:
+        - "&f攻击附带&6火焰伤害"
+        - "&f击退敌人保持距离"
+      enchants: { SHARPNESS: 2, KNOCKBACK: 1, FIRE_ASPECT: 1 }
+      sell-price: 520
+    # 凋零：锋利3铁剑；攻击敌方上凋零2 6s
+    venom_blade:
+      material: IRON_SWORD
+      name: "&a&l凋零"
+      normal-lore:
+        - "&f攻击敌方施加&a凋零II&f 6秒"
+        - "&f长时间持续伤害"
+      enchants: { SHARPNESS: 3 }
+      sell-price: 560
+    # 压制：锋利3铁斧
+    suppression_axe:
+      material: IRON_AXE
+      name: "&c&l压制"
+      normal-lore:
+        - "&f攻击有&e80%&f概率使目标停顿&e0.35秒"
+        - "&f必定打断拉弓/施法/装填"
+        - "&f同一目标每&e5秒&f最多触发一次"
+      enchants: { SHARPNESS: 3 }
+      sell-price: 550
+    # 无限弓：无限附魔弓，无需箭矢即可射击（由 InfiniteBowNoArrowListener 临时给箭）
+    infinite_bow:
+      material: BOW
+      name: "&f&l无限弓"
+      normal-lore:
+        - "&f&b无需箭矢"
+        - "&f无限续航"
+      enchants: { INFINITY: 1 }
+      sell-price: 560
+    # 爆发弩：快速装填III + 多重射击 弩
+    burst_crossbow:
+      material: CROSSBOW
+      name: "&c&l爆发弩"
+      normal-lore:
+        - "&f多重射击"
+        - "&f瞬间三连发射击"
+      enchants: { QUICK_CHARGE: 3, MULTISHOT: 1 }
+      sell-price: 640
+    # 风弹弩：快速装填II 弩，伤害减半，命中/落点生成风弹击退周围实体
+    wind_crossbow:
+      material: CROSSBOW
+      name: "&c&l风弹弩"
+      normal-lore:
+        - "&f发射&a风弹&f 范围击退"
+        - "&f创造输出时机"
+      enchants: { QUICK_CHARGE: 2 }
+      sell-price: 680
+    # 爆破弩：原版弩无附魔，配合爆炸箭使用
+    explosive_crossbow:
+      material: CROSSBOW
+      name: "&4&l爆破弩"
+      normal-lore:
+        - "&7范围爆破型"
+        - "&f装配&4爆炸箭&f 命中产生TNT爆炸"
+      sell-price: 880
+    # 特种弓：力量II 弓
+    special_bow:
+      material: BOW
+      name: "&5&l特种弓"
+      normal-lore:
+        - "&7多功能特化型"
+        - "&7可装备任意箭矢"
+      enchants: { POWER: 2 }
+      sell-price: 680
+    # 普通箭矢：价值 2 信用点/支，用于背包价值显示
+    normal_arrow:
+      material: ARROW
+      name: "&f普通箭矢"
+      normal-lore:
+        - "&7最常见普通的箭矢"
+      sell-price: 2
+    # 爆炸箭（光灵箭原型）：价值 16 信用点/发，爆破弩专用
+    baozha_jian:
+      material: SPECTRAL_ARROW
+      name: "&4爆炸箭"
+      normal-lore:
+        - "&7爆破弩专用，命中产生TNT爆炸"
+      sell-price: 10
+    # 特种弓用特殊箭矢（原版药水箭）
+    # 光灵箭
+    guangling_jian:
+      material: SPECTRAL_ARROW
+      name: "&b光灵箭"
+      normal-lore:
+        - "&7特种弓专用，命中目标发光"
+      sell-price: 4
+    # 缓慢箭
+    huanman_jian:
+      material: TIPPED_ARROW
+      name: "&e缓慢箭"
+      normal-lore:
+        - "&7特种弓专用，命中造成缓慢效果"
+      base_potion_type: SLOWNESS
+      sell-price: 5
+    # 中毒箭
+    zhongdu_jian:
+      material: TIPPED_ARROW
+      name: "&2中毒箭"
+      normal-lore:
+        - "&7特种弓专用，命中造成中毒效果"
+      base_potion_type: POISON
+      sell-price: 5
+    # 治疗箭
+    zhiliao_jian:
+      material: TIPPED_ARROW
+      name: "&c治疗箭"
+      normal-lore:
+        - "&7特种弓专用，命中造成治疗效果"
+      base_potion_type: HEALING
+      sell-price: 12
+    # 迅捷箭
+    xunjie_jian:
+      material: TIPPED_ARROW
+      name: "&d迅捷箭"
+      normal-lore:
+        - "&7特种弓专用，命中造成迅捷效果"
+      base_potion_type: SWIFTNESS
+      sell-price: 8
+    # 标准补给（面包）
+    standard_ration:
+      material: BREAD
+      name: "&a标准口粮"
+      normal-lore:
+        - "&7恢复少量饥饿值，维持体力"
+      sell-price: 16
+    # 南瓜派
+    pumpkin_pie:
+      material: PUMPKIN_PIE
+      name: "&b南瓜派"
+      normal-lore:
+        - "&7恢复中等饥饿值，维持体力"
+      sell-price: 32
+    # 金胡萝卜
+    golden_carrot:
+      material: GOLDEN_CARROT
+      name: "&b金胡萝卜"
+      normal-lore:
+        - "&7恢复大量饱和度，维持体力"
+      sell-price: 50
+    # 磨刀石 修复武器30点耐久
+    whetstone_flint:
+      material: FLINT
+      name: "&a磨刀石"
+      normal-lore:
+        - "&72s读条后修复武器30点耐久"
+        - "&7读条期间受攻击会中断"
+      sell-price: 32
+
+
+# 2. 地牢配置（每个地牢独立）
+dungeons:
+  trialchambers:
+    # 地牢 ID（用于实际世界名称和指令参数，现在 id 作为世界名称的基础部分）
+    id: "trialchambers"
+    # 地牢中文显示名称（用于提示信息）
+    world-name: "试炼"
+
+    # 模板世界文件夹路径（相对路径: "trialchambers_template"
+    template-world-path: "trialchambers_template"
+
+    # 进入地牢所需费用（信用点，0 表示免费）
+    cost: 0
+
+    # 最大实例数和每实例最大玩家数
+    max-instances: 3
+    max-players-per-instance: 9
+
+    duration-minutes: 45  # 地牢持续时间（分钟），0表示无限
+
+    # 出生点列表（在副本世界中的坐标）
+    spawn-points:
+      - x: 49.0
+        y: 4.0
+        z: 38.0
+        name: "SW出生点1"
+      - x: 21.0
+        y: -11.0
+        z: 29.0
+        name: "SW出生点2"
+      - x: 3.0
+        y: -11.0
+        z: 18.0
+        name: "SW出生点3"
+    # 撤离点区域列表（在副本世界中的坐标）
+    exit-regions:
+      - min-x: -11
+        min-y: -18
+        min-z: 31
+        max-x: -8
+        max-y: -15
+        max-z: 35
+        world: "trialchambers_world"
+        name: "水下撤离点"
+  
+    # 玩家在撤离点停留多少秒后自动退出副本
+    exit-wait-seconds: 10
+
+    # 地牢科技树等级加成（0 级无加成；血量为半心数，如 2 = 1 心；player-damage-reduction 为 0~1，如 0.03 = 3%）
+    tech-level-bonuses:
+      0:
+        health: 0
+        player-damage-reduction: 0
+      1:
+        health: 2
+        player-damage-reduction: 0
+      2:
+        health: 4
+        player-damage-reduction: 0.03
+      3:
+        health: 6
+        player-damage-reduction: 0.06
+      4:
+        health: 8
+        player-damage-reduction: 0.09
+      5:
+        health: 10
+        player-damage-reduction: 0.12
+
+
+    # ==============================
+    # 怪物头颅配置
+    # ==============================
+    # 怪物头颅列表
+    # monster-id: 对应 MonsterRegistry 中注册的怪物 ID
+    # head-type: 头颅类型（standard 或 custom）
+    # material: 原版头颅材质（当 head-type 为 standard 时填写）
+    # texture: 自定义头颅纹理 Base64（当 head-type 为 custom 时填写）
+    # display-name: 头颅显示名称
+    monster-heads:
+      # 标准怪物
+      - monster-id: "standard_zombie"
+        head-type: "standard"
+        material: "ZOMBIE_HEAD"
+        display-name: "&e地穴僵尸"
+      - monster-id: "standard_skeleton"
+        head-type: "standard"
+        material: "SKELETON_SKULL"
+        display-name: "&e地穴骷髅"
+      - monster-id: "elite_skeleton"
+        head-type: "standard"
+        material: "SKELETON_SKULL"
+        display-name: "&6暗影射手"
+      - monster-id: "elite_zombie"
+        head-type: "standard"
+        material: "ZOMBIE_HEAD"
+        display-name: "&6试炼盾卫"
+      - monster-id: "enhanced_skeleton"
+        head-type: "standard"
+        material: "SKELETON_SKULL"
+        display-name: "&d试炼射手"
+      # 自定义头颅怪物
+      - monster-id: "standard_spider"
+        head-type: "custom"
+        texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzVlMjQ4ZGEyZTEwOGYwOTgxM2E2Yjg0OGEwZmNlZjExMTMwMDk3ODE4MGVkYTQxZDNkMWE3YThlNGRiYTNjMyJ9fX0="
+        display-name: "&e地穴蜘蛛"
+      - monster-id: "elite_vindicator"
+        head-type: "custom"
+        texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGFlZWQ5ZDhlZDE3NjllNzdlM2NmZTExZGMxNzk2NjhlZDBkYjFkZTZjZTI5ZjFjOGUwZDVmZTVlNjU3M2I2MCJ9fX0="
+        display-name: "&6试炼处刑者"
+      - monster-id: "chaos_witch"
+        head-type: "custom"
+        texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGFhOTg2YTZlMWMyZDg4ZmYxOThhYjJjMzI1OWU4ZDI2NzRjYjgzYTZkMjA2Zjg4M2JhZDJjOGFkYTgxOSJ9fX0="
+        display-name: "&d混沌女巫"
+      - monster-id: "enhanced_shulker"
+        head-type: "custom"
+        texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjVhYmY5MTUxNzYwYzkzOTVmYWU0ZjNkMjUxN2JkZjU3ODM3ODE1ZDI1NDUzNzg3MDU5NjI3MGNiN2ZmMTk2In19fQ=="
+        display-name: "&d无形贝"
+      - monster-id: "legendary_raider_captain"
+        head-type: "custom"
+        texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjc3MTgzOGU0NTU0ZmRkMzlmOWRhOTg3MmM0MWVmNzA1NWJlMmRiMjBhZmIyYzg4ZTQyNjU1NGZkZDQzYTZlMSJ9fX0="
+        display-name: "&c试炼1队队长"
+
+    # ==============================
+    # 怪物掉落物表配置
+    # ==============================
+    # 怪物掉落物表，按怪物等级分类
+    # level: 怪物等级（STANDARD/ELITE/ENHANCED/LEGENDARY）
+    # drops: 掉落物列表
+    #   - item-id: 掉落物ID（对应dungeon.loot-items中的id）
+    #   - chance: 掉落概率（0.0-1.0，1.0表示100%掉落）
+    monster-loot-tables:
+      # 标准怪物掉落表
+      STANDARD:
+        drops:
+          small_copper_coins_drop:
+            item-id: "small_copper_coins"
+            chance: 1.0
+          rough_bandage_drop:
+            item-id: "rough_bandage"
+            chance: 0.5
+      
+      # 精英怪物掉落表
+      ELITE:
+        drops:
+          energy_drink_drop:
+            item-id: "energy_drink"
+            chance: 0.8
+          bandage_drop:
+            item-id: "bandage"
+            chance: 1.0
+      
+      # 强化怪物掉落表
+      ENHANCED:
+        drops:
+          medkit_drop:
+            item-id: "medkit"
+            chance: 0.6
+          energy_drink_drop:
+            item-id: "energy_drink"
+            chance: 0.4
+      
+      # 史诗怪物掉落表
+      LEGENDARY:
+        drops:
+          legendary_sword_drop:
+            item-id: "legendary_sword"
+            chance: 0.3
+          goldbar_drop:
+            item-id: "goldbar"
+            chance: 0.7
+
+    # ==============================
+    # 怪物生成配置
+    # ==============================
+    # 怪物生成点列表
+    # 在世界生成时，会自动在指定位置生成指定数量和类型的怪物
+    # monster-id: 对应 MonsterRegistry 中注册的怪物 ID
+    # count: 生成数量（默认为 1）
+    monster-spawns:
+      # ==============================
+      # SW大厅 - 房间1
+      # ==============================
+      # 一层标准僵尸*2
+      - id: "room1_zombie_1"
+        monster-id: "standard_zombie"
+        x: 54.0
+        y: -11.0
+        z: 32.0
+        count: 2
+        name: "房间1-标准僵尸"
+      # 中层标准骷髅*1+蜘蛛*1
+      - id: "room1_skeleton_1"
+        monster-id: "standard_skeleton"
+        x: 59.0
+        y: -6.0
+        z: 38.0
+        count: 1
+        name: "房间1-标准骷髅"
+      - id: "room1_spider_1"
+        monster-id: "standard_spider"
+        x: 59.0
+        y: -6.0
+        z: 38.0
+        count: 1
+        name: "房间1-蜘蛛"
+      # 2级容器看守 精英骷髅*1+标准僵尸*1
+      - id: "room1_elite_skeleton_1"
+        monster-id: "elite_skeleton"
+        x: 60.0
+        y: 4.0
+        z: 38.0
+        count: 1
+        name: "房间1-精英骷髅"
+      - id: "room1_zombie_2"
+        monster-id: "standard_zombie"
+        x: 60.0
+        y: 4.0
+        z: 38.0
+        count: 1
+        name: "房间1-标准僵尸"
+
+      # ==============================
+      # SW大厅 - 走廊
+      # ==============================
+      # 高层精英骷髅*1
+      - id: "corridor_elite_skeleton_1"
+        monster-id: "elite_skeleton"
+        x: 18.0
+        y: -6.0
+        z: 28.0
+        count: 1
+        name: "走廊-精英骷髅"
+      # 高层精英僵尸*1
+      - id: "corridor_elite_zombie_1"
+        monster-id: "elite_zombie"
+        x: 11.0
+        y: -11.0
+        z: 33.0
+        count: 1
+        name: "走廊-精英僵尸"
+      # 一层普通小怪*1
+      - id: "corridor_zombie_1"
+        monster-id: "standard_zombie"
+        x: 9.0
+        y: -18.0
+        z: 34.0
+        count: 1
+        name: "走廊-普通僵尸"
+
+      # ==============================
+      # SW大厅 - 走廊2
+      # ==============================
+      # 一层僵尸*2
+      - id: "corridor2_zombie_1"
+        monster-id: "standard_zombie"
+        x: -9.0
+        y: -18.0
+        z: 14.0
+        count: 2
+        name: "走廊2-普通僵尸"
+      # 二层精英骷髅*1
+      - id: "corridor2_elite_skeleton_1"
+        monster-id: "elite_skeleton"
+        x: -9.0
+        y: -11.0
+        z: 3.0
+        count: 1
+        name: "走廊2-精英骷髅"
+      # 女巫*1
+      - id: "corridor2_witch_1"
+        monster-id: "chaos_witch"
+        x: -9.0
+        y: -18.0
+        z: -7.0
+        count: 1
+        name: "走廊2-女巫"
+      # 开关精英僵尸*1
+      - id: "corridor2_elite_zombie_1"
+        monster-id: "elite_zombie"
+        x: 3.0
+        y: -26.0
+        z: 13.0
+        count: 1
+        name: "走廊2-精英僵尸"
+
+      # ==============================
+      # SW大厅 - 汇合点
+      # ==============================
+      # 潜影贝*1（吸附在上面）
+      - id: "meeting_shulker_1"
+        monster-id: "enhanced_shulker"
+        x: -6.0
+        y: -14.0
+        z: 33.0
+        count: 1
+        name: "汇合点-潜影贝"
+
+      # ==============================
+      # SW大厅 - 房间2
+      # ==============================
+      # 普通骷髅*2
+      - id: "room2_skeleton_1"
+        monster-id: "standard_skeleton"
+        x: 1.0
+        y: -6.0
+        z: 52.0
+        count: 2
+        name: "房间2-标准骷髅"
+      # 2级容器普通骷髅*1
+      - id: "room2_container_skeleton_1"
+        monster-id: "standard_skeleton"
+        x: -9.0
+        y: -1.0
+        z: 57.0
+        count: 1
+        name: "房间2-2级容器骷髅"
+      # 精英僵尸*1
+      - id: "room2_elite_zombie_1"
+        monster-id: "elite_zombie"
+        x: -4.0
+        y: -1.0
+        z: 62.0
+        count: 1
+        name: "房间2-精英僵尸"
+      # 普通骷髅*1
+      - id: "room2_skeleton_2"
+        monster-id: "standard_skeleton"
+        x: 1.0
+        y: -1.0
+        z: 52.0
+        count: 1
+        name: "房间2-标准骷髅"
+      # 1级容器普通僵尸*1+蜘蛛*1
+      - id: "room2_container_zombie_1"
+        monster-id: "standard_zombie"
+        x: -9.0
+        y: -6.0
+        z: 62.0
+        count: 1
+        name: "房间2-1级容器僵尸"
+      - id: "room2_container_spider_1"
+        monster-id: "standard_spider"
+        x: -9.0
+        y: -6.0
+        z: 62.0
+        count: 1
+        name: "房间2-1级容器蜘蛛"
+
+      # ==============================
+      # SW大厅 - 房间3
+      # ==============================
+      # 普通骷髅*2
+      - id: "room3_skeleton_1"
+        monster-id: "standard_skeleton"
+        x: -17.0
+        y: 1.0
+        z: 8.0
+        count: 2
+        name: "房间3-标准骷髅"
+      # 2级容器普通骷髅*1
+      - id: "room3_container_skeleton_1"
+        monster-id: "standard_skeleton"
+        x: -4.0
+        y: 6.0
+        z: 8.0
+        count: 1
+        name: "房间3-2级容器骷髅"
+      # 精英僵尸*1
+      - id: "room3_elite_zombie_1"
+        monster-id: "elite_zombie"
+        x: 1.0
+        y: 6.0
+        z: 3.0
+        count: 1
+        name: "房间3-精英僵尸"
+      # 普通骷髅*1
+      - id: "room3_skeleton_2"
+        monster-id: "standard_skeleton"
+        x: -14.0
+        y: 6.0
+        z: 8.0
+        count: 1
+        name: "房间3-标准骷髅"
+      # 1级容器普通僵尸*1+蜘蛛*1
+      - id: "room3_container_zombie_1"
+        monster-id: "standard_zombie"
+        x: -9.0
+        y: 1.0
+        z: -2.0
+        count: 1
+        name: "房间3-1级容器僵尸"
+      - id: "room3_container_spider_1"
+        monster-id: "standard_spider"
+        x: -9.0
+        y: 1.0
+        z: -2.0
+        count: 1
+        name: "房间3-1级容器蜘蛛"
+
+      # ==============================
+      # SW大厅 - 大房间
+      # ==============================
+      # 掠夺者队长*1
+      - id: "large_room_captain_1"
+        monster-id: "legendary_raider_captain"
+        x: 21.0
+        y: 8.0
+        z: 16.0
+        count: 1
+        name: "大房间-掠夺者队长"
+      # 卫道士*1
+      - id: "large_room_vindicator_1"
+        monster-id: "elite_vindicator"
+        x: 21.0
+        y: 6.0
+        z: 32.0
+        count: 1
+        name: "大房间-卫道士"
+      # 强化骷髅*1
+      - id: "large_room_enhanced_skeleton_1"
+        monster-id: "enhanced_skeleton"
+        x: 31.0
+        y: 11.0
+        z: 33.0
+        count: 1
+        name: "大房间-强化骷髅"
+      # 强化骷髅*1
+      - id: "large_room_enhanced_skeleton_2"
+        monster-id: "enhanced_skeleton"
+        x: 13.0
+        y: 6.0
+        z: 31.0
+        count: 1
+        name: "大房间-强化骷髅"
+      # 普通僵尸*2
+      - id: "large_room_zombie_1"
+        monster-id: "standard_zombie"
+        x: 27.0
+        y: 8.0
+        z: 16.0
+        count: 1
+        name: "大房间-普通僵尸"
+      - id: "large_room_zombie_2"
+        monster-id: "standard_zombie"
+        x: 15.0
+        y: 8.0
+        z: 16.0
+        count: 1
+        name: "大房间-普通僵尸"
+
+    # 容器区域
+    # 容器配置字段：
+    #   name: 容器打开界面显示的名称
+    #   texture: 容器搜索UI中左上角显示的头颅自定义皮肤值（Base64编码）
+    # 等级说明：
+    #   level 1: 普通容器
+    #   level 2: 高级容器
+    #   level 3: 稀有容器
+    containers:
+      # SW1 - 49, -11, 38 (1级, 1格)
+      - id: "SW1"
+        min-x: 49
+        min-y: -11
+        min-z: 38
+        max-x: 49
+        max-y: -11
+        max-z: 38
+        level: 1
+        name: "&b包裹"
+        texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjJjYTk3YzRjZjE5YjU0YjE3MDZhYzk1Zjc5ZmEyODQ5ZmZkZGIwZjYzMDllNzBmZDJkMjQ3MTgwMTYxYmI1NyJ9fX0="
+      # SW2 - 5, -18, 35 (1级, 1格)
+      - id: "SW2"
+        min-x: 5
+        min-y: -18
+        min-z: 35
+        max-x: 5
+        max-y: -18
+        max-z: 35
+        level: 1
+        name: "&b测试"
+        texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjJjYTk3YzRjZjE5YjU0YjE3MDZhYzk1Zjc5ZmEyODQ5ZmZkZGIwZjYzMDllNzBmZDJkMjQ3MTgwMTYxYmI1NyJ9fX0="
+      # SW3 - -5, -6, 64 (1级, 1格)
+      - id: "SW3"
+        min-x: -5
+        min-y: -6
+        min-z: 64
+        max-x: -5
+        max-y: -6
+        max-z: 64
+        level: 1
+        name: "&b测试"
+        texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjJjYTk3YzRjZjE5YjU0YjE3MDZhYzk1Zjc5ZmEyODQ5ZmZkZGIwZjYzMDllNzBmZDJkMjQ3MTgwMTYxYmI1NyJ9fX0="
+      # SW4 - -16, -11, 9 (1级, 1格)
+      - id: "SW4"
+        min-x: -16
+        min-y: -11
+        min-z: 9
+        max-x: -16
+        max-y: -11
+        max-z: 9
+        level: 1
+        name: "&b测试"
+        texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjJjYTk3YzRjZjE5YjU0YjE3MDZhYzk1Zjc5ZmEyODQ5ZmZkZGIwZjYzMDllNzBmZDJkMjQ3MTgwMTYxYmI1NyJ9fX0="
+      # SW5 - -16, -16, 2 (1级, 1格)
+      - id: "SW5"
+        min-x: -16
+        min-y: -16
+        min-z: 2
+        max-x: -16
+        max-y: -16
+        max-z: 2
+        level: 1
+        name: "&b测试"
+        texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjJjYTk3YzRjZjE5YjU0YjE3MDZhYzk1Zjc5ZmEyODQ5ZmZkZGIwZjYzMDllNzBmZDJkMjQ3MTgwMTYxYmI1NyJ9fX0="
+      # SW6 - 29, 6, 37 ~ 29, 7, 37 (1级, 2格)
+      - id: "SW6"
+        min-x: 29
+        min-y: 6
+        min-z: 37
+        max-x: 29
+        max-y: 7
+        max-z: 37
+        level: 1
+        name: "&b测试"
+        texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjJjYTk3YzRjZjE5YjU0YjE3MDZhYzk1Zjc5ZmEyODQ5ZmZkZGIwZjYzMDllNzBmZDJkMjQ3MTgwMTYxYmI1NyJ9fX0="
+      # SW7 - 13, 6, 37 ~ 13, 7, 37 (1级, 2格)
+      - id: "SW7"
+        min-x: 13
+        min-y: 6
+        min-z: 37
+        max-x: 13
+        max-y: 7
+        max-z: 37
+        level: 1
+        name: "&b测试"
+        texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjJjYTk3YzRjZjE5YjU0YjE3MDZhYzk1Zjc5ZmEyODQ5ZmZkZGIwZjYzMDllNzBmZDJkMjQ3MTgwMTYxYmI1NyJ9fX0="
+      # SW8 - -16, 2, 12 ~ -16, 2, 14 (1级, 2格)
+      - id: "SW8"
+        min-x: -16
+        min-y: 2
+        min-z: 12
+        max-x: -16
+        max-y: 2
+        max-z: 14
+        level: 1
+        name: "&b测试"
+        texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjJjYTk3YzRjZjE5YjU0YjE3MDZhYzk1Zjc5ZmEyODQ5ZmZkZGIwZjYzMDllNzBmZDJkMjQ3MTgwMTYxYmI1NyJ9fX0="
+      # SW9 - -2, -17, 27 ~ -2, -18, 29 (1级, 6格)
+      - id: "SW9"
+        min-x: -2
+        min-y: -18
+        min-z: 27
+        max-x: -2
+        max-y: -17
+        max-z: 29
+        level: 1
+        name: "&b测试"
+        texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjJjYTk3YzRjZjE5YjU0YjE3MDZhYzk1Zjc5ZmEyODQ5ZmZkZGIwZjYzMDllNzBmZDJkMjQ3MTgwMTYxYmI1NyJ9fX0="
+      # SW10 - 59, 5, 31 (2级, 1格)
+      - id: "SW10"
+        min-x: 59
+        min-y: 5
+        min-z: 31
+        max-x: 59
+        max-y: 5
+        max-z: 31
+        level: 2
+        name: "&b测试"
+        texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjJjYTk3YzRjZjE5YjU0YjE3MDZhYzk1Zjc5ZmEyODQ5ZmZkZGIwZjYzMDllNzBmZDJkMjQ3MTgwMTYxYmI1NyJ9fX0="
+      # SW11 - 10, -6, 33 ~ 12, -6, 33 (2级, 3格)
+      - id: "SW11"
+        min-x: 10
+        min-y: -6
+        min-z: 33
+        max-x: 12
+        max-y: -6
+        max-z: 33
+        level: 2
+        name: "&b测试"
+        texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjJjYTk3YzRjZjE5YjU0YjE3MDZhYzk1Zjc5ZmEyODQ5ZmZkZGIwZjYzMDllNzBmZDJkMjQ3MTgwMTYxYmI1NyJ9fX0="
+      # SW12 - 5, -1, 51 ~ 5, -1, 53 (2级, 3格)
+      - id: "SW12"
+        min-x: 5
+        min-y: -1
+        min-z: 51
+        max-x: 5
+        max-y: -1
+        max-z: 53
+        level: 2
+        name: "&6测试"
+        texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjJjYTk3YzRjZjE5YjU0YjE3MDZhYzk1Zjc5ZmEyODQ5ZmZkZGIwZjYzMDllNzBmZDJkMjQ3MTgwMTYxYmI1NyJ9fX0="
+      # SW13 - -17, 6, 7 ~ -17, 6, 9 (2级, 3格)
+      - id: "SW13"
+        min-x: -17
+        min-y: 6
+        min-z: 7
+        max-x: -17
+        max-y: 6
+        max-z: 9
+        level: 2
+        name: "&6测试"
+        texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjJjYTk3YzRjZjE5YjU0YjE3MDZhYzk1Zjc5ZmEyODQ5ZmZkZGIwZjYzMDllNzBmZDJkMjQ3MTgwMTYxYmI1NyJ9fX0="
+      # SW14 - 20, 8, 11 ~ 22, 9, 11 (2级, 6格)
+      - id: "SW14"
+        min-x: 20
+        min-y: 8
+        min-z: 11
+        max-x: 22
+        max-y: 9
+        max-z: 11
+        level: 2
+        name: "&6测试"
+        texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjJjYTk3YzRjZjE5YjU0YjE3MDZhYzk1Zjc5ZmEyODQ5ZmZkZGIwZjYzMDllNzBmZDJkMjQ3MTgwMTYxYmI1NyJ9fX0="
+      # SW15 - -2, -17, 34 ~ -2, -16, 32 (2级, 6格)
+      - id: "SW15"
+        min-x: -2
+        min-y: -17
+        min-z: 32
+        max-x: -2
+        max-y: -16
+        max-z: 34
+        level: 2
+        name: "&6测试"
+        texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjJjYTk3YzRjZjE5YjU0YjE3MDZhYzk1Zjc5ZmEyODQ5ZmZkZGIwZjYzMDllNzBmZDJkMjQ3MTgwMTYxYmI1NyJ9fX0="
+      # SW16 - -9, -19, -16 (3级, 1格)
+      - id: "SW16"
+        min-x: -9
+        min-y: -19
+        min-z: -16
+        max-x: -9
+        max-y: -19
+        max-z: -16
+        level: 3
+        name: "&6保险箱"
+        texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmU2ZmNhNjdiMzdmOWI2NWQ5NTNhZmNiOTliN2UzYjZmYWYwZjRkN2QzOWM5ZTdmODM0ZTMxMzhiZWJhYmQ0In19fQ=="
+      # SW17 - -16, -17, 32 ~ -17, -18, 32 (3级, 2格)
+      - id: "SW17"
+        min-x: -17
+        min-y: -18
+        min-z: 32
+        max-x: -16
+        max-y: -17
+        max-z: 32
+        level: 3
+        name: "&6保险箱"
+        texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmU2ZmNhNjdiMzdmOWI2NWQ5NTNhZmNiOTliN2UzYjZmYWYwZjRkN2QzOWM5ZTdmODM0ZTMxMzhiZWJhYmQ0In19fQ=="
+      # SW18 - 33, 14, 27 ~ 33, 13, 29 (3级, 6格)
+      - id: "SW18"
+        min-x: 33
+        min-y: 13
+        min-z: 27
+        max-x: 33
+        max-y: 14
+        max-z: 29
+        level: 3
+        name: "&6保险箱"
+        texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmU2ZmNhNjdiMzdmOWI2NWQ5NTNhZmNiOTliN2UzYjZmYWYwZjRkN2QzOWM5ZTdmODM0ZTMxMzhiZWJhYmQ0In19fQ=="
+
+    # 掉落物列表：按品级分组，更清晰易管理
+    # - name: 显示名称（可使用 & 颜色符，建议使用对应等级的颜色）
+    # - description: 物品描述（可使用 & 颜色符）
+    # - price: 出售价格（信用点，用于地牢背包价值显示和出售给商店）
+    # - material: Bukkit 材质名（如 DIAMOND、IRON_INGOT）
+    # - cash-id: 现金物品ID（如果指定，则使用cash-items中的配置生成自定义头颅）
+    # 注意：tier 会自动从分组 key 中获取，不需要在每个物品中重复写
+    # 颜色码参考：&f白色(普通) &a绿色(精良) &b蓝色(罕见) &5紫色(史诗) &6金色(传奇) &c橘色(稀世)
+    # 物品显示：名称、描述、价格
+    loot-items:
+      common:
+        - id: "small_copper_coins"
+          name: "&f一小堆铜币"
+          cash-id: "small_copper_coins"
+        - id: "rough_bandage"
+          name: "&f粗糙绷带"
+          description: "&7简单粗糙的绷带，可以轻微止血(右键使用)"
+          price: 5
+          material: "PAPER"
+          isshop: false
+        - id: "normal_arrow"
+          name: "&f普通箭矢"
+          description: "&7最常见普通的箭矢"
+          price: 2
+          material: "ARROW"
+          isshop: true
+          min-amount: 1
+          max-amount: 5
+        - id: "rusty_iron"
+          name: "&f生锈的铁锭"
+          description: "&7锈迹斑斑的铁锭"
+          price: 10
+          material: "IRON_INGOT"
+          isshop: false
+        - id: "damp_coal"
+          name: "&f受潮的煤炭"
+          description: "&7受潮的煤炭，已无法点燃"
+          price: 8
+          material: "COAL"
+          isshop: false
+        - id: "rotten_flesh"
+          name: "&f腐肉"
+          description: "&7散发着恶臭的腐烂肉块"
+          price: 8
+          material: "ROTTEN_FLESH"
+          isshop: false
+        - id: "broken_pottery_shards"
+          name: "&f破碎的陶片"
+          description: "&7古代陶器的碎片"
+          price: 5
+          material: "BLADE_POTTERY_SHERD"
+          isshop: false
+        - id: "bone"
+          name: "&f骨头"
+          description: "&7一块普通的骨头，一种常见的材料"
+          price: 12
+          material: "BONE"
+          isshop: false
+        - id: "egg"
+          name: "&f鸡蛋"
+          description: "&7一个普通的鸡蛋，虽然已经有些陈旧，但仍然可以食用或扔出去"
+          price: 5
+          material: "EGG"
+          isshop: false
+        - id: "snowball"
+          name: "&f雪球"
+          description: "&7一团雪球，虽然已经有些结块，但仍然可以扔出去"
+          price: 8
+          material: "SNOWBALL"
+          isshop: false
+      uncommon:
+        - id: "small_silver_coins"
+          name: "&a一小堆银币"
+          cash-id: "small_silver_coins"
+        - id: "bandage"
+          name: "&a绷带"
+          description-lore:
+            - "&f2秒读条后恢复&c❤*2"
+            - "&7读条期间受攻击会中断"
+          price: 12
+          material: "PAPER"
+          isshop: true
+        - id: "standard_ration"
+          name: "&a标准口粮"
+          description-lore:
+            - "&7恢复少量饥饿值，维持体力"
+          price: 16
+          material: "BREAD"
+          isshop: true
+        - id: "whetstone_flint"
+          name: "&a磨刀石"
+          description-lore:
+            - "&72s读条后修复武器30点耐久"
+            - "&7读条期间受攻击会中断"
+          price: 32
+          material: "FLINT"
+          isshop: true
+        - id: "spider_eye"
+          name: "&a蜘蛛眼"
+          description: "&7蜘蛛的眼球，有一定的炼金价值"
+          price: 25
+          material: "SPIDER_EYE"
+          isshop: false
+        - id: "copper_ingot"
+          name: "&a铜锭"
+          description: "&7一小块铜锭，光泽暗淡"
+          price: 30
+          material: "COPPER_INGOT"
+          isshop: false
+        - id: "lapis_lazuli"
+          name: "&a青金石"
+          description: "&7一块未经打磨的青金石，有微弱的魔力闪烁"
+          price: 40
+          material: "LAPIS_LAZULI"
+          isshop: false
+        - id: "redstone"
+          name: "&a红石粉"
+          description: "&7一小撮红石粉，带有微弱的能量"
+          price: 35
+          material: "REDSTONE"
+          isshop: false
+        - id: "glowstone"
+          name: "&a萤石粉"
+          description: "&7一小撮萤石粉，但已经失去荧光效果"
+          price: 28
+          material: "GLOWSTONE_DUST"
+          isshop: false
+        - id: "quartz"
+          name: "&a石英"
+          description: "&7一块未经打磨的石英，表面有细微的纹理"
+          price: 45
+          material: "QUARTZ"
+          isshop: false
+      rare:
+        - id: "small_gold_coins"
+          name: "&b一小堆金币"
+          cash-id: "small_gold_coins"
+        - id: "first_aid_kit"
+          name: "&b急救包"
+          description-lore:
+            - "&f4秒读条后恢复&c❤*5"
+            - "&7读条期间受攻击会中断"
+          price: 32
+          material: "WHITE_WOOL"
+          isshop: true
+        - id: "antidote"
+          name: "&b解毒剂"
+          description-lore:
+            - "&f2.5秒读条后解除中毒效果"
+            - "&7读条期间受攻击会中断"
+          price: 16
+          material: "HONEY_BOTTLE"
+          isshop: true
+        - id: "pumpkin_pie"
+          name: "&b南瓜派"
+          description-lore:
+            - "&7恢复中量饥饿值，维持体力"
+          price: 32
+          material: "PUMPKIN_PIE"
+          isshop: true
+        - id: "gold_ingot"
+          name: "&b金锭"
+          description: "&7一块闪耀的金锭，是制作高级装备的珍贵材料"
+          price: 80
+          material: "GOLD_INGOT"
+          isshop: false
+        - id: "emerald"
+          name: "&b绿宝石"
+          description: "&7一块未经打磨的绿宝石，散发着神秘的光芒"
+          price: 90
+          material: "EMERALD"
+          isshop: false
+        - id: "gunpowder"
+          name: "&b火药"
+          description: "&7一小堆火药，虽然已经受潮但仍有一定的爆炸威力"
+          price: 65
+          material: "GUNPOWDER"
+          isshop: false
+        - id: "leather"
+          name: "&b皮革"
+          description: "&7一块柔软的皮革，可以制作各种装备"
+          price: 55
+          material: "LEATHER"
+          isshop: false
+      epic:
+        - id: "bag_of_gold_coins"
+          name: "&5一包金币"
+          cash-id: "bag_of_gold_coins"
+        - id: "golden_carrot"
+          name: "&b金胡萝卜"
+          description-lore:
+            - "&7恢复大量饱和度，维持体力"
+          price: 50
+          material: "GOLDEN_CARROT"
+          isshop: true
+        - id: "diamond"
+          name: "&5钻石"
+          description: "&7一块闪耀的钻石，是制作顶级装备的珍贵材料"
+          price: 150
+          material: "DIAMOND"
+          isshop: false
+        - id: "emerald_block"
+          name: "&5绿宝石块"
+          description: "&7一块完整的绿宝石块，散发着强烈的魔力光芒"
+          price: 180
+          material: "EMERALD_BLOCK"
+          isshop: false
+        - id: "quartz_block"
+          name: "&5石英块"
+          description: "&7一块完整的石英块，带有微弱的荧光"
+          price: 120
+          material: "QUARTZ_BLOCK"
+          isshop: false
+        - id: "prismarine_shard"
+          name: "&5海晶碎片"
+          description: "&7一块闪耀的海晶碎片，是制作高级装备的珍贵材料"
+          price: 100
+          material: "PRISMARINE_SHARD"
+          isshop: false
+        - id: "golden_apple"
+          name: "&5金苹果"
+          description: "&7一颗闪耀的金苹果，拥有强大的恢复能力"
+          price: 220
+          material: "GOLDEN_APPLE"
+          isshop: false
+        - id: "ender_pearl"
+          name: "&5末影珍珠"
+          description: "&7一颗神秘的末影珍珠，蕴含着强大的传送能力"
+          price: 120
+          material: "ENDER_PEARL"
+          isshop: false
+      legendary:
+        - id: "stack_of_cash"
+          name: "&6一摞现金"
+          cash-id: "stack_of_cash"
+        - id: "enchanted_golden_apple"
+          name: "&6附魔金苹果"
+          description: "&7一颗附魔金苹果，拥有极强的恢复能力和特殊效果"
+          price: 400
+          material: "ENCHANTED_GOLDEN_APPLE"
+          isshop: false
+      mythic:
+        - id: "bundle_of_cash"
+          name: "&c一大捆现金"
+          cash-id: "bundle_of_cash"
+
+  

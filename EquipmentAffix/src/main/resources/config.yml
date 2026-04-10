@@ -1,0 +1,113 @@
+# EquipmentAffix 配置文件
+
+# 熟练度配置
+proficiency:
+  level_requirements:
+    - 100   # 0级升到1级
+    - 250   # 1级升到2级
+    - 500   # 2级升到3级
+    - 1000  # 3级升到4级
+    - 2000  # 4级升到5级
+
+# 装备属性配置
+equipment:
+  # 最大闪避率（0.0 - 1.0）
+  max_dodge_chance: 0.8
+
+  # 最大抗击退（0.0 - 1.0）
+  max_knockback_resistance: 1.0
+
+  # 最大移动惩罚（0.0 - 1.0）
+  max_movement_penalty: 1.0
+
+  # 最大饥饿惩罚（0.0 - 1.0）
+  max_hunger_penalty: 1.0
+
+  # 闪避词条基础加成（每级增加的闪避率）
+  dodge_affix_base_chance: 0.05
+
+# 需要移除原版合成配方的物品材质列表
+# 使用材质名称（Material），如 DIAMOND_SWORD, IRON_CHESTPLATE 等
+# 注意：只包含Minecraft 1.21.1中确实有合成配方的物品
+
+# 护甲类（所有材质的护甲都有合成配方）
+removed_recipes:
+  # 铁制护甲
+  - IRON_HELMET
+  - IRON_CHESTPLATE
+  - IRON_LEGGINGS
+  - IRON_BOOTS
+
+  # 钻石护甲
+  - DIAMOND_HELMET
+  - DIAMOND_CHESTPLATE
+  - DIAMOND_LEGGINGS
+  - DIAMOND_BOOTS
+
+  # 金制护甲
+  - GOLDEN_HELMET
+  - GOLDEN_CHESTPLATE
+  - GOLDEN_LEGGINGS
+  - GOLDEN_BOOTS
+
+  # 皮革护甲
+  - LEATHER_HELMET
+  - LEATHER_CHESTPLATE
+  - LEATHER_LEGGINGS
+  - LEATHER_BOOTS
+
+  # 武器类
+  - DIAMOND_SWORD
+  - IRON_SWORD
+  - GOLDEN_SWORD
+  - STONE_SWORD
+  - WOODEN_SWORD
+
+  # 工具类
+  - DIAMOND_AXE
+  - IRON_AXE
+  - GOLDEN_AXE
+  - STONE_AXE
+  - WOODEN_AXE
+  - DIAMOND_PICKAXE
+  - IRON_PICKAXE
+  - GOLDEN_PICKAXE
+  - STONE_PICKAXE
+  - WOODEN_PICKAXE
+  - DIAMOND_SHOVEL
+  - IRON_SHOVEL
+  - GOLDEN_SHOVEL
+  - STONE_SHOVEL
+  - WOODEN_SHOVEL
+  - DIAMOND_HOE
+  - IRON_HOE
+  - GOLDEN_HOE
+  - STONE_HOE
+  - WOODEN_HOE
+
+  # 盾牌
+  - SHIELD
+
+  # 弓
+  - BOW
+
+  # 弩
+  - CROSSBOW
+
+  # 鱼竿
+  - FISHING_ROD
+
+  # 重锤
+  - MACE
+
+  # 注意：下界合金装备需要通过锻造台升级，不是直接合成的
+  # 如果需要禁用下界合金升级，需要特殊处理
+  # - NETHERITE_HELMET
+  # - NETHERITE_CHESTPLATE
+  # - NETHERITE_LEGGINGS
+  # - NETHERITE_BOOTS
+  # - NETHERITE_SWORD
+  # - NETHERITE_AXE
+  # - NETHERITE_PICKAXE
+  # - NETHERITE_SHOVEL
+  # - NETHERITE_HOE

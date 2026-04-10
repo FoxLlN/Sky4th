@@ -1,0 +1,10 @@
+# 间隙词条配置
+id: gap
+display_name: "<underlined><#6F7676>间隙</underlined>"
+description: "<#6F7676>受到物理攻击时，有概率完全闪避本次攻击"
+simple_description: "&7受到物理攻击时，有&a5%&7概率完全闪避本次攻击"
+max_level: 1
+applicable_to:
+  - LIGHT_ARMOR
+  - HEAVY_ARMOR
+calculation_mode: HIGHEST

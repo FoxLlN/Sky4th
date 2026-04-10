@@ -1,0 +1,25 @@
+# 词条模板配置
+id: momentum
+max_level: 3
+unlock_stage: "深层"
+upgrade_materials:
+  1:
+    - "REDSTONE*8"
+  2:
+    - "REDSTONE*16"
+  3:
+    - "REDSTONE*32"
+custom_model_data: 1025
+
+# 合成配方
+recipe:
+  type: shaped
+  shape:
+    - "BPB"
+    - "RIR"
+    - "BRB"
+  ingredients:
+    R: REDSTONE
+    B: REDSTONE_BLOCK
+    P: PISTON
+    I: IRON_SWORD

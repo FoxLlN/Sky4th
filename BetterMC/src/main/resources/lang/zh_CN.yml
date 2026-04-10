@@ -1,0 +1,66 @@
+# 前缀
+prefix: "<gray>[</gray><#00AAAA>BetterMC</#00AAAA><gray>]</gray> <reset>"
+
+# 命令相关
+command:
+  # 通用
+  no-permission: "&c你没有权限执行此操作！"
+  unknown-command: "&c未知命令: {command}"
+
+  # 帮助
+  help:
+    header: "&6===== {plugin} 帮助 ====="
+    help: "&e/bettermc help &7- 显示帮助信息"
+    reload: "&e/bettermc reload &7- 重新加载配置文件"
+    list: "&e/bettermc list &7- 列出所有功能及其状态"
+    rule: "&e/bettermc rule <功能> <true|false> &7- 设置功能开关"
+
+  # 重载
+  reload-success: "&aBetterMC配置已重新加载！"
+
+  # 列表
+  list:
+    header: "&6=== BetterMC 功能列表 ==="
+    footer: "&6========================"
+    enabled: "&a已启用"
+    disabled: "&c已禁用"
+    format: "&e{key} &7- {description} &f[{status}&f]"
+
+  # 规则
+  rule:
+    usage: "&c用法: /bettermc rule <功能> <true|false>"
+    hint: "&7使用 /bettermc list 查看所有可用功能"
+    not-found: "&c未找到功能: {feature}"
+    invalid-value: "&c无效的值: {value}"
+    valid-values: "&c请使用: true 或 false"
+    enabled: "&a功能 {feature} 已启用"
+    disabled: "&c功能 {feature} 已禁用"
+
+# 功能描述
+features:
+  growth: "动物/村民成长延迟"
+  animal-panic: "动物惊慌"
+  iron-golem: "铁傀儡加强"
+  villager-iron-golem: "村民惊恐铁傀儡生成限制"
+  drops: "动物掉落物加强"
+  player-kill: "玩家击杀限制"
+  vehicle: "交通工具限制"
+  portal: "传送门限制"
+  enderman: "末影人无仇恨(小黑塔)"
+  fertilize: "骨粉催熟限制(苔藓块)"
+  ender-pearl: "末影珍珠传送限制(地狱上层)"
+  crop-harvest: "作物右键收获"
+  waterflow-immunity: "铁傀儡/盔甲架水流动免疫"
+  player-hitbox: "玩家部位受伤优化"
+  grass-attack: "穿草攻击"
+
+
+# 成长系统
+growth:
+  breed-failed: "&c§l繁衍失败！"
+
+# 插件信息
+plugin:
+  enabled: "BetterMC插件已启用"
+  disabled: "BetterMC插件已禁用"
+  context-not-initialized: "§cBetterMCContext 未初始化，请确保 BetterMC 已加载"

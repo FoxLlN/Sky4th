@@ -1,0 +1,19 @@
+# 词条模板配置
+id: echo_location
+max_level: 1
+unlock_stage: "深层"
+upgrade_materials:
+  1:
+    - "AMETHYST_SHARD*8"
+custom_model_data: 1052
+
+# 合成配方
+recipe:
+  type: shaped
+  shape:
+    - "AAA"
+    - "AIA"
+    - "AAA"
+  ingredients:
+    A: AMETHYST_BLOCK
+    I: IRON_HELMET

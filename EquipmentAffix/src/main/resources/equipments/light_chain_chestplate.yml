@@ -1,0 +1,25 @@
+# 锁链 轻型胸甲
+id: light_chain_chestplate
+material: CHAINMAIL_CHESTPLATE
+categories:
+  - LIGHT_ARMOR
+display_name: "锁链 轻型胸甲"
+material_effect: gap
+armor: 3.0
+toughness: 0.0
+max_enchantment_slots: 1
+max_affix_slots: 1
+max_durability: 240
+dodge_chance: 0.016
+affixes: {}
+enchantments: {}
+
+# 配方配置
+recipe:
+  type: shaped
+  shape:
+    - "C C"
+    - "CCC"
+    - "CCC"
+  ingredients:
+    C: CHAIN

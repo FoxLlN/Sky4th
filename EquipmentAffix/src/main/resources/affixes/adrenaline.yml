@@ -1,0 +1,11 @@
+# 应激词条配置
+id: adrenaline
+display_name: "<#F5F5F5>应激"
+description: "<#F5F5F5>受到攻击时，获得短时速度提升"
+simple_description: "&7受到攻击时，获得&a速度{level}&7，持续&a{1+level}秒&7"
+max_level: 3
+applicable_to:
+  - LIGHT_ARMOR
+equipment_slot:
+  - FEET
+calculation_mode: HIGHEST

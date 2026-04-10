@@ -1,0 +1,15 @@
+# 下届合金锹
+id: netherite_shovel
+material: NETHERITE_SHOVEL
+categories:
+  - TOOL
+display_name: "下届合金锹"
+material_effect: pillar
+attack_damage: 6.5
+attack_speed: 1.0
+max_enchantment_slots: 2
+max_affix_slots: 2
+max_durability: 2031
+affixes: {}
+enchantments: {}
+

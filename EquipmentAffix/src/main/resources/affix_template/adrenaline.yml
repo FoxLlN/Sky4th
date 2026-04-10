@@ -1,0 +1,24 @@
+# 词条模板配置
+id: adrenaline
+max_level: 3
+unlock_stage: "主世界"
+upgrade_materials:
+  1:
+    - "RABBIT_FOOT*4"
+  2:
+    - "RABBIT_FOOT*8"
+  3:
+    - "RABBIT_FOOT*16"
+custom_model_data: 1072
+
+# 合成配方
+recipe:
+  type: shaped
+  shape:
+    - "SRS"
+    - "RIR"
+    - "SRS"
+  ingredients:
+    S: RABBIT_FOOT
+    R: REDSTONE
+    I: IRON_BOOTS

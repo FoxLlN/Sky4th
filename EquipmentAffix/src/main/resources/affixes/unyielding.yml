@@ -1,0 +1,13 @@
+# 屹立不倒词条配置
+id: unyielding
+display_name: "<#542F81>屹立不倒"
+description: "<#542F81>增加重甲抗击退属性"
+simple_description: "&7重甲抗击退属性&a+{1+level}%&7"
+max_level: 3
+applicable_to:
+  - HEAVY_ARMOR
+calculation_mode: HIGHEST
+is_init: true
+conflicting_affixes:
+  - lightweight
+

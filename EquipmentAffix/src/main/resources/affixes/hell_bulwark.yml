@@ -1,0 +1,13 @@
+
+# 地狱壁垒词条配置
+id: hell_bulwark
+display_name: "<#E3D4C4>地狱壁垒"
+description: "<#E3D4C4>免疫下界环境伤害，在下界获得一定伤害减免"
+simple_description: "&7免疫下界环境伤害，在下界获得&a{5*level}%&7伤害减免"
+max_level: 3
+applicable_to:
+  - HEAVY_ARMOR
+  - LIGHT_ARMOR
+equipment_slot:
+  - CHEST
+calculation_mode: HIGHEST

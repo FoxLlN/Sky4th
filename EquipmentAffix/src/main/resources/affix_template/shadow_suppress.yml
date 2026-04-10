@@ -1,0 +1,20 @@
+# 词条模板配置
+id: shadow_suppress
+max_level: 1
+unlock_stage: "末地"
+upgrade_materials:
+  1:
+    - "ENDER_PEARL*6"
+custom_model_data: 1021
+
+# 合成配方
+recipe:
+  type: shaped
+  shape:
+    - "ESE"
+    - "SIS"
+    - "ESE"
+  ingredients:
+    E: ENDER_PEARL
+    S: STRING
+    I: IRON_SWORD

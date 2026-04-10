@@ -1,0 +1,14 @@
+# 蜘蛛感应词条配置
+id: spider_sense
+display_name: "<#7B0D27>蜘蛛感应"
+description: "<#7B0D27>被锁定为仇恨目标时，使锁定者发光"
+simple_description: "&7被锁定为仇恨目标时，使锁定者发光&a2秒"
+max_level: 1
+applicable_to:
+  - LIGHT_ARMOR
+equipment_slot:
+  - HEAD
+calculation_mode: HIGHEST
+conflicting_affixes:
+  - insight
+  - echo_location

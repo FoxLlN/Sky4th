@@ -1,0 +1,13 @@
+# 火星词条配置
+id: sparks
+display_name: "<#565656>火星"
+description: "<#565656>攻击时可以叠加“火星”标记，引爆时造成额外伤害并点燃目标"
+simple_description: "&7攻击时可以叠加<#565656>火星&7标记，累计&a3层&7引爆造成&a{2+level}点&7伤害并点燃目标&a{level}秒"
+max_level: 3
+applicable_to:
+  - WEAPON
+equipment_slot:
+  - SWORD
+  - AXE
+calculation_mode: HIGHEST
+trigger_slot: MAIN_HAND

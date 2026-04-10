@@ -1,0 +1,35 @@
+# 木剑
+id: wooden_sword
+material: WOODEN_SWORD
+categories:
+  - WEAPON
+display_name: "木剑"
+material_effect: vitality
+attack_damage: 4.0
+attack_speed: 1.6
+max_enchantment_slots: 1
+max_affix_slots: 0
+max_durability: 59
+affixes: {}
+enchantments: {}
+
+recipe:
+  type: shaped
+  shape:
+    - "P"
+    - "P"
+    - "S"
+  ingredients:
+    P: 
+      - OAK_PLANKS
+      - SPRUCE_PLANKS
+      - BIRCH_PLANKS
+      - JUNGLE_PLANKS
+      - ACACIA_PLANKS
+      - DARK_OAK_PLANKS
+      - CRIMSON_PLANKS
+      - WARPED_PLANKS
+      - MANGROVE_PLANKS
+      - CHERRY_PLANKS
+      - BAMBOO_PLANKS
+    S: STICK

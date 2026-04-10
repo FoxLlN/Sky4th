@@ -1,0 +1,18 @@
+# 共振词条配置
+id: resonance
+display_name: "<#9A5CC6>共振"
+description: "<#9A5CC6>连续破坏同种方块时，可以加快挖掘速度"
+simple_description: "&7每破坏一个同种方块时，挖掘速度&a+{1+2*level}%&7，最多&a+{3+6*level}%&7"
+max_level: 3
+applicable_to:
+  - TOOL
+equipment_slot:
+  - PICKAXE
+  - AXE
+  - SHOVEL
+calculation_mode: SUM
+conflicting_affixes:
+  - depth_gravity
+  - plutocrat
+  - nether_mining
+trigger_slot: MAIN_HAND

@@ -1,0 +1,24 @@
+# 锁链 轻型靴子
+id: light_chain_boots
+material: CHAINMAIL_BOOTS
+categories:
+  - LIGHT_ARMOR
+display_name: "锁链 轻型靴子"
+material_effect: gap
+armor: 1.0
+toughness: 0.0
+max_enchantment_slots: 1
+max_affix_slots: 1
+max_durability: 195
+dodge_chance: 0.004
+affixes: {}
+enchantments: {}
+
+# 配方配置
+recipe:
+  type: shaped
+  shape:
+    - "C C"
+    - "C C"
+  ingredients:
+    C: CHAIN

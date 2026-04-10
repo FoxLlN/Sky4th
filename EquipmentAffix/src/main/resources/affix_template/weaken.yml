@@ -1,0 +1,24 @@
+# 词条模板配置
+id: weaken
+max_level: 3
+unlock_stage: "主世界"
+upgrade_materials:
+  1:
+    - "SPIDER_EYE*8"
+  2:
+    - "SPIDER_EYE*16"
+  3:
+    - "SPIDER_EYE*32"
+custom_model_data: 1035
+
+# 合成配方
+recipe:
+  type: shaped
+  shape:
+    - "ESE"
+    - "SBS"
+    - "ESE"
+  ingredients:
+    S: STRING
+    E: SPIDER_EYE
+    B: BOW

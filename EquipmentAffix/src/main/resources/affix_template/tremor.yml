@@ -1,0 +1,25 @@
+
+# 词条模板配置
+id: tremor
+max_level: 3
+unlock_stage: "主世界"
+upgrade_materials:
+  1:
+    - "IRON_INGOT*16"
+  2:
+    - "IRON_INGOT*32"
+  3:
+    - "IRON_INGOT*64"
+custom_model_data: 1045
+
+# 合成配方
+recipe:
+  type: shaped
+  shape:
+    - "SIS"
+    - "IAI"
+    - "SIS"
+  ingredients:
+    S: IRON_BLOCK
+    I: IRON_INGOT
+    A: ANVIL

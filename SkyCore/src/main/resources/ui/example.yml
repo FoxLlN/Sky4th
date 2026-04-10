@@ -1,0 +1,19 @@
+
+id: "example"
+title: "<b><gold>示例UI</gold></b>"
+shape:
+  - 'FFFFFFFFF'
+  - 'F T FFFFF'
+  - 'FFFFFFFFF'
+template:
+  F:
+    material: BLACK_STAINED_GLASS_PANE
+    name: "&r"
+  T:
+    material: PLAYER_HEAD
+    name: "<b><aqua>示例按钮</aqua></b>"
+    lore:
+      - "<dark_gray>| <gray>这是一个示例UI</gray>"
+      - "<dark_gray>| <gold>点击测试功能</gold></gray>"
+    feature:
+      texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmM0NDViMDA3YjU1MWM0YTAyNjQ4YmIzODA1MTc3NmJiMGVkMGJiMGQ5MDk3ODIwMjI1ZWJlZmFmNWExZWMzZSJ9fX0="

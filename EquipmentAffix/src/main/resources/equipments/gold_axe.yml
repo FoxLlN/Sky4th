@@ -1,0 +1,26 @@
+# 金斧
+id: gold_axe
+material: GOLDEN_AXE
+categories:
+  - TOOL
+  - WEAPON
+display_name: "金斧"
+material_effect: gold_hunting
+attack_damage: 7.0
+attack_speed: 1.0
+max_enchantment_slots: 3
+max_affix_slots: 1
+max_durability: 100
+affixes: {}
+enchantments: {}
+
+# 配方配置
+recipe:
+  type: shaped
+  shape:
+    - "GG"
+    - "GS"
+    - " S"
+  ingredients:
+    G: GOLD_INGOT
+    S: STICK

@@ -1,0 +1,24 @@
+# 铁质 轻型头盔
+id: light_iron_helmet
+material: IRON_HELMET
+categories:
+  - LIGHT_ARMOR
+display_name: "铁质 轻型头盔"
+material_effect: iron_bone
+armor: 2.0
+toughness: 0.0
+max_enchantment_slots: 1
+max_affix_slots: 1
+max_durability: 165
+dodge_chance: 0.01
+affixes: {}
+enchantments: {}
+
+# 配方配置
+recipe:
+  type: shaped
+  shape:
+    - "III"
+    - "I I"
+  ingredients:
+    I: IRON_INGOT

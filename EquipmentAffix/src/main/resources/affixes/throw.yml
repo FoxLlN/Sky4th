@@ -1,0 +1,16 @@
+# 飞掷词条配置
+id: throw
+display_name: "<#A8D8EA>飞掷"
+description: "<#A8D8EA>投掷伤害降低，可以无限投掷，每次投掷消耗额外耐久"
+simple_description: "&7投掷伤害降低&a{50-10*level}%&7，可以无限投掷，每次投掷消耗额外&a{5+5*level}&7点耐久"
+max_level: 3
+applicable_to:
+  - WEAPON
+equipment_slot:
+  - TRIDENT
+calculation_mode: HIGHEST
+conflicting_affixes:
+  - heavy_thrust
+conflicting_enchantments:
+  - riptide
+trigger_slot: HAND

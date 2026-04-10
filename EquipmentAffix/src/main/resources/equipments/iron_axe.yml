@@ -1,0 +1,26 @@
+# 铁斧
+id: iron_axe
+material: IRON_AXE
+categories:
+  - TOOL
+  - WEAPON
+display_name: "铁斧"
+material_effect: conduction
+attack_damage: 9.0
+attack_speed: 0.9
+max_enchantment_slots: 2
+max_affix_slots: 1
+max_durability: 250
+affixes: {}
+enchantments: {}
+
+# 配方配置
+recipe:
+  type: shaped
+  shape:
+    - "II"
+    - "IS"
+    - " S"
+  ingredients:
+    I: IRON_INGOT
+    S: STICK

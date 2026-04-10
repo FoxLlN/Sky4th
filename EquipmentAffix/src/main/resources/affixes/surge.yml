@@ -1,0 +1,17 @@
+# 潮涌词条配置
+id: surge
+display_name: "<#5AAFA4>潮涌"
+description: "<#5AAFA4>投掷三叉戟会对路径上周围的敌人造成伤害"
+simple_description: "&7投掷三叉戟会对路径上周围的敌人造成&a{30+10*level}%&7武器伤害"
+max_level: 3
+applicable_to:
+  - WEAPON
+equipment_slot:
+  - TRIDENT
+calculation_mode: HIGHEST
+conflicting_affixes:
+  - heavy_thrust
+  - vortex
+conflicting_enchantments:
+  - riptide
+trigger_slot: HAND

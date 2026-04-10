@@ -1,0 +1,20 @@
+# 铁血词条配置
+id: iron_blood
+display_name: "<#A2B0B3>铁血"
+description: "<#A2B0B3>每损失一定生命值，造成伤害提升"
+simple_description: "&7每损失&a10%&7生命值，造成伤害提升&a{1+level}%&7，最多&a{12+4*level}%&7"
+max_level: 3
+applicable_to:
+  - WEAPON
+equipment_slot:
+  - SWORD
+  - AXE
+calculation_mode: HIGHEST
+conflicting_affixes:
+  - emerald_edge
+  - resonance_mark
+  - nether_bane
+  - overheat
+  - sibling
+  - thermal_conduct
+trigger_slot: MAIN_HAND

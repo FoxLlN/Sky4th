@@ -1,0 +1,10 @@
+# 对决词条配置
+id: duel
+display_name: "<#A2B0B3>对决"
+description: "<#A2B0B3>对使用远程武器的生物伤害增加"
+simple_description: "&7对使用远程武器的生物伤害增加&a{10+5*level}%"
+max_level: 3
+applicable_to:
+  - BOW
+calculation_mode: HIGHEST
+trigger_slot: MAIN_HAND

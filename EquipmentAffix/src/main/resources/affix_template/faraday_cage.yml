@@ -1,0 +1,25 @@
+# 词条模板配置
+id: faraday_cage
+max_level: 3
+unlock_stage: "主世界"
+upgrade_materials:
+  1:
+    - "COPPER_INGOT*8"
+  2:
+    - "COPPER_INGOT*16"
+  3:
+    - "COPPER_INGOT*32"
+custom_model_data: 1059
+
+# 合成配方
+recipe:
+  type: shaped
+  shape:
+    - "BLB"
+    - "CIC"
+    - "BCB"
+  ingredients:
+    C: COPPER_INGOT
+    I: IRON_CHESTPLATE
+    L: LIGHTNING_ROD
+    B: COPPER_BLOCK

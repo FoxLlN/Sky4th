@@ -1,0 +1,28 @@
+# 石剑
+id: stone_sword
+material: STONE_SWORD
+categories:
+  - WEAPON
+display_name: "石剑"
+material_effect: stone_sharp
+attack_damage: 5.0
+attack_speed: 1.6
+max_enchantment_slots: 1
+max_affix_slots: 0
+max_durability: 131
+affixes: {}
+enchantments: {}
+
+recipe1:
+  type: shaped
+  shape:
+    - "C"
+    - "C"
+    - "S"
+  ingredients:
+    C: 
+      - COBBLESTONE
+      - STONE
+      - BLACKSTONE
+      - COBBLED_DEEPSLATE
+    S: STICK

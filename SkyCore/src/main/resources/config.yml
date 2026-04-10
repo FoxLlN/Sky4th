@@ -1,0 +1,15 @@
+# SkyCore 数据库配置
+database:
+  host: localhost
+  port: 3306
+  username: minecraft
+  password: password
+  database: minecraft
+
+# HikariCP 连接池（可选，不填则使用默认值）
+pool:
+  minimum-idle: 2
+  maximum-pool-size: 10
+  connection-timeout: 10000
+  idle-timeout: 300000
+  max-lifetime: 1800000

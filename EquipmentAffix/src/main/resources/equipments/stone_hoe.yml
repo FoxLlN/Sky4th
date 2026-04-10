@@ -1,0 +1,28 @@
+# 石锄
+id: stone_hoe
+material: STONE_HOE
+categories:
+  - TOOL
+display_name: "石锄"
+material_effect: solid
+attack_damage: 1.0
+attack_speed: 2.0
+max_enchantment_slots: 1
+max_affix_slots: 0
+max_durability: 131
+affixes: {}
+enchantments: {}
+
+recipe1:
+  type: shaped
+  shape:
+    - "CC"
+    - " S"
+    - " S"
+  ingredients:
+    C: 
+      - COBBLESTONE
+      - STONE
+      - BLACKSTONE
+      - COBBLED_DEEPSLATE
+    S: STICK

@@ -1,0 +1,140 @@
+# BetterMC 配置文件
+# 
+# 本配置文件用于调整BetterMC插件的各种参数
+# 修改配置后，使用 /bettermc reload 命令重新加载配置
+
+# 成长相关配置（单位：分钟）
+growth:
+  # 动物繁衍冷却时间（分钟），原版为5分钟
+  breed-cooldown-minutes: 20
+
+  # 动物长大时间（分钟），原版约为20分钟
+  animal-growth-minutes: 60
+
+  # 村民长大时间（分钟），原版约为20分钟
+  villager-growth-minutes: 100
+
+  # 无breed权限时繁衍失败的概率（0.0-1.0）
+  breed-failure-chance: 0.5
+
+# 时间相关配置（单位：分钟）
+time:
+  # 白天时长（分钟），原版为10分钟
+  day-time-minutes: 40.0
+
+  # 夜间时长（分钟），原版为10分钟
+  night-time-minutes: 20.0
+
+  # 快进模式下夜间时长（分钟）
+  fast-forward-time-minutes: 10.0
+
+# 动物惊慌配置
+animal-panic:
+  # 惊慌扩散半径（方块）
+  panic-radius: 6.0
+  
+  # 惊慌持续时间（秒）
+  panic-duration-seconds: 4.0
+  
+  # 惊慌速度倍数
+  panic-speed-multiplier: 1.5
+
+  # 惊慌距离
+  panic-distance: 6.0
+
+# 动物掉落物配置
+drops:
+  # 额外掉落物配置（在原版掉落基础上额外掉落的物品）
+  # 掉落物品: 数量
+  extra-drops:
+    # 猪
+    PIG:
+      - PORKCHOP: 2 # 生猪肉
+      - LEATHER: 1 # 皮革
+      - BONE: 1 # 骨头
+
+    # 牛
+    COW:
+      - BEEF: 2 # 生牛肉
+      - LEATHER: 1 # 皮革
+      - BONE: 1 # 骨头
+
+    # 鸡
+    CHICKEN:
+      - CHICKEN: 2 # 生鸡肉
+      - FEATHER: 1  # 羽毛
+
+    # 羊
+    SHEEP:
+      - MUTTON: 2 # 生羊肉
+      - WOOL: 1  # 羊毛
+      - BONE: 1 # 骨头
+
+    # 兔子
+    RABBIT:
+      - RABBIT: 2 # 生兔肉
+      - RABBIT_HIDE: 1  # 兔子皮
+
+    # 马
+    HORSE:
+      - LEATHER: 2 # 皮革
+      - BONE: 1 # 骨头
+
+    # 驴
+    DONKEY:
+      - LEATHER: 1 # 皮革
+      - BONE: 1 # 骨头
+
+    # 骡
+    MULE:
+      - LEATHER: 1 # 皮革
+      - BONE: 1 # 骨头
+
+    # 骆驼
+    CAMEL:
+      - LEATHER: 2 # 皮革
+      - BONE: 1 # 骨头
+
+    # 羊驼
+    LLAMA:
+      - LEATHER: 1 # 皮革
+      - BONE: 1 # 骨头
+
+    # 鹦鹉
+    PARROT:
+      - FEATHER: 1 # 羽毛
+
+    # 熊猫
+    PANDA:
+      - BAMBOO: 1 # 竹子
+      - BONE: 1 # 骨头
+
+    # 狼
+    WOLF:
+      - BONE: 1 # 骨头
+
+# 铁傀儡配置
+iron-golem:
+  # 攻击记录有效时间窗口（秒），在此时间内连续攻击会增加减伤
+  attack-window-seconds: 10.0
+
+  # 达到最大减伤所需的连续攻击次数
+  max-reduction-hits: 10
+
+  # 基础减伤比例（0.0-1.0），0.2表示20%
+  base-reduction: 0.2
+
+  # 最大减伤比例（0.0-1.0），0.7表示70%
+  max-reduction: 0.7
+
+# 玩家部位受击配置
+player-hitbox:
+  # 头部伤害倍率
+  head-damage-multiplier: 1.5
+
+  # 躯干伤害倍率
+  body-damage-multiplier: 1.0
+
+  # 腿部伤害倍率
+  legs-damage-multiplier: 0.7
+

@@ -1,0 +1,14 @@
+# 置换词条配置
+id: swap
+display_name: "<#349988>置换"
+description: "<#349988>消耗15点耐久与命中目标交换位置，冷却30秒"
+simple_description: "&7消耗&a15点&7耐久与命中目标交换位置，冷却&a30秒"
+max_level: 1
+applicable_to:
+  - BOW
+equipment_slot:
+  - BOW
+calculation_mode: HIGHEST
+conflicting_affixes:
+  - wormhole
+trigger_slot: MAIN_HAND

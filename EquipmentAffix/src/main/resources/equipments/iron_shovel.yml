@@ -1,0 +1,25 @@
+# 铁锹
+id: iron_shovel
+material: IRON_SHOVEL
+categories:
+  - TOOL
+display_name: "铁锹"
+material_effect: mineral_vein
+attack_damage: 4.5
+attack_speed: 1.0
+max_enchantment_slots: 2
+max_affix_slots: 1
+max_durability: 250
+affixes: {}
+enchantments: {}
+
+# 配方配置
+recipe:
+  type: shaped
+  shape:
+    - "I"
+    - "S"
+    - "S"
+  ingredients:
+    I: IRON_INGOT
+    S: STICK

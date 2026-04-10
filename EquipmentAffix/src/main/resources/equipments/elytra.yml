@@ -1,0 +1,12 @@
+# 鞘翅
+id: elytra
+material: ELYTRA
+categories:
+  - ELYTRA
+display_name: "鞘翅"
+max_enchantment_slots: 1
+max_affix_slots: 0
+max_durability: 432
+affixes: {}
+enchantments: {}
+

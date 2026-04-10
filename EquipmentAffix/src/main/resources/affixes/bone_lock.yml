@@ -1,0 +1,11 @@
+id: bone_lock
+display_name: "<#CBC6A5>锁骨"
+description: "<#CBC6A5>钩离实体会造成持续流血效果"
+simple_description: "&7钩离实体时，每秒造成&a{0.5+0.5*level}点&7流血伤害，持续&a{2+level}秒"
+max_level: 3
+applicable_to:
+  - TOOL
+equipment_slot: 
+  - FISHING_ROD
+calculation_mode: HIGHEST
+trigger_slot: MAIN_HAND

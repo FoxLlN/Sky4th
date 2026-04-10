@@ -1,0 +1,13 @@
+# 蓄能词条配置
+id: capacitor
+display_name: "<#B4684D>蓄能"
+description: "<#B4684D>受到伤害时存储部分伤害，追加到下次攻击"
+simple_description: "<grey>受到伤害时存储伤害<green>{3*level}%</green>，追加到下次攻击"
+max_level: 3
+applicable_to:
+  - LIGHT_ARMOR
+  - HEAVY_ARMOR
+calculation_mode: SUM
+conflicting_affixes:
+  - iron_spike
+  - sacrifice

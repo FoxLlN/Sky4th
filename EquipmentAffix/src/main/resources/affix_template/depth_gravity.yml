@@ -1,0 +1,23 @@
+# 词条模板配置
+id: depth_gravity
+max_level: 3
+unlock_stage: "主世界"
+upgrade_materials:
+  1:
+    - "COPPER_INGOT*8"
+  2:
+    - "COPPER_INGOT*16"
+  3:
+    - "COPPER_INGOT*32"
+custom_model_data: 1002
+
+# 合成配方
+recipe:
+  type: shaped
+  shape:
+    - "CCC"
+    - "CGC"
+    - "CCC"
+  ingredients:
+    C: COPPER_INGOT
+    G: GOLDEN_PICKAXE

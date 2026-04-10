@@ -1,0 +1,21 @@
+# 词条模板配置
+id: solar
+max_level: 1
+unlock_stage: "地狱"
+upgrade_materials:
+  1:
+    - "GLOWSTONE_DUST*32"
+custom_model_data: 1094
+
+# 合成配方
+recipe:
+  type: shaped
+  shape:
+    - "BDB"
+    - "GRG"
+    - "BGB"
+  ingredients:
+    G: GLOWSTONE
+    B: GOLD_BLOCK
+    R: REDSTONE_BLOCK
+    D: DAYLIGHT_DETECTOR

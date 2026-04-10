@@ -1,0 +1,24 @@
+# 钻石 轻型头盔
+id: light_diamond_helmet
+material: DIAMOND_HELMET
+categories:
+  - LIGHT_ARMOR
+display_name: "钻石 轻型头盔"
+material_effect: resilience
+armor: 3.0
+toughness: 0.8
+max_enchantment_slots: 2
+max_affix_slots: 1
+max_durability: 363
+dodge_chance: 0.025
+affixes: {}
+enchantments: {}
+
+# 配方配置
+recipe:
+  type: shaped
+  shape:
+    - "DDD"
+    - "D D"
+  ingredients:
+    D: DIAMOND

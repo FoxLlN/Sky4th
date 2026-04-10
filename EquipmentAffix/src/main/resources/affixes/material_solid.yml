@@ -1,0 +1,10 @@
+# 坚固词条配置
+id: solid
+display_name: "<underlined><#7F7F7F>坚固</underlined>"
+description: "<#7F7F7F>挖掘方块时，有概率不消耗耐久"
+simple_description: "&7挖掘方块时，有&a20%&7概率不消耗耐久"
+max_level: 1
+applicable_to:
+  - TOOL
+calculation_mode: HIGHEST
+trigger_slot: HAND

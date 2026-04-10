@@ -1,0 +1,20 @@
+# 词条模板配置
+id: whirlwind
+max_level: 1
+unlock_stage: "深层"
+upgrade_materials:
+  1:
+    - "WIND_CHARGE*8"
+custom_model_data: 1033
+
+# 合成配方
+recipe:
+  type: shaped
+  shape:
+    - "ABA"
+    - "BCB"
+    - "ABA"
+  ingredients:
+    A: FEATHER
+    B: WIND_CHARGE
+    C: CROSSBOW

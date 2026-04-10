@@ -1,0 +1,18 @@
+# 下界合金重型靴子
+id: heavy_netherite_boots
+material: NETHERITE_BOOTS
+categories:
+  - HEAVY_ARMOR
+display_name: "下界合金重型靴子"
+material_effect: coercion
+armor: 2.0
+toughness: 1.0
+max_enchantment_slots: 2
+max_affix_slots: 2
+max_durability: 625
+knockback_resistance: 0.04
+hunger_penalty: 0.02
+movement_penalty: 0.016
+affixes: {}
+enchantments: {}
+

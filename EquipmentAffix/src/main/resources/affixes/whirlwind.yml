@@ -1,0 +1,12 @@
+# 旋风词条配置
+id: whirlwind
+display_name: "<#A8D8EA>旋风"
+description: "<#A8D8EA>在命中位置生成一个风弹，击退周围目标"
+simple_description: "&7在命中位置生成一个风弹，击退周围目标"
+max_level: 1
+applicable_to:
+  - BOW
+equipment_slot:
+  - CROSSBOW
+calculation_mode: HIGHEST
+trigger_slot: MAIN_HAND

@@ -1,0 +1,36 @@
+name: SkyMissions
+version: ${version}
+main: sky4th.missions.SkyMissions
+api-version: '1.21'
+description: Sky4th 任务与成就系统 - 处理任务和成就功能
+author: HXS__
+depend: [SkyCore]
+softdepend: []
+
+commands:
+  mission:
+    description: 任务系统主命令
+    usage: /<command> [参数]
+    aliases: [quest, q]
+  achievement:
+    description: 成就系统主命令
+    usage: /<command> [参数]
+    aliases: [ach, achi]
+
+permissions:
+  mission.use:
+    description: 使用任务系统的基本权限
+    default: true
+  mission.admin:
+    description: 任务系统管理员权限
+    default: op
+    children:
+      mission.use: true
+  achievement.use:
+    description: 使用成就系统的基本权限
+    default: true
+  achievement.admin:
+    description: 成就系统管理员权限
+    default: op
+    children:
+      achievement.use: true

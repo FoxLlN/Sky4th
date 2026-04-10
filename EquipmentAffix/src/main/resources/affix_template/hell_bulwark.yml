@@ -1,0 +1,24 @@
+
+# 词条模板配置
+id: hell_bulwark
+max_level: 3
+unlock_stage: "地狱"
+upgrade_materials:
+  1:
+    - "QUARTZ*8"
+  2:
+    - "QUARTZ*16"
+  3:
+    - "QUARTZ*32"
+custom_model_data: 1063
+
+# 合成配方
+recipe:
+  type: shaped
+  shape:
+    - "NNN"
+    - "NIN"
+    - "NNN"
+  ingredients:
+    N: NETHER_BRICKS
+    I: IRON_CHESTPLATE

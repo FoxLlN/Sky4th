@@ -1,0 +1,18 @@
+# 下界合金重型头盔
+id: heavy_netherite_helmet
+material: NETHERITE_HELMET
+categories:
+  - HEAVY_ARMOR
+display_name: "下界合金重型头盔"
+material_effect: coercion
+armor: 4.0
+toughness: 2.0
+max_enchantment_slots: 2
+max_affix_slots: 2
+max_durability: 529
+knockback_resistance: 0.08
+hunger_penalty: 0.04
+movement_penalty: 0.032
+affixes: {}
+enchantments: {}
+

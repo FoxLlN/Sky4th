@@ -1,0 +1,12 @@
+# 法拉第笼词条配置
+id: faraday_cage
+display_name: "<#B4684D>法拉第笼"
+description: "<#B4684D>免疫闪电伤害，被闪电击中时获得速度效果"
+simple_description: "&7免疫闪电伤害，被闪电击中时获得&a速度1&7，持续&a{5*level}秒"
+max_level: 3
+applicable_to:
+  - LIGHT_ARMOR
+  - HEAVY_ARMOR
+equipment_slot:
+  - CHEST
+calculation_mode: HIGHEST

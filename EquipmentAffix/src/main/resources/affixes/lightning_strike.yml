@@ -1,0 +1,19 @@
+# 雷击词条配置
+id: lightning_strike
+display_name: "<#B4684D>雷击"
+description: "<#B4684D>消耗存储铜块召唤闪电攻击目标"
+simple_description: "&7消耗存储铜块召唤闪电攻击目标，造成&a{3+3*level}%&7伤害"
+max_level: 3
+applicable_to:
+  - WEAPON
+equipment_slot:
+  - SWORD
+calculation_mode: HIGHEST
+is_chargeable: true
+charge_resource: "COPPER_BLOCK"
+charge_resource_name: "<#B4684D>铜块"
+charge_max_storage:
+  1: 16
+  2: 32
+  3: 48
+trigger_slot: MAIN_HAND

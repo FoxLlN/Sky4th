@@ -1,0 +1,15 @@
+# 食腐词条配置
+id: scavenge
+display_name: "<#BE886C>食腐"
+description: "<#BE886C>每个掉落物转换成1点饱食度"
+simple_description: "&7每个掉落物转换成&a1点&7饱食度"
+max_level: 1
+applicable_to:
+  - WEAPON
+  - TOOL
+calculation_mode: HIGHEST
+conflicting_affixes:
+  - magnetic
+  - greed
+  - cost_avoid
+trigger_slot: HAND

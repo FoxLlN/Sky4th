@@ -1,0 +1,10 @@
+# 虚弱词条配置
+id: weaken
+display_name: "<#7B0D27>虚弱"
+description: "<#7B0D27>命中目标后降低目标一定时间攻击力"
+simple_description: "&7命中目标后降低目标&a{5+5*level}%&7攻击力，持续&a5秒"
+max_level: 3
+applicable_to:
+  - BOW
+calculation_mode: HIGHEST
+trigger_slot: MAIN_HAND

@@ -1,0 +1,15 @@
+# 虚无词条配置
+id: void
+display_name: "<#CC00FA>虚无"
+description: "<#CC00FA>挖掘/击杀不生成掉落物，只保留经验"
+simple_description: "&7挖掘/击杀不生成掉落物，只保留经验"
+max_level: 1
+applicable_to:
+  - WEAPON
+  - TOOL
+calculation_mode: HIGHEST
+conflicting_affixes:
+  - magnetic
+  - greed
+  - scavenge
+trigger_slot: HAND

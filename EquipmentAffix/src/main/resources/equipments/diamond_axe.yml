@@ -1,0 +1,26 @@
+# 钻石斧
+id: diamond_axe
+material: DIAMOND_AXE
+categories:
+  - TOOL
+  - WEAPON
+display_name: "钻石斧"
+material_effect: sharp
+attack_damage: 9.0
+attack_speed: 1.0
+max_enchantment_slots: 2
+max_affix_slots: 1
+max_durability: 1561
+affixes: {}
+enchantments: {}
+
+# 配方配置
+recipe:
+  type: shaped
+  shape:
+    - "DD"
+    - "DS"
+    - " S"
+  ingredients:
+    D: DIAMOND
+    S: STICK

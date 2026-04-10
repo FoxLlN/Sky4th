@@ -1,0 +1,95 @@
+id: "affix_info"
+title: "<b><blue>词条信息</blue></b>"
+shape:
+  - 'FTFFFPINF'
+  - 'FFFFFFFFF'
+  - 'FUUFHAAAF'
+  - 'FUUFCAAAF'
+  - 'FUUFDAAAF'
+  - 'BFFFFFFFE'
+template:
+  F:
+    material: BLACK_STAINED_GLASS_PANE
+    name: " "
+  T:
+    feature:
+      functional: template_info
+      lore:
+        - "&8| &7锻造词条 > {affix_name}"
+        - "&8| &7当前等级 > &e{level}"
+        - "&8| &7最大等级 > &c{max_level}"
+        - "&8| &7升级材料 > {materials}"
+        - "&8| &7词条简介 > &c{description}"
+        - "&8| &7适用装备 > {equipment}"
+  U:
+    feature:
+      functional: affix_update
+      lore:
+        - "&8| &7升级路径 > {level}级 -> &a{next_level}&7级"
+        - "&8| &7需求数量 > &e{needs}"
+  A:
+    feature:
+      functional: affix_active
+  C:
+    material: SMITHING_TABLE
+    name: "&a冲突词条"
+    lore:
+      - "&7点击查看冲突词条"
+      - "&7无法与当前词条共存的词条"
+    feature:
+      functional: affix_conflict
+  D:
+    material: ENCHANTING_TABLE
+    name: "&a冲突附魔"
+    lore:
+      - "&7点击查看冲突附魔"
+      - "&7无法与当前词条共存的附魔"
+    feature:
+      functional: affix_enchant_conflict
+  H:
+    material: CRAFTING_TABLE
+    name: "&e合成配方"
+    lore: 
+      - "&7点击查看合成配方"
+      - "&7查看当前词条模板的合成配方"
+    feature:
+      functional: affix_recipe
+  N:
+    material: PLAYER_HEAD
+    name: "&a等级增加"
+    lore: 
+      - "&7点击当前等级&a+1"
+    feature:
+      head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOWFjYTg5MWE3MDE1Y2JiYTA2ZTYxYzYwMDg2MTA2OWZhNzg3MGRjZjliMzViNGZlMTU4NTBmNGIyNWIzY2UwIn19fQ==
+      functional: level_up
+  P:
+    material: PLAYER_HEAD
+    name: "&c等级减少"
+    lore: 
+      - "&7点击当前等级&c-1"
+    feature:
+      head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmZiN2Y1NThiNmY2N2U4NzI1MzI2YTY5YTg1ZGEyNmFlNWIyN2M0NDczZDI1ZDVlOWNhYWM1NzZiNGQ5NjQzMyJ9fX0=
+      functional: level_down
+  I:
+    material: PLAYER_HEAD
+    name: "&e当前信息"
+    feature:
+      head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2Q5MWY1MTI2NmVkZGM2MjA3ZjEyYWU4ZDdhNDljNWRiMDQxNWFkYTA0ZGFiOTJiYjc2ODZhZmRiMTdmNGQ0ZSJ9fX0=
+      functional: level_info
+      lore:
+        - "&8| &7当前等级 > &e{level}"
+        - "&8| &7最大等级 > &c{max_level}"
+        - " "
+        - "&8| &7左键点击 &e重置到最大等级"
+  B:
+    material: PLAYER_HEAD
+    name: "&e返回词条列表"
+    feature:
+      head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzk3OGYzNWM2Mzg2MGQ2OTRmZWU0YWIzYzM2OTRmZGU0MDQ2Yzk2NmU0YzFiZjA2NjVmODg3NDhmOWY4MDI1In19fQ==
+      page: affix_list
+  E:
+    material: PLAYER_HEAD
+    name: "&c关闭"
+    feature:
+      head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjc1NDgzNjJhMjRjMGZhODQ1M2U0ZDkzZTY4YzU5NjlkZGJkZTU3YmY2NjY2YzAzMTljMWVkMWU4NGQ4OTA2NSJ9fX0=
+      functional: exit

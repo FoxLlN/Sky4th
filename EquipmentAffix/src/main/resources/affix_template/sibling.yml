@@ -1,0 +1,24 @@
+# 词条模板配置
+id: sibling
+max_level: 3
+unlock_stage: "主世界"
+upgrade_materials:
+  1:
+    - "ROTTEN_FLESH*12"
+  2:
+    - "ROTTEN_FLESH*24"
+  3:
+    - "ROTTEN_FLESH*48"
+custom_model_data: 1026
+
+# 合成配方
+recipe:
+  type: shaped
+  shape:
+    - "IRI"
+    - "RDR"
+    - "IRI"
+  ingredients:
+    I: IRON_INGOT
+    R: ROTTEN_FLESH
+    D: DIAMOND_SWORD

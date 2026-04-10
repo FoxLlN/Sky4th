@@ -1,0 +1,12 @@
+# 碎骨词条配置
+id: bone_break
+display_name: "<#CBC6A5>碎骨"
+description: "<#CBC6A5>攻击时有概率降低目标最大生命值"
+simple_description: "&7攻击时有&a{6+3*level}%&7概率降低目标最大生命值&a10%"
+max_level: 3
+applicable_to:
+  - WEAPON
+equipment_slot:
+  - MACE
+calculation_mode: HIGHEST
+trigger_slot: MAIN_HAND

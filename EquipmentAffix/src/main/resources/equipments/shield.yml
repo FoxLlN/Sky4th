@@ -1,0 +1,34 @@
+# 盾牌
+id: shield
+material: SHIELD
+categories:
+  - SHIELD
+display_name: "盾牌"
+material_effect: durable
+max_enchantment_slots: 1
+max_affix_slots: 1
+max_durability: 336
+affixes: {}
+enchantments: {}
+
+# 配方配置
+recipe:
+  type: shaped
+  shape:
+    - "PIP"
+    - "PPP"
+    - " P "
+  ingredients:
+    P: 
+      - OAK_PLANKS
+      - SPRUCE_PLANKS
+      - BIRCH_PLANKS
+      - JUNGLE_PLANKS
+      - ACACIA_PLANKS
+      - DARK_OAK_PLANKS
+      - CRIMSON_PLANKS
+      - WARPED_PLANKS
+      - MANGROVE_PLANKS
+      - CHERRY_PLANKS
+      - BAMBOO_PLANKS
+    I: IRON_INGOT

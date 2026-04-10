@@ -1,0 +1,36 @@
+# 木斧
+id: wooden_axe
+material: WOODEN_AXE
+categories:
+  - TOOL
+  - WEAPON
+display_name: "木斧"
+material_effect: vitality
+attack_damage: 7.0
+attack_speed: 0.8
+max_enchantment_slots: 1
+max_affix_slots: 0
+max_durability: 59
+affixes: {}
+enchantments: {}
+
+recipe:
+  type: shaped
+  shape:
+    - "PP"
+    - "PS"
+    - " S"
+  ingredients:
+    P: 
+      - OAK_PLANKS
+      - SPRUCE_PLANKS
+      - BIRCH_PLANKS
+      - JUNGLE_PLANKS
+      - ACACIA_PLANKS
+      - DARK_OAK_PLANKS
+      - CRIMSON_PLANKS
+      - WARPED_PLANKS
+      - MANGROVE_PLANKS
+      - CHERRY_PLANKS
+      - BAMBOO_PLANKS
+    S: STICK

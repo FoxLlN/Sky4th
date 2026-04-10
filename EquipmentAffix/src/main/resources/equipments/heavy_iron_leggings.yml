@@ -1,0 +1,28 @@
+# 铁质 重型护腿
+id: heavy_iron_leggings
+material: IRON_LEGGINGS
+categories:
+  - HEAVY_ARMOR
+display_name: "铁质 重型护腿"
+material_effect: iron_bone
+armor: 4.0
+toughness: 0.6
+max_enchantment_slots: 1
+max_affix_slots: 1
+max_durability: 290
+knockback_resistance: 0.05
+hunger_penalty: 0.04
+movement_penalty: 0.03
+affixes: {}
+enchantments: {}
+
+# 配方配置
+recipe:
+  type: shaped
+  shape:
+    - "BIB"
+    - "I I"
+    - "I I"
+  ingredients:
+    I: IRON_INGOT
+    B: IRON_BLOCK

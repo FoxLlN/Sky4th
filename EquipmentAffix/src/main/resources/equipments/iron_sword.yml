@@ -1,0 +1,25 @@
+# 铁剑
+id: iron_sword
+material: IRON_SWORD
+categories:
+  - WEAPON
+display_name: "铁剑"
+material_effect: conduction
+attack_damage: 6.0
+attack_speed: 1.6
+max_enchantment_slots: 2
+max_affix_slots: 1
+max_durability: 250
+affixes: {}
+enchantments: {}
+
+# 配方配置
+recipe:
+  type: shaped
+  shape:
+    - "I"
+    - "I"
+    - "S"
+  ingredients:
+    I: IRON_INGOT
+    S: STICK

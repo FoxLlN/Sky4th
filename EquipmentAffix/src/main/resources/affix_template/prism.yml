@@ -1,0 +1,24 @@
+# 棱镜词条锻造模板配置
+id: prism
+max_level: 3
+unlock_stage: "深层"
+upgrade_materials:
+  1:
+    - "DIAMOND*4"
+  2:
+    - "DIAMOND*8"
+  3:
+    - "DIAMOND*16"
+custom_model_data: 1071
+
+# 配方（使用成型配方）
+recipe:
+  type: shaped
+  shape:
+    - "DGD"
+    - "GIG"
+    - "DGD"
+  ingredients:
+    D: DIAMOND
+    G: GLASS_PANE
+    I: IRON_LEGGINGS

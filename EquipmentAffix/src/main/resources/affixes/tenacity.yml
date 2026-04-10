@@ -1,0 +1,11 @@
+# 坚毅词条配置
+id: tenacity
+display_name: "<#542F81>坚毅"
+description: "<#542F81>受伤有概率获得抗性提升，下次攻击伤害提升"
+simple_description: "&7受伤有&a{6+3*level}%&7概率获得&a抗性提升1&7，下次攻击伤害提升&a{5+5*level}%&7"
+max_level: 3
+applicable_to:
+  - HEAVY_ARMOR
+equipment_slot:
+  - LEGS
+calculation_mode: HIGHEST

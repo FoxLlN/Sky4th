@@ -1,0 +1,11 @@
+# 长链材质词条配置
+id: long_chain
+display_name: "<underlined><#6F7676>长链</underlined>"
+description: "<#6F7676>攻击距离增加"
+simple_description: "&7攻击距离&a+1%&7"
+max_level: 1
+applicable_to:
+  - WEAPON
+calculation_mode: HIGHEST
+is_init: true
+trigger_slot: MAIN_HAND

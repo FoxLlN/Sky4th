@@ -1,0 +1,26 @@
+# 词条模板配置
+id: feather_fall
+max_level: 3
+unlock_stage: "末地"
+upgrade_materials:
+  1:
+    - "FEATHER*8"
+  2:
+    - "FEATHER*16"
+  3:
+    - "FEATHER*32"
+custom_model_data: 1087
+
+# 合成配方
+recipe:
+  type: shaped
+  shape:
+    - "PFP"
+    - "FSF"
+    - "PFP"
+  ingredients:
+    F: FEATHER
+    P: PHANTOM_MEMBRANE
+    S: FIREWORK_STAR
+
+

@@ -1,0 +1,23 @@
+# 消灾词条配置
+id: cost_avoid
+display_name: "<#0EC754>消灾"
+description: "<#0EC754>受到伤害时优先使用存储抵挡伤害"
+simple_description: "&7受到伤害消耗&a{5-level}个&7绿宝石，抵消&a1点&7伤害，同时最多抵消&a{5+level}点"
+max_level: 3
+applicable_to:
+  - LIGHT_ARMOR
+  - HEAVY_ARMOR
+equipment_slot:
+  - CHEST
+calculation_mode: HIGHEST
+priority: 100
+is_chargeable: true
+charge_resource: emerald
+charge_resource_name: "<#0EC754>绿宝石"
+charge_max_storage:
+  1: 64
+  2: 128
+  3: 256
+conflicting_affixes:
+  - buy_life
+  - diamond_protection

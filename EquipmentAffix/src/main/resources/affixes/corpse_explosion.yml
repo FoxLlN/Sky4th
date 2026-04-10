@@ -1,0 +1,14 @@
+# 尸爆词条配置
+id: corpse_explosion
+display_name: "<#DB2F1A>尸爆"
+description: "<#DB2F1A>击杀目标后，尸体可以引发爆炸"
+simple_description: "&7击杀目标后，尸体会对周围&a{level}格&7实体造成&a{10+5*level}%&7的爆炸伤害"
+max_level: 3
+applicable_to:
+  - WEAPON
+equipment_slot:
+  - SWORD
+  - AXE
+calculation_mode: HIGHEST
+priority: 20
+trigger_slot: MAIN_HAND

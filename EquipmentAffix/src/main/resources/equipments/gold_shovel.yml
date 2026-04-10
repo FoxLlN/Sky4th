@@ -1,0 +1,25 @@
+# 金锹
+id: gold_shovel
+material: GOLDEN_SHOVEL
+categories:
+  - TOOL
+display_name: "金锹"
+material_effect: gold_digger
+attack_damage: 3.5
+attack_speed: 1.0
+max_enchantment_slots: 3
+max_affix_slots: 1
+max_durability: 100
+affixes: {}
+enchantments: {}
+
+# 配方配置
+recipe:
+  type: shaped
+  shape:
+    - "G"
+    - "S"
+    - "S"
+  ingredients:
+    G: GOLD_INGOT
+    S: STICK

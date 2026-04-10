@@ -1,0 +1,17 @@
+# 下界合金轻型靴子
+id: light_netherite_boots
+material: NETHERITE_BOOTS
+categories:
+  - LIGHT_ARMOR
+display_name: "下界合金轻型靴子"
+material_effect: coercion
+armor: 3.0
+toughness: 1.0
+max_enchantment_slots: 3
+max_affix_slots: 1
+max_durability: 481
+dodge_chance: 0.016
+affixes: {}
+enchantments: {}
+
+# 下界合金装备只能通过锻造台升级获取，没有合成配方

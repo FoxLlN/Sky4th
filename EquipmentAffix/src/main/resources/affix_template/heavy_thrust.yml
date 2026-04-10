@@ -1,0 +1,24 @@
+# 重戟词条模板配置
+id: heavy_thrust
+max_level: 3
+unlock_stage: "主世界"
+upgrade_materials:
+  1:
+    - "IRON_INGOT*8"
+  2:
+    - "IRON_INGOT*16"
+  3:
+    - "IRON_INGOT*32"
+custom_model_data: 1043
+
+# 合成配方
+recipe:
+  type: shaped
+  shape:
+    - "INI"
+    - "NSN"
+    - "INI"
+  ingredients:
+    I: IRON_INGOT
+    S: IRON_BLOCK
+    N: NAUTILUS_SHELL

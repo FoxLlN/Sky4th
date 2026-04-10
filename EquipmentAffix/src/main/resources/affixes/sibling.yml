@@ -1,0 +1,21 @@
+# 手足词条配置
+id: sibling
+display_name: "<#BE886C>手足"
+description: "<#BE886C>大幅提升对玩家造成的伤害"
+simple_description: "&7对玩家造成的伤害增加&a{20+20*level}%&7"
+max_level: 3
+applicable_to:
+  - WEAPON
+equipment_slot:
+  - SWORD
+  - AXE
+calculation_mode: HIGHEST
+priority: 10
+conflicting_affixes:
+  - iron_blood
+  - emerald_edge
+  - resonance_mark
+  - nether_bane
+  - overheat
+  - thermal_conduct
+trigger_slot: MAIN_HAND

@@ -1,0 +1,25 @@
+# 钻石 轻型胸甲
+id: light_diamond_chestplate
+material: DIAMOND_CHESTPLATE
+categories:
+  - LIGHT_ARMOR
+display_name: "钻石 轻型胸甲"
+material_effect: resilience
+armor: 5.0
+toughness: 1.6
+max_enchantment_slots: 2
+max_affix_slots: 1
+max_durability: 528
+dodge_chance: 0.045
+affixes: {}
+enchantments: {}
+
+# 配方配置
+recipe:
+  type: shaped
+  shape:
+    - "D D"
+    - "DDD"
+    - "DDD"
+  ingredients:
+    D: DIAMOND

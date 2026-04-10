@@ -1,0 +1,24 @@
+# 词条模板配置
+id: bone_lock
+max_level: 3
+unlock_stage: "主世界"
+upgrade_materials:
+  1:
+    - "BONE*8"
+  2:
+    - "BONE*16"
+  3:
+    - "BONE*32"
+custom_model_data: 1092
+
+# 合成配方
+recipe:
+  type: shaped
+  shape:
+    - "BRB"
+    - "RFR"
+    - "BRB"
+  ingredients:
+    B: BONE
+    R: REDSTONE
+    F: FISHING_ROD

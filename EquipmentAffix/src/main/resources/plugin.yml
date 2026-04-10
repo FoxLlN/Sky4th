@@ -1,0 +1,19 @@
+name: EquipmentAffix
+version: ${version}
+main: com.sky4th.equipment.EquipmentAffix
+api-version: '1.21'
+description: Sky4th 装备系统 - 处理装备属性、词条和权限检查
+author: HXS__
+depend: [SkyCore, Aiyatsbus]
+
+commands:
+  equipment:
+    description: 装备系统主命令
+    usage: /<command> [参数]
+
+permissions:
+  equipment.admin:
+    description: 装备系统管理员权限
+    default: op
+    children:
+      equipment.use: true

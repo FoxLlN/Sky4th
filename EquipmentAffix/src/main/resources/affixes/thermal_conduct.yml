@@ -1,0 +1,20 @@
+# 导热词条配置
+id: thermal_conduct
+display_name: "<#FC9600>导热"
+description: "<#FC9600>处于点燃状态时，攻击造成更高伤害"
+simple_description: "&7处于点燃状态时，攻击额外造成&a{10+5*level}%&7伤害"
+max_level: 3
+applicable_to:
+  - WEAPON
+equipment_slot:
+  - SWORD
+  - AXE
+calculation_mode: HIGHEST
+conflicting_affixes:
+  - iron_blood
+  - emerald_edge
+  - resonance_mark
+  - nether_bane
+  - sibling
+  - overheat
+trigger_slot: MAIN_HAND

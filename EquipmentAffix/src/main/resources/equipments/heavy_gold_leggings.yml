@@ -1,0 +1,28 @@
+# 金质 重型护腿
+id: heavy_gold_leggings
+material: GOLDEN_LEGGINGS
+categories:
+  - HEAVY_ARMOR
+display_name: "金质 重型护腿"
+material_effect: dazzling
+armor: 4.0
+toughness: 1.0
+max_enchantment_slots: 2
+max_affix_slots: 2
+max_durability: 137
+knockback_resistance: 0.04
+hunger_penalty: 0.03
+movement_penalty: 0.015
+affixes: {}
+enchantments: {}
+
+# 配方配置
+recipe:
+  type: shaped
+  shape:
+    - "BGB"
+    - "G G"
+    - "G G"
+  ingredients:
+    G: GOLD_INGOT
+    B: GOLD_BLOCK

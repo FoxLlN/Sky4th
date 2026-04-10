@@ -1,0 +1,9 @@
+# 词条配置
+id: pillar
+display_name: "<underlined><#625859>砥柱</underlined>"
+description: "<#625859>工具耐久度越高，挖掘速度越快(最高50%)"
+simple_description: "&7满耐久度挖掘速度&a+50%&7，耐久度每降低&a2%&7，挖掘速度降低&a1%&7"
+max_level: 1
+applicable_to:
+  - TOOL
+calculation_mode: HIGHEST

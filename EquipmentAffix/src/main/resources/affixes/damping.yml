@@ -1,0 +1,10 @@
+# 减震词条配置
+id: damping
+display_name: "<#A2B0B3>减震"
+description: "<#A2B0B3>受到动能/爆炸伤害时减少伤害"
+simple_description: "&7受到动能/爆炸伤害时减少&a{4*level}%&7伤害"
+max_level: 3
+applicable_to:
+  - LIGHT_ARMOR
+  - HEAVY_ARMOR
+calculation_mode: SUM

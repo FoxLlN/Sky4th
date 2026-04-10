@@ -1,0 +1,15 @@
+# 下届合金剑
+id: netherite_sword
+material: NETHERITE_SWORD
+categories:
+  - WEAPON
+display_name: "下届合金剑"
+material_effect: desperate
+attack_damage: 8.0
+attack_speed: 1.6
+max_enchantment_slots: 2
+max_affix_slots: 2
+max_durability: 2031
+affixes: {}
+enchantments: {}
+

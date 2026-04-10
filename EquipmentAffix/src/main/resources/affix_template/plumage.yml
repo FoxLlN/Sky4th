@@ -1,0 +1,19 @@
+# 词条模板配置
+id: plumage
+max_level: 1
+unlock_stage: "主世界"
+upgrade_materials:
+  1:
+    - "FEATHER*8"
+custom_model_data: 1076
+
+# 合成配方
+recipe:
+  type: shaped
+  shape:
+    - "FFF"
+    - "FBF"
+    - "FFF"
+  ingredients:
+    F: FEATHER
+    B: IRON_BOOTS

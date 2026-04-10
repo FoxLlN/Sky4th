@@ -1,0 +1,16 @@
+# 太阳能词条配置
+id: solar
+display_name: "<#FFB347>太阳能"
+description: "<#FFB347>站在太阳下可以缓慢恢复物品耐久"
+simple_description: "&7站在太阳下每&a30秒&7恢复&a1点&7耐久，最多恢复至&a60%&7"
+max_level: 1
+applicable_to:
+  - TOOL
+  - WEAPON
+  - LIGHT_ARMOR
+  - HEAVY_ARMOR
+  - SHIELD
+  - ELYTRA
+  - BOW
+calculation_mode: HIGHEST
+trigger_slot: HAND

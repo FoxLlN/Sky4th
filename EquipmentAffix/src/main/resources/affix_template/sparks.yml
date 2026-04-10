@@ -1,0 +1,25 @@
+# 词条模板配置
+id: sparks
+max_level: 3
+unlock_stage: "主世界"
+upgrade_materials:
+  1:
+    - "FLINT*12"
+  2:
+    - "FLINT*24"
+  3:
+    - "FLINT*48"
+custom_model_data: 1018
+
+# 合成配方
+recipe:
+  type: shaped
+  shape:
+    - "IDI"
+    - "FSF"
+    - "IFI"
+  ingredients:
+    F: FLINT
+    I: IRON_INGOT
+    S: IRON_SWORD
+    D: FLINT_AND_STEEL

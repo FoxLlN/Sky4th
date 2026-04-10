@@ -1,0 +1,11 @@
+# 羽落词条配置
+id: feather_fall
+display_name: "<#F5F5F5>羽落"
+description: "<#F5F5F5>降低鞘翅撞墙的动能伤害"
+simple_description: "&7降低&a{30+10*level}%&7鞘翅撞墙的动能伤害"
+max_level: 3
+applicable_to:
+  - ELYTRA
+calculation_mode: HIGHEST
+conflicting_affixes:
+  - dive_bomb

@@ -1,0 +1,24 @@
+
+name: BetterVillage
+version: ${version}
+main: sky4th.bettervillage.BetterVillage
+api-version: 1.21
+author: Sky4th
+description: 原版村庄改革插件
+depend:
+  - SkyCore
+
+commands:
+  village:
+    description: 村庄管理命令
+    usage: /village <info|nearby|list|level>
+    permission: bettervillage.command
+    permission-message: §c你没有权限执行此命令
+
+permissions:
+  bettervillage.command:
+    description: 允许使用村庄命令
+    default: true
+  bettervillage.admin:
+    description: 村庄管理权限
+    default: op

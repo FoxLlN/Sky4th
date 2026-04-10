@@ -1,0 +1,25 @@
+# 金镐
+id: gold_pickaxe
+material: GOLDEN_PICKAXE
+categories:
+  - TOOL
+display_name: "金镐"
+material_effect: gold_digger
+attack_damage: 3.0
+attack_speed: 1.2
+max_enchantment_slots: 3
+max_affix_slots: 1
+max_durability: 100
+affixes: {}
+enchantments: {}
+
+# 配方配置
+recipe:
+  type: shaped
+  shape:
+    - "GGG"
+    - " S "
+    - " S "
+  ingredients:
+    G: GOLD_INGOT
+    S: STICK

@@ -1,0 +1,12 @@
+id: cooking
+display_name: "<#FC9600>料理"
+description: "<#FC9600>钓到鱼类时自动煮熟鱼类"
+simple_description: "&7钓到鱼类时自动煮熟鱼类"
+max_level: 1
+applicable_to:
+  - TOOL
+equipment_slot:
+  - FISHING_ROD
+calculation_mode: HIGHEST
+trigger_slot: MAIN_HAND
+priority: 1

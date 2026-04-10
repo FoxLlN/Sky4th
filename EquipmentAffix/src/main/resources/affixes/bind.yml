@@ -1,0 +1,10 @@
+# 束缚词条配置
+id: bind
+display_name: "<#DBDBDB>束缚"
+description: "<#DBDBDB>命中目标后概率使目标定身"
+simple_description: "&7命中目标后&a{20+10*level}%&7概率使目标定身&a{0.5*level}秒"
+max_level: 3
+applicable_to:
+  - BOW
+calculation_mode: HIGHEST
+trigger_slot: MAIN_HAND

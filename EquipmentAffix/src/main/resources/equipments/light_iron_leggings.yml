@@ -1,0 +1,25 @@
+# 铁质 轻型护腿
+id: light_iron_leggings
+material: IRON_LEGGINGS
+categories:
+  - LIGHT_ARMOR
+display_name: "铁质 轻型护腿"
+material_effect: iron_bone
+armor: 3.0
+toughness: 0.0
+max_enchantment_slots: 1
+max_affix_slots: 1
+max_durability: 225
+dodge_chance: 0.02
+affixes: {}
+enchantments: {}
+
+# 配方配置
+recipe:
+  type: shaped
+  shape:
+    - "III"
+    - "I I"
+    - "I I"
+  ingredients:
+    I: IRON_INGOT

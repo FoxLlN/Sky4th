@@ -1,0 +1,57 @@
+id: "affix_filter_types"
+title: "<b><blue>词条筛选: 装备类别</blue></b>"
+shape:
+  - 'FFFFFFFFF'
+  - 'FFMMMMMFF'
+  - 'FFMMMMMFF'
+  - 'FFMMMMMFF'
+  - 'FFMMMMMFF'
+  - 'BFFPRNFFE'
+template:
+  F:
+    material: BLACK_STAINED_GLASS_PANE
+    name: " "
+  E:
+    material: PLAYER_HEAD
+    name: "&c关闭"
+    feature:
+      head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjc1NDgzNjJhMjRjMGZhODQ1M2U0ZDkzZTY4YzU5NjlkZGJkZTU3YmY2NjY2YzAzMTljMWVkMWU4NGQ4OTA2NSJ9fX0=
+      functional: exit
+  P:
+    material: PLAYER_HEAD
+    name: "&e上一页"
+    feature:
+      functional: page_turn
+      direction: previous
+      slot_char: M
+      head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjllYTFkODYyNDdmNGFmMzUxZWQxODY2YmNhNmEzMDQwYTA2YzY4MTc3Yzc4ZTQyMzE2YTEwOThlNjBmYjdkMyJ9fX0=
+  N:
+    material: PLAYER_HEAD
+    name: "&e下一页"
+    feature:
+      functional: page_turn
+      direction: next
+      slot_char: M
+      head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODI3MWE0NzEwNDQ5NWUzNTdjM2U4ZTgwZjUxMWE5ZjEwMmIwNzAwY2E5Yjg4ZTg4Yjc5NWQzM2ZmMjAxMDVlYiJ9fX0=
+  M:
+    feature:
+      functional: type_list
+      lore:
+        - "&8| &7本装备类型适用词条数量: &e{size}"
+        - "&7"
+        - "&8| &7左键点击 &a查看此装备类型的词条"
+        - "&8| &7Shift + 点击 &e清除当前选择"
+        - "&8| &7右键点击 &c不看此装备类型的词条"
+  B:
+    material: PLAYER_HEAD
+    name: "&e返回词条列表"
+    feature:
+      head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzk3OGYzNWM2Mzg2MGQ2OTRmZWU0YWIzYzM2OTRmZGU0MDQ2Yzk2NmU0YzFiZjA2NjVmODg3NDhmOWY4MDI1In19fQ==
+      page: affix_list
+  R:
+    material: PLAYER_HEAD
+    name: "&c重置筛选"
+    lore: "&8| &7点击重置筛选"
+    feature:
+      head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2E5MDNmOTAyNmM3ODU0NDZmYzQ1MmVkMmQ4NjQzODllNzgyMmQ0YWRjMDg3Y2Y3MjVlMjJlMWQ5ZjI5OTBlYSJ9fX0=
+      functional: reset_filter

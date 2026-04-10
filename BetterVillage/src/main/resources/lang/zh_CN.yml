@@ -1,0 +1,74 @@
+# 前缀（可选，如果设置了会自动添加到所有消息前）
+prefix: "&7[&aBetterVillage&7] "
+
+# 通用消息
+common:
+  no-permission: "&c你没有权限执行此操作！"
+  player-only: "&c只有玩家可以使用此命令！"
+  unknown-command: "&c未知命令！"
+
+# 命令相关
+command:
+  usage: "&c用法: /{command} {args}"
+  unknown: "&c未知命令: {command}"
+  no-permission: "&c你没有权限执行此操作！"
+  player-only: "&c只有玩家可以使用此命令！"
+  help:
+    header: "&6===== &b{plugin} &6帮助 ====="
+    info: "&e/village info &7- 显示当前位置的村庄信息"
+    nearby: "&e/village nearby &7- 显示附近的村庄信息"
+    list: "&e/village list &7- 显示当前世界的所有村庄"
+    level: "&e/village level <等级> &7- 设置当前位置村庄的等级"
+    villager: "&e/village villager <子命令> &7- 村民管理命令"
+  info:
+    header: "&6=== 村庄信息 ==="
+    id: "&7ID: &f{id}"
+    world: "&7世界: &f{world}"
+    level: "&7等级: &f{level}"
+    center-chunk: "&7核心区块: &f({chunkX}, {chunkZ})"
+    bounds: "&7边界: &f({minX}, {minY}, {minZ}) 到 ({maxX}, {maxY}, {maxZ})"
+    last-raid: "&7上次劫掠: &f{time}"
+    last-loot: "&7上次抢夺: &f{time}"
+    allied-teams: "&7建交队伍: &f{count}"
+    hostile-teams: "&7敌对队伍: &f{count}"
+    no-village: "&c当前位置不在任何村庄内"
+    villager-stats-header: "&6=== 村民统计 ==="
+    villager-total: "&7村民总数: &f{count}"
+    villager-baby: "&7幼年体村民: &f{count}"
+    villager-adult: "&7成年村民: &f{count}"
+    villager-unemployed: "&7无职业村民: &f{count}"
+    villager-employed: "&7职业村民: &f{count}"
+    villager-levels: "&7职业等级分布: &f1级:{level1} 2级:{level2} 3级:{level3} 4级:{level4} 5级:{level5}"
+  nearby:
+    header: "&6=== 附近的村庄 ==="
+    village-id: "&7村庄 ID: &f{id}"
+    level: "&7等级: &f{level}"
+    distance: "&7距离: &f{distance} 方块"
+    no-village: "&c当前区块没有村庄"
+  list:
+    header: "&6=== {world} 的村庄列表 ==="
+    item: "&7- {id} (等级 {level}, 区块 {chunkX}, {chunkZ})"
+    no-village: "&c当前世界没有村庄"
+  level:
+    usage: "&c用法: /village level <等级>"
+    invalid-level: "&c无效的等级，等级必须大于 0"
+    no-village: "&c当前位置不在任何村庄内"
+    success: "&a成功将村庄等级设置为 {level}"
+    failed: "&c设置村庄等级失败"
+  villager:
+    usage: "&c用法: /village villager <upgrade|refresh|info> [等级]"
+    unknown_subcommand: "&c未知的子命令: {subcommand}"
+    not_found: "&c附近没有找到村民"
+
+# 村民相关
+villager:
+  invalid_level: "&c无效的等级，等级必须在 1-5 之间"
+  already_at_level: "&c村民已经是等级 {level} 或更高"
+  upgraded: "&a成功将村民升级到等级 {level}"
+  trades_refreshed: "&a成功刷新村民交易"
+  info:
+    header: "&6=== 村民信息 ==="
+    profession: "&7职业: &f{profession}"
+    level: "&7等级: &f{level}"
+    type: "&7类型: &f{type}"
+    experience: "&7经验: &f{experience}"

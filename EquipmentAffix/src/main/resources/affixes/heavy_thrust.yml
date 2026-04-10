@@ -1,0 +1,17 @@
+# 重戟词条配置
+id: heavy_thrust
+display_name: "<#A2B0B3>重戟"
+description: "<#A2B0B3>无法投掷，但近战伤害增加"
+simple_description: "&7无法投掷，但增加&a{20+10*level}%&7近战伤害"
+max_level: 3
+applicable_to:
+  - WEAPON
+equipment_slot:
+  - TRIDENT
+calculation_mode: HIGHEST
+conflicting_affixes:
+  - throw
+  - surge
+  - vortex
+trigger_slot: MAIN_HAND
+  

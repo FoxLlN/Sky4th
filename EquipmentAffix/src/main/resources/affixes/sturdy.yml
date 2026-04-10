@@ -1,0 +1,17 @@
+# 镀层词条配置
+id: sturdy
+display_name: "<#A2B0B3>镀层"
+description: "<#A2B0B3>每级增加100点耐久度上限"
+simple_description: "&7增加&a{100*level}点&7耐久度上限"
+max_level: 5
+applicable_to:
+  - TOOL
+  - WEAPON
+  - LIGHT_ARMOR
+  - HEAVY_ARMOR
+  - SHIELD
+  - ELYTRA
+  - BOW
+calculation_mode: HIGHEST
+is_init: true
+trigger_slot: HAND

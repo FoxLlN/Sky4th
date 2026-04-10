@@ -1,0 +1,20 @@
+# 词条模板配置
+id: steady_step
+max_level: 1
+unlock_stage: "主世界"
+upgrade_materials:
+  1:
+    - "PRISMARINE_SHARD*8"
+custom_model_data: 1074
+
+# 合成配方
+recipe:
+  type: shaped
+  shape:
+    - "PPP"
+    - "PBP"
+    - "PAP"
+  ingredients:
+    P: PRISMARINE_SHARD
+    A: ANVIL
+    B: IRON_BOOTS

@@ -1,0 +1,13 @@
+# 碎甲词条配置
+id: shrapnel
+display_name: "<#92B9FE>碎片"
+description: "<#92B9FE>有概率造成大量额外伤害，但每次使用时消耗双倍耐久"
+simple_description: "&7有&a{15+5*level}%&7概率造成&a{30+10*level}%&7额外伤害，但每次使用时消耗双倍耐久"
+max_level: 3
+applicable_to:
+  - WEAPON
+equipment_slot:
+  - SWORD
+  - AXE
+calculation_mode: HIGHEST
+trigger_slot: MAIN_HAND

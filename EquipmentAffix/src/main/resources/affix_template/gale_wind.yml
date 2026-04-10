@@ -1,0 +1,23 @@
+# 疾风词条锻造模板配置
+id: gale_wind
+max_level: 3
+unlock_stage: "主世界"
+upgrade_materials:
+  1:
+    - "FEATHER*8"
+  2:
+    - "FEATHER*16"
+  3:
+    - "FEATHER*32"
+custom_model_data: 1066
+
+# 配方（使用成型配方）
+recipe:
+  type: shaped
+  shape:
+    - "FFF"
+    - "FIF"
+    - "FFF"
+  ingredients:
+    F: FEATHER
+    I: IRON_LEGGINGS

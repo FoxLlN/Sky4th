@@ -1,0 +1,10 @@
+# 耐用词条配置
+id: durable
+display_name: "<underlined><#866526>耐用</underlined>"
+description: "<#866526>消耗耐久度时有概率不消耗"
+simple_description: "&7消耗耐久度时有&a10%&7概率不消耗"
+max_level: 1
+applicable_to:
+  - SHIELD
+calculation_mode: HIGHEST
+trigger_slot: HAND

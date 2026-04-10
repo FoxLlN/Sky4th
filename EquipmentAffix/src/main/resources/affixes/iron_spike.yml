@@ -1,0 +1,14 @@
+# 铁刺词条配置
+id: iron_spike
+display_name: "<#A2B0B3>铁刺"
+description: "<#A2B0B3>受到近战攻击时反弹伤害"
+simple_description: "&7受到近战攻击时反弹&a{3*level}%&7伤害"
+max_level: 3
+applicable_to:
+  - LIGHT_ARMOR
+  - HEAVY_ARMOR
+calculation_mode: SUM
+conflicting_affixes:
+  - capacitor
+  - sacrifice
+

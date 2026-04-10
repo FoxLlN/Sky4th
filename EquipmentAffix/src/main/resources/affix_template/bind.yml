@@ -1,0 +1,23 @@
+# 词条模板配置
+id: bind
+max_level: 3
+unlock_stage: "主世界"
+upgrade_materials:
+  1:
+    - "STRING*8"
+  2:
+    - "STRING*16"
+  3:
+    - "STRING*32"
+custom_model_data: 1036
+
+# 合成配方
+recipe:
+  type: shaped
+  shape:
+    - "AAA"
+    - "ACA"
+    - "AAA"
+  ingredients:
+    A: STRING
+    C: BOW

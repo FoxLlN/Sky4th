@@ -1,0 +1,17 @@
+# 下界合金轻型头盔
+id: light_netherite_helmet
+material: NETHERITE_HELMET
+categories:
+  - LIGHT_ARMOR
+display_name: "下界合金轻型头盔"
+material_effect: coercion
+armor: 4.0
+toughness: 2.0
+max_enchantment_slots: 3
+max_affix_slots: 1
+max_durability: 407
+dodge_chance: 0.032
+affixes: {}
+enchantments: {}
+
+# 下界合金装备只能通过锻造台升级获取，没有合成配方

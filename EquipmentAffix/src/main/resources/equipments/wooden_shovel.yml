@@ -1,0 +1,35 @@
+# 木锹
+id: wooden_shovel
+material: WOODEN_SHOVEL
+categories:
+  - TOOL
+display_name: "木铲"
+material_effect: satiate
+attack_damage: 2.5
+attack_speed: 1.0
+max_enchantment_slots: 1
+max_affix_slots: 0
+max_durability: 59
+affixes: {}
+enchantments: {}
+
+recipe:
+  type: shaped
+  shape:
+    - "P"
+    - "S"
+    - "S"
+  ingredients:
+    P: 
+      - OAK_PLANKS
+      - SPRUCE_PLANKS
+      - BIRCH_PLANKS
+      - JUNGLE_PLANKS
+      - ACACIA_PLANKS
+      - DARK_OAK_PLANKS
+      - CRIMSON_PLANKS
+      - WARPED_PLANKS
+      - MANGROVE_PLANKS
+      - CHERRY_PLANKS
+      - BAMBOO_PLANKS
+    S: STICK

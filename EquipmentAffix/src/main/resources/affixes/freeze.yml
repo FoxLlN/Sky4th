@@ -1,0 +1,14 @@
+# 冰封词条配置
+id: freeze
+display_name: "<#92B9FE>冰封"
+description: "<#92B9FE>攻击时有概率冰封目标造成冻伤"
+simple_description: "&7攻击时&a{12+4*level}%&7概率冰封敌人&a{1+0.5*level}秒"
+max_level: 3
+applicable_to:
+  - WEAPON
+equipment_slot:
+  - SWORD
+calculation_mode: HIGHEST
+conflicting_affixes:
+  - entangle
+trigger_slot: MAIN_HAND

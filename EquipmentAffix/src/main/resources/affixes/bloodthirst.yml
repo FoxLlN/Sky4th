@@ -1,0 +1,13 @@
+# 渴血词条配置
+id: bloodthirst
+display_name: "<#BE886C>渴血"
+description: "<#BE886C>攻击时恢复一定生命值"
+simple_description: "&7攻击时恢复造成伤害&a{5*level}%&7的生命值"
+max_level: 3
+applicable_to:
+  - WEAPON
+equipment_slot:
+  - SWORD
+  - AXE
+calculation_mode: HIGHEST
+trigger_slot: MAIN_HAND

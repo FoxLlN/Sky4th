@@ -1,0 +1,28 @@
+# 铁质 重型胸甲
+id: heavy_iron_chestplate
+material: IRON_CHESTPLATE
+categories:
+  - HEAVY_ARMOR
+display_name: "铁质 重型胸甲"
+material_effect: iron_bone
+armor: 6.0
+toughness: 0.9
+max_enchantment_slots: 1
+max_affix_slots: 1
+max_durability: 310
+knockback_resistance: 0.1
+hunger_penalty: 0.05
+movement_penalty: 0.03
+affixes: {}
+enchantments: {}
+
+# 配方配置
+recipe:
+  type: shaped
+  shape:
+    - "I I"
+    - "BIB"
+    - "III"
+  ingredients:
+    I: IRON_INGOT
+    B: IRON_BLOCK

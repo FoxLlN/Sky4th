@@ -1,0 +1,10 @@
+# 标记词条配置
+id: mark
+display_name: "<#9A5CC6>标记"
+description: "<#9A5CC6>命中后为目标施加标记，使其受到的伤害提高"
+simple_description: "&7命中后为目标施加&a5秒&7&c易伤&7标记，使其受到的伤害提高&a{5+5*level}%&7"
+max_level: 3
+applicable_to:
+  - BOW
+calculation_mode: HIGHEST
+trigger_slot: MAIN_HAND

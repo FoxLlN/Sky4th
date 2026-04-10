@@ -1,0 +1,28 @@
+# 锁链 重型护腿
+id: heavy_chain_leggings
+material: CHAINMAIL_LEGGINGS
+categories:
+  - HEAVY_ARMOR
+display_name: "锁链 重型护腿"
+material_effect: gap
+armor: 2.0
+toughness: 0.0
+max_enchantment_slots: 1
+max_affix_slots: 1
+max_durability: 293
+knockback_resistance: 0.03
+hunger_penalty: 0.024
+movement_penalty: 0.018
+affixes: {}
+enchantments: {}
+
+# 配方配置
+recipe:
+  type: shaped
+  shape:
+    - "III"
+    - "C C"
+    - "C C"
+  ingredients:
+    C: CHAIN
+    I: IRON_INGOT

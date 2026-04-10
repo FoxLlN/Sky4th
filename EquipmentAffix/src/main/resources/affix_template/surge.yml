@@ -1,0 +1,24 @@
+# 潮涌词条模板配置
+id: surge
+max_level: 3
+unlock_stage: "主世界"
+upgrade_materials:
+  1:
+    - "PRISMARINE_SHARD*4"
+  2:
+    - "PRISMARINE_SHARD*8"
+  3:
+    - "PRISMARINE_SHARD*16"
+custom_model_data: 1040
+
+# 合成配方
+recipe:
+  type: shaped
+  shape:
+    - "PNP"
+    - "NSN"
+    - "PNP"
+  ingredients:
+    P: PRISMARINE_SHARD
+    S: SEA_LANTERN
+    N: NAUTILUS_SHELL

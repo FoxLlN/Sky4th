@@ -1,0 +1,17 @@
+# 下界合金轻型护腿
+id: light_netherite_leggings
+material: NETHERITE_LEGGINGS
+categories:
+  - LIGHT_ARMOR
+display_name: "下界合金轻型护腿"
+material_effect: coercion
+armor: 5.0
+toughness: 3.0
+max_enchantment_slots: 3
+max_affix_slots: 1
+max_durability: 555
+dodge_chance: 0.048
+affixes: {}
+enchantments: {}
+
+# 下界合金装备只能通过锻造台升级获取，没有合成配方

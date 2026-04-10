@@ -1,0 +1,20 @@
+# 词条模板配置
+id: wormhole
+max_level: 1
+unlock_stage: "末地"
+upgrade_materials:
+  1:
+    - "ENDER_PEARL*8"
+custom_model_data: 1030
+
+# 合成配方
+recipe:
+  type: shaped
+  shape:
+    - "EAE"
+    - "ABA"
+    - "EAE"
+  ingredients:
+    E: ENDER_PEARL
+    A: AMETHYST_SHARD
+    B: BOW

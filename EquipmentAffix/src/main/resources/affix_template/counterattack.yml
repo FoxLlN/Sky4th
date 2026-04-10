@@ -1,0 +1,24 @@
+# 词条模板配置
+id: counterattack
+max_level: 3
+unlock_stage: "主世界"
+upgrade_materials:
+  1:
+    - "CACTUS*8"
+  2:
+    - "CACTUS*16"
+  3:
+    - "CACTUS*32"
+custom_model_data: 1084
+
+# 合成配方
+recipe:
+  type: shaped
+  shape:
+    - "ICI"
+    - "CBC"
+    - "ICI"
+  ingredients:
+    I: IRON_INGOT
+    C: CACTUS
+    B: SHIELD

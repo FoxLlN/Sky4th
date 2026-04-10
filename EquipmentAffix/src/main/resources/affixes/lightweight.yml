@@ -1,0 +1,12 @@
+# 轻盈词条配置
+id: lightweight
+display_name: "<#F5F5F5>轻盈"
+description: "<#F5F5F5>削弱重甲惩罚，增加移动速度"
+simple_description: "&7削弱重甲惩罚，增加&a{0.5+0.5*level}%&7移动速度"
+max_level: 3
+applicable_to:
+  - HEAVY_ARMOR
+calculation_mode: SUM
+is_init: true
+conflicting_affixes:
+  - unyielding

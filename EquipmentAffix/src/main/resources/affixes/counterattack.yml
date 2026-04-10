@@ -1,0 +1,10 @@
+# 反击词条配置
+id: counterattack
+display_name: "<#649832>反击"
+description: "<#649832>格挡近战攻击后有概率反弹伤害"
+simple_description: "&7格挡近战攻击后有&a{10+5*level}%&7概率反弹&a{10+10*level}%&7伤害"
+max_level: 3
+applicable_to:
+  - SHIELD
+calculation_mode: HIGHEST
+trigger_slot: HAND

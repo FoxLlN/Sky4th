@@ -1,0 +1,21 @@
+
+# 下界克星词条配置
+id: nether_bane
+display_name: "<#E3D4C4>下界克星"
+description: "<#E3D4C4>对下界生物造成额外伤害"
+simple_description: "&7对下界生物造成&a{15+5*level}%&7额外伤害"
+max_level: 3
+applicable_to:
+  - WEAPON
+equipment_slot:
+  - SWORD
+  - AXE
+calculation_mode: HIGHEST
+conflicting_affixes:
+  - iron_blood
+  - emerald_edge
+  - resonance_mark
+  - overheat
+  - sibling
+  - thermal_conduct
+trigger_slot: MAIN_HAND

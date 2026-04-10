@@ -1,0 +1,25 @@
+# 金剑
+id: gold_sword
+material: GOLDEN_SWORD
+categories:
+  - WEAPON
+display_name: "金剑"
+material_effect: gold_hunting
+attack_damage: 4.0
+attack_speed: 1.6
+max_enchantment_slots: 3
+max_affix_slots: 1
+max_durability: 100
+affixes: {}
+enchantments: {}
+
+# 配方配置
+recipe:
+  type: shaped
+  shape:
+    - "G"
+    - "G"
+    - "S"
+  ingredients:
+    G: GOLD_INGOT
+    S: STICK

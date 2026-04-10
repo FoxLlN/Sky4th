@@ -1,0 +1,15 @@
+
+# 震地词条配置
+id: tremor
+display_name: "<#A2B0B3>震地"
+description: "<#A2B0B3>从高处砸地时产生冲击波，对周围敌人造成伤害"
+simple_description: "&7从高处砸地时产生冲击波，对周围&a3格&7敌人造成&a{15+5*level}%&7武器伤害"
+max_level: 3
+applicable_to:
+  - WEAPON
+equipment_slot:
+  - MACE
+conflicting_affixes:
+  - aftershock
+calculation_mode: HIGHEST
+trigger_slot: MAIN_HAND

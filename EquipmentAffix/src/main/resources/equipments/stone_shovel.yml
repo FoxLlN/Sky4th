@@ -1,0 +1,28 @@
+# 石锹
+id: stone_shovel
+material: STONE_SHOVEL
+categories:
+  - TOOL
+display_name: "石锹"
+material_effect: solid
+attack_damage: 3.5
+attack_speed: 1.0
+max_enchantment_slots: 1
+max_affix_slots: 0
+max_durability: 131
+affixes: {}
+enchantments: {}
+
+recipe1:
+  type: shaped
+  shape:
+    - "C"
+    - "S"
+    - "S"
+  ingredients:
+    C: 
+      - COBBLESTONE
+      - STONE
+      - BLACKSTONE
+      - COBBLED_DEEPSLATE
+    S: STICK

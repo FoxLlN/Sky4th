@@ -1,0 +1,25 @@
+# 钻石镐
+id: diamond_pickaxe
+material: DIAMOND_PICKAXE
+categories:
+  - TOOL
+display_name: "钻石镐"
+material_effect: crystal
+attack_damage: 5.0
+attack_speed: 1.2
+max_enchantment_slots: 2
+max_affix_slots: 1
+max_durability: 1561
+affixes: {}
+enchantments: {}
+
+# 配方配置
+recipe:
+  type: shaped
+  shape:
+    - "DDD"
+    - " S "
+    - " S "
+  ingredients:
+    D: DIAMOND
+    S: STICK

@@ -1,0 +1,24 @@
+# 词条模板配置
+id: magic_barrier
+max_level: 3
+unlock_stage: "深层"
+upgrade_materials:
+  1:
+    - "LAPIS_LAZULI*8"
+  2:
+    - "LAPIS_LAZULI*16"
+  3:
+    - "LAPIS_LAZULI*32"
+custom_model_data: 1083
+
+# 合成配方
+recipe:
+  type: shaped
+  shape:
+    - "SLS"
+    - "LBL"
+    - "SLS"
+  ingredients:
+    L: LAPIS_LAZULI
+    B: LAPIS_BLOCK
+    S: BOOKSHELF

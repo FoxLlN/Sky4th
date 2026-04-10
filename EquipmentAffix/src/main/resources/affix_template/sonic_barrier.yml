@@ -1,0 +1,25 @@
+
+# 词条模板配置
+id: sonic_barrier
+max_level: 3
+unlock_stage: "深层"
+upgrade_materials:
+  1:
+    - "AMETHYST_SHARD*8"
+  2:
+    - "AMETHYST_SHARD*16"
+  3:
+    - "AMETHYST_SHARD*32"
+custom_model_data: 1062
+
+# 合成配方
+recipe:
+  type: shaped
+  shape:
+    - "BAB"
+    - "AIA"
+    - "BAB"
+  ingredients:
+    A: AMETHYST_SHARD
+    B: AMETHYST_BLOCK
+    I: IRON_CHESTPLATE

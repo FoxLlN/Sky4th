@@ -1,0 +1,24 @@
+# 词条模板配置
+id: emerald_edge
+max_level: 3
+unlock_stage: "深层"
+upgrade_materials:
+  1:
+    - "EMERALD*8"
+  2:
+    - "EMERALD*16"
+  3:
+    - "EMERALD*32"
+custom_model_data: 1013
+
+# 合成配方
+recipe:
+  type: shaped
+  shape:
+    - "BEB"
+    - "EDE"
+    - "BEB"
+  ingredients:
+    E: EMERALD
+    D: DIAMOND_SWORD
+    B: EMERALD_BLOCK

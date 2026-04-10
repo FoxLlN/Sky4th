@@ -1,0 +1,11 @@
+# 急袭词条配置
+id: dive_bomb
+display_name: "<#DB2F1A>急袭"
+description: "<#DB2F1A>降落时可以撞击敌人造成伤害"
+simple_description: "&7降落时可以对落点周围&a2格&7敌人造成&a{40+10*level}%&7撞击伤害"
+max_level: 3
+applicable_to:
+  - ELYTRA
+calculation_mode: HIGHEST
+conflicting_affixes:
+  - feather_fall

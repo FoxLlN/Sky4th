@@ -1,0 +1,18 @@
+# 下界合金重型胸甲
+id: heavy_netherite_chestplate
+material: NETHERITE_CHESTPLATE
+categories:
+  - HEAVY_ARMOR
+display_name: "下界合金重型胸甲"
+material_effect: coercion
+armor: 9.0
+toughness: 5.0
+max_enchantment_slots: 2
+max_affix_slots: 2
+max_durability: 770
+knockback_resistance: 0.16
+hunger_penalty: 0.08
+movement_penalty: 0.064
+affixes: {}
+enchantments: {}
+

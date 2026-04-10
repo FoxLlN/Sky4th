@@ -1,0 +1,4391 @@
+# BetterVillage 配置文件
+# 村民自定义交易配置
+
+# 是否启用自定义交易
+enabled: true
+
+# 村庄村民上限 公式： base + area/population_per_area
+villager:
+  base_population: 5  # 村庄基础人数
+  population_per_area: 400  # 每400平方米增加1个村民
+  restrict_movement: true  # 是否启用村民移动限制
+  check_interval: 20        # 检查间隔（tick，20tick=1秒）
+
+# 村庄保护配置
+protection:
+  # 交易禁令时长配置（单位：分钟）
+  trade-ban:
+    villager-kill: 10  # 击杀村民后的交易禁令时长
+    iron-golem-kill: 5  # 击杀铁傀儡后的交易禁令时长
+
+# 村民交易配置
+trades:
+  # 1.盔甲匠交易
+  armorer:
+    level-1:
+      emerald-trades:
+        - cost: PUMPKIN
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+      other-trades:
+        - cost: EMERALD
+          cost-amount: 1
+          result: COOKIE
+          result-amount: 18
+          max-uses: 12
+          experience: 0
+    level-2:
+      emerald-trades:
+        - cost: PUMPKIN
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+      other-trades:
+        - cost: EMERALD
+          cost-amount: 1
+          result: COOKIE
+          result-amount: 18
+          max-uses: 12
+          experience: 0
+    level-3:
+      emerald-trades:
+        - cost: PUMPKIN
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+      other-trades:
+        - cost: EMERALD
+          cost-amount: 1
+          result: COOKIE
+          result-amount: 18
+          max-uses: 12
+          experience: 0
+    level-4:
+      emerald-trades:
+        - cost: PUMPKIN
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+      other-trades:
+        - cost: EMERALD
+          cost-amount: 1
+          result: COOKIE
+          result-amount: 18
+          max-uses: 12
+          experience: 0
+    level-5:
+      emerald-trades:
+        - cost: PUMPKIN
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+      other-trades:
+        - cost: EMERALD
+          cost-amount: 1
+          result: COOKIE
+          result-amount: 18
+          max-uses: 12
+          experience: 0
+
+  # 2.屠夫交易
+  butcher:
+    level-1:
+      emerald-trades:
+        - cost: PUMPKIN
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+      other-trades:
+        - cost: EMERALD
+          cost-amount: 1
+          result: COOKIE
+          result-amount: 18
+          max-uses: 12
+          experience: 0
+    level-2:
+      emerald-trades:
+        - cost: PUMPKIN
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+      other-trades:
+        - cost: EMERALD
+          cost-amount: 1
+          result: COOKIE
+          result-amount: 18
+          max-uses: 12
+          experience: 0
+    level-3:
+      emerald-trades:
+        - cost: PUMPKIN
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+      other-trades:
+        - cost: EMERALD
+          cost-amount: 1
+          result: COOKIE
+          result-amount: 18
+          max-uses: 12
+          experience: 0
+    level-4:
+      emerald-trades:
+        - cost: PUMPKIN
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+      other-trades:
+        - cost: EMERALD
+          cost-amount: 1
+          result: COOKIE
+          result-amount: 18
+          max-uses: 12
+          experience: 0
+    level-5:
+      emerald-trades:
+        - cost: PUMPKIN
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+      other-trades:
+        - cost: EMERALD
+          cost-amount: 1
+          result: COOKIE
+          result-amount: 18
+          max-uses: 12
+          experience: 0
+
+  # 3.制图师交易
+  cartographer:
+    level-1:
+      emerald-trades:
+        - cost: PUMPKIN
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+      other-trades:
+        - cost: EMERALD
+          cost-amount: 1
+          result: COOKIE
+          result-amount: 18
+          max-uses: 12
+          experience: 0
+    level-2:
+      emerald-trades:
+        - cost: PUMPKIN
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+      other-trades:
+        - cost: EMERALD
+          cost-amount: 1
+          result: COOKIE
+          result-amount: 18
+          max-uses: 12
+          experience: 0
+    level-3:
+      emerald-trades:
+        - cost: PUMPKIN
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+      other-trades:
+        - cost: EMERALD
+          cost-amount: 1
+          result: COOKIE
+          result-amount: 18
+          max-uses: 12
+          experience: 0
+    level-4:
+      emerald-trades:
+        - cost: PUMPKIN
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+      other-trades:
+        - cost: EMERALD
+          cost-amount: 1
+          result: COOKIE
+          result-amount: 18
+          max-uses: 12
+          experience: 0
+    level-5:
+      emerald-trades:
+        - cost: PUMPKIN
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+      other-trades:
+        - cost: EMERALD
+          cost-amount: 1
+          result: COOKIE
+          result-amount: 18
+          max-uses: 12
+          experience: 0
+
+  # 4.牧师交易 done
+  cleric:
+    level-1:
+      emerald-trades:
+        # 腐肉*32 - 绿宝石*1
+        - cost: ROTTEN_FLESH
+          cost-amount: 32
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 1
+        # 蜘蛛眼*16 - 绿宝石*1
+        - cost: SPIDER_EYE
+          cost-amount: 16
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 1
+        # 金锭*3 - 绿宝石*1
+        - cost: GOLD_INGOT
+          cost-amount: 3
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+        # 绿宝石*1 - 红石粉*2
+        - cost: EMERALD
+          cost-amount: 1
+          result: REDSTONE
+          result-amount: 2
+          max-uses: 12
+          experience: 2
+        # 绿宝石*1 - 萤石粉*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: GLOWSTONE_DUST
+          result-amount: 4
+          max-uses: 12
+          experience: 2
+        # 绿宝石*1 - 火药*6
+        - cost: EMERALD
+          cost-amount: 1
+          result: GUNPOWDER
+          result-amount: 6
+          max-uses: 12
+          experience: 2
+      other-trades:
+        # 铜锭*1 - 腐肉*8
+        - cost: COPPER_INGOT
+          cost-amount: 1
+          result: ROTTEN_FLESH
+          result-amount: 8
+          max-uses: 6
+          experience: 0
+        # 铜锭*1 - 蜘蛛眼*4
+        - cost: COPPER_INGOT
+          cost-amount: 1
+          result: SPIDER_EYE
+          result-amount: 4
+          max-uses: 6
+          experience: 0
+        # 铜锭*1 - 金粒*6
+        - cost: COPPER_INGOT
+          cost-amount: 1
+          result: GOLD_NUGGET
+          result-amount: 6
+          max-uses: 6
+          experience: 0
+        # 铜锭*2 - 红石粉*4
+        - cost: COPPER_INGOT
+          cost-amount: 2
+          result: REDSTONE
+          result-amount: 4
+          max-uses: 6
+          experience: 0
+        # 铜锭*2 - 萤石粉*2
+        - cost: COPPER_INGOT
+          cost-amount: 2
+          result: GLOWSTONE_DUST
+          result-amount: 2
+          max-uses: 6
+          experience: 0
+        # 铜锭*2 - 火药*3
+        - cost: COPPER_INGOT
+          cost-amount: 2
+          result: GUNPOWDER
+          result-amount: 3
+          max-uses: 6
+          experience: 0
+    level-2:
+      emerald-trades:
+        # 玻璃瓶*9 - 绿宝石*1
+        - cost: GLASS_BOTTLE
+          cost-amount: 9
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 2
+        # 兔子脚*2 - 绿宝石*1
+        - cost: RABBIT_FOOT
+          cost-amount: 2
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 2
+        # 海龟鳞片*4 - 绿宝石*1
+        - cost: TURTLE_SCUTE
+          cost-amount: 4
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 2
+        # 绿宝石*3 - 经验瓶*1
+        - cost: EMERALD
+          cost-amount: 8
+          result: EXPERIENCE_BOTTLE
+          result-amount: 6
+          max-uses: 10
+          experience: 3
+        # 绿宝石*5 - 末影珍珠*1
+        - cost: EMERALD
+          cost-amount: 5
+          result: ENDER_PEARL
+          result-amount: 1
+          max-uses: 10
+          experience: 3
+        # 绿宝石*4 - 发酵蛛眼*4
+        - cost: EMERALD
+          cost-amount: 4
+          result: FERMENTED_SPIDER_EYE
+          result-amount: 4
+          max-uses: 8
+          experience: 3
+      other-trades:
+        # 铁锭*25 - 末影珍珠*1
+        - cost: IRON_INGOT
+          cost-amount: 25
+          result: ENDER_PEARL
+          result-amount: 1
+          max-uses: 6
+          experience: 0
+        # 铁锭*20 - 经验瓶*1
+        - cost: IRON_INGOT
+          cost-amount: 20
+          result: EXPERIENCE_BOTTLE
+          result-amount: 1
+          max-uses: 6
+          experience: 0
+        # 铁锭*1 - 玻璃瓶*3
+        - cost: IRON_INGOT
+          cost-amount: 1
+          result: GLASS_BOTTLE
+          result-amount: 3
+          max-uses: 6
+          experience: 0
+        # 铁锭*5 - 发酵蛛眼*1
+        - cost: IRON_INGOT
+          cost-amount: 5
+          result: FERMENTED_SPIDER_EYE
+          result-amount: 1
+          max-uses: 6
+          experience: 0
+        # 铁锭*2 - 海龟鳞片*1
+        - cost: IRON_INGOT
+          cost-amount: 2
+          result: TURTLE_SCUTE
+          result-amount: 1
+          max-uses: 6
+          experience: 0
+        # 海龟鳞片*5 - 发酵蛛眼*2
+        - cost: TURTLE_SCUTE
+          cost-amount: 5
+          result: FERMENTED_SPIDER_EYE
+          result-amount: 2
+          max-uses: 6
+          experience: 0
+    level-3:
+      emerald-trades:
+        # 烈焰棒*2 - 绿宝石*1
+        - cost: BLAZE_ROD
+          cost-amount: 2
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 3
+        # 岩浆膏*4 - 绿宝石*1
+        - cost: MAGMA_CREAM
+          cost-amount: 4
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 3
+        # 绿宝石*2 - 烈焰棒*1
+        - cost: EMERALD
+          cost-amount: 2
+          result: BLAZE_ROD
+          result-amount: 1
+          max-uses: 10
+          experience: 4
+        # 绿宝石*1 - 岩浆膏*2
+        - cost: EMERALD
+          cost-amount: 1
+          result: MAGMA_CREAM
+          result-amount: 2
+          max-uses: 10
+          experience: 4
+        # 绿宝石*8 - 末影之眼*1
+        - cost: EMERALD
+          cost-amount: 8
+          result: ENDER_EYE
+          result-amount: 1
+          max-uses: 8
+          experience: 4
+        # 绿宝石*2 - 火焰弹*4
+        - cost: EMERALD
+          cost-amount: 2
+          result: FIRE_CHARGE
+          result-amount: 4
+          max-uses: 8
+          experience: 4
+      other-trades:
+        # 金锭*6 - 烈焰棒*1
+        - cost: GOLD_INGOT
+          cost-amount: 6
+          result: BLAZE_ROD
+          result-amount: 1
+          max-uses: 6
+          experience: 0
+        # 金锭*3 - 岩浆膏*2
+        - cost: GOLD_INGOT
+          cost-amount: 3
+          result: MAGMA_CREAM
+          result-amount: 2
+          max-uses: 6
+          experience: 0
+        # 金锭*24 - 末影之眼*1
+        - cost: GOLD_INGOT
+          cost-amount: 24
+          result: ENDER_EYE
+          result-amount: 1
+          max-uses: 6
+          experience: 0
+        # 金锭*12 - 火焰弹*8
+        - cost: GOLD_INGOT
+          cost-amount: 12
+          result: FIRE_CHARGE
+          result-amount: 8
+          max-uses: 6
+          experience: 0
+        # 金锭*1 - 下界石英*4
+        - cost: GOLD_INGOT
+          cost-amount: 1
+          result: QUARTZ
+          result-amount: 4
+          max-uses: 6
+          experience: 0
+        # 金锭*24 - 烈焰棒*5
+        - cost: GOLD_INGOT
+          cost-amount: 24
+          result: BLAZE_ROD
+          result-amount: 5
+          max-uses: 6
+          experience: 0
+    level-4:
+      emerald-trades:
+        # 绿宝石*10 - 治疗药水*1
+        - cost: EMERALD
+          cost-amount: 10
+          result: POTION
+          result-amount: 1
+          max-uses: 4
+          experience: 4
+          extra-type: potion
+          extra-data: 
+            - instant_health:60:1
+        # 绿宝石*10 - 再生药水*1
+        - cost: EMERALD
+          cost-amount: 10
+          result: POTION  # 再生药水
+          result-amount: 1
+          max-uses: 4
+          experience: 4
+          extra-type: potion
+          extra-data: 
+            - regeneration:60:1
+        # 绿宝石*10 - 抗火药水*1
+        - cost: EMERALD
+          cost-amount: 10
+          result: POTION  # 抗火药水
+          result-amount: 1
+          max-uses: 4
+          experience: 4
+          extra-type: potion
+          extra-data: 
+            - fire_resistance:60:1
+        # 绿宝石*10 - 夜视药水*1
+        - cost: EMERALD
+          cost-amount: 10
+          result: POTION  # 夜视药水
+          result-amount: 1
+          max-uses: 4
+          experience: 4
+          extra-type: potion
+          extra-data: 
+            - night_vision:60:1
+        # 绿宝石*10 - 水肺药水*1
+        - cost: EMERALD
+          cost-amount: 10
+          result: POTION  # 水肺药水
+          result-amount: 1
+          max-uses: 4
+          experience: 4
+          extra-type: potion
+          extra-data: 
+            - water_breathing:60:1
+        # 绿宝石*10 - 隐身药水*1
+        - cost: EMERALD
+          cost-amount: 10
+          result: POTION  # 隐身药水
+          result-amount: 1
+          max-uses: 4
+          experience: 4
+          extra-type: potion
+          extra-data: 
+            - invisibility:60:1
+      other-trades:
+        # 钻石*1 - 治疗药水*1
+        - cost: DIAMOND
+          cost-amount: 1
+          result: POTION  # 治疗药水
+          result-amount: 3
+          max-uses: 3
+          experience: 3
+          extra-type: potion
+          extra-data: 
+            - instant_health:60:1
+        # 钻石*1 - 再生药水*1
+        - cost: DIAMOND
+          cost-amount: 1
+          result: POTION  # 再生药水
+          result-amount: 3
+          max-uses: 3
+          experience: 3
+          extra-type: potion
+          extra-data: 
+            - regeneration:60:1
+        # 钻石*1 - 抗火药水*1
+        - cost: DIAMOND
+          cost-amount: 1
+          result: POTION  # 抗火药水
+          result-amount: 3
+          max-uses: 3
+          experience: 3
+          extra-type: potion
+          extra-data: 
+            - fire_resistance:60:1
+        # 钻石*1 - 夜视药水*1
+        - cost: DIAMOND
+          cost-amount: 1
+          result: POTION  # 夜视药水
+          result-amount: 3
+          max-uses: 3
+          experience: 3
+          extra-type: potion
+          extra-data: 
+            - night_vision:60:1
+        # 钻石*1 - 水肺药水*1
+        - cost: DIAMOND
+          cost-amount: 1
+          result: POTION  # 水肺药水
+          result-amount: 3
+          max-uses: 3
+          experience: 3
+          extra-type: potion
+          extra-data: 
+            - water_breathing:60:1
+        # 钻石*1 - 隐身药水*1
+        - cost: DIAMOND
+          cost-amount: 1
+          result: POTION  # 隐身药水
+          result-amount: 3
+          max-uses: 3
+          experience: 3
+          extra-type: potion
+          extra-data: 
+            - invisibility:60:1
+    level-5:
+      emerald-trades:
+        # 绿宝石块*36 - 下界合金升级模板*1
+        - cost: EMERALD
+          cost-amount: 36
+          result: NETHERITE_UPGRADE_SMITHING_TEMPLATE
+          result-amount: 1
+          max-uses: 1
+          experience: 0
+        # 绿宝石*18 - 龙息*1
+        - cost: EMERALD
+          cost-amount: 18
+          result: DRAGON_BREATH
+          result-amount: 1
+          max-uses: 4
+          experience: 0
+        # 绿宝石*64 - 经验瓶*25
+        - cost: EMERALD
+          cost-amount: 64
+          result: EXPERIENCE_BOTTLE
+          result-amount: 25
+          max-uses: 4
+          experience: 0
+        # 绿宝石块*1 - 治疗药水II*1
+        - cost: EMERALD_BLOCK
+          cost-amount: 1
+          result: SPLASH_POTION
+          result-amount: 1
+          max-uses: 1
+          experience: 0
+          extra-type: potion
+          extra-data: 
+            - instant_health:120:2
+      other-trades:
+        # 钻石*18 - 下界合金升级模板*1
+        - cost: DIAMOND
+          cost-amount: 18
+          result: NETHERITE_UPGRADE_SMITHING_TEMPLATE
+          result-amount: 1
+          max-uses: 1
+          experience: 0
+        # 钻石*9 - 龙息*1
+        - cost: DIAMOND
+          cost-amount: 9
+          result: DRAGON_BREATH
+          result-amount: 1
+          max-uses: 2
+          experience: 0
+        # 钻石块*1 - 力量药水II*1
+        - cost: DIAMOND_BLOCK
+          cost-amount: 1
+          result: POTION
+          result-amount: 1
+          max-uses: 2
+          experience: 0
+          extra-type: potion
+          extra-data: 
+            - strength:120:2
+        # 钻石块*1 - 速度药水II*1
+        - cost: DIAMOND_BLOCK
+          cost-amount: 1
+          result: POTION
+          result-amount: 1
+          max-uses: 2
+          experience: 0
+          extra-type: potion
+          extra-data: 
+            - speed:120:2
+
+  # 5.农民交易 done
+  farmer:
+    level-1:
+      emerald-trades:
+        # 小麦*20 - 绿宝石*1
+        - cost: WHEAT
+          cost-amount: 20
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 1
+        # 胡萝卜*18 - 绿宝石*1
+        - cost: CARROT
+          cost-amount: 18
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 1
+        # 土豆*18 - 绿宝石*1
+        - cost: POTATO
+          cost-amount: 18
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 1
+        # 甜菜*16 - 绿宝石*1
+        - cost: BEETROOT
+          cost-amount: 16
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 1
+        # 绿宝石*1 - 面包*6
+        - cost: EMERALD
+          cost-amount: 1
+          result: BREAD
+          result-amount: 6
+          max-uses: 12
+          experience: 2
+        # 绿宝石*1 - 甜菜汤*1
+        - cost: EMERALD
+          cost-amount: 1
+          result: BEETROOT_SOUP
+          result-amount: 1
+          max-uses: 8
+          experience: 2
+      other-trades:
+        # 铜锭*1 - 小麦种子*4
+        - cost: COPPER_INGOT
+          cost-amount: 1
+          result: WHEAT_SEEDS
+          result-amount: 4
+          max-uses: 4
+          experience: 0
+        # 铜锭*1 - 胡萝卜*1
+        - cost: COPPER_INGOT
+          cost-amount: 1
+          result: CARROT
+          result-amount: 1
+          max-uses: 4
+          experience: 0
+        # 铜锭*1 - 土豆*1
+        - cost: COPPER_INGOT
+          cost-amount: 1
+          result: POTATO
+          result-amount: 1
+          max-uses: 4
+          experience: 0
+        # 铜锭*1 - 甜菜种子*1
+        - cost: COPPER_INGOT
+          cost-amount: 1
+          result: BEETROOT_SEEDS
+          result-amount: 1
+          max-uses: 4
+          experience: 0
+        # 小麦*8 - 胡萝卜*6
+        - cost: WHEAT
+          cost-amount: 8
+          result: CARROT
+          result-amount: 6
+          max-uses: 8
+          experience: 0
+        # 胡萝卜*6 - 土豆*6
+        - cost: CARROT
+          cost-amount: 6
+          result: POTATO
+          result-amount: 6
+          max-uses: 8
+          experience: 0
+        # 土豆*6 - 小麦 *8 
+        - cost: POTATO
+          cost-amount: 6
+          result: WHEAT
+          result-amount: 8
+          max-uses: 8
+          experience: 0
+    level-2:
+      emerald-trades:
+        # 南瓜*7 - 绿宝石*1
+        - cost: PUMPKIN
+          cost-amount: 7
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 2
+        # 西瓜*7 - 绿宝石*1
+        - cost: MELON
+          cost-amount: 7
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 2
+        # 甜浆果*12 - 绿宝石*1
+        - cost: SWEET_BERRIES
+          cost-amount: 12
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 2
+        # 绿宝石*2 - 南瓜派*4
+        - cost: EMERALD
+          cost-amount: 2
+          result: PUMPKIN_PIE
+          result-amount: 4
+          max-uses: 8
+          experience: 3
+        # 绿宝石*1 - 西瓜片*8
+        - cost: EMERALD
+          cost-amount: 1
+          result: MELON_SLICE
+          result-amount: 8
+          max-uses: 8
+          experience: 3
+        # 绿宝石*1 - 甜浆果*8
+        - cost: EMERALD
+          cost-amount: 1
+          result: SWEET_BERRIES
+          result-amount: 8
+          max-uses: 8
+          experience: 3
+      other-trades:
+        # 铁锭*1 - 南瓜种子*1
+        - cost: IRON_INGOT
+          cost-amount: 1
+          result: PUMPKIN_SEEDS
+          result-amount: 1
+          max-uses: 4
+          experience: 0
+        # 铁锭*1 - 西瓜种子*1
+        - cost: IRON_INGOT
+          cost-amount: 1
+          result: MELON_SEEDS
+          result-amount: 1
+          max-uses: 4
+          experience: 0
+        # 铁锭*1 - 甜浆果*1
+        - cost: IRON_INGOT
+          cost-amount: 1
+          result: SWEET_BERRIES
+          result-amount: 1
+          max-uses: 4
+          experience: 0
+        # 南瓜*2 - 西瓜*2
+        - cost: PUMPKIN
+          cost-amount: 2
+          result: MELON
+          result-amount: 2
+          max-uses: 6
+          experience: 0
+        # 甜浆果*8 - 南瓜*1
+        - cost: SWEET_BERRIES
+          cost-amount: 8
+          result: PUMPKIN
+          result-amount: 1
+          max-uses: 6
+          experience: 0
+        # 西瓜*1 - 甜浆果*8
+        - cost: MELON
+          cost-amount: 1
+          result: SWEET_BERRIES
+          result-amount: 8
+          max-uses: 6
+          experience: 0
+    level-3:
+      emerald-trades:
+        # 竹子*16 - 绿宝石*1
+        - cost: BAMBOO
+          cost-amount: 16
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 3
+        # 甘蔗*14 - 绿宝石*1
+        - cost: SUGAR_CANE
+          cost-amount: 14
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 3
+        # 仙人掌*12 - 绿宝石*1
+        - cost: CACTUS
+          cost-amount: 12
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 3
+        # 绿宝石*3 - 曲奇*10
+        - cost: EMERALD
+          cost-amount: 3
+          result: COOKIE
+          result-amount: 10
+          max-uses: 10
+          experience: 4
+        # 绿宝石*2 - 蘑菇煲*1
+        - cost: EMERALD
+          cost-amount: 2
+          result: MUSHROOM_STEW
+          result-amount: 1
+          max-uses: 8
+          experience: 4
+        # 绿宝石*3 - 苹果*10
+        - cost: EMERALD
+          cost-amount: 3
+          result: APPLE
+          result-amount: 10
+          max-uses: 10
+          experience: 4
+      other-trades:
+        # 金锭*1 - 棕色蘑菇*2
+        - cost: GOLD_INGOT
+          cost-amount: 1
+          result: BROWN_MUSHROOM
+          result-amount: 2
+          max-uses: 4
+          experience: 0
+        # 金锭*1 - 红色蘑菇*2
+        - cost: GOLD_INGOT
+          cost-amount: 1
+          result: RED_MUSHROOM
+          result-amount: 2
+          max-uses: 4
+          experience: 0
+        # 金锭*1 - 仙人掌*2
+        - cost: GOLD_INGOT
+          cost-amount: 1
+          result: CACTUS
+          result-amount: 2
+          max-uses: 4
+          experience: 0
+        # 竹子*8 - 甘蔗*8
+        - cost: BAMBOO
+          cost-amount: 8
+          result: SUGAR_CANE
+          result-amount: 8
+          max-uses: 8
+          experience: 0
+        # 甘蔗*8 - 仙人掌*6
+        - cost: SUGAR_CANE
+          cost-amount: 8
+          result: CACTUS
+          result-amount: 6
+          max-uses: 8
+          experience: 0
+        # 仙人掌*6 - 竹子*8
+        - cost: CACTUS
+          cost-amount: 6
+          result: BAMBOO
+          result-amount: 8
+          max-uses: 8
+          experience: 0
+    level-4:
+      emerald-trades:
+        # 海带*24 - 绿宝石*1
+        - cost: KELP
+          cost-amount: 24
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 4
+        # 地狱疣*8 - 绿宝石*1
+        - cost: NETHER_WART
+          cost-amount: 8
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 4
+        # 绯红菌*10 - 绿宝石*1
+        - cost: CRIMSON_FUNGUS
+          cost-amount: 10
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 4
+        # 诡异菌*10 - 绿宝石*1
+        - cost: WARPED_FUNGUS
+          cost-amount: 10
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 4
+        # 绿宝石*2 - 蛋糕*1
+        - cost: EMERALD
+          cost-amount: 2
+          result: CAKE
+          result-amount: 1
+          max-uses: 4
+          experience: 5
+        # 绿宝石*1 - 迷之炖菜（夜视）
+        - cost: EMERALD
+          cost-amount: 1
+          result: SUSPICIOUS_STEW
+          result-amount: 1
+          max-uses: 8
+          experience: 5
+          extra-type: suspicious_stew
+          extra-data: night_vision:15:1
+        # 绿宝石*1 - 迷之炖菜（跳跃提升）
+        - cost: EMERALD
+          cost-amount: 1
+          result: SUSPICIOUS_STEW
+          result-amount: 1
+          max-uses: 8
+          experience: 5
+          extra-type: suspicious_stew
+          extra-data: jump_boost:15:1
+        # 绿宝石*1 - 迷之炖菜（抗火）
+        - cost: EMERALD
+          cost-amount: 1
+          result: SUSPICIOUS_STEW
+          result-amount: 1
+          max-uses: 8
+          experience: 5
+          extra-type: suspicious_stew
+          extra-data: fire_resistance:15:1
+        # 绿宝石*1 - 迷之炖菜（虚弱）
+        - cost: EMERALD
+          cost-amount: 1
+          result: SUSPICIOUS_STEW
+          result-amount: 1
+          max-uses: 8
+          experience: 5
+          extra-type: suspicious_stew
+          extra-data: weakness:20:1
+        # 绿宝石*1 - 迷之炖菜（失明）
+        - cost: EMERALD
+          cost-amount: 1
+          result: SUSPICIOUS_STEW
+          result-amount: 1
+          max-uses: 8
+          experience: 5
+          extra-type: suspicious_stew
+          extra-data: blindness:20:1
+      other-trades:
+        # 金锭*1 - 可可豆*3
+        - cost: GOLD_INGOT
+          cost-amount: 1
+          result: COCOA_BEANS
+          result-amount: 3
+          max-uses: 4
+          experience: 0
+        # 下届石英*2 - 地狱疣*1
+        - cost: QUARTZ
+          cost-amount: 2
+          result: NETHER_WART
+          result-amount: 1
+          max-uses: 4
+          experience: 0
+        # 绯红菌*8 - 诡异菌*8
+        - cost: CRIMSON_FUNGUS
+          cost-amount: 8
+          result: WARPED_FUNGUS
+          result-amount: 8
+          max-uses: 8
+          experience: 0
+        # 诡异菌*6 - 地狱疣*4
+        - cost: WARPED_FUNGUS
+          cost-amount: 6
+          result: NETHER_WART
+          result-amount: 4
+          max-uses: 8
+          experience: 0
+        # 地狱疣*4 - 绯红菌*6
+        - cost: NETHER_WART
+          cost-amount: 4
+          result: CRIMSON_FUNGUS
+          result-amount: 6
+          max-uses: 8
+          experience: 0
+    level-5:
+      emerald-trades:
+        # 绿宝石*1 - 金胡萝卜*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: GOLDEN_CARROT
+          result-amount: 4
+          max-uses: 8
+          experience: 0
+        # 绿宝石*3 - 金苹果*1
+        - cost: EMERALD
+          cost-amount: 3
+          result: GOLDEN_APPLE
+          result-amount: 1
+          max-uses: 6
+          experience: 0
+        # 紫颂果*8 - 绿宝石*1
+        - cost: CHORUS_FRUIT
+          cost-amount: 8
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 0
+        # 绿宝石*2 - 爆裂紫颂果*2
+        - cost: EMERALD
+          cost-amount: 2
+          result: POPPED_CHORUS_FRUIT
+          result-amount: 2
+          max-uses: 8
+          experience: 0
+      other-trades:
+        # 钻石*2 - 紫颂花*1
+        - cost: DIAMOND
+          cost-amount: 2
+          result: CHORUS_FLOWER
+          result-amount: 1
+          max-uses: 4
+          experience: 0
+        # 绿宝石块*4 - 附魔金苹果*1
+        - cost: EMERALD_BLOCK
+          cost-amount: 4
+          result: ENCHANTED_GOLDEN_APPLE
+          result-amount: 1
+          max-uses: 1
+          experience: 0
+        # 钻石*1 - 闪耀西瓜片*4
+        - cost: DIAMOND
+          cost-amount: 1
+          result: GLISTERING_MELON_SLICE
+          result-amount: 4
+          max-uses: 6
+          experience: 0
+        # 紫颂果*2 - 爆裂紫颂果*1
+        - cost: CHORUS_FRUIT
+          cost-amount: 2
+          result: POPPED_CHORUS_FRUIT
+          result-amount: 1
+          max-uses: 8
+          experience: 0
+  
+  # 6.渔夫交易 ing
+  fisherman:
+    level-1:
+      emerald-trades:
+        # 线*20 - 绿宝石*1
+        - cost: STRING
+          cost-amount: 20
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 1
+        # 煤炭*10 - 绿宝石*1
+        - cost: COAL
+          cost-amount: 10
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 1
+        # 生鳕鱼*15 - 绿宝石*1
+        - cost: COD
+          cost-amount: 15
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 1
+        # 生鲑鱼*13 - 绿宝石*1
+        - cost: SALMON
+          cost-amount: 13
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 1
+        # 绿宝石*3 - 鳕鱼桶*1
+        - cost: EMERALD
+          cost-amount: 3
+          result: COD_BUCKET
+          result-amount: 1
+          max-uses: 8
+          experience: 2
+        # 绿宝石*5 - 鲑鱼桶*1
+        - cost: EMERALD
+          cost-amount: 5
+          result: SALMON_BUCKET
+          result-amount: 1
+          max-uses: 8
+          experience: 2
+      other-trades:
+        # 生鳕鱼*6 + 铜锭*1 - 熟鳕鱼*6
+        - cost: COD
+          cost-amount: 6
+          cost-2: COPPER_INGOT
+          cost-2-amount: 1
+          result: COOKED_COD
+          result-amount: 6
+          max-uses: 10
+          experience: 0
+        # 生鲑鱼*6 + 铜锭*1 - 熟鲑鱼*6
+        - cost: SALMON
+          cost-amount: 6
+          cost-2: COPPER_INGOT
+          cost-2-amount: 1
+          result: COOKED_SALMON
+          result-amount: 6
+          max-uses: 10
+          experience: 0
+        # 鳕鱼*15 - 鲑鱼*13
+        - cost: COD
+          cost-amount: 15
+          result: SALMON
+          result-amount: 13
+          max-uses: 12
+          experience: 0
+        # 鲑鱼*13 - 鳕鱼*15
+        - cost: SALMON
+          cost-amount: 13
+          result: COD
+          result-amount: 15
+          max-uses: 12
+          experience: 0
+        # 鳕鱼桶*5 - 鲑鱼桶*3
+        - cost: COD_BUCKET
+          cost-amount: 5
+          result: SALMON_BUCKET
+          result-amount: 3
+          max-uses: 8
+          experience: 0
+        # 鲑鱼桶*3 - 鳕鱼桶*5
+        - cost: SALMON_BUCKET
+          cost-amount: 3
+          result: COD_BUCKET
+          result-amount: 5
+          max-uses: 8
+          experience: 0
+    level-2:
+      emerald-trades:
+        # 热带鱼*6 - 绿宝石*1
+        - cost: TROPICAL_FISH
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 2
+        # 河豚*6 - 绿宝石*1
+        - cost: PUFFERFISH
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 2
+        # 海草*16 - 绿宝石*1
+        - cost: SEAGRASS
+          cost-amount: 16
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 2
+        # 绿宝石*2 - 营火*1
+        - cost: EMERALD
+          cost-amount: 2
+          result: CAMPFIRE
+          result-amount: 1
+          max-uses: 8
+          experience: 3
+        # 绿宝石*10 - 热带鱼桶*1
+        - cost: EMERALD
+          cost-amount: 10
+          result: TROPICAL_FISH_BUCKET
+          result-amount: 1
+          max-uses: 8
+          experience: 3
+        # 绿宝石*15 - 河豚桶*1
+        - cost: EMERALD
+          cost-amount: 15
+          result: PUFFERFISH_BUCKET
+          result-amount: 1
+          max-uses: 8
+          experience: 3
+      other-trades:
+        # 铁锭*1 - 海泡菜*4
+        - cost: IRON_INGOT
+          cost-amount: 1
+          result: SEA_PICKLE
+          result-amount: 4
+          max-uses: 6
+          experience: 0
+        # 铁锭*1 - 海草*8
+        - cost: IRON_INGOT
+          cost-amount: 1
+          result: SEAGRASS
+          result-amount: 8
+          max-uses: 6
+          experience: 0
+        # 铁锭*1 - 干海带块*2
+        - cost: IRON_INGOT
+          cost-amount: 1
+          result: DRIED_KELP_BLOCK
+          result-amount: 2
+          max-uses: 6
+          experience: 0
+        # 热带鱼*6 - 河豚*4
+        - cost: TROPICAL_FISH
+          cost-amount: 6
+          result: PUFFERFISH
+          result-amount: 4
+          max-uses: 12
+          experience: 2
+        # 海泡菜*2 - 海草*6
+        - cost: SEA_PICKLE
+          cost-amount: 2
+          result: SEAGRASS
+          result-amount: 6
+          max-uses: 8
+        # 海草*12 - 海泡菜*4
+        - cost: SEAGRASS
+          cost-amount: 12
+          result: SEA_PICKLE
+          result-amount: 4
+          max-uses: 8
+    level-3:
+      emerald-trades:
+        # 绿宝石*2 - 脑纹珊瑚块*1
+        - cost: EMERALD
+          cost-amount: 2
+          result: BRAIN_CORAL_BLOCK
+          result-amount: 1
+          max-uses: 8
+          experience: 3
+        # 绿宝石*2 - 气泡珊瑚块*1
+        - cost: EMERALD
+          cost-amount: 2
+          result: BUBBLE_CORAL_BLOCK
+          result-amount: 1
+          max-uses: 8
+          experience: 3
+        # 绿宝石*2 - 火珊瑚块*1
+        - cost: EMERALD
+          cost-amount: 2
+          result: FIRE_CORAL_BLOCK
+          result-amount: 1
+          max-uses: 8
+          experience: 3
+        # 绿宝石*1 - 管珊瑚扇*2
+        - cost: EMERALD
+          cost-amount: 1
+          result: TUBE_CORAL_FAN
+          result-amount: 2
+          max-uses: 12
+          experience: 3
+        # 绿宝石*1 - 脑纹珊瑚扇*2
+        - cost: EMERALD
+          cost-amount: 1
+          result: BRAIN_CORAL_FAN
+          result-amount: 2
+          max-uses: 12
+          experience: 3
+        # 绿宝石*1 - 气泡珊瑚扇*2
+        - cost: EMERALD
+          cost-amount: 1
+          result: BUBBLE_CORAL_FAN
+          result-amount: 2
+          max-uses: 12
+          experience: 3
+      other-trades:
+        # 绿宝石*8 - 饵钓I钓鱼竿
+        - cost: EMERALD
+          cost-amount: 8
+          result: FISHING_ROD  # 附魔：饵钓I
+          result-amount: 1
+          max-uses: 4
+          experience: 4
+          extra-type: enchantment
+          extra-data:
+            - lure:1
+        # 绿宝石*12 - 海之眷顾I钓鱼竿
+        - cost: EMERALD
+          cost-amount: 12
+          result: FISHING_ROD  # 附魔：海之眷顾I
+          result-amount: 1
+          max-uses: 4
+          experience: 4
+          extra-type: enchantment
+          extra-data:
+            - luck_of_the_sea:1
+        # 绿宝石*16 - 饵钓II钓鱼竿
+        - cost: EMERALD
+          cost-amount: 16
+          result: FISHING_ROD  # 附魔：饵钓II
+          result-amount: 1
+          max-uses: 4
+          experience: 4
+          extra-type: enchantment
+          extra-data:
+            - lure:2
+        # 绿宝石*20 - 海之眷顾I + 饵钓I钓鱼竿
+        - cost: EMERALD
+          cost-amount: 20
+          result: FISHING_ROD  # 附魔：海之眷顾I + 饵钓I
+          result-amount: 1
+          max-uses: 4
+          experience: 4
+          extra-type: enchantment
+          extra-data:
+            - luck_of_the_sea:1
+            - lure:1
+        # 绿宝石*26 - 海之眷顾II钓鱼竿
+        - cost: EMERALD
+          cost-amount: 26
+          result: FISHING_ROD  # 附魔：海之眷顾II
+          result-amount: 1
+          max-uses: 4
+          experience: 4
+          extra-type: enchantment
+          extra-data:
+            - luck_of_the_sea:2
+        # 绿宝石*33 - 海之眷顾III钓鱼竿
+        - cost: EMERALD
+          cost-amount: 33
+          result: FISHING_ROD  # 附魔：海之眷顾III
+          result-amount: 1
+          max-uses: 4
+          experience: 4
+          extra-type: enchantment
+          extra-data:
+            - luck_of_the_sea:3
+    level-4:
+      emerald-trades:
+        - cost: PUMPKIN
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+      other-trades:
+        - cost: EMERALD
+          cost-amount: 1
+          result: COOKIE
+          result-amount: 18
+          max-uses: 12
+          experience: 0
+    level-5:
+      emerald-trades:
+        - cost: PUMPKIN
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+      other-trades:
+        - cost: EMERALD
+          cost-amount: 1
+          result: COOKIE
+          result-amount: 18
+          max-uses: 12
+          experience: 0
+
+  # 7.箭匠交易
+  fletcher:
+    level-1:
+      emerald-trades:
+        - cost: PUMPKIN
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+      other-trades:
+        - cost: EMERALD
+          cost-amount: 1
+          result: COOKIE
+          result-amount: 18
+          max-uses: 12
+          experience: 0
+    level-2:
+      emerald-trades:
+        - cost: PUMPKIN
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+      other-trades:
+        - cost: EMERALD
+          cost-amount: 1
+          result: COOKIE
+          result-amount: 18
+          max-uses: 12
+          experience: 0
+    level-3:
+      emerald-trades:
+        - cost: PUMPKIN
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+      other-trades:
+        - cost: EMERALD
+          cost-amount: 1
+          result: COOKIE
+          result-amount: 18
+          max-uses: 12
+          experience: 0
+    level-4:
+      emerald-trades:
+        - cost: PUMPKIN
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+      other-trades:
+        - cost: EMERALD
+          cost-amount: 1
+          result: COOKIE
+          result-amount: 18
+          max-uses: 12
+          experience: 0
+    level-5:
+      emerald-trades:
+        - cost: PUMPKIN
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+      other-trades:
+        - cost: EMERALD
+          cost-amount: 1
+          result: COOKIE
+          result-amount: 18
+          max-uses: 12
+          experience: 0
+
+  # 8.皮革匠交易
+  leatherworker:
+    level-1:
+      emerald-trades:
+        - cost: PUMPKIN
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+      other-trades:
+        - cost: EMERALD
+          cost-amount: 1
+          result: COOKIE
+          result-amount: 18
+          max-uses: 12
+          experience: 0
+    level-2:
+      emerald-trades:
+        - cost: PUMPKIN
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+      other-trades:
+        - cost: EMERALD
+          cost-amount: 1
+          result: COOKIE
+          result-amount: 18
+          max-uses: 12
+          experience: 0
+    level-3:
+      emerald-trades:
+        - cost: PUMPKIN
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+      other-trades:
+        - cost: EMERALD
+          cost-amount: 1
+          result: COOKIE
+          result-amount: 18
+          max-uses: 12
+          experience: 0
+    level-4:
+      emerald-trades:
+        - cost: PUMPKIN
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+      other-trades:
+        - cost: EMERALD
+          cost-amount: 1
+          result: COOKIE
+          result-amount: 18
+          max-uses: 12
+          experience: 0
+    level-5:
+      emerald-trades:
+        - cost: PUMPKIN
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+      other-trades:
+        - cost: EMERALD
+          cost-amount: 1
+          result: COOKIE
+          result-amount: 18
+          max-uses: 12
+          experience: 0
+
+  # 9.图书管理员交易
+  librarian:
+    level-1:
+      emerald-trades:
+        - cost: PUMPKIN
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+      other-trades:
+        - cost: EMERALD
+          cost-amount: 1
+          result: COOKIE
+          result-amount: 18
+          max-uses: 12
+          experience: 0
+    level-2:
+      emerald-trades:
+        - cost: PUMPKIN
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+      other-trades:
+        - cost: EMERALD
+          cost-amount: 1
+          result: COOKIE
+          result-amount: 18
+          max-uses: 12
+          experience: 0
+    level-3:
+      emerald-trades:
+        - cost: PUMPKIN
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+      other-trades:
+        - cost: EMERALD
+          cost-amount: 1
+          result: COOKIE
+          result-amount: 18
+          max-uses: 12
+          experience: 0
+    level-4:
+      emerald-trades:
+        - cost: PUMPKIN
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+      other-trades:
+        - cost: EMERALD
+          cost-amount: 1
+          result: COOKIE
+          result-amount: 18
+          max-uses: 12
+          experience: 0
+    level-5:
+      emerald-trades:
+        - cost: PUMPKIN
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+      other-trades:
+        - cost: EMERALD
+          cost-amount: 1
+          result: COOKIE
+          result-amount: 18
+          max-uses: 12
+          experience: 0
+
+  # 10.石匠交易 done
+  mason:
+    level-1:
+      emerald-trades:
+        # 粘土球*10 - 绿宝石*1
+        - cost: CLAY_BALL
+          cost-amount: 10
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 1
+        # 沙砾*20 - 绿宝石*1
+        - cost: GRAVEL
+          cost-amount: 20
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 1
+        # 石头*20 - 绿宝石*1
+        - cost: STONE
+          cost-amount: 20
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 1
+        # 绿宝石*1 - 红砖*10
+        - cost: EMERALD
+          cost-amount: 1
+          result: BRICK
+          result-amount: 10
+          max-uses: 12
+          experience: 2
+        # 绿宝石*1 - 石砖*8
+        - cost: EMERALD
+          cost-amount: 1
+          result: STONE_BRICKS
+          result-amount: 8
+          max-uses: 12
+          experience: 2
+        # 绿宝石*1 - 砖块*3
+        - cost: EMERALD
+          cost-amount: 1
+          result: BRICKS
+          result-amount: 3
+          max-uses: 12
+          experience: 2
+      other-trades:
+        # 铜锭*1 - 粘土块*1
+        - cost: COPPER_INGOT
+          cost-amount: 1
+          result: CLAY
+          result-amount: 1
+          max-uses: 6
+          experience: 0
+        # 铜锭*1 - 石头*8
+        - cost: COPPER_INGOT
+          cost-amount: 1
+          result: STONE
+          result-amount: 8
+          max-uses: 6
+          experience: 0
+        # 铜锭*1 - 雕纹石砖*1
+        - cost: COPPER_INGOT
+          cost-amount: 1
+          result: CHISELED_STONE_BRICKS
+          result-amount: 1
+          max-uses: 6
+          experience: 0
+        # 石砖*10 - 砖块*4
+        - cost: STONE_BRICKS
+          cost-amount: 10
+          result: BRICKS
+          result-amount: 4
+          max-uses: 8
+          experience: 0
+        # 砖块*1 - 沙砾*6
+        - cost: BRICKS
+          cost-amount: 1
+          result: GRAVEL
+          result-amount: 6
+          max-uses: 8
+          experience: 0
+        # 沙砾*5 - 石砖*2
+        - cost: GRAVEL
+          cost-amount: 5
+          result: STONE_BRICKS
+          result-amount: 2
+          max-uses: 8
+          experience: 0
+    level-2:
+      # ----- 绿宝石交易 -----
+      emerald-trades:
+        # 花岗岩*16 - 绿宝石*1
+        - cost: GRANITE
+          cost-amount: 16
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 2
+        # 闪长岩*16 - 绿宝石*1
+        - cost: DIORITE
+          cost-amount: 16
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 2
+        # 安山岩*16 - 绿宝石*1
+        - cost: ANDESITE
+          cost-amount: 16
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 2
+        # 绿宝石*1 - 磨制闪长岩*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: POLISHED_DIORITE
+          result-amount: 4
+          max-uses: 8
+          experience: 3
+        # 绿宝石*1 - 磨制安山岩*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: POLISHED_ANDESITE
+          result-amount: 4
+          max-uses: 8
+          experience: 3
+        # 绿宝石*1 - 磨制花岗岩*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: POLISHED_GRANITE
+          result-amount: 4
+          max-uses: 8
+          experience: 3
+      other-trades:
+        # 铁锭*1 - 滴水石块*2
+        - cost: IRON_INGOT
+          cost-amount: 1
+          result: DRIPSTONE_BLOCK
+          result-amount: 2
+          max-uses: 4
+          experience: 0
+        # 铁锭*1 - 凝灰岩*4
+        - cost: IRON_INGOT
+          cost-amount: 1
+          result: TUFF
+          result-amount: 4
+          max-uses: 4
+          experience: 0
+        # 铁锭*1 - 方解石*1
+        - cost: IRON_INGOT
+          cost-amount: 1
+          result: CALCITE
+          result-amount: 1
+          max-uses: 4
+          experience: 0
+        # 花岗岩*8 - 闪长岩*8
+        - cost: GRANITE
+          cost-amount: 8
+          result: DIORITE
+          result-amount: 8
+          max-uses: 10
+          experience: 0
+        # 闪长岩*8 - 安山岩*8
+        - cost: DIORITE
+          cost-amount: 8
+          result: ANDESITE
+          result-amount: 8
+          max-uses: 10
+          experience: 0
+        # 安山岩*8 - 花岗岩*8
+        - cost: ANDESITE
+          cost-amount: 8
+          result: GRANITE
+          result-amount: 8
+          max-uses: 10
+          experience: 0
+    level-3:
+      emerald-trades:
+        # 下界岩*128 - 绿宝石*1
+        - cost: NETHERRACK
+          cost-amount: 64
+          cost-2: NETHERRACK
+          cost-2-amount: 64
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+        # 下界砖*16 - 绿宝石*1
+        - cost: NETHER_BRICK
+          cost-amount: 16
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 3
+        # 下界石英*12 - 绿宝石*1
+        - cost: QUARTZ
+          cost-amount: 12
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 3
+        # 绿宝石*1 - 镶金黑石*1
+        - cost: EMERALD
+          cost-amount: 1
+          result: GILDED_BLACKSTONE
+          result-amount: 1
+          max-uses: 8
+          experience: 4
+        # 绿宝石*1 - 红色下界砖块*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: RED_NETHER_BRICKS
+          result-amount: 4
+          max-uses: 8
+          experience: 4
+        # 绿宝石*1 - 石英块*2
+        - cost: EMERALD
+          cost-amount: 1
+          result: QUARTZ_BLOCK
+          result-amount: 2
+          max-uses: 8
+          experience: 4
+      other-trades:
+        # 金锭*1 - 黑石*8
+        - cost: GOLD_INGOT
+          cost-amount: 1
+          result: BLACKSTONE
+          result-amount: 8
+          max-uses: 6
+          experience: 0
+        # 金锭*1 - 玄武岩*8
+        - cost: GOLD_INGOT
+          cost-amount: 1
+          result: BASALT
+          result-amount: 8
+          max-uses: 6
+          experience: 0
+        # 金锭*1 - 岩浆块*1
+        - cost: GOLD_INGOT
+          cost-amount: 1
+          result: MAGMA_BLOCK
+          result-amount: 1
+          max-uses: 4
+          experience: 0
+        # 岩浆块*1 - 黑石*8
+        - cost: MAGMA_BLOCK
+          cost-amount: 1
+          result: BLACKSTONE
+          result-amount: 8
+          max-uses: 6
+          experience: 0
+        # 黑石*8 - 玄武岩*8
+        - cost: BLACKSTONE
+          cost-amount: 8
+          result: BASALT
+          result-amount: 8
+          max-uses: 8
+          experience: 0
+        # 玄武岩*8 - 岩浆块*1
+        - cost: BASALT
+          cost-amount: 8
+          result: MAGMA_BLOCK
+          result-amount: 1
+          max-uses: 6
+          experience: 0
+    level-4:
+      emerald-trades:
+        # 砂岩*16 - 绿宝石*1
+        - cost: SANDSTONE
+          cost-amount: 16
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 4
+        # 红砂岩*16 - 绿宝石*1
+        - cost: RED_SANDSTONE
+          cost-amount: 16
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 4
+        # 海晶石*8 - 绿宝石*1
+        - cost: PRISMARINE
+          cost-amount: 8
+          result: EMERALD
+          result-amount: 1
+          max-uses: 10
+          experience: 4
+        # 绿宝石*1 - 平滑砂岩*12
+        - cost: EMERALD
+          cost-amount: 1
+          result: SMOOTH_SANDSTONE
+          result-amount: 12
+          max-uses: 8
+          experience: 5
+        # 绿宝石*1 - 平滑红砂岩*12
+        - cost: EMERALD
+          cost-amount: 1
+          result: SMOOTH_RED_SANDSTONE
+          result-amount: 12
+          max-uses: 8
+          experience: 5
+        # 绿宝石*1 - 陶瓦（无色）*2
+        - cost: EMERALD
+          cost-amount: 1
+          result: TERRACOTTA
+          result-amount: 2
+          max-uses: 8
+          experience: 5
+        # 绿宝石*1 - 白色陶瓦*2
+        - cost: EMERALD
+          cost-amount: 1
+          result: WHITE_TERRACOTTA
+          result-amount: 2
+          max-uses: 8
+          experience: 5
+        # 绿宝石*1 - 橙色陶瓦*2
+        - cost: EMERALD
+          cost-amount: 1
+          result: ORANGE_TERRACOTTA
+          result-amount: 2
+          max-uses: 8
+          experience: 5
+        # 绿宝石*1 - 品红色陶瓦*2
+        - cost: EMERALD
+          cost-amount: 1
+          result: MAGENTA_TERRACOTTA
+          result-amount: 2
+          max-uses: 8
+          experience: 5
+        # 绿宝石*1 - 淡蓝色陶瓦*2
+        - cost: EMERALD
+          cost-amount: 1
+          result: LIGHT_BLUE_TERRACOTTA
+          result-amount: 2
+          max-uses: 8
+          experience: 5
+        # 绿宝石*1 - 黄色陶瓦*2
+        - cost: EMERALD
+          cost-amount: 1
+          result: YELLOW_TERRACOTTA
+          result-amount: 2
+          max-uses: 8
+          experience: 5
+        # 绿宝石*1 - 黄绿色陶瓦*2
+        - cost: EMERALD
+          cost-amount: 1
+          result: LIME_TERRACOTTA
+          result-amount: 2
+          max-uses: 8
+          experience: 5
+        # 绿宝石*1 - 粉色陶瓦*2
+        - cost: EMERALD
+          cost-amount: 1
+          result: PINK_TERRACOTTA
+          result-amount: 2
+          max-uses: 8
+          experience: 5
+        # 绿宝石*1 - 灰色陶瓦*2
+        - cost: EMERALD
+          cost-amount: 1
+          result: GRAY_TERRACOTTA
+          result-amount: 2
+          max-uses: 8
+          experience: 5
+        # 绿宝石*1 - 淡灰色陶瓦*2
+        - cost: EMERALD
+          cost-amount: 1
+          result: LIGHT_GRAY_TERRACOTTA
+          result-amount: 2
+          max-uses: 8
+          experience: 5
+        # 绿宝石*1 - 青色陶瓦*2
+        - cost: EMERALD
+          cost-amount: 1
+          result: CYAN_TERRACOTTA
+          result-amount: 2
+          max-uses: 8
+          experience: 5
+        # 绿宝石*1 - 紫色陶瓦*2
+        - cost: EMERALD
+          cost-amount: 1
+          result: PURPLE_TERRACOTTA
+          result-amount: 2
+          max-uses: 8
+          experience: 5
+        # 绿宝石*1 - 蓝色陶瓦*2
+        - cost: EMERALD
+          cost-amount: 1
+          result: BLUE_TERRACOTTA
+          result-amount: 2
+          max-uses: 8
+          experience: 5
+        # 绿宝石*1 - 棕色陶瓦*2
+        - cost: EMERALD
+          cost-amount: 1
+          result: BROWN_TERRACOTTA
+          result-amount: 2
+          max-uses: 8
+          experience: 5
+        # 绿宝石*1 - 绿色陶瓦*2
+        - cost: EMERALD
+          cost-amount: 1
+          result: GREEN_TERRACOTTA
+          result-amount: 2
+          max-uses: 8
+          experience: 5
+        # 绿宝石*1 - 红色陶瓦*2
+        - cost: EMERALD
+          cost-amount: 1
+          result: RED_TERRACOTTA
+          result-amount: 2
+          max-uses: 8
+          experience: 5
+        # 绿宝石*1 - 黑色陶瓦*2
+        - cost: EMERALD
+          cost-amount: 1
+          result: BLACK_TERRACOTTA
+          result-amount: 2
+          max-uses: 8
+          experience: 5
+      other-trades:
+        # 钻石*1 - 陶瓦（无色）*5
+        - cost: DIAMOND
+          cost-amount: 1
+          result: TERRACOTTA
+          result-amount: 5
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 白色陶瓦*5
+        - cost: DIAMOND
+          cost-amount: 1
+          result: WHITE_TERRACOTTA
+          result-amount: 5
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 橙色陶瓦*5
+        - cost: DIAMOND
+          cost-amount: 1
+          result: ORANGE_TERRACOTTA
+          result-amount: 5
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 品红色陶瓦*5
+        - cost: DIAMOND
+          cost-amount: 1
+          result: MAGENTA_TERRACOTTA
+          result-amount: 5
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 淡蓝色陶瓦*5
+        - cost: DIAMOND
+          cost-amount: 1
+          result: LIGHT_BLUE_TERRACOTTA
+          result-amount: 5
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 黄色陶瓦*5
+        - cost: DIAMOND
+          cost-amount: 1
+          result: YELLOW_TERRACOTTA
+          result-amount: 5
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 黄绿色陶瓦*5
+        - cost: DIAMOND
+          cost-amount: 1
+          result: LIME_TERRACOTTA
+          result-amount: 5
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 粉色陶瓦*5
+        - cost: DIAMOND
+          cost-amount: 1
+          result: PINK_TERRACOTTA
+          result-amount: 5
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 灰色陶瓦*5
+        - cost: DIAMOND
+          cost-amount: 1
+          result: GRAY_TERRACOTTA
+          result-amount: 5
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 淡灰色陶瓦*5
+        - cost: DIAMOND
+          cost-amount: 1
+          result: LIGHT_GRAY_TERRACOTTA
+          result-amount: 5
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 青色陶瓦*5
+        - cost: DIAMOND
+          cost-amount: 1
+          result: CYAN_TERRACOTTA
+          result-amount: 5
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 紫色陶瓦*5
+        - cost: DIAMOND
+          cost-amount: 1
+          result: PURPLE_TERRACOTTA
+          result-amount: 5
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 蓝色陶瓦*5
+        - cost: DIAMOND
+          cost-amount: 1
+          result: BLUE_TERRACOTTA
+          result-amount: 5
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 棕色陶瓦*5
+        - cost: DIAMOND
+          cost-amount: 1
+          result: BROWN_TERRACOTTA
+          result-amount: 5
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 绿色陶瓦*5
+        - cost: DIAMOND
+          cost-amount: 1
+          result: GREEN_TERRACOTTA
+          result-amount: 5
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 红色陶瓦*5
+        - cost: DIAMOND
+          cost-amount: 1
+          result: RED_TERRACOTTA
+          result-amount: 5
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 黑色陶瓦*5
+        - cost: DIAMOND
+          cost-amount: 1
+          result: BLACK_TERRACOTTA
+          result-amount: 5
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 海晶石砖*16
+        - cost: DIAMOND
+          cost-amount: 1
+          result: PRISMARINE_BRICKS
+          result-amount: 16
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 暗海晶石*2
+        - cost: DIAMOND
+          cost-amount: 1
+          result: DARK_PRISMARINE
+          result-amount: 2
+          max-uses: 4
+          experience: 0
+        # 海晶石*8 - 暗海晶石*1
+        - cost: PRISMARINE
+          cost-amount: 8
+          result: DARK_PRISMARINE
+          result-amount: 1
+          max-uses: 6
+          experience: 0
+        # 暗海晶石*1 - 海晶石砖*8
+        - cost: DARK_PRISMARINE
+          cost-amount: 1
+          result: PRISMARINE_BRICKS
+          result-amount: 8
+          max-uses: 6
+          experience: 0
+        # 海晶石砖*1 - 海晶石*1
+        - cost: PRISMARINE_BRICKS
+          cost-amount: 1
+          result: PRISMARINE
+          result-amount: 1
+          max-uses: 8
+          experience: 0
+    level-5:
+      emerald-trades:
+        # 末地石*8 - 绿宝石*1
+        - cost: END_STONE
+          cost-amount: 8
+          result: EMERALD
+          result-amount: 1
+          max-uses: 8
+          experience: 0
+        # 紫水晶块*4 - 绿宝石*1
+        - cost: AMETHYST_BLOCK
+          cost-amount: 4
+          result: EMERALD
+          result-amount: 1
+          max-uses: 8
+          experience: 0
+        # 绿宝石*1 - 白色带釉陶瓦*2
+        - cost: EMERALD
+          cost-amount: 1
+          result: WHITE_GLAZED_TERRACOTTA
+          result-amount: 2
+          max-uses: 6
+          experience: 0
+        # 绿宝石*1 - 橙色带釉陶瓦*2
+        - cost: EMERALD
+          cost-amount: 1
+          result: ORANGE_GLAZED_TERRACOTTA
+          result-amount: 2
+          max-uses: 6
+          experience: 0
+        # 绿宝石*1 - 品红色带釉陶瓦*2
+        - cost: EMERALD
+          cost-amount: 1
+          result: MAGENTA_GLAZED_TERRACOTTA
+          result-amount: 2
+          max-uses: 6
+          experience: 0
+        # 绿宝石*1 - 淡蓝色带釉陶瓦*2
+        - cost: EMERALD
+          cost-amount: 1
+          result: LIGHT_BLUE_GLAZED_TERRACOTTA
+          result-amount: 2
+          max-uses: 6
+          experience: 0
+        # 绿宝石*1 - 黄色带釉陶瓦*2
+        - cost: EMERALD
+          cost-amount: 1
+          result: YELLOW_GLAZED_TERRACOTTA
+          result-amount: 2
+          max-uses: 6
+          experience: 0
+        # 绿宝石*1 - 黄绿色带釉陶瓦*2
+        - cost: EMERALD
+          cost-amount: 1
+          result: LIME_GLAZED_TERRACOTTA
+          result-amount: 2
+          max-uses: 6
+          experience: 0
+        # 绿宝石*1 - 粉色带釉陶瓦*2
+        - cost: EMERALD
+          cost-amount: 1
+          result: PINK_GLAZED_TERRACOTTA
+          result-amount: 2
+          max-uses: 6
+          experience: 0
+        # 绿宝石*1 - 灰色带釉陶瓦*2
+        - cost: EMERALD
+          cost-amount: 1
+          result: GRAY_GLAZED_TERRACOTTA
+          result-amount: 2
+          max-uses: 6
+          experience: 0
+        # 绿宝石*1 - 淡灰色带釉陶瓦*2
+        - cost: EMERALD
+          cost-amount: 1
+          result: LIGHT_GRAY_GLAZED_TERRACOTTA
+          result-amount: 2
+          max-uses: 6
+          experience: 0
+        # 绿宝石*1 - 青色带釉陶瓦*2
+        - cost: EMERALD
+          cost-amount: 1
+          result: CYAN_GLAZED_TERRACOTTA
+          result-amount: 2
+          max-uses: 6
+          experience: 0
+        # 绿宝石*1 - 紫色带釉陶瓦*2
+        - cost: EMERALD
+          cost-amount: 1
+          result: PURPLE_GLAZED_TERRACOTTA
+          result-amount: 2
+          max-uses: 6
+          experience: 0
+        # 绿宝石*1 - 蓝色带釉陶瓦*2
+        - cost: EMERALD
+          cost-amount: 1
+          result: BLUE_GLAZED_TERRACOTTA
+          result-amount: 2
+          max-uses: 6
+          experience: 0
+        # 绿宝石*1 - 棕色带釉陶瓦*2
+        - cost: EMERALD
+          cost-amount: 1
+          result: BROWN_GLAZED_TERRACOTTA
+          result-amount: 2
+          max-uses: 6
+          experience: 0
+        # 绿宝石*1 - 绿色带釉陶瓦*2
+        - cost: EMERALD
+          cost-amount: 1
+          result: GREEN_GLAZED_TERRACOTTA
+          result-amount: 2
+          max-uses: 6
+          experience: 0
+        # 绿宝石*1 - 红色带釉陶瓦*2
+        - cost: EMERALD
+          cost-amount: 1
+          result: RED_GLAZED_TERRACOTTA
+          result-amount: 2
+          max-uses: 6
+          experience: 0
+        # 绿宝石*1 - 黑色带釉陶瓦*2
+        - cost: EMERALD
+          cost-amount: 1
+          result: BLACK_GLAZED_TERRACOTTA
+          result-amount: 2
+          max-uses: 6
+          experience: 0
+        # 绿宝石*1 - 白色混凝土*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: WHITE_CONCRETE
+          result-amount: 4
+          max-uses: 6
+          experience: 0
+        # 绿宝石*1 - 橙色混凝土*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: ORANGE_CONCRETE
+          result-amount: 4
+          max-uses: 6
+          experience: 0
+        # 绿宝石*1 - 品红色混凝土*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: MAGENTA_CONCRETE
+          result-amount: 4
+          max-uses: 6
+          experience: 0
+        # 绿宝石*1 - 淡蓝色混凝土*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: LIGHT_BLUE_CONCRETE
+          result-amount: 4
+          max-uses: 6
+          experience: 0
+        # 绿宝石*1 - 黄色混凝土*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: YELLOW_CONCRETE
+          result-amount: 4
+          max-uses: 6
+          experience: 0
+        # 绿宝石*1 - 黄绿色混凝土*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: LIME_CONCRETE
+          result-amount: 4
+          max-uses: 6
+          experience: 0
+        # 绿宝石*1 - 粉色混凝土*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: PINK_CONCRETE
+          result-amount: 4
+          max-uses: 6
+          experience: 0
+        # 绿宝石*1 - 灰色混凝土*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: GRAY_CONCRETE
+          result-amount: 4
+          max-uses: 6
+          experience: 0
+        # 绿宝石*1 - 淡灰色混凝土*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: LIGHT_GRAY_CONCRETE
+          result-amount: 4
+          max-uses: 6
+          experience: 0
+        # 绿宝石*1 - 青色混凝土*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: CYAN_CONCRETE
+          result-amount: 4
+          max-uses: 6
+          experience: 0
+        # 绿宝石*1 - 紫色混凝土*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: PURPLE_CONCRETE
+          result-amount: 4
+          max-uses: 6
+          experience: 0
+        # 绿宝石*1 - 蓝色混凝土*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: BLUE_CONCRETE
+          result-amount: 4
+          max-uses: 6
+          experience: 0
+        # 绿宝石*1 - 棕色混凝土*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: BROWN_CONCRETE
+          result-amount: 4
+          max-uses: 6
+          experience: 0
+        # 绿宝石*1 - 绿色混凝土*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: GREEN_CONCRETE
+          result-amount: 4
+          max-uses: 6
+          experience: 0
+        # 绿宝石*1 - 红色混凝土*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: RED_CONCRETE
+          result-amount: 4
+          max-uses: 6
+          experience: 0
+        # 绿宝石*1 - 黑色混凝土*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: BLACK_CONCRETE
+          result-amount: 4
+          max-uses: 6
+          experience: 0
+      other-trades:
+        # 钻石*1 - 白色带釉陶瓦*4
+        - cost: DIAMOND
+          cost-amount: 1
+          result: WHITE_GLAZED_TERRACOTTA
+          result-amount: 4
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 橙色带釉陶瓦*4
+        - cost: DIAMOND
+          cost-amount: 1
+          result: ORANGE_GLAZED_TERRACOTTA
+          result-amount: 4
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 品红色带釉陶瓦*4
+        - cost: DIAMOND
+          cost-amount: 1
+          result: MAGENTA_GLAZED_TERRACOTTA
+          result-amount: 4
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 淡蓝色带釉陶瓦*4
+        - cost: DIAMOND
+          cost-amount: 1
+          result: LIGHT_BLUE_GLAZED_TERRACOTTA
+          result-amount: 4
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 黄色带釉陶瓦*4
+        - cost: DIAMOND
+          cost-amount: 1
+          result: YELLOW_GLAZED_TERRACOTTA
+          result-amount: 4
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 黄绿色带釉陶瓦*4
+        - cost: DIAMOND
+          cost-amount: 1
+          result: LIME_GLAZED_TERRACOTTA
+          result-amount: 4
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 粉色带釉陶瓦*4
+        - cost: DIAMOND
+          cost-amount: 1
+          result: PINK_GLAZED_TERRACOTTA
+          result-amount: 4
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 灰色带釉陶瓦*4
+        - cost: DIAMOND
+          cost-amount: 1
+          result: GRAY_GLAZED_TERRACOTTA
+          result-amount: 4
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 淡灰色带釉陶瓦*4
+        - cost: DIAMOND
+          cost-amount: 1
+          result: LIGHT_GRAY_GLAZED_TERRACOTTA
+          result-amount: 4
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 青色带釉陶瓦*4
+        - cost: DIAMOND
+          cost-amount: 1
+          result: CYAN_GLAZED_TERRACOTTA
+          result-amount: 4
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 紫色带釉陶瓦*4
+        - cost: DIAMOND
+          cost-amount: 1
+          result: PURPLE_GLAZED_TERRACOTTA
+          result-amount: 4
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 蓝色带釉陶瓦*4
+        - cost: DIAMOND
+          cost-amount: 1
+          result: BLUE_GLAZED_TERRACOTTA
+          result-amount: 4
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 棕色带釉陶瓦*4
+        - cost: DIAMOND
+          cost-amount: 1
+          result: BROWN_GLAZED_TERRACOTTA
+          result-amount: 4
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 绿色带釉陶瓦*4
+        - cost: DIAMOND
+          cost-amount: 1
+          result: GREEN_GLAZED_TERRACOTTA
+          result-amount: 4
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 红色带釉陶瓦*4
+        - cost: DIAMOND
+          cost-amount: 1
+          result: RED_GLAZED_TERRACOTTA
+          result-amount: 4
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 黑色带釉陶瓦*4
+        - cost: DIAMOND
+          cost-amount: 1
+          result: BLACK_GLAZED_TERRACOTTA
+          result-amount: 4
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 白色混凝土*8
+        - cost: DIAMOND
+          cost-amount: 1
+          result: WHITE_CONCRETE
+          result-amount: 8
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 橙色混凝土*8
+        - cost: DIAMOND
+          cost-amount: 1
+          result: ORANGE_CONCRETE
+          result-amount: 8
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 品红色混凝土*8
+        - cost: DIAMOND
+          cost-amount: 1
+          result: MAGENTA_CONCRETE
+          result-amount: 8
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 淡蓝色混凝土*8
+        - cost: DIAMOND
+          cost-amount: 1
+          result: LIGHT_BLUE_CONCRETE
+          result-amount: 8
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 黄色混凝土*8
+        - cost: DIAMOND
+          cost-amount: 1
+          result: YELLOW_CONCRETE
+          result-amount: 8
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 黄绿色混凝土*8
+        - cost: DIAMOND
+          cost-amount: 1
+          result: LIME_CONCRETE
+          result-amount: 8
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 粉色混凝土*8
+        - cost: DIAMOND
+          cost-amount: 1
+          result: PINK_CONCRETE
+          result-amount: 8
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 灰色混凝土*8
+        - cost: DIAMOND
+          cost-amount: 1
+          result: GRAY_CONCRETE
+          result-amount: 8
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 淡灰色混凝土*8
+        - cost: DIAMOND
+          cost-amount: 1
+          result: LIGHT_GRAY_CONCRETE
+          result-amount: 8
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 青色混凝土*8
+        - cost: DIAMOND
+          cost-amount: 1
+          result: CYAN_CONCRETE
+          result-amount: 8
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 紫色混凝土*8
+        - cost: DIAMOND
+          cost-amount: 1
+          result: PURPLE_CONCRETE
+          result-amount: 8
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 蓝色混凝土*8
+        - cost: DIAMOND
+          cost-amount: 1
+          result: BLUE_CONCRETE
+          result-amount: 8
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 棕色混凝土*8
+        - cost: DIAMOND
+          cost-amount: 1
+          result: BROWN_CONCRETE
+          result-amount: 8
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 绿色混凝土*8
+        - cost: DIAMOND
+          cost-amount: 1
+          result: GREEN_CONCRETE
+          result-amount: 8
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 红色混凝土*8
+        - cost: DIAMOND
+          cost-amount: 1
+          result: RED_CONCRETE
+          result-amount: 8
+          max-uses: 4
+          experience: 0
+        # 钻石*1 - 黑色混凝土*8
+        - cost: DIAMOND
+          cost-amount: 1
+          result: BLACK_CONCRETE
+          result-amount: 8
+          max-uses: 4
+          experience: 0
+        # 白色混凝土*8 - 白色陶瓦*5
+        - cost: WHITE_CONCRETE
+          cost-amount: 8
+          result: WHITE_TERRACOTTA
+          result-amount: 5
+          max-uses: 6
+          experience: 0
+        # 橙色混凝土*8 - 橙色陶瓦*5
+        - cost: ORANGE_CONCRETE
+          cost-amount: 8
+          result: ORANGE_TERRACOTTA
+          result-amount: 5
+          max-uses: 6
+          experience: 0
+        # 品红色混凝土*8 - 品红色陶瓦*5
+        - cost: MAGENTA_CONCRETE
+          cost-amount: 8
+          result: MAGENTA_TERRACOTTA
+          result-amount: 5
+          max-uses: 6
+          experience: 0
+        - cost: LIGHT_BLUE_CONCRETE
+          cost-amount: 8
+          result: LIGHT_BLUE_TERRACOTTA
+          result-amount: 5
+          max-uses: 6
+          experience: 0
+        - cost: YELLOW_CONCRETE
+          cost-amount: 8
+          result: YELLOW_TERRACOTTA
+          result-amount: 5
+          max-uses: 6
+          experience: 0
+        - cost: LIME_CONCRETE
+          cost-amount: 8
+          result: LIME_TERRACOTTA
+          result-amount: 5
+          max-uses: 6
+          experience: 0
+        - cost: PINK_CONCRETE
+          cost-amount: 8
+          result: PINK_TERRACOTTA
+          result-amount: 5
+          max-uses: 6
+          experience: 0
+        - cost: GRAY_CONCRETE
+          cost-amount: 8
+          result: GRAY_TERRACOTTA
+          result-amount: 5
+          max-uses: 6
+          experience: 0
+        - cost: LIGHT_GRAY_CONCRETE
+          cost-amount: 8
+          result: LIGHT_GRAY_TERRACOTTA
+          result-amount: 5
+          max-uses: 6
+          experience: 0
+        - cost: CYAN_CONCRETE
+          cost-amount: 8
+          result: CYAN_TERRACOTTA
+          result-amount: 5
+          max-uses: 6
+          experience: 0
+        - cost: PURPLE_CONCRETE
+          cost-amount: 8
+          result: PURPLE_TERRACOTTA
+          result-amount: 5
+          max-uses: 6
+          experience: 0
+        - cost: BLUE_CONCRETE
+          cost-amount: 8
+          result: BLUE_TERRACOTTA
+          result-amount: 5
+          max-uses: 6
+          experience: 0
+        - cost: BROWN_CONCRETE
+          cost-amount: 8
+          result: BROWN_TERRACOTTA
+          result-amount: 5
+          max-uses: 6
+          experience: 0
+        - cost: GREEN_CONCRETE
+          cost-amount: 8
+          result: GREEN_TERRACOTTA
+          result-amount: 5
+          max-uses: 6
+          experience: 0
+        - cost: RED_CONCRETE
+          cost-amount: 8
+          result: RED_TERRACOTTA
+          result-amount: 5
+          max-uses: 6
+          experience: 0
+        - cost: BLACK_CONCRETE
+          cost-amount: 8
+          result: BLACK_TERRACOTTA
+          result-amount: 5
+          max-uses: 6
+          experience: 0
+        # 陶瓦*5 - 对应颜色混凝土*8
+        - cost: WHITE_TERRACOTTA
+          cost-amount: 5
+          result: WHITE_CONCRETE
+          result-amount: 8
+          max-uses: 6
+          experience: 0
+        - cost: ORANGE_TERRACOTTA
+          cost-amount: 5
+          result: ORANGE_CONCRETE
+          result-amount: 8
+          max-uses: 6
+          experience: 0
+        - cost: MAGENTA_TERRACOTTA
+          cost-amount: 5
+          result: MAGENTA_CONCRETE
+          result-amount: 8
+          max-uses: 6
+          experience: 0
+        - cost: LIGHT_BLUE_TERRACOTTA
+          cost-amount: 5
+          result: LIGHT_BLUE_CONCRETE
+          result-amount: 8
+          max-uses: 6
+          experience: 0
+        - cost: YELLOW_TERRACOTTA
+          cost-amount: 5
+          result: YELLOW_CONCRETE
+          result-amount: 8
+          max-uses: 6
+          experience: 0
+        - cost: LIME_TERRACOTTA
+          cost-amount: 5
+          result: LIME_CONCRETE
+          result-amount: 8
+          max-uses: 6
+          experience: 0
+        - cost: PINK_TERRACOTTA
+          cost-amount: 5
+          result: PINK_CONCRETE
+          result-amount: 8
+          max-uses: 6
+          experience: 0
+        - cost: GRAY_TERRACOTTA
+          cost-amount: 5
+          result: GRAY_CONCRETE
+          result-amount: 8
+          max-uses: 6
+          experience: 0
+        - cost: LIGHT_GRAY_TERRACOTTA
+          cost-amount: 5
+          result: LIGHT_GRAY_CONCRETE
+          result-amount: 8
+          max-uses: 6
+          experience: 0
+        - cost: CYAN_TERRACOTTA
+          cost-amount: 5
+          result: CYAN_CONCRETE
+          result-amount: 8
+          max-uses: 6
+          experience: 0
+        - cost: PURPLE_TERRACOTTA
+          cost-amount: 5
+          result: PURPLE_CONCRETE
+          result-amount: 8
+          max-uses: 6
+          experience: 0
+        - cost: BLUE_TERRACOTTA
+          cost-amount: 5
+          result: BLUE_CONCRETE
+          result-amount: 8
+          max-uses: 6
+          experience: 0
+        - cost: BROWN_TERRACOTTA
+          cost-amount: 5
+          result: BROWN_CONCRETE
+          result-amount: 8
+          max-uses: 6
+          experience: 0
+        - cost: GREEN_TERRACOTTA
+          cost-amount: 5
+          result: GREEN_CONCRETE
+          result-amount: 8
+          max-uses: 6
+          experience: 0
+        - cost: RED_TERRACOTTA
+          cost-amount: 5
+          result: RED_CONCRETE
+          result-amount: 8
+          max-uses: 6
+          experience: 0
+        - cost: BLACK_TERRACOTTA
+          cost-amount: 5
+          result: BLACK_CONCRETE
+          result-amount: 8
+          max-uses: 6
+          experience: 0
+
+  # 11.牧羊人交易 done
+  shepherd:
+    level-1:
+      emerald-trades:
+        # 白色羊毛*18 - 绿宝石*1
+        - cost: WHITE_WOOL
+          cost-amount: 18
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 1
+        # 红色羊毛*18 - 绿宝石*1
+        - cost: RED_WOOL
+          cost-amount: 18
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 1
+        # 黄色羊毛*18 - 绿宝石*1
+        - cost: YELLOW_WOOL
+          cost-amount: 18
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 1
+        # 绿色羊毛*18 - 绿宝石*1
+        - cost: GREEN_WOOL
+          cost-amount: 18
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 1
+        # 黑色羊毛*18 - 绿宝石*1
+        - cost: BLACK_WOOL
+          cost-amount: 18
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 1
+        # 棕色羊毛*18 - 绿宝石*1
+        - cost: BROWN_WOOL
+          cost-amount: 18
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 1
+        # 蓝色羊毛*18 - 绿宝石*1
+        - cost: BLUE_WOOL
+          cost-amount: 18
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 1
+        # 橙色羊毛*18 - 绿宝石*1
+        - cost: ORANGE_WOOL
+          cost-amount: 18
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 1
+        # 绿宝石*2 - 剪刀*1
+        - cost: EMERALD
+          cost-amount: 2
+          result: SHEARS
+          result-amount: 1
+          max-uses: 12
+          experience: 2
+      other-trades:
+        # 铜锭*1 - 白色羊毛*6
+        - cost: COPPER_INGOT
+          cost-amount: 1
+          result: WHITE_WOOL
+          result-amount: 6
+          max-uses: 8
+          experience: 0
+        # 铜锭*1 - 红色羊毛*6
+        - cost: COPPER_INGOT
+          cost-amount: 1
+          result: RED_WOOL
+          result-amount: 6
+          max-uses: 8
+          experience: 0
+        # 铜锭*1 - 黄色羊毛*6
+        - cost: COPPER_INGOT
+          cost-amount: 1
+          result: YELLOW_WOOL
+          result-amount: 6
+          max-uses: 8
+          experience: 0
+        # 铜锭*1 - 绿色羊毛*6
+        - cost: COPPER_INGOT
+          cost-amount: 1
+          result: GREEN_WOOL
+          result-amount: 6
+          max-uses: 8
+          experience: 0
+        # 铜锭*1 - 黑色羊毛*6
+        - cost: COPPER_INGOT
+          cost-amount: 1
+          result: BLACK_WOOL
+          result-amount: 6
+          max-uses: 8
+          experience: 0
+        # 铜锭*1 - 棕色羊毛*6
+        - cost: COPPER_INGOT
+          cost-amount: 1
+          result: BROWN_WOOL
+          result-amount: 6
+          max-uses: 8
+          experience: 0
+        # 铜锭*1 - 蓝色羊毛*6
+        - cost: COPPER_INGOT
+          cost-amount: 1
+          result: BLUE_WOOL
+          result-amount: 6
+          max-uses: 8
+          experience: 0
+        # 铜锭*1 - 橙色羊毛*6
+        - cost: COPPER_INGOT
+          cost-amount: 1
+          result: ORANGE_WOOL
+          result-amount: 6
+          max-uses: 8
+          experience: 0
+        # 白色羊毛*8 - 红色羊毛*8
+        - cost: WHITE_WOOL
+          cost-amount: 8
+          result: RED_WOOL
+          result-amount: 8
+          max-uses: 12
+          experience: 0
+        # 红色羊毛*8 - 黄色羊毛*8
+        - cost: RED_WOOL
+          cost-amount: 8
+          result: YELLOW_WOOL
+          result-amount: 8
+          max-uses: 12
+          experience: 0
+        # 黄色羊毛*8 - 绿色羊毛*8
+        - cost: YELLOW_WOOL
+          cost-amount: 8
+          result: GREEN_WOOL
+          result-amount: 8
+          max-uses: 12
+          experience: 0
+        # 绿色羊毛*8 - 黑色羊毛*8
+        - cost: GREEN_WOOL
+          cost-amount: 8
+          result: BLACK_WOOL
+          result-amount: 8
+          max-uses: 12
+          experience: 0
+        # 黑色羊毛*8 - 棕色羊毛*8
+        - cost: BLACK_WOOL
+          cost-amount: 8
+          result: BROWN_WOOL
+          result-amount: 8
+          max-uses: 12
+          experience: 0
+        # 棕色羊毛*8 - 蓝色羊毛*8
+        - cost: BROWN_WOOL
+          cost-amount: 8
+          result: BLUE_WOOL
+          result-amount: 8
+          max-uses: 12
+          experience: 0
+        # 蓝色羊毛*8 - 橙色羊毛*8
+        - cost: BLUE_WOOL
+          cost-amount: 8
+          result: ORANGE_WOOL
+          result-amount: 8
+          max-uses: 12
+          experience: 0
+        # 橙色羊毛*8 - 白色羊毛*8
+        - cost: ORANGE_WOOL
+          cost-amount: 8
+          result: WHITE_WOOL
+          result-amount: 8
+          max-uses: 12
+          experience: 0
+    level-2:
+      emerald-trades:
+        # 白色染料*12 - 绿宝石*1
+        - cost: WHITE_DYE
+          cost-amount: 12
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 2
+        # 红色染料*12 - 绿宝石*1
+        - cost: RED_DYE
+          cost-amount: 12
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 2
+        # 黄色染料*12 - 绿宝石*1
+        - cost: YELLOW_DYE
+          cost-amount: 12
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 2
+        # 绿色染料*12 - 绿宝石*1
+        - cost: GREEN_DYE
+          cost-amount: 12
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 2
+        # 黑色染料*12 - 绿宝石*1
+        - cost: BLACK_DYE
+          cost-amount: 12
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 2
+        # 棕色染料*12 - 绿宝石*1
+        - cost: BROWN_DYE
+          cost-amount: 12
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 2
+        # 蓝色染料*12 - 绿宝石*1
+        - cost: BLUE_DYE
+          cost-amount: 12
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 2
+        # 橙色染料*12 - 绿宝石*1
+        - cost: ORANGE_DYE
+          cost-amount: 12
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 2
+        # 绿宝石*1 - 白色地毯*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: WHITE_CARPET
+          result-amount: 4
+          max-uses: 12
+          experience: 3
+        # 绿宝石*1 - 红色地毯*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: RED_CARPET
+          result-amount: 4
+          max-uses: 12
+          experience: 3
+        # 绿宝石*1 - 黄色地毯*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: YELLOW_CARPET
+          result-amount: 4
+          max-uses: 12
+          experience: 3
+        # 绿宝石*1 - 绿色地毯*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: GREEN_CARPET
+          result-amount: 4
+          max-uses: 12
+          experience: 3
+        # 绿宝石*1 - 黑色地毯*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: BLACK_CARPET
+          result-amount: 4
+          max-uses: 12
+          experience: 3
+        # 绿宝石*1 - 棕色地毯*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: BROWN_CARPET
+          result-amount: 4
+          max-uses: 12
+          experience: 3
+        # 绿宝石*1 - 蓝色地毯*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: BLUE_CARPET
+          result-amount: 4
+          max-uses: 12
+          experience: 3
+        # 绿宝石*1 - 橙色地毯*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: ORANGE_CARPET
+          result-amount: 4
+          max-uses: 12
+          experience: 3
+      other-trades:
+        # 铜锭*1 - 白色地毯*12
+        - cost: COPPER_INGOT
+          cost-amount: 1
+          result: WHITE_CARPET
+          result-amount: 12
+          max-uses: 8
+          experience: 0
+        # 铜锭*1 - 红色地毯*12
+        - cost: COPPER_INGOT
+          cost-amount: 1
+          result: RED_CARPET
+          result-amount: 12
+          max-uses: 8
+          experience: 0
+        # 铜锭*1 - 黄色地毯*12
+        - cost: COPPER_INGOT
+          cost-amount: 1
+          result: YELLOW_CARPET
+          result-amount: 12
+          max-uses: 8
+          experience: 0
+        # 铜锭*1 - 绿色地毯*12
+        - cost: COPPER_INGOT
+          cost-amount: 1
+          result: GREEN_CARPET
+          result-amount: 12
+          max-uses: 8
+          experience: 0
+        # 铜锭*1 - 黑色地毯*12
+        - cost: COPPER_INGOT
+          cost-amount: 1
+          result: BLACK_CARPET
+          result-amount: 12
+          max-uses: 8
+          experience: 0
+        # 铜锭*1 - 棕色地毯*12
+        - cost: COPPER_INGOT
+          cost-amount: 1
+          result: BROWN_CARPET
+          result-amount: 12
+          max-uses: 8
+          experience: 0
+        # 铜锭*1 - 蓝色地毯*12
+        - cost: COPPER_INGOT
+          cost-amount: 1
+          result: BLUE_CARPET
+          result-amount: 12
+          max-uses: 8
+          experience: 0
+        # 铜锭*1 - 橙色地毯*12
+        - cost: COPPER_INGOT
+          cost-amount: 1
+          result: ORANGE_CARPET
+          result-amount: 12
+          max-uses: 8
+          experience: 0
+        # 白色染料*8 - 红色染料*8
+        - cost: WHITE_DYE
+          cost-amount: 8
+          result: RED_DYE
+          result-amount: 8
+          max-uses: 12
+          experience: 0
+        # 红色染料*8 - 黄色染料*8
+        - cost: RED_DYE
+          cost-amount: 8
+          result: YELLOW_DYE
+          result-amount: 8
+          max-uses: 12
+          experience: 0
+        # 黄色染料*8 - 绿色染料*8
+        - cost: YELLOW_DYE
+          cost-amount: 8
+          result: GREEN_DYE
+          result-amount: 8
+          max-uses: 12
+          experience: 0
+        # 绿色染料*8 - 黑色染料*8
+        - cost: GREEN_DYE
+          cost-amount: 8
+          result: BLACK_DYE
+          result-amount: 8
+          max-uses: 12
+          experience: 0
+        # 黑色染料*8 - 棕色染料*8
+        - cost: BLACK_DYE
+          cost-amount: 8
+          result: BROWN_DYE
+          result-amount: 8
+          max-uses: 12
+          experience: 0
+        # 棕色染料*8 - 蓝色染料*8
+        - cost: BROWN_DYE
+          cost-amount: 8
+          result: BLUE_DYE
+          result-amount: 8
+          max-uses: 12
+          experience: 0
+        # 蓝色染料*8 - 橙色染料*8
+        - cost: BLUE_DYE
+          cost-amount: 8
+          result: ORANGE_DYE
+          result-amount: 8
+          max-uses: 12
+          experience: 0
+        # 橙色染料*8 - 白色染料*8
+        - cost: ORANGE_DYE
+          cost-amount: 8
+          result: WHITE_DYE
+          result-amount: 8
+          max-uses: 12
+          experience: 0
+    level-3:
+      emerald-trades:
+        # 品红色羊毛*18 - 绿宝石*1
+        - cost: MAGENTA_WOOL
+          cost-amount: 18
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 3
+        # 淡蓝色羊毛*18 - 绿宝石*1
+        - cost: LIGHT_BLUE_WOOL
+          cost-amount: 18
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 3
+        # 黄绿色羊毛*18 - 绿宝石*1
+        - cost: LIME_WOOL
+          cost-amount: 18
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 3
+        # 粉色羊毛*18 - 绿宝石*1
+        - cost: PINK_WOOL
+          cost-amount: 18
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 3
+        # 灰色羊毛*18 - 绿宝石*1
+        - cost: GRAY_WOOL
+          cost-amount: 18
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 3
+        # 淡灰色羊毛*18 - 绿宝石*1
+        - cost: LIGHT_GRAY_WOOL
+          cost-amount: 18
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 3
+        # 青色羊毛*18 - 绿宝石*1
+        - cost: CYAN_WOOL
+          cost-amount: 18
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 3
+        # 紫色羊毛*18 - 绿宝石*1
+        - cost: PURPLE_WOOL
+          cost-amount: 18
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 3
+        # 绿宝石*3 - 白色床*1
+        - cost: EMERALD
+          cost-amount: 3
+          result: WHITE_BED
+          result-amount: 1
+          max-uses: 8
+          experience: 4
+        # 绿宝石*3 - 橙色床*1
+        - cost: EMERALD
+          cost-amount: 3
+          result: ORANGE_BED
+          result-amount: 1
+          max-uses: 8
+          experience: 4
+        # 绿宝石*3 - 品红色床*1
+        - cost: EMERALD
+          cost-amount: 3
+          result: MAGENTA_BED
+          result-amount: 1
+          max-uses: 8
+          experience: 4
+        # 绿宝石*3 - 淡蓝色床*1
+        - cost: EMERALD
+          cost-amount: 3
+          result: LIGHT_BLUE_BED
+          result-amount: 1
+          max-uses: 8
+          experience: 4
+        # 绿宝石*3 - 黄色床*1
+        - cost: EMERALD
+          cost-amount: 3
+          result: YELLOW_BED
+          result-amount: 1
+          max-uses: 8
+          experience: 4
+        # 绿宝石*3 - 黄绿色床*1
+        - cost: EMERALD
+          cost-amount: 3
+          result: LIME_BED
+          result-amount: 1
+          max-uses: 8
+          experience: 4
+        # 绿宝石*3 - 粉色床*1
+        - cost: EMERALD
+          cost-amount: 3
+          result: PINK_BED
+          result-amount: 1
+          max-uses: 8
+          experience: 4
+        # 绿宝石*3 - 灰色床*1
+        - cost: EMERALD
+          cost-amount: 3
+          result: GRAY_BED
+          result-amount: 1
+          max-uses: 8
+          experience: 4
+        # 绿宝石*3 - 淡灰色床*1
+        - cost: EMERALD
+          cost-amount: 3
+          result: LIGHT_GRAY_BED
+          result-amount: 1
+          max-uses: 8
+          experience: 4
+        # 绿宝石*3 - 青色床*1
+        - cost: EMERALD
+          cost-amount: 3
+          result: CYAN_BED
+          result-amount: 1
+          max-uses: 8
+          experience: 4
+        # 绿宝石*3 - 紫色床*1
+        - cost: EMERALD
+          cost-amount: 3
+          result: PURPLE_BED
+          result-amount: 1
+          max-uses: 8
+          experience: 4
+        # 绿宝石*3 - 蓝色床*1
+        - cost: EMERALD
+          cost-amount: 3
+          result: BLUE_BED
+          result-amount: 1
+          max-uses: 8
+          experience: 4
+        # 绿宝石*3 - 棕色床*1
+        - cost: EMERALD
+          cost-amount: 3
+          result: BROWN_BED
+          result-amount: 1
+          max-uses: 8
+          experience: 4
+        # 绿宝石*3 - 绿色床*1
+        - cost: EMERALD
+          cost-amount: 3
+          result: GREEN_BED
+          result-amount: 1
+          max-uses: 8
+          experience: 4
+        # 绿宝石*3 - 红色床*1
+        - cost: EMERALD
+          cost-amount: 3
+          result: RED_BED
+          result-amount: 1
+          max-uses: 8
+          experience: 4
+        # 绿宝石*3 - 黑色床*1
+        - cost: EMERALD
+          cost-amount: 3
+          result: BLACK_BED
+          result-amount: 1
+          max-uses: 8
+          experience: 4
+      other-trades:
+        # 铁锭*1 - 品红色羊毛*8
+        - cost: IRON_INGOT
+          cost-amount: 1
+          result: MAGENTA_WOOL
+          result-amount: 8
+          max-uses: 8
+          experience: 0
+        # 铁锭*1 - 淡蓝色羊毛*8
+        - cost: IRON_INGOT
+          cost-amount: 1
+          result: LIGHT_BLUE_WOOL
+          result-amount: 8
+          max-uses: 8
+          experience: 0
+        # 铁锭*1 - 黄绿色羊毛*8
+        - cost: IRON_INGOT
+          cost-amount: 1
+          result: LIME_WOOL
+          result-amount: 8
+          max-uses: 8
+          experience: 0
+        # 铁锭*1 - 粉色羊毛*8
+        - cost: IRON_INGOT
+          cost-amount: 1
+          result: PINK_WOOL
+          result-amount: 8
+          max-uses: 8
+          experience: 0
+        # 铁锭*1 - 灰色羊毛*8
+        - cost: IRON_INGOT
+          cost-amount: 1
+          result: GRAY_WOOL
+          result-amount: 8
+          max-uses: 8
+          experience: 0
+        # 铁锭*1 - 淡灰色羊毛*8
+        - cost: IRON_INGOT
+          cost-amount: 1
+          result: LIGHT_GRAY_WOOL
+          result-amount: 8
+          max-uses: 8
+          experience: 0
+        # 铁锭*1 - 青色羊毛*8
+        - cost: IRON_INGOT
+          cost-amount: 1
+          result: CYAN_WOOL
+          result-amount: 8
+          max-uses: 8
+          experience: 0
+        # 铁锭*1 - 紫色羊毛*8
+        - cost: IRON_INGOT
+          cost-amount: 1
+          result: PURPLE_WOOL
+          result-amount: 8
+          max-uses: 8
+          experience: 0
+        # 品红色羊毛*8 - 淡蓝色羊毛*8
+        - cost: MAGENTA_WOOL
+          cost-amount: 8
+          result: LIGHT_BLUE_WOOL
+          result-amount: 8
+          max-uses: 12
+          experience: 0
+        # 淡蓝色羊毛*8 - 黄绿色羊毛*8
+        - cost: LIGHT_BLUE_WOOL
+          cost-amount: 8
+          result: LIME_WOOL
+          result-amount: 8
+          max-uses: 12
+          experience: 0
+        # 黄绿色羊毛*8 - 粉色羊毛*8
+        - cost: LIME_WOOL
+          cost-amount: 8
+          result: PINK_WOOL
+          result-amount: 8
+          max-uses: 12
+          experience: 0
+        # 粉色羊毛*8 - 灰色羊毛*8
+        - cost: PINK_WOOL
+          cost-amount: 8
+          result: GRAY_WOOL
+          result-amount: 8
+          max-uses: 12
+          experience: 0
+        # 灰色羊毛*8 - 淡灰色羊毛*8
+        - cost: GRAY_WOOL
+          cost-amount: 8
+          result: LIGHT_GRAY_WOOL
+          result-amount: 8
+          max-uses: 12
+          experience: 0
+        # 淡灰色羊毛*8 - 青色羊毛*8
+        - cost: LIGHT_GRAY_WOOL
+          cost-amount: 8
+          result: CYAN_WOOL
+          result-amount: 8
+          max-uses: 12
+          experience: 0
+        # 青色羊毛*8 - 紫色羊毛*8
+        - cost: CYAN_WOOL
+          cost-amount: 8
+          result: PURPLE_WOOL
+          result-amount: 8
+          max-uses: 12
+          experience: 0
+        # 紫色羊毛*8 - 品红色羊毛*8
+        - cost: PURPLE_WOOL
+          cost-amount: 8
+          result: MAGENTA_WOOL
+          result-amount: 8
+          max-uses: 12
+          experience: 0
+    level-4:
+      emerald-trades:
+        # 品红色染料*12 - 绿宝石*1
+        - cost: MAGENTA_DYE
+          cost-amount: 12
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 4
+        # 淡蓝色染料*12 - 绿宝石*1
+        - cost: LIGHT_BLUE_DYE
+          cost-amount: 12
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 4
+        # 黄绿色染料*12 - 绿宝石*1
+        - cost: LIME_DYE
+          cost-amount: 12
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 4
+        # 粉色染料*12 - 绿宝石*1
+        - cost: PINK_DYE
+          cost-amount: 12
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 4
+        # 灰色染料*12 - 绿宝石*1
+        - cost: GRAY_DYE
+          cost-amount: 12
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 4
+        # 淡灰色染料*12 - 绿宝石*1
+        - cost: LIGHT_GRAY_DYE
+          cost-amount: 12
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 4
+        # 青色染料*12 - 绿宝石*1
+        - cost: CYAN_DYE
+          cost-amount: 12
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 4
+        # 紫色染料*12 - 绿宝石*1
+        - cost: PURPLE_DYE
+          cost-amount: 12
+          result: EMERALD
+          result-amount: 1
+          max-uses: 16
+          experience: 4
+        # 绿宝石*3 - 白色旗帜*1
+        - cost: EMERALD
+          cost-amount: 3
+          result: WHITE_BANNER
+          result-amount: 1
+          max-uses: 8
+          experience: 5
+        # 绿宝石*3 - 橙色旗帜*1
+        - cost: EMERALD
+          cost-amount: 3
+          result: ORANGE_BANNER
+          result-amount: 1
+          max-uses: 8
+          experience: 5
+        # 绿宝石*3 - 品红色旗帜*1
+        - cost: EMERALD
+          cost-amount: 3
+          result: MAGENTA_BANNER
+          result-amount: 1
+          max-uses: 8
+          experience: 5
+        # 绿宝石*3 - 淡蓝色旗帜*1
+        - cost: EMERALD
+          cost-amount: 3
+          result: LIGHT_BLUE_BANNER
+          result-amount: 1
+          max-uses: 8
+          experience: 5
+        # 绿宝石*3 - 黄色旗帜*1
+        - cost: EMERALD
+          cost-amount: 3
+          result: YELLOW_BANNER
+          result-amount: 1
+          max-uses: 8
+          experience: 5
+        # 绿宝石*3 - 黄绿色旗帜*1
+        - cost: EMERALD
+          cost-amount: 3
+          result: LIME_BANNER
+          result-amount: 1
+          max-uses: 8
+          experience: 5
+        # 绿宝石*3 - 粉色旗帜*1
+        - cost: EMERALD
+          cost-amount: 3
+          result: PINK_BANNER
+          result-amount: 1
+          max-uses: 8
+          experience: 5
+        # 绿宝石*3 - 灰色旗帜*1
+        - cost: EMERALD
+          cost-amount: 3
+          result: GRAY_BANNER
+          result-amount: 1
+          max-uses: 8
+          experience: 5
+        # 绿宝石*3 - 淡灰色旗帜*1
+        - cost: EMERALD
+          cost-amount: 3
+          result: LIGHT_GRAY_BANNER
+          result-amount: 1
+          max-uses: 8
+          experience: 5
+        # 绿宝石*3 - 青色旗帜*1
+        - cost: EMERALD
+          cost-amount: 3
+          result: CYAN_BANNER
+          result-amount: 1
+          max-uses: 8
+          experience: 5
+        # 绿宝石*3 - 紫色旗帜*1
+        - cost: EMERALD
+          cost-amount: 3
+          result: PURPLE_BANNER
+          result-amount: 1
+          max-uses: 8
+          experience: 5
+        # 绿宝石*3 - 蓝色旗帜*1
+        - cost: EMERALD
+          cost-amount: 3
+          result: BLUE_BANNER
+          result-amount: 1
+          max-uses: 8
+          experience: 5
+        # 绿宝石*3 - 棕色旗帜*1
+        - cost: EMERALD
+          cost-amount: 3
+          result: BROWN_BANNER
+          result-amount: 1
+          max-uses: 8
+          experience: 5
+        # 绿宝石*3 - 绿色旗帜*1
+        - cost: EMERALD
+          cost-amount: 3
+          result: GREEN_BANNER
+          result-amount: 1
+          max-uses: 8
+          experience: 5
+        # 绿宝石*3 - 红色旗帜*1
+        - cost: EMERALD
+          cost-amount: 3
+          result: RED_BANNER
+          result-amount: 1
+          max-uses: 8
+          experience: 5
+        # 绿宝石*3 - 黑色旗帜*1
+        - cost: EMERALD
+          cost-amount: 3
+          result: BLACK_BANNER
+          result-amount: 1
+          max-uses: 8
+          experience: 5
+      other-trades:
+        # 铁锭*1 - 白色旗帜*1
+        - cost: IRON_INGOT
+          cost-amount: 1
+          result: WHITE_BANNER
+          result-amount: 1
+          max-uses: 8
+          experience: 0
+        # 铁锭*1 - 橙色旗帜*1
+        - cost: IRON_INGOT
+          cost-amount: 1
+          result: ORANGE_BANNER
+          result-amount: 1
+          max-uses: 8
+          experience: 0
+        # 铁锭*1 - 品红色旗帜*1
+        - cost: IRON_INGOT
+          cost-amount: 1
+          result: MAGENTA_BANNER
+          result-amount: 1
+          max-uses: 8
+          experience: 0
+        # 铁锭*1 - 淡蓝色旗帜*1
+        - cost: IRON_INGOT
+          cost-amount: 1
+          result: LIGHT_BLUE_BANNER
+          result-amount: 1
+          max-uses: 8
+          experience: 0
+        # 铁锭*1 - 黄色旗帜*1
+        - cost: IRON_INGOT
+          cost-amount: 1
+          result: YELLOW_BANNER
+          result-amount: 1
+          max-uses: 8
+          experience: 0
+        # 铁锭*1 - 黄绿色旗帜*1
+        - cost: IRON_INGOT
+          cost-amount: 1
+          result: LIME_BANNER
+          result-amount: 1
+          max-uses: 8
+          experience: 0
+        # 铁锭*1 - 粉色旗帜*1
+        - cost: IRON_INGOT
+          cost-amount: 1
+          result: PINK_BANNER
+          result-amount: 1
+          max-uses: 8
+          experience: 0
+        # 铁锭*1 - 灰色旗帜*1
+        - cost: IRON_INGOT
+          cost-amount: 1
+          result: GRAY_BANNER
+          result-amount: 1
+          max-uses: 8
+          experience: 0
+        # 铁锭*1 - 淡灰色旗帜*1
+        - cost: IRON_INGOT
+          cost-amount: 1
+          result: LIGHT_GRAY_BANNER
+          result-amount: 1
+          max-uses: 8
+          experience: 0
+        # 铁锭*1 - 青色旗帜*1
+        - cost: IRON_INGOT
+          cost-amount: 1
+          result: CYAN_BANNER
+          result-amount: 1
+          max-uses: 8
+          experience: 0
+        # 铁锭*1 - 紫色旗帜*1
+        - cost: IRON_INGOT
+          cost-amount: 1
+          result: PURPLE_BANNER
+          result-amount: 1
+          max-uses: 8
+          experience: 0
+        # 铁锭*1 - 蓝色旗帜*1
+        - cost: IRON_INGOT
+          cost-amount: 1
+          result: BLUE_BANNER
+          result-amount: 1
+          max-uses: 8
+          experience: 0
+        # 铁锭*1 - 棕色旗帜*1
+        - cost: IRON_INGOT
+          cost-amount: 1
+          result: BROWN_BANNER
+          result-amount: 1
+          max-uses: 8
+          experience: 0
+        # 铁锭*1 - 绿色旗帜*1
+        - cost: IRON_INGOT
+          cost-amount: 1
+          result: GREEN_BANNER
+          result-amount: 1
+          max-uses: 8
+          experience: 0
+        # 铁锭*1 - 红色旗帜*1
+        - cost: IRON_INGOT
+          cost-amount: 1
+          result: RED_BANNER
+          result-amount: 1
+          max-uses: 8
+          experience: 0
+        # 铁锭*1 - 黑色旗帜*1
+        - cost: IRON_INGOT
+          cost-amount: 1
+          result: BLACK_BANNER
+          result-amount: 1
+          max-uses: 8
+          experience: 0
+        # 品红色染料*8 - 淡蓝色染料*8
+        - cost: MAGENTA_DYE
+          cost-amount: 8
+          result: LIGHT_BLUE_DYE
+          result-amount: 8
+          max-uses: 12
+          experience: 0
+        # 淡蓝色染料*8 - 黄绿色染料*8
+        - cost: LIGHT_BLUE_DYE
+          cost-amount: 8
+          result: LIME_DYE
+          result-amount: 8
+          max-uses: 12
+          experience: 0
+        # 黄绿色染料*8 - 粉色染料*8
+        - cost: LIME_DYE
+          cost-amount: 8
+          result: PINK_DYE
+          result-amount: 8
+          max-uses: 12
+          experience: 0
+        # 粉色染料*8 - 灰色染料*8
+        - cost: PINK_DYE
+          cost-amount: 8
+          result: GRAY_DYE
+          result-amount: 8
+          max-uses: 12
+          experience: 0
+        # 灰色染料*8 - 淡灰色染料*8
+        - cost: GRAY_DYE
+          cost-amount: 8
+          result: LIGHT_GRAY_DYE
+          result-amount: 8
+          max-uses: 12
+          experience: 0
+        # 淡灰色染料*8 - 青色染料*8
+        - cost: LIGHT_GRAY_DYE
+          cost-amount: 8
+          result: CYAN_DYE
+          result-amount: 8
+          max-uses: 12
+          experience: 0
+        # 青色染料*8 - 紫色染料*8
+        - cost: CYAN_DYE
+          cost-amount: 8
+          result: PURPLE_DYE
+          result-amount: 8
+          max-uses: 12
+          experience: 0
+        # 紫色染料*8 - 品红色染料*8
+        - cost: PURPLE_DYE
+          cost-amount: 8
+          result: MAGENTA_DYE
+          result-amount: 8
+          max-uses: 12
+          experience: 0
+    level-5:
+      emerald-trades:
+        # 绿宝石*2 - 画*3
+        - cost: EMERALD
+          cost-amount: 2
+          result: PAINTING
+          result-amount: 3
+          max-uses: 8
+          experience: 0
+        # 绿宝石*1 - 物品展示框*2
+        - cost: EMERALD
+          cost-amount: 1
+          result: ITEM_FRAME
+          result-amount: 2
+          max-uses: 10
+          experience: 0
+        # 绿宝石*1 - 白色蜡烛*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: WHITE_CANDLE
+          result-amount: 4
+          max-uses: 8
+          experience: 0
+        # 绿宝石*1 - 橙色蜡烛*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: ORANGE_CANDLE
+          result-amount: 4
+          max-uses: 8
+          experience: 0
+        # 绿宝石*1 - 品红色蜡烛*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: MAGENTA_CANDLE
+          result-amount: 4
+          max-uses: 8
+          experience: 0
+        # 绿宝石*1 - 淡蓝色蜡烛*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: LIGHT_BLUE_CANDLE
+          result-amount: 4
+          max-uses: 8
+          experience: 0
+        # 绿宝石*1 - 黄色蜡烛*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: YELLOW_CANDLE
+          result-amount: 4
+          max-uses: 8
+          experience: 0
+        # 绿宝石*1 - 黄绿色蜡烛*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: LIME_CANDLE
+          result-amount: 4
+          max-uses: 8
+          experience: 0
+        # 绿宝石*1 - 粉色蜡烛*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: PINK_CANDLE
+          result-amount: 4
+          max-uses: 8
+          experience: 0
+        # 绿宝石*1 - 灰色蜡烛*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: GRAY_CANDLE
+          result-amount: 4
+          max-uses: 8
+          experience: 0
+        # 绿宝石*1 - 淡灰色蜡烛*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: LIGHT_GRAY_CANDLE
+          result-amount: 4
+          max-uses: 8
+          experience: 0
+        # 绿宝石*1 - 青色蜡烛*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: CYAN_CANDLE
+          result-amount: 4
+          max-uses: 8
+          experience: 0
+        # 绿宝石*1 - 紫色蜡烛*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: PURPLE_CANDLE
+          result-amount: 4
+          max-uses: 8
+          experience: 0
+        # 绿宝石*1 - 蓝色蜡烛*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: BLUE_CANDLE
+          result-amount: 4
+          max-uses: 8
+          experience: 0
+        # 绿宝石*1 - 棕色蜡烛*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: BROWN_CANDLE
+          result-amount: 4
+          max-uses: 8
+          experience: 0
+        # 绿宝石*1 - 绿色蜡烛*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: GREEN_CANDLE
+          result-amount: 4
+          max-uses: 8
+          experience: 0
+        # 绿宝石*1 - 红色蜡烛*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: RED_CANDLE
+          result-amount: 4
+          max-uses: 8
+          experience: 0
+        # 绿宝石*1 - 黑色蜡烛*4
+        - cost: EMERALD
+          cost-amount: 1
+          result: BLACK_CANDLE
+          result-amount: 4
+          max-uses: 8
+          experience: 0
+      other-trades:
+        # 金锭*1 - 白色蜡烛*6
+        - cost: GOLD_INGOT
+          cost-amount: 1
+          result: WHITE_CANDLE
+          result-amount: 6
+          max-uses: 6
+          experience: 0
+        # 金锭*1 - 橙色蜡烛*6
+        - cost: GOLD_INGOT
+          cost-amount: 1
+          result: ORANGE_CANDLE
+          result-amount: 6
+          max-uses: 6
+          experience: 0
+        # 金锭*1 - 品红色蜡烛*6
+        - cost: GOLD_INGOT
+          cost-amount: 1
+          result: MAGENTA_CANDLE
+          result-amount: 6
+          max-uses: 6
+          experience: 0
+        # 金锭*1 - 淡蓝色蜡烛*6
+        - cost: GOLD_INGOT
+          cost-amount: 1
+          result: LIGHT_BLUE_CANDLE
+          result-amount: 6
+          max-uses: 6
+          experience: 0
+        # 金锭*1 - 黄色蜡烛*6
+        - cost: GOLD_INGOT
+          cost-amount: 1
+          result: YELLOW_CANDLE
+          result-amount: 6
+          max-uses: 6
+          experience: 0
+        # 金锭*1 - 黄绿色蜡烛*6
+        - cost: GOLD_INGOT
+          cost-amount: 1
+          result: LIME_CANDLE
+          result-amount: 6
+          max-uses: 6
+          experience: 0
+        # 金锭*1 - 粉色蜡烛*6
+        - cost: GOLD_INGOT
+          cost-amount: 1
+          result: PINK_CANDLE
+          result-amount: 6
+          max-uses: 6
+          experience: 0
+        # 金锭*1 - 灰色蜡烛*6
+        - cost: GOLD_INGOT
+          cost-amount: 1
+          result: GRAY_CANDLE
+          result-amount: 6
+          max-uses: 6
+          experience: 0
+        # 金锭*1 - 淡灰色蜡烛*6
+        - cost: GOLD_INGOT
+          cost-amount: 1
+          result: LIGHT_GRAY_CANDLE
+          result-amount: 6
+          max-uses: 6
+          experience: 0
+        # 金锭*1 - 青色蜡烛*6
+        - cost: GOLD_INGOT
+          cost-amount: 1
+          result: CYAN_CANDLE
+          result-amount: 6
+          max-uses: 6
+          experience: 0
+        # 金锭*1 - 紫色蜡烛*6
+        - cost: GOLD_INGOT
+          cost-amount: 1
+          result: PURPLE_CANDLE
+          result-amount: 6
+          max-uses: 6
+          experience: 0
+        # 金锭*1 - 蓝色蜡烛*6
+        - cost: GOLD_INGOT
+          cost-amount: 1
+          result: BLUE_CANDLE
+          result-amount: 6
+          max-uses: 6
+          experience: 0
+        # 金锭*1 - 棕色蜡烛*6
+        - cost: GOLD_INGOT
+          cost-amount: 1
+          result: BROWN_CANDLE
+          result-amount: 6
+          max-uses: 6
+          experience: 0
+        # 金锭*1 - 绿色蜡烛*6
+        - cost: GOLD_INGOT
+          cost-amount: 1
+          result: GREEN_CANDLE
+          result-amount: 6
+          max-uses: 6
+          experience: 0
+        # 金锭*1 - 红色蜡烛*6
+        - cost: GOLD_INGOT
+          cost-amount: 1
+          result: RED_CANDLE
+          result-amount: 6
+          max-uses: 6
+          experience: 0
+        # 金锭*1 - 黑色蜡烛*6
+        - cost: GOLD_INGOT
+          cost-amount: 1
+          result: BLACK_CANDLE
+          result-amount: 6
+          max-uses: 6
+          experience: 0
+
+  # 12.工具匠交易
+  toolsmith:
+    level-1:
+      emerald-trades:
+        - cost: PUMPKIN
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+      other-trades:
+        - cost: EMERALD
+          cost-amount: 1
+          result: COOKIE
+          result-amount: 18
+          max-uses: 12
+          experience: 0
+    level-2:
+      emerald-trades:
+        - cost: PUMPKIN
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+      other-trades:
+        - cost: EMERALD
+          cost-amount: 1
+          result: COOKIE
+          result-amount: 18
+          max-uses: 12
+          experience: 0
+    level-3:
+      emerald-trades:
+        - cost: PUMPKIN
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+      other-trades:
+        - cost: EMERALD
+          cost-amount: 1
+          result: COOKIE
+          result-amount: 18
+          max-uses: 12
+          experience: 0
+    level-4:
+      emerald-trades:
+        - cost: PUMPKIN
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+      other-trades:
+        - cost: EMERALD
+          cost-amount: 1
+          result: COOKIE
+          result-amount: 18
+          max-uses: 12
+          experience: 0
+    level-5:
+      emerald-trades:
+        - cost: PUMPKIN
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+      other-trades:
+        - cost: EMERALD
+          cost-amount: 1
+          result: COOKIE
+          result-amount: 18
+          max-uses: 12
+          experience: 0
+
+  # 13.武器匠交易
+  weaponsmith:
+    level-1:
+      emerald-trades:
+        - cost: PUMPKIN
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+      other-trades:
+        - cost: EMERALD
+          cost-amount: 1
+          result: COOKIE
+          result-amount: 18
+          max-uses: 12
+          experience: 0
+    level-2:
+      emerald-trades:
+        - cost: PUMPKIN
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+      other-trades:
+        - cost: EMERALD
+          cost-amount: 1
+          result: COOKIE
+          result-amount: 18
+          max-uses: 12
+          experience: 0
+    level-3:
+      emerald-trades:
+        - cost: PUMPKIN
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+      other-trades:
+        - cost: EMERALD
+          cost-amount: 1
+          result: COOKIE
+          result-amount: 18
+          max-uses: 12
+          experience: 0
+    level-4:
+      emerald-trades:
+        - cost: PUMPKIN
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+      other-trades:
+        - cost: EMERALD
+          cost-amount: 1
+          result: COOKIE
+          result-amount: 18
+          max-uses: 12
+          experience: 0
+    level-5:
+      emerald-trades:
+        - cost: PUMPKIN
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+      other-trades:
+        - cost: EMERALD
+          cost-amount: 1
+          result: COOKIE
+          result-amount: 18
+          max-uses: 12
+          experience: 0
+
+  # 默认交易（无职业）
+  default:
+    level-1:
+      emerald-trades:
+        - cost: PUMPKIN
+          cost-amount: 6
+          result: EMERALD
+          result-amount: 1
+          max-uses: 12
+          experience: 1
+      other-trades:
+        - cost: EMERALD
+          cost-amount: 1
+          result: COOKIE
+          result-amount: 18
+          max-uses: 12
+          experience: 0

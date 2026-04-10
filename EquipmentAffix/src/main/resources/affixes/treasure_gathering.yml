@@ -1,0 +1,12 @@
+id: treasure_gathering
+display_name: "<#0EC754>聚宝"
+description: "<#0EC754>钓鱼时有概率获得双倍掉落"
+simple_description: "&7钓鱼时有&a{10*level}%&7概率获得双倍掉落"
+max_level: 3
+applicable_to:
+  - TOOL
+equipment_slot:
+  - FISHING_ROD
+calculation_mode: HIGHEST
+trigger_slot: MAIN_HAND
+priority: 2

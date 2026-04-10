@@ -1,0 +1,23 @@
+# 词条模板配置
+id: diamond_protection
+max_level: 3
+unlock_stage: "深层"
+upgrade_materials:
+  1:
+    - "DIAMOND*4"
+  2:
+    - "DIAMOND*8"
+  3:
+    - "DIAMOND*16"
+custom_model_data: 1058
+
+# 合成配方
+recipe:
+  type: shaped
+  shape:
+    - "DDD"
+    - "DID"
+    - "DDD"
+  ingredients:
+    D: DIAMOND
+    I: IRON_CHESTPLATE

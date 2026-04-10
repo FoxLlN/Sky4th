@@ -1,0 +1,24 @@
+# 猎潮词条模板配置
+id: tide_hunter
+max_level: 3
+unlock_stage: "主世界"
+upgrade_materials:
+  1:
+    - "NAUTILUS_SHELL*4"
+  2:
+    - "NAUTILUS_SHELL*8"
+  3:
+    - "NAUTILUS_SHELL*16"
+custom_model_data: 1042
+
+# 合成配方
+recipe:
+  type: shaped
+  shape:
+    - "FNF"
+    - "NPN"
+    - "FNF"
+  ingredients:
+    F: COD
+    N: NAUTILUS_SHELL
+    P: PUFFERFISH

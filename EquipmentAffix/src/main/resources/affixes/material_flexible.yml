@@ -1,0 +1,11 @@
+# 柔韧材质词条配置
+id: flexible
+display_name: "<underlined><#C65C35>柔韧</underlined>"
+description: "<#C65C35>挖掘速度小幅提升"
+simple_description: "&7挖掘速度提升&a10%&7"
+max_level: 1
+applicable_to:
+  - TOOL
+calculation_mode: HIGHEST
+is_init: true
+trigger_slot: MAIN_HAND

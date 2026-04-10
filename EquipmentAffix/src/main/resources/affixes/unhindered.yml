@@ -1,0 +1,12 @@
+# 无阻词条配置
+id: unhindered
+display_name: "<#F5F5F5>无阻"
+description: "<#F5F5F5>箭矢射出后一定时间不受重力影响"
+simple_description: "&7箭矢射出后&a{0.5*level}秒&7不受重力影响"
+max_level: 3
+applicable_to:
+  - BOW
+equipment_slot:
+  - CROSSBOW
+calculation_mode: HIGHEST
+trigger_slot: MAIN_HAND

@@ -1,0 +1,19 @@
+# 棱镜词条配置
+id: prism
+display_name: "<#6EECD2>棱镜"
+description: "<#6EECD2>累计棱镜护盾，折射弹射物攻击到周围敌人"
+simple_description: "&7每&a{12-2*level}秒&7累计一层<#6EECD2>棱镜&7，可以折射弹射物攻击到周围敌人"
+max_level: 3
+applicable_to:
+  - LIGHT_ARMOR
+  - HEAVY_ARMOR
+equipment_slot:
+  - LEGS
+calculation_mode: HIGHEST
+is_chargeable: true
+charge_resource: prism
+charge_resource_name: "<#6EECD2>棱镜"
+charge_max_storage:
+  1: 1
+  2: 2
+  3: 3

@@ -1,0 +1,24 @@
+# 词条模板配置
+id: aftershock
+max_level: 3
+unlock_stage: "主世界"
+upgrade_materials:
+  1:
+    - "GUNPOWDER*8"
+  2:
+    - "GUNPOWDER*16"
+  3:
+    - "GUNPOWDER*32"
+custom_model_data: 1047
+
+# 合成配方
+recipe:
+  type: shaped
+  shape:
+    - "SIS"
+    - "IAI"
+    - "SIS"
+  ingredients:
+    S: IRON_BLOCK
+    I: TNT
+    A: ANVIL

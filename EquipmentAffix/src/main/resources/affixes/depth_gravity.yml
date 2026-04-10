@@ -1,0 +1,18 @@
+# 地心引力词条配置
+id: depth_gravity
+display_name: "<#B4684D>地心引力"
+description: "<#B4684D>挖掘速度随高度降低而提升"
+simple_description: "&7从&ay=64&7每下降&a{25-5*level}格&7，挖掘速度&a+{0.5+0.5*level}%&7（最高&a+20%&7）"
+max_level: 3
+applicable_to:
+  - TOOL
+equipment_slot:
+  - PICKAXE
+  - AXE
+  - SHOVEL
+calculation_mode: SUM
+conflicting_affixes:
+  - plutocrat
+  - resonance
+  - nether_mining
+trigger_slot: MAIN_HAND

@@ -1,0 +1,97 @@
+# EquipmentAffix 语言文件（中文）
+# 支持参数替换，使用 {参数名} 格式
+# 支持颜色代码，使用旧版 & 格式（如 &a、&b）
+
+# 前缀
+prefix: "&7[&a装备系统&7] "
+
+# 命令相关
+command:
+  usage: "&c用法: /{command} {args}"
+  player-only: "&c该命令只能由玩家执行"
+  no-permission: "&c你没有权限执行此命令"
+  unknown: "&c未知命令: {command}"
+  equipment:
+    give:
+      usage: "&c用法: /equipment give <装备ID>"
+      affix-usage: "&c用法: /equipment give affix <词条名>"
+      success: "&a已获得装备: {equipment_name}"
+      not-found: "&c未找到装备: {equipment_id}"
+      affix-success: "&a成功创建词条锻造模版: {template_name}"
+      affix-not-found: "&c词条不存在: {affix_id}"
+  help:
+    header: "&6===== &b装备系统 &6帮助 ====="
+    give: "&e/equipment give <装备ID|affix> [词条ID] &7- 获取指定装备/词条锻造模版"
+    report: "&e/equipment report &7- 显示性能报告"
+    clear: "&e/equipment clear &7- 清空性能数据"
+    menu: "&e/equipment menu <页面ID> &7- 打开指定UI页面"
+  menu:
+    usage: "&c用法: /equipment menu <页面ID>"
+    example: "&7例如: /equipment menu affix_test"
+  report:
+    header: "&a=== 装备系统性能报告 ==="
+    no-data: "&7暂无性能数据"
+    operation: "&e{operation}:"
+    avg-time: "  &f平均耗时: &a{avg_time} ms"
+    max-time: "  &f最大耗时: &c{max_time} ms"
+    min-time: "  &f最小耗时: &a{min_time} ms"
+    count: "  &f调用次数: &e{count}"
+    footer: "========================="
+  clear:
+    success: "&a已清空性能数据"
+
+# 熟练度系统
+proficiency:
+  level-up: "&a{equipment_name} 熟练度等级提升至 {level}！"
+  level:
+    novice: "生疏"
+    beginner: "初学"
+    competent: "掌握"
+    proficient: "精通"
+    expert: "专家"
+    master: "宗师"
+
+# Lore显示
+lore:
+  simple:
+    base-weapon: "&f攻击伤害: +&c{damage}"
+    base-trident: "&f攻击伤害: +&c{damage}"
+    base-mace: "&f攻击伤害: +&c{damage}"
+    base-bow: "&f攻击伤害: +&c6&f~&c10"
+    base-crossbow: "&f攻击伤害: +&c7&f~&c11"
+    base-armor: "&f护甲值：+&a{armor}"
+    level: "&6熟练度: &e{level}"
+    material-effect: "{effect_name}"
+    affix-entry: "&7{affix_name} {roman_level}"
+    enchant-entry: "{enchant_name} {roman_level}"
+    toggle-hint: "&8[&7双击查看详情&8]"
+
+  detailed:
+    base-weapon: "&f近战伤害: +&c{damage}"
+    base-trident: "&f近战伤害: +&c{damage}&f; 投掷伤害: &c8点"
+    base-mace: "&f近战伤害: +&c{damage}&f~&c无限"
+    base-bow: "&f远程伤害: +&c6&f~&c10"
+    base-crossbow: "&f远程伤害: +&c7&f~&c11"
+    base-armor: "&f护甲值：+&a{armor}"
+    light-armor: "&7【轻型】&f闪避 +&c{dodge}%"
+    heavy-armor: "&7【重型】&f抗击退 +&c{knockback}%"
+    heavy-armor-punishment: "&7【重型】&f速度 -&c{speed}%  &f饥饿 +&c{hunger}%"
+    level: "&6熟练度: &e{level} &7{usage}&8/&7{nextThreshold}"
+    material-effect-detail: "&8|&7 {effect_name}&7: &f{description}"
+    affix-entry: "&8|&7 &b{affix_name} {roman_level}&7: &f{description}"
+    affix-entry-store: "&8|&7 &b{affix_name} {roman_level}&7: &f{description} &7({resource_name}&7:{currentAmount}/{maxAmount})"
+    slots-remaining: "&7剩余词条槽位：&e{remaining}"
+    enchant-entry: "&8|&7 &d{enchant_name} {roman_level}&7: &f{description}"
+    enchant-slots-remaining: "&7剩余附魔槽位：&e{remaining}"
+    trim-info: "&7纹质: {pattern}"
+    toggle-hint: "&8[&7双击隐藏详情&8]"
+
+# 充能系统
+charge:
+  charge-success: "&a存储成功: {current}/{max}"
+  charge-full: "&e存储已满 ({current}/{max})"
+
+equipment:
+  max_dodge_chance: 0.8
+
+

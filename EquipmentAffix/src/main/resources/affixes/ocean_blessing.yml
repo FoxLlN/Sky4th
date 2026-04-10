@@ -1,0 +1,12 @@
+# 海洋祝福词条配置
+id: ocean_blessing
+display_name: "<#5AAFA4>海洋祝福"
+description: "<#5AAFA4>获得水下呼吸，在水中受到伤害降低"
+simple_description: "&7获得水下呼吸，在水中受到伤害降低&a{2+3*level}%&7"
+max_level: 3
+applicable_to:
+  - LIGHT_ARMOR
+  - HEAVY_ARMOR
+equipment_slot:
+  - HEAD
+calculation_mode: HIGHEST

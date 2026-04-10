@@ -1,0 +1,405 @@
+# 前缀
+prefix: "<gray>[</gray><#AA00AA>地牢世界</#AA00AA><gray>]</gray> <reset>"
+prefix-sys: "<gray>[</gray><#55FFFF>地牢系统</#55FFFF><gray>]</gray> <reset>"
+prefix-team: "<gray>[</gray><#55FF55>地牢队伍</#55FF55><gray>]</gray> <reset>"
+prefix-message: "<gray>[</gray><#FFAA00>地牢公告</#FFAA00><gray>]</gray> <reset>"
+prefix-broadcast: "<gray>[</gray><#FF5555>地牢播报</#FF5555><gray>]</gray> <reset>"
+
+# 命令相关
+command:
+  usage: "&c用法错误，请使用 &e/dungeon help &c查看具体用法。"
+  help:
+    - "&6===== {plugin} 帮助 ====="
+    - "&e/dungeon <子命令>"
+    - "&7可用子命令:"
+    - "&a  help &7- 显示此帮助信息"
+    - "&a  list &7- 列出所有地牢及其实例状态"
+    - "&a  enter <实例ID> &7- 进入指定地牢实例（格式：地牢ID_实例ID）"
+    - "&a  exit &7- 离开副本"
+    - "&a  shop &7- 打开配装商店（装备/近战/远程/补给）"
+    - "&a  storage &7- 打开仓库"
+    - "&a  cost <地牢名> [新费用] &7- 查看/设置入场费用（管理员）"
+    - "&a  level [玩家] &7- 查看地牢科技树等级"
+    - "&a  setlevel <玩家> <等级> &7- 设置地牢科技树等级（管理员）"
+    - "&a  reload <地牢名|ALL> &7- 重新加载配置（管理员）"
+    - "&a  reset <地牢名|ALL> &7- 重置副本世界（管理员）"
+    - "&a  create <地牢名> &7- 创建新的地牢实例（管理员）"
+    - "&a  delete <实例ID> &7- 删除指定的地牢实例（管理员）"
+    - "&a  random [稀有度] &7- 随机抽一个物品放入背包（稀有度可选：common/uncommon/rare/epic/legendary/mythic）"
+    - "&a  team <子命令> &7- 队伍管理"
+    - "&7    invite <玩家名> &7- 邀请玩家加入队伍"
+    - "&7    accept &7- 接受队伍邀请"
+    - "&7    decline &7- 拒绝队伍邀请"
+    - "&7    info &7- 查看队伍信息"
+  player-only: "&c只有玩家可以使用此命令！"
+  already-in-dungeon: "&c你已经在副本中了！"
+  enter-failed: "&c进入副本失败！请检查副本世界是否已创建。"
+  enter:
+    instance-not-found: "&c找不到实例ID为 &e{instanceId} &c的地牢实例！"
+    instance-full: "&c实例 &e{instanceId} &c已满，无法进入！"
+    instance-required: "&c必须指定实例ID才能进入地牢！"
+    invalid-instance-format: "&c无效的实例ID格式！正确格式：地牢ID_实例ID"
+  enter-cost-not-enough: "&c信用点不足！进入需要 &e{cost} &c信用点。"
+  enter-cost-failed: "&c扣除进入费用失败，请稍后再试。"
+  not-in-dungeon: "&c你不在副本中！"
+  no-permission: "&c你没有权限使用此命令！"
+  reload-success: "&a地牢 &e{dungeon} &a配置已重新加载！"
+  reload-success-all: "&a所有地牢配置已重新加载！"
+  reload-failed: "&c配置重载失败！"
+  reset-start: "&a正在重置地牢 &e{dungeon} &a的副本世界，请稍候..."
+  reset-failed: "&c重置/加载失败：请查看控制台日志（可能模板路径错误或世界仍被占用）。"
+  reset-success: "&a地牢 &e{dungeon} &a副本世界已重置并加载完成：&e{world}"
+  reset-success-all: "&a所有地牢副本世界已重置并加载完成。"
+  unknown: "&c未知子命令，请使用 &e/dungeon help &c查看帮助。"
+  invalid-dungeon: "&c不存在名为 &e{dungeon} &c的地牢。"
+  cost-show: "&7地牢 &e{dungeon} &7当前入场费用：&e{cost}"
+  cost-set: "&a地牢 &e{dungeon} &a入场费用已设置为 &e{cost}&a。"
+  cost-invalid-number: "&c无效的金额，请输入数字。"
+  level:
+    show-self: "&7你的地牢科技树等级：&e{level}&7。"
+    show-other: "&7玩家 &e{player} &7的地牢科技树等级：&e{level}&7。"
+    set-success: "&a已将 &e{player} &a的地牢科技树等级设置为 &e{level}&a。"
+    tech-unavailable: "&c地牢科技树服务不可用（请确认SkyCore与数据库已就绪）。"
+    invalid-level: "&c无效的等级，只能设置为 0～5。"
+  random-success: "&a已随机获得一个物品并放入背包！"
+  random-fail: "&c未能获得物品（可能没有配置或该稀有度下无物品）。"
+  random-not-in-dungeon: "&c你不在地牢中，无法使用此命令！"
+  list:
+    no-dungeons: "&c当前没有可用的地牢配置。"
+    header: "&6===== 地牢列表 ====="
+    dungeon-info: "&7地牢: &e{id} &7({name}) &7| 费用: &e{cost} &7| 实例: &e{instances}/{maxInstances}"
+    instance-info: "&8  ┃ 实例: &e{instanceId} &7| 玩家: &e{players}/{maxPlayers} &7| 状态: &e{status}"
+    footer: "&6=================="
+  create:
+    max-instances-reached: "&c地牢 &e{dungeon} &c已达到最大实例数 &e{max}&c（当前: &e{current}&c）"
+    failed: "&c创建地牢实例失败！"
+    success: "&a成功创建地牢实例: &e{instanceId} &a({dungeonName})"
+  delete:
+    instance-not-found: "&c找不到实例ID为 &e{instanceId} &c的地牢实例！"
+    has-players: "&c实例 &e{instanceId} &c中还有 &e{players} &c名玩家，无法删除！"
+    failed: "&c删除地牢实例失败！"
+    success: "&a成功删除地牢实例: &e{instanceId} &a({dungeon})"
+  reset:
+    no-instances: "&7地牢 &e{dungeon} &7当前没有活动实例。"
+    result: "&7地牢 &e{dungeon} &7重置完成: 成功 &a{success}&7, 失败 &c{failed}"
+    reset-all-result: "&7所有地牢重置完成: 成功 &a{success}&7, 失败 &c{failed}"
+
+# 配装商店
+shop:
+  title: "&1配装商店"
+  coming-soon: "&7即将上架"
+  purchased: "&a已购买 &e{item} &a，花费 &e{cost}&a。"
+  purchased-to-storage: "&a已购买 &e{item} &a并加入仓库，花费 &e{cost}&a。"
+  not-enough: "&c信用点不足！需要 &e{cost}&c。"
+  economy-unavailable: "&c经济系统不可用，无法购买。"
+  storage-unavailable: "&c仓库服务不可用，无法购买。"
+  purchase-failed: "&c扣款失败，请稍后再试。"
+  button:
+    prev: "&e上一页"
+    next: "&e下一页"
+    confirm: "&a确认购买"
+    cancel: "&c取消选中"
+    storage: "&e点击打开仓库"
+    loadout: "&a进入配装"
+  category:
+    selected: "&a&l&n{name}"
+    current: "&8┃ &a▶ 当前分类"
+    switch: "&7点击切换到此分类"
+  item:
+    price: "&8┃ &6价格 &8» &e{price} &7信用点"
+    click-hint: "&8┃ &7第一次点击选中 &8│ &a再次点击购买"
+
+# 副本内补给品使用
+supply-use:
+  start: "&e使用开始: &f{item} &7(读条中...请勿切换物品或受伤)"
+  bossbar: "&e使用中: &f{item} &7({time}s)"
+  success: "&a使用成功: &f{item}"
+  interrupted: "&c使用被打断"
+  full-health: "&c你已经满血了，无法使用！"
+
+# 副本内维修物品使用
+repair-use:
+  start: "&e维修开始: &f{item} &7(读条中...请勿切换物品或受伤)"
+  bossbar: "&e维修中: &f{item} &7({time}s)"
+  success: "&a维修成功: &f{item}"
+  interrupted: "&c维修被打断"
+  no-repairable: "&c主手物品无法维修或已满耐久！"
+  not-in-dungeon: "&c只能在副本内使用维修物品！"
+
+# 仓库（搜打撤物品）
+storage:
+  title: "&1仓库"
+  full: "&c仓库已满，无法放入。"
+  button:
+    shop: "&a点击打开商店"
+    sell: "&c点击进入出售模式"
+    sell-confirm: "&c点击退出出售模式"
+  sell-lore:
+    - "&8┃ &7在出售模式下:"
+    - "&8┃ &7左键点击物品选中"
+    - "&8┃ &7再次点击已选中的物品出售"
+    - "&8┃ &7右键点击物品取消选中"
+  sell-confirm-lore:
+    - "&a当前处于出售模式"
+    - "&8┃ &7左键点击物品选中"
+    - "&8┃ &7再次点击已选中的物品出售"
+    - "&8┃ &7右键点击物品取消选中"
+  sell-success: "&a出售成功！获得 &e{totalPrice} &7信用点 (单价: &e{unitPrice} &7× &e{amount})"
+  loot: "&7搜刮物品"
+  set-durability-title: "&f套装耐久度:"
+  set-durability-line: "&7{slot}: &e{current}/{max}"
+
+loadout:
+  category:
+    equipment: "装备"
+    melee: "近战武器"
+    ranged: "远程武器"
+    supplies: "补给品"
+    repair: "维修"
+  # 配装界面（进入地牢前）
+  screen:
+    title: "&1配装"
+    owned: "&7拥有 &e{count} &7件"
+    not-selected: "&7未选择"
+    selected: "&a已选: &f{name}"
+    click-to-select: "&e点击从仓库选择"
+    need-buy: "&c仓库中暂无此类物品，请先到商店购买"
+    enter-dungeon: "&a进入地牢"
+    open-shop: "&e打开商店"
+    open-storage: "&e打开仓库"
+    supplies-selected: "&7已选 &e{current}&7/&e{max} &7件补给"
+    supplies-limit-reached: "&c补给品最多携带 &e{max} &c件（当前已选 &e{current}&c）。"
+    pick-storage-title: "&1选择要装备的物品"
+    pick-arrows-title: "&1选择要携带的箭矢"
+    pick-arrows-title-explosive: "&1选择要携带的爆炸箭"
+    arrows-total-title: "&7已选箭矢"
+    arrows-total: "&7共 &e{total} &7支（普通箭矢）"
+    arrows-total-explosive: "&7共 &e{total} &7支（爆炸箭）"
+    arrows-total-any: "&7共 &e{total} &7支（箭矢）"
+    arrows-limit-reached: "&c{type}最多携带 &e{max} &c支（当前已选 &e{current}&c）。"
+    arrows-limit-partial: "&e{type}上限剩余 &a{remain}&e支，本次仅选中 &a{taken}&e支。"
+    arrows-hint-normal: "&7可装备: &f普通箭矢"
+    arrows-hint-explosive: "&7可装备: &4爆炸箭"
+    arrows-hint-special: "&7可装备: &f普通箭矢 &7/ &5特种箭矢"
+    select-arrows: "&e选择箭矢"
+    select-explosive-arrows: "&e选择爆炸箭"
+    arrows-selected: "&a已选 &e{count} &a堆 / 共 &e{total} &a支"
+    arrows-selected-explosive: "&a已选 &e{count} &a堆 / 共 &e{total} &a支（爆炸箭）"
+    select-arrows-first: "&7请先选择远程武器"
+    need-arrows: "&c已选远程武器，请选择要携带的箭矢"
+    back: "&7返回配装"
+    buy-arrows: "&a购买箭矢"
+    buy-arrows-title: "&1购买箭矢"
+    buy-arrows-lore: "&7点击购买当前武器可用箭矢"
+    arrows-explosive: "&7爆炸箭: &e{count}&7/&e16 &7支"
+    arrows-normal: "&7普通箭矢: &e{count}&7/&e64 &7支"
+    arrows-special: "&7特种箭矢: &e{count}&7/&e24 &7支"
+    category-title: "&1选择 {category}"
+    category-current: "&a当前装配中"
+    category-switch: "&7点击切换到此分类"
+    storage-count: "&7仓库: &e{count} &7件"
+    click-select-then: "&7首次点击选中，再次点击选择/购买"
+    supplies-equipped: "&7已装备: &e{count} &7件"
+    supplies-click-hint: "&7左键装备一个 &8| &7右键取消一个 &8| &7无则双击购买"
+    selected-confirm: "&a已选上: &f{name}"
+  # 铁壁套装主动技能
+  ironwall:
+    active-used: "&a已获得 &e抗性 II &a，持续 40 秒。"
+    cooldown: "&c铁壁技能次数已用完！"
+    wrong-set: "&c你已使用其他套装的技能，本局无法使用铁壁技能！"
+    effect-active: "&e铁壁抗性效果生效中：剩余 &a{seconds}&e 秒"
+  # 斥候套装主动技能
+  scout:
+    active-used: "&a已触发斥候技能：下一次搜索高品质概率提升。"
+    cooldown: "&c斥候技能次数已用完！"
+    wrong-set: "&c你已使用其他套装的技能，本局无法使用斥候技能！"
+    effect-active: "&e斥候品质提升效果生效中"
+  # 学者套装主动技能
+  scholar:
+    active-used: "&a已触发学者技能：附近容器已刷新，可重新搜索。"
+    no-container: "&c附近 5 格内没有已搜索的容器，无法刷新。"
+    cooldown: "&c学者技能次数已用完！"
+    wrong-set: "&c你已使用其他套装的技能，本局无法使用学者技能！"
+  # 游侠套装主动技能
+  ranger:
+    active-used: "&a已触发游侠技能：下次远程伤害 +60%。"
+    cooldown: "&c游侠技能次数已用完！"
+    wrong-set: "&c你已使用其他套装的技能，本局无法使用游侠技能！"
+    effect-active: "&e游侠伤害加成效果生效中"
+  # 萨满套装主动技能
+  shaman:
+    active-used: "&a已清除负面效果并恢复 &c❤❤❤&a。"
+    cooldown: "&c萨满技能次数已用完！"
+    wrong-set: "&c你已使用其他套装的技能，本局无法使用萨满技能！"
+
+  # 通用提示
+  common:
+    skill-active: "&c套装技能效果正在生效中，无法再次使用！"
+
+# 武器提示
+weapon:
+  suppression_axe:
+    effect-triggered: "&e压制战斧效果触发！目标已被停顿。"
+
+# 通用 UI（商店/仓库/配装右上角）
+ui:
+  credits-title: "&6信用点"
+  credits: "&7当前: &e{balance}"
+
+# 价值描述
+price-value: "&7价值: &e{value} &7信用点"
+
+# 副本相关
+dungeon:
+  entered-with-name: "&a你已进入 &e{name} &a世界，祝你好运！"
+  left-with-name: "&a你成功撤离了 &e{name} &a世界，返回了安全的地方！"
+  already-entered: "&c你已经进入过该地牢，无法进入！"
+  instance-closed: "&c该地牢已关闭，无法进入！"
+
+backpack:
+  slot-blocked: "&c该格子在地牢内不可存放物品！"
+  cash-received: "&a获得 &e{value} &a信用点现金"
+  placeholder:
+    name: "&8已锁定"
+    lore:
+      - "&7此格在地牢内不可使用"
+  safe-slot:
+    name: "&a安全箱"
+    lore:
+      - "&7此行格子为安全箱"
+      - "&7死亡后不会丢失物品"
+  value-solt:
+    name: "&a背包价值"
+    lore: 
+      - "&7背包总价值: &e{value}&7信用点"
+  sidebar:
+    title: "&6&l地牢背包"
+    no-skill: "&7技能: &f-"
+    skill-prefix: "&7技能: "
+    cash-amount: "&7背包现金: &e{cash}"
+    dungeon-time: "&7地牢关闭: &e{time}"
+    dungeon-time-inactive: "&7地牢关闭: &f-"
+    dungeon-time-unlimited: "&7地牢关闭: &a无限"
+    dungeon-time-closed: "&7地牢关闭: &c已关闭"
+
+# 队伍相关
+team:
+  invite-sent: "&a已向 &e{player} &a发送组队邀请"
+  invite-received: "&e{player} &a邀请你加入队伍"
+  not-in-dungeon: "&c你不在地牢中"
+  create-failed: "&c创建队伍失败"
+  cannot-invite-self: "&c你不能邀请自己"
+  invite-buttons-accept: "&7[&a接受&7]"
+  invite-buttons-decline: "&7[&c拒绝&7]"
+  invite-declined-by: "&e{player} &c拒绝了你的组队邀请"
+  invite-accepted: "&a你已加入队伍"
+  invite-declined: "&c你拒绝了组队邀请"
+  invite-expired: "&c邀请已过期"
+  team-full: "&c队伍已满，无法加入"
+  already-in-team: "&c你已经在队伍中了"
+  not-in-team: "&c你不在队伍中"
+  not-available: "&c队伍系统不可用"
+  not-exist: "&c队伍不存在"
+  player-not-found: "&c找不到玩家 &e{player}"
+  player-not-in-dungeon: "&c玩家 &e{player} &c不在地牢中"
+  player-not-in-instance: "&c玩家 &e{player} &c不在同一地牢实例中"
+  help-sent-solo: "&a你已发送呼救信号，附近玩家已收到你的信号"
+  help-sent-team: "&a你已发送呼救信号，队友已收到你的信号"
+  help-received: "&e{player} &c在 X:&e{x} &cY:&e{y} &cZ:&e{z} &c处倒地，需要救援！"
+  rescue-start: "&a开始救援 &e{player} &a..."
+  rescue-complete: "&a成功救起 &e{player} &a！"
+  rescue-cancelled: "&c救援已被取消"
+  rescue-cancel-distance: "&c距离过远，救援已取消"
+  rescue-progress: "&e救援进度: {progress}"
+  give-up: "&c你放弃了救援，已死亡"
+  downed: "&c你已倒地，无法移动和改变物品栏"
+  message: "&c你已倒地！等待救援或放弃救援。"
+  no-nearby-players: "&c周围30格内没有玩家！"
+  already-being-rescued: "&c该玩家正在被救援中！"
+  cannot-rescue-while-downed: "&c你已倒地，无法救援他人！"
+  being-rescued: "&e{player} &a正在救援你..."
+  death-count: "&c死亡次数: &e{current}&c/&e{max}"
+  spectator-mode: "&e你已进入旁观者模式，可以旁观队友或退出地牢"
+  exit-spectator: "&a退出地牢（旁观者）"
+  info:
+    header: "&6===== 队伍信息 ====="
+    id: "&7队伍ID: &e{id}"
+    members: "&7成员: &e{count}&7/&e{max}"
+    member: "&7  - {player} &8| &7状态: {status}"
+    footer: "&6=================="
+
+# 倒地相关
+downed:
+  downed: "&c你已倒地！等待救援或放弃救援。"
+  use: "&c你已倒地，无法使用物品！"
+  no-nearby-players: "&c周围没有玩家！"
+  death-count-exceeded: "&c你已达到最大死亡次数，无法被救援！"
+  already-being-rescued: "&c该玩家正在被救援中！"
+  cannot-rescue-while-downed: "&c你已倒地，无法救援他人！"
+  cannot-rescue-not-teammate: "&c只能救援队友！"
+  being-rescued: "&e{player} &a正在救援你..."
+  rescue-cancel-distance: "&c距离过远，救援已取消"
+  rescue-progress: "&e救援进度: {progress}"
+  rescued: "&a你已被 &e{player} &a救起！"
+  help-button: "&7[&e呼救&7]"
+  give-up-button: "&7[&c放弃&7]"
+  help-message: "&a向周围玩家/队友发送救援请求"
+  give-up-message: "&c放弃呼救，直接死亡"
+
+# 死亡相关
+death:
+  message: "&c你在地牢中迷失了方向，返回了安全的地方..."
+  inventory:
+    title: "&c{player}的尸体"
+  head:
+    name: "&c{player}的尸体"
+  cash-title: "&c尸体上的钱袋"
+  cash-lore: "&7点击领取 &e{amount} 信用点现金"
+  cash-empty-lore: "&7钱袋已空"
+  cash-collected: "&a你从尸体内收集了 &e{amount} 信用点现金！"
+  killed-by-player: "&e{killername} &c使用 &e{weapon} &c击杀 &e{playername}"
+  killed-by-monster: "&e{monstername} &c击杀 &e{playername}"
+  killed: "&e{playername} &c死亡！"
+
+# 撤离点相关
+exit:
+  entered-with-name: "&7你已进入 &e{name} &7，停留 &e{seconds} &7秒将自动退出副本。"
+  cancelled: "&c你离开了撤离点区域，倒计时已取消。"
+  bossbar-title: "&a撤离中：剩余 &e{seconds} &a秒"
+
+# 搜索相关
+search:
+  no-loot: "&c当前没有可用的掉落物配置，请联系管理员。"
+  cash-value: "&7价值: &e{min}&7-&e{max} &7信用点"
+  monster-body-title: "&c怪物尸体"
+  ui:
+    glass-pane: "&7 "
+    placeholder: "&8???"
+    progress:
+      completed: "&a已完成"
+      in-progress: "&7搜索中..."
+      active: "&e搜索中..."
+  already-in-use: "&c该容器正在被其他玩家搜索..."
+
+# 科技树等级相关
+tech-level:
+  modifier-name: "地牢科技树生命加成"
+
+# 日志相关
+log:
+  world-ready: "副本世界已就绪: {world}"
+  world-init-failed: "副本世界初始化失败！请检查 template-world-path 配置是否正确。"
+  enabled: "{plugin} v{version} 已启用！"
+  disabled: "{plugin} 已禁用！"
+  config-reloaded: "配置已重新加载"
+  world-missing: "副本世界不存在"
+  prepare-world-failed: "准备副本世界文件夹失败: {error}"
+  load-world-failed: "加载副本世界失败: {world}"
+  unload-world-failed: "卸载副本世界失败（可能仍被占用）: {world}"
+  template-filter: "模板复制过滤启用: {filters}"
+  template-copy-start: "正在从模板复制副本世界..."
+  template-path: "模板: {path}"
+  target-path: "目标: {path}"
+  template-core-filter-warning: "检测到在 template-ignore 中配置了核心世界文件/目录({path})，已强制忽略该过滤，避免生成全新的随机世界。"
+  template-world-missing: "模板世界目录不存在: {path}"
+  delete-failed: "删除失败: {path} ({error})"

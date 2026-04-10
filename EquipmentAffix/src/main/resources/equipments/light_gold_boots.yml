@@ -1,0 +1,24 @@
+# 金质 轻型靴子
+id: light_gold_boots
+material: GOLDEN_BOOTS
+categories:
+  - LIGHT_ARMOR
+display_name: "金质 轻型靴子"
+material_effect: dazzling
+armor: 1.0
+toughness: 0.0
+max_enchantment_slots: 3
+max_affix_slots: 1
+max_durability: 91
+dodge_chance: 0.02
+affixes: {}
+enchantments: {}
+
+# 配方配置
+recipe:
+  type: shaped
+  shape:
+    - "G G"
+    - "G G"
+  ingredients:
+    G: GOLD_INGOT

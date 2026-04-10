@@ -1,0 +1,18 @@
+# 自动冶炼词条配置
+id: auto_smelting
+display_name: "<#FC9600>自动冶炼"
+description: "<#FC9600>挖掘时，掉落物可以自动冶炼成成品"
+simple_description: "&7挖掘时，掉落物可以自动冶炼成成品"
+max_level: 1
+applicable_to:
+  - TOOL
+equipment_slot:
+  - PICKAXE
+  - AXE
+  - SHOVEL
+calculation_mode: HIGHEST
+conflicting_affixes:
+  - void
+  - gold_touch
+  - scavenge
+trigger_slot: MAIN_HAND

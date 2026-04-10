@@ -1,0 +1,25 @@
+# 铁锄
+id: iron_hoe
+material: IRON_HOE
+categories:
+  - TOOL
+display_name: "铁锄"
+material_effect: mineral_vein
+attack_damage: 1.0
+attack_speed: 3.0
+max_enchantment_slots: 2
+max_affix_slots: 1
+max_durability: 250
+affixes: {}
+enchantments: {}
+
+# 配方配置
+recipe:
+  type: shaped
+  shape:
+    - "II"
+    - " S"
+    - " S"
+  ingredients:
+    I: IRON_INGOT
+    S: STICK

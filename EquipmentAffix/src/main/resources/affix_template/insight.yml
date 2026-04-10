@@ -1,0 +1,24 @@
+# 词条模板配置
+id: insight
+max_level: 3
+unlock_stage: "末地"
+upgrade_materials:
+  1:
+    - "ENDER_EYE*6"
+  2:
+    - "ENDER_EYE*12"
+  3:
+    - "ENDER_EYE*24"
+custom_model_data: 1051
+
+# 合成配方
+recipe:
+  type: shaped
+  shape:
+    - "GEG"
+    - "EIE"
+    - "GEG"
+  ingredients:
+    E: ENDER_EYE
+    G: GOLD_INGOT
+    I: IRON_HELMET

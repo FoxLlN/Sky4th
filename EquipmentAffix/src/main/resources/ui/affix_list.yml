@@ -1,0 +1,92 @@
+id: "affix_list"
+title: "<b><blue>词条列表</blue></b>"
+shape:
+  - 'FFFFFFFFF'
+  - 'FFTTTTTFF'
+  - 'AFTTTTTFS'
+  - 'YFTTTTTFM'
+  - 'FFTTTTTFF'
+  - 'FFFPFNFFE'
+template:
+  F:
+    material: BLACK_STAINED_GLASS_PANE
+    name: " "
+  T:
+    feature:
+      functional: template_list
+      lore:
+        - "&8| &7锻造词条 > {affix_name}"
+        - "&8| &7最大等级 > &e{max_level}"
+        - "&8| &7词条简介 > {description}"
+        - "&7"
+        - "&8| &7点击查看详细信息"
+  S:
+    material: PLAYER_HEAD
+    name: "&b排序 &7>> &e切换词条列表排序模式"
+    feature:
+      head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWZiMzFmMDNmMjYzZTNiZDcxZmJlOGQwN2ZlY2FjODY3NWQxNjZhZTNjM2YwNzkxODYzNTg2NWExYzNlNDAwMyJ9fX0=
+      functional: sort
+      lore:
+        - "&8| &7当前排序的模式"
+        - "&8| > &e{rule}"
+        - "&7"
+        - "&8| &7左键点击 &a切换下一个排序模式"
+        - "&8| &7排序模式 &e<名字|装备类别|材料>"
+  M:
+    material: PLAYER_HEAD
+    name: "&b筛选 &7>> &e按词条名字"
+    feature:
+      head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmFkOGEzYTNiMzZhZGQ1ZDk1NDFhOGVjOTcwOTk2ZmJkY2RlYTk0MTRjZDc1NGM1MGU0OGU1ZDM0ZjFiZjYwYSJ9fX0=
+      functional: filter_name
+      lore:
+        - "&8| &7当前筛选的字符"
+        - "&8| > &e{name}"
+        - "&7"
+        - "&8| &7左键点击 &a输入筛选字符"
+        - "&8| &7右键点击 &e重置当前筛选"
+  A:
+    material: PLAYER_HEAD
+    name: "&b筛选 &7>> &e按升级材料"
+    feature:
+      head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGNmN2FmNTQ4ZGNhNmEyYTk0MmVkNzI2NDBkZDgwZTUwMGY4MzI5OGY4OWMzMWUzYWI0YTVmNmNlMjBlMmY0ZCJ9fX0=
+      functional: filter_material
+      lore:
+        - "&8| &7当前筛选条件: {mode}"
+        - "&8| > &e{materials}"
+        - "&7"
+        - "&8| &7左键点击 &a选择筛选条件"
+        - "&8| &7右键点击 &e重置当前筛选"
+  Y:
+    material: PLAYER_HEAD
+    name: "&b筛选 &7>> &e按装备类型"
+    feature:
+      head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTBkZmM4YTM1NjNiZjk5NmY1YzFiNzRiMGIwMTViMmNjZWIyZDA0Zjk0YmJjZGFmYjIyOTlkOGE1OTc5ZmFjMSJ9fX0=
+      functional: filter_type
+      lore:
+        - "&8| &7当前筛选条件: {mode}"
+        - "&8| > &e{types}"
+        - "&7"
+        - "&8| &7左键点击 &a选择筛选条件"
+        - "&8| &7右键点击 &e重置当前筛选"
+  P:
+    material: PLAYER_HEAD
+    name: "&e上一页"
+    feature:
+      functional: page_turn
+      direction: previous
+      slot_char: T
+      head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjllYTFkODYyNDdmNGFmMzUxZWQxODY2YmNhNmEzMDQwYTA2YzY4MTc3Yzc4ZTQyMzE2YTEwOThlNjBmYjdkMyJ9fX0=
+  N:
+    material: PLAYER_HEAD
+    name: "&e下一页"
+    feature:
+      functional: page_turn
+      direction: next
+      slot_char: T
+      head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODI3MWE0NzEwNDQ5NWUzNTdjM2U4ZTgwZjUxMWE5ZjEwMmIwNzAwY2E5Yjg4ZTg4Yjc5NWQzM2ZmMjAxMDVlYiJ9fX0=
+  E:
+    material: PLAYER_HEAD
+    name: "&c关闭"
+    feature:
+      head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjc1NDgzNjJhMjRjMGZhODQ1M2U0ZDkzZTY4YzU5NjlkZGJkZTU3YmY2NjY2YzAzMTljMWVkMWU4NGQ4OTA2NSJ9fX0=
+      functional: exit

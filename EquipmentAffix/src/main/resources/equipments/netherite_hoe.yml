@@ -1,0 +1,15 @@
+# 下届合金锄
+id: netherite_hoe
+material: NETHERITE_HOE
+categories:
+  - TOOL
+display_name: "下届合金锄"
+material_effect: pillar
+attack_damage: 1.0
+attack_speed: 4.0
+max_enchantment_slots: 2
+max_affix_slots: 2
+max_durability: 2031
+affixes: {}
+enchantments: {}
+

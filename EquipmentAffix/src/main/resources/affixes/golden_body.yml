@@ -1,0 +1,11 @@
+# 金身词条配置
+id: golden_body
+display_name: "<#DEB12D>金身"
+description: "<#DEB12D>周期性获得一定数值伤害吸收护盾"
+simple_description: "&7每&a60秒&7获得&a2点&7伤害吸收护盾，最多&a{2+2*level}点"
+max_level: 3
+applicable_to:
+  - HEAVY_ARMOR
+equipment_slot:
+  - CHEST
+calculation_mode: HIGHEST

@@ -1,0 +1,24 @@
+# 弩
+id: crossbow
+material: CROSSBOW
+categories:
+  - BOW
+display_name: "弩"
+max_enchantment_slots: 2
+max_affix_slots: 1
+max_durability: 465
+affixes: {}
+enchantments: {}
+
+# 配方配置
+recipe:
+  type: shaped
+  shape:
+    - "BIB"
+    - "STS"
+    - " B "
+  ingredients:
+    S: STRING
+    B: STICK
+    I: IRON_INGOT
+    T: TRIPWIRE_HOOK

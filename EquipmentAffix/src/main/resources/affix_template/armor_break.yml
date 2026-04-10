@@ -1,0 +1,24 @@
+# 词条模板配置
+id: armor_break
+max_level: 3
+unlock_stage: "深层"
+upgrade_materials:
+  1:
+    - "DIAMOND*4"
+  2:
+    - "DIAMOND*8"
+  3:
+    - "DIAMOND*12"
+custom_model_data: 1015
+
+# 合成配方
+recipe:
+  type: shaped
+  shape:
+    - "ODO"
+    - "DID"
+    - "ODO"
+  ingredients:
+    D: DIAMOND
+    O: OBSIDIAN
+    I: IRON_CHESTPLATE

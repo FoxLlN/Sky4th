@@ -1,0 +1,11 @@
+# 双晶词条配置
+id: crystal
+display_name: "<underlined><#6EECD2>双晶</underlined>"
+description: "<#6EECD2>挖掘时，有概率获得双倍掉落物"
+simple_description: "&7挖掘时，有&a10%&7概率获得双倍掉落物"
+max_level: 1
+applicable_to:
+  - TOOL
+calculation_mode: HIGHEST
+priority: 0
+trigger_slot: MAIN_HAND

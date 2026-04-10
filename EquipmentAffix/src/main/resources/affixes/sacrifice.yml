@@ -1,0 +1,14 @@
+# 献祭词条配置
+id: sacrifice
+display_name: "<#FC9600>献祭"
+description: "<#FC9600>自身受到伤害增加，受伤时对周围实体造成火焰伤害"
+simple_description: "&7自身受到伤害增加&a{5+5*level}%&7，受伤时对周围&a{1.5+0.5*level}格&7实体造成受到伤害&a{10+5*level}%&7的火焰伤害"
+max_level: 3
+applicable_to:
+  - LIGHT_ARMOR
+equipment_slot:
+  - CHEST
+calculation_mode: HIGHEST
+conflicting_affixes:
+  - iron_spike
+  - capacitor

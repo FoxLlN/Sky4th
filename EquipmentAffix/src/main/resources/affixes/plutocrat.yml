@@ -1,0 +1,18 @@
+# 财阀词条配置
+id: plutocrat
+display_name: "<#0EC754>财阀"
+description: "<#0EC754>物品栏的绿宝石越多，挖掘速度越快"
+simple_description: "&7物品栏中每有&a{20-4*level}个&7绿宝石，挖掘速度增加&a1%&7，最多&a+20%"
+max_level: 3
+applicable_to:
+  - TOOL
+equipment_slot:
+  - PICKAXE
+  - AXE
+  - SHOVEL
+calculation_mode: SUM
+conflicting_affixes:
+  - depth_gravity
+  - resonance
+  - nether_mining
+trigger_slot: MAIN_HAND

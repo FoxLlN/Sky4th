@@ -1,0 +1,25 @@
+# 钻石 轻型护腿
+id: light_diamond_leggings
+material: DIAMOND_LEGGINGS
+categories:
+  - LIGHT_ARMOR
+display_name: "钻石 轻型护腿"
+material_effect: resilience
+armor: 4.0
+toughness: 1.2
+max_enchantment_slots: 2
+max_affix_slots: 1
+max_durability: 495
+dodge_chance: 0.035
+affixes: {}
+enchantments: {}
+
+# 配方配置
+recipe:
+  type: shaped
+  shape:
+    - "DDD"
+    - "D D"
+    - "D D"
+  ingredients:
+    D: DIAMOND

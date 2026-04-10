@@ -1,0 +1,24 @@
+# 词条模板配置
+id: overheat
+max_level: 3
+unlock_stage: "地狱"
+upgrade_materials:
+  1:
+    - "BLAZE_POWDER*8"
+  2:
+    - "BLAZE_POWDER*16"
+  3:
+    - "BLAZE_POWDER*32"
+custom_model_data: 1019
+
+# 合成配方
+recipe:
+  type: shaped
+  shape:
+    - "MBM"
+    - "BDB"
+    - "MBM"
+  ingredients:
+    M: MAGMA_BLOCK
+    B: BLAZE_POWDER
+    D: DIAMOND_SWORD

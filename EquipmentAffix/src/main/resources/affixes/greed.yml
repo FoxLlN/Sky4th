@@ -1,0 +1,17 @@
+# 贪婪词条配置
+id: greed
+display_name: "<#DEB12D>贪婪"
+description: "<#DEB12D>击杀生物时，消耗一定耐久度将掉落物都转换成金粒"
+simple_description: "&7击杀生物时，每个掉落物消耗&a{24-4*level}点&7耐久转换成金粒"
+max_level: 3
+applicable_to:
+  - WEAPON
+equipment_slot:
+  - SWORD
+  - AXE
+calculation_mode: HIGHEST
+priority: 2
+conflicting_affixes:
+  - void
+  - scavenge
+trigger_slot: MAIN_HAND

@@ -1,0 +1,24 @@
+# 生根词条锻造模板配置
+id: rooted
+max_level: 3
+unlock_stage: "主世界"
+upgrade_materials:
+  1:
+    - "ROOTED_DIRT*12"
+  2:
+    - "ROOTED_DIRT*24"
+  3:
+    - "ROOTED_DIRT*48"
+custom_model_data: 1075
+
+# 配方（使用成型配方）
+recipe:
+  type: shaped
+  shape:
+    - "DSD"
+    - "SBS"
+    - "DSD"
+  ingredients:
+    D: ROOTED_DIRT
+    S: STONE
+    B: IRON_BOOTS

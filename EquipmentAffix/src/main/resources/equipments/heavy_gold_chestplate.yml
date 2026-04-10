@@ -1,0 +1,28 @@
+# 金质 重型胸甲
+id: heavy_gold_chestplate
+material: GOLDEN_CHESTPLATE
+categories:
+  - HEAVY_ARMOR
+display_name: "金质 重型胸甲"
+material_effect: dazzling
+armor: 4.0
+toughness: 1.0
+max_enchantment_slots: 2
+max_affix_slots: 2
+max_durability: 146
+knockback_resistance: 0.06
+hunger_penalty: 0.04
+movement_penalty: 0.02
+affixes: {}
+enchantments: {}
+
+# 配方配置
+recipe:
+  type: shaped
+  shape:
+    - "G G"
+    - "BGB"
+    - "GGG"
+  ingredients:
+    G: GOLD_INGOT
+    B: GOLD_BLOCK

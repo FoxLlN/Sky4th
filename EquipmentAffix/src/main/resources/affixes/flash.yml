@@ -1,0 +1,10 @@
+# 闪光词条配置
+id: flash
+display_name: "<#6EECD2>闪光"
+description: "<#6EECD2>手持工具获得夜视效果"
+simple_description: "&7手持工具获得夜视效果"
+max_level: 1
+applicable_to:
+  - TOOL
+calculation_mode: HIGHEST
+trigger_slot: HAND

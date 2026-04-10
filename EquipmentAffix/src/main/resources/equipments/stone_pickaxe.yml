@@ -1,0 +1,28 @@
+# 石镐
+id: stone_pickaxe
+material: STONE_PICKAXE
+categories:
+  - TOOL
+display_name: "石镐"
+material_effect: solid
+attack_damage: 3.0
+attack_speed: 1.2
+max_enchantment_slots: 1
+max_affix_slots: 0
+max_durability: 131
+affixes: {}
+enchantments: {}
+
+recipe1:
+  type: shaped
+  shape:
+    - "CCC"
+    - " S "
+    - " S "
+  ingredients:
+    C: 
+      - COBBLESTONE
+      - STONE
+      - BLACKSTONE
+      - COBBLED_DEEPSLATE
+    S: STICK

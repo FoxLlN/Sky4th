@@ -1,0 +1,14 @@
+# 余震词条配置
+id: aftershock
+display_name: "<#DB2F1A>余震"
+description: "<#DB2F1A>猛击落地后，地面留下裂纹，3秒后爆炸"
+simple_description: "&7猛击落地后，&a3秒&7后爆炸造成&a{25+5*level}%&7武器伤害"
+max_level: 3
+applicable_to:
+  - WEAPON
+equipment_slot:
+  - MACE
+conflicting_affixes:
+  - tremor
+calculation_mode: HIGHEST
+trigger_slot: MAIN_HAND

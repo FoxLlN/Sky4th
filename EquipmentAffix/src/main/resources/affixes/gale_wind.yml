@@ -1,0 +1,21 @@
+# 疾风词条配置
+id: gale_wind
+display_name: "<#F5F5F5>疾风"
+description: "<#F5F5F5>移动时累计疾风层数，下次攻击释放造成额外伤害"
+simple_description: "&7每移动&a{12-2*level}格&7累计一层<#F5F5F5>疾风&7，下次攻击消耗全部层数，每层额外造成&a{2+level}%&7伤害"
+max_level: 3
+applicable_to:
+  - LIGHT_ARMOR
+equipment_slot:
+  - LEGS
+calculation_mode: HIGHEST
+is_chargeable: true
+charge_resource: gale_wind
+charge_resource_name: "<#F5F5F5>疾风"
+charge_max_storage:
+  1: 5
+  2: 5
+  3: 5
+conflicting_affixes:
+  - flowing_light
+  - opportunist

@@ -1,0 +1,22 @@
+# 词条模板配置
+id: flash
+max_level: 1
+unlock_stage: "深层"
+upgrade_materials:
+  1:
+    - "DIAMOND*4"
+custom_model_data: 1006
+
+# 合成配方
+recipe:
+  type: shaped
+  shape:
+    - "GIG"
+    - "LSL"
+    - "GDG"
+  ingredients:
+    D: DIAMOND
+    G: GOLDEN_CARROT
+    L: LANTERN
+    I: GLOW_INK_SAC
+    S: IRON_PICKAXE

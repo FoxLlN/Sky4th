@@ -1,0 +1,14 @@
+# 闪光词条配置
+id: diamond_protection
+display_name: "<#6EECD2>钻石护体"
+description: "<#6EECD2>当生命低于30%时会获得一个护盾"
+simple_description: "&7当生命低于&a30%&7时会获得一个吸收&a{4+4*level}点&7伤害护盾，持续&a8秒"
+max_level: 3
+applicable_to:
+  - HEAVY_ARMOR
+equipment_slot:
+  - CHEST
+calculation_mode: HIGHEST
+conflicting_affixes:
+  - buy_life
+  - cost_avoid

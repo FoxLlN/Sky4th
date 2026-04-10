@@ -1,0 +1,9 @@
+# 乘风词条配置
+id: wind_ride
+display_name: "<#A8D8EA>乘风"
+description: "<#A8D8EA>进入滑翔时获得初始速度加成"
+simple_description: "&7进入滑翔时，初始速度增加&a{60+20*level}%&7"
+max_level: 3
+applicable_to:
+  - ELYTRA
+calculation_mode: HIGHEST

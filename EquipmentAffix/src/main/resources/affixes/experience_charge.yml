@@ -1,0 +1,13 @@
+# 经验冲击词条配置
+id: experience_charge
+display_name: "<#345EC3>经验冲击"
+description: "<#345EC3>可以消耗经验提升攻击伤害"
+simple_description: "&7可以消耗&a10点&7经验提升&a{5*level}%&7攻击伤害"
+max_level: 3
+applicable_to:
+  - WEAPON
+equipment_slot:
+  - SWORD
+  - AXE
+calculation_mode: HIGHEST
+trigger_slot: MAIN_HAND

@@ -1,0 +1,28 @@
+# 钻石 重型胸甲
+id: heavy_diamond_chestplate
+material: DIAMOND_CHESTPLATE
+categories:
+  - HEAVY_ARMOR
+display_name: "钻石 重型胸甲"
+material_effect: resilience
+armor: 6.0
+toughness: 3.2
+max_enchantment_slots: 1
+max_affix_slots: 2
+max_durability: 686
+knockback_resistance: 0.12
+hunger_penalty: 0.064
+movement_penalty: 0.048
+affixes: {}
+enchantments: {}
+
+# 配方配置
+recipe:
+  type: shaped
+  shape:
+    - "D D"
+    - "BDB"
+    - "DDD"
+  ingredients:
+    D: DIAMOND
+    B: DIAMOND_BLOCK

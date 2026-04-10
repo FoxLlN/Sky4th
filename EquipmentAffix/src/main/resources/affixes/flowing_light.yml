@@ -1,0 +1,20 @@
+# 流光词条配置
+id: flowing_light
+display_name: "<#DEB12D>流光"
+description: "<#DEB12D>移动时累计流光层数，受击时有概率消耗层数闪避伤害"
+simple_description: "&7每移动&a{25-5*level}格&7累计一层<#DEB12D>流光&7，受击时&a{15+5*level}%&7概率消耗1层闪避伤害"
+max_level: 3
+applicable_to:
+  - LIGHT_ARMOR
+equipment_slot:
+  - LEGS
+calculation_mode: HIGHEST
+is_chargeable: true
+charge_resource: flowing_light
+charge_resource_name: "<#DEB12D>流光"
+charge_max_storage:
+  1: 5
+  2: 5
+  3: 10
+conflicting_affixes:
+  - gale_wind

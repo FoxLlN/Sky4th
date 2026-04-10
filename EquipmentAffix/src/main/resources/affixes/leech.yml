@@ -1,0 +1,10 @@
+# 汲取词条配置
+id: leech
+display_name: "<#BE886C>汲取"
+description: "<#BE886C>命中目标后恢复生命值"
+simple_description: "&7命中目标后恢复伤害的&a{2.5+2.5*level}%&7生命值"
+max_level: 3
+applicable_to:
+  - BOW
+calculation_mode: HIGHEST
+trigger_slot: MAIN_HAND

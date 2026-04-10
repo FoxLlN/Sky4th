@@ -1,0 +1,19 @@
+
+# 炽热采集词条配置
+id: nether_mining
+display_name: "<#E3D4C4>炽热采集"
+description: "<#E3D4C4>在下界挖掘速度增加，有概率获得额外的下界石英"
+simple_description: "&7在下界挖掘速度增加&a{10+5*level}%&7，有&a{5*level}%&7概率获得&a1个&7下界石英"
+max_level: 3
+applicable_to:
+  - TOOL
+equipment_slot:
+  - PICKAXE
+  - AXE
+  - SHOVEL
+calculation_mode: HIGHEST
+conflicting_affixes:
+  - depth_gravity
+  - plutocrat
+  - resonance
+trigger_slot: MAIN_HAND

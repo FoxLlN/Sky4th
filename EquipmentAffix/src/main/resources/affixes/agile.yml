@@ -1,0 +1,9 @@
+# 灵巧词条配置
+id: agile
+display_name: "<#F5F5F5>灵巧"
+description: "<#F5F5F5>增加轻甲闪避值"
+simple_description: "&7增加&a{1+level}%&7轻甲闪避值"
+max_level: 3
+applicable_to:
+  - LIGHT_ARMOR
+calculation_mode: SUM

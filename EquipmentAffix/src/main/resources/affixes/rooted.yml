@@ -1,0 +1,18 @@
+# 生根词条配置
+id: rooted
+display_name: "<#5D3A1A>生根"
+description: "<#5D3A1A>站立不动时获得减伤和击退抗性"
+simple_description: "&7每站立不动&a3秒&7获得一层<#5D3A1A>生根&7，每层提供&a{2+level}%&7减伤和&a{1+level}%&7击退抗性"
+max_level: 3
+applicable_to:
+  - HEAVY_ARMOR
+equipment_slot:
+  - FEET
+calculation_mode: HIGHEST
+is_chargeable: true
+charge_resource: rooted
+charge_resource_name: "<#5D3A1A>生根"
+charge_max_storage:
+  1: 5
+  2: 5
+  3: 5

@@ -1,0 +1,14 @@
+# 洞悉词条配置
+id: insight
+display_name: "<#349988>洞悉"
+description: "<#349988>受到攻击后有概率为目标施加标记，使其受到的伤害提高"
+simple_description: "&7受到攻击后有&a{10+5*level}%&7概率为目标施加&a{3+3*level}秒&7&c易伤&7标记，使其受到的伤害提高&a{5+5*level}%&7"
+max_level: 3
+applicable_to:
+  - LIGHT_ARMOR
+equipment_slot:
+  - HEAD
+calculation_mode: HIGHEST
+conflicting_affixes:
+  - spider_sense
+  - echo_location

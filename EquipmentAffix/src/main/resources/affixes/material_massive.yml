@@ -1,0 +1,10 @@
+# 磐石词条配置
+id: massive
+display_name: "<underlined><#7F7F7F>磐石</underlined>"
+description: "<#7F7F7F>站在石质方块上时，受到物理伤害减少"
+simple_description: "&7站在石质方块上时，受到物理伤害减少&a5%&7"
+max_level: 1
+applicable_to:
+  - LIGHT_ARMOR
+  - HEAVY_ARMOR
+calculation_mode: HIGHEST

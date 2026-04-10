@@ -1,0 +1,24 @@
+# 流光词条锻造模板配置
+id: flowing_light
+max_level: 3
+unlock_stage: "主世界"
+upgrade_materials:
+  1:
+    - "GOLD_INGOT*8"
+  2:
+    - "GOLD_INGOT*16"
+  3:
+    - "GOLD_INGOT*32"
+custom_model_data: 1065
+
+# 配方（使用成型配方）
+recipe:
+  type: shaped
+  shape:
+    - "GSG"
+    - "SIS"
+    - "GSG"
+  ingredients:
+    G: GLOWSTONE_DUST
+    S: GOLD_INGOT
+    I: IRON_LEGGINGS

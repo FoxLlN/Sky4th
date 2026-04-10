@@ -1,0 +1,28 @@
+# 钻石 重型护腿
+id: heavy_diamond_leggings
+material: DIAMOND_LEGGINGS
+categories:
+  - HEAVY_ARMOR
+display_name: "钻石 重型护腿"
+material_effect: resilience
+armor: 5.0
+toughness: 2.4
+max_enchantment_slots: 1
+max_affix_slots: 2
+max_durability: 644
+knockback_resistance: 0.09
+hunger_penalty: 0.048
+movement_penalty: 0.036
+affixes: {}
+enchantments: {}
+
+# 配方配置
+recipe:
+  type: shaped
+  shape:
+    - "BDB"
+    - "D D"
+    - "D D"
+  ingredients:
+    D: DIAMOND
+    B: DIAMOND_BLOCK

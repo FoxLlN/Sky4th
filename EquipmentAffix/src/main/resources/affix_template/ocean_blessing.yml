@@ -1,0 +1,23 @@
+# 词条模板配置
+id: ocean_blessing
+max_level: 3
+unlock_stage: "主世界"
+upgrade_materials:
+  1:
+    - "PRISMARINE_SHARD*6"
+  2:
+    - "PRISMARINE_SHARD*12"
+  3:
+    - "PRISMARINE_SHARD*24"
+custom_model_data: 1054
+
+# 合成配方
+recipe:
+  type: shaped
+  shape:
+    - "SSS"
+    - "STS"
+    - "SSS"
+  ingredients:
+    S: PRISMARINE_SHARD
+    T: TURTLE_HELMET

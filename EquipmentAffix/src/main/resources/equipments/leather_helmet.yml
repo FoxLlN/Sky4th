@@ -1,0 +1,23 @@
+# 皮革帽子
+id: leather_helmet
+material: LEATHER_HELMET
+categories:
+  - LIGHT_ARMOR
+display_name: "皮革帽子"
+material_effect: fitting
+armor: 1.0
+toughness: 0.0
+max_enchantment_slots: 1
+max_affix_slots: 0
+max_durability: 55
+affixes: {}
+enchantments: {}
+
+# 配方配置
+recipe:
+  type: shaped
+  shape:
+    - "LLL"
+    - "L L"
+  ingredients:
+    L: LEATHER

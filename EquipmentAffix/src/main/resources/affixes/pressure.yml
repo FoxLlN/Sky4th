@@ -1,0 +1,13 @@
+# 压强词条配置
+id: pressure
+display_name: "<#5AAFA4>压强"
+description: "<#5AAFA4>在水中攻击目标的时候可以附加溺水伤害"
+simple_description: "&7在水中攻击目标的时候可以附加&a{1+level}点&7溺水伤害"
+max_level: 3
+applicable_to:
+  - WEAPON
+equipment_slot:
+  - SWORD
+  - AXE
+calculation_mode: HIGHEST
+trigger_slot: MAIN_HAND

@@ -1,0 +1,26 @@
+# 乘风词条模板
+id: wind_ride
+max_level: 3
+unlock_stage: "末地"
+applicable_to:
+  - ELYTRA
+upgrade_materials:
+  1:
+    - "PHANTOM_MEMBRANE*8"
+  2:
+    - "PHANTOM_MEMBRANE*16"
+  3:
+    - "PHANTOM_MEMBRANE*32"
+custom_model_data: 1088
+
+# 合成配方
+recipe:
+  type: shaped
+  shape:
+    - "PFP"
+    - "FSF"
+    - "PFP"
+  ingredients:
+    F: FIREWORK_ROCKET
+    P: PHANTOM_MEMBRANE
+    S: FIREWORK_STAR

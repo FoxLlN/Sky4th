@@ -1,0 +1,12 @@
+# 碎甲词条配置
+id: armor_break
+display_name: "<#6EECD2>碎甲"
+description: "<#6EECD2>攻击命中后目标护甲值持续降低数秒"
+simple_description: "&7攻击命中后目标护甲值降低&a{4+4*level}%&7，持续&a{2+level}秒"
+max_level: 3
+applicable_to:
+  - WEAPON
+equipment_slot:
+  - AXE
+calculation_mode: HIGHEST
+trigger_slot: MAIN_HAND

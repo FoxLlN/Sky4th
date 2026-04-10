@@ -1,0 +1,10 @@
+# 节弹词条配置
+id: recycle
+display_name: "<#DBDBDB>节弹"
+description: "<#DBDBDB>射击时有一定概率额外掉落箭矢"
+simple_description: "&7射击时有&a{10+10*level}%&7概率额外掉落箭矢"
+max_level: 3
+applicable_to:
+  - BOW
+calculation_mode: HIGHEST
+trigger_slot: MAIN_HAND

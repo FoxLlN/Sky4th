@@ -1,0 +1,44 @@
+name: SkyCore
+version: ${version}
+main: sky4th.core.SkyCorePlugin
+api-version: '1.21'
+description: Sky4th 服务器核心 API - 提供所有模块共享的基础接口和工具类
+author: HXS__
+load: STARTUP
+
+commands:
+  sky:
+    description: SkyCore 主命令
+    aliases: [skycore, sca]
+    usage: /<command> <子命令>
+    permission: skycore.use
+
+permissions:
+  skycore.*:
+    description: SkyCore 的所有权限
+    default: op
+    children:
+      skycore.use: true
+      skycore.info: true
+      skycore.reload: true
+      skycore.player: true
+      skycore.economy: true
+      skycore.status: true
+  skycore.use:
+    description: 使用 SkyCore 的基本权限
+    default: true
+  skycore.info:
+    description: 查看 SkyCore 信息
+    default: op
+  skycore.reload:
+    description: 重载 SkyCore 配置
+    default: op
+  skycore.player:
+    description: 查看玩家数据
+    default: op
+  skycore.economy:
+    description: 查看经济系统信息
+    default: op
+  skycore.status:
+    description: 查看系统状态
+    default: op

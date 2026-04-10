@@ -1,0 +1,22 @@
+# 钓鱼竿
+id: fishing_rod
+material: FISHING_ROD
+categories:
+  - TOOL
+display_name: "钓鱼竿"
+max_enchantment_slots: 1
+max_affix_slots: 1
+max_durability: 64
+affixes: {}
+enchantments: {}
+
+# 配方配置
+recipe:
+  type: shaped
+  shape:
+    - "  B"
+    - " BS"
+    - "B S"
+  ingredients:
+    S: STRING
+    B: STICK

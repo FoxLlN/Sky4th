@@ -1,0 +1,12 @@
+# 熔岩行者词条配置
+id: lava_walker
+display_name: "<#E3D4C4>熔岩行者"
+description: "<#E3D4C4>免疫下界环境伤害，在下界移动速度增加"
+simple_description: "&7免疫下界环境伤害，在下界移动速度增加&a{5*level}%&7"
+max_level: 3
+applicable_to:
+  - LIGHT_ARMOR
+  - HEAVY_ARMOR
+equipment_slot:
+  - LEGS
+calculation_mode: HIGHEST

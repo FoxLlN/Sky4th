@@ -1,0 +1,27 @@
+# 钻石 重型头盔
+id: heavy_diamond_helmet
+material: DIAMOND_HELMET
+categories:
+  - HEAVY_ARMOR
+display_name: "钻石 重型头盔"
+material_effect: resilience
+armor: 4.0
+toughness: 1.6
+max_enchantment_slots: 1
+max_affix_slots: 2
+max_durability: 472
+knockback_resistance: 0.06
+hunger_penalty: 0.032
+movement_penalty: 0.024
+affixes: {}
+enchantments: {}
+
+# 配方配置
+recipe:
+  type: shaped
+  shape:
+    - "DBD"
+    - "D D"
+  ingredients:
+    D: DIAMOND
+    B: DIAMOND_BLOCK

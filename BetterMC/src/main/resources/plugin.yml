@@ -1,0 +1,24 @@
+name: BetterMC
+version: ${version}
+main: sky4th.bettermc.BetterMC
+api-version: 1.21
+author: HXS__
+description: 原版改革插件，提供职业限制等功能
+depend:
+  - SkyCore
+softdepend: []
+loadbefore:
+  - EquipmentAffix
+commands:
+  bettermc:
+    description: BetterMC主命令
+    usage: /<command> [help|reload]
+    permission: bettermc.use
+    aliases: [bmc]
+permissions:
+  bettermc.use:
+    description: 允许使用BetterMC基础命令
+    default: true
+  bettermc.admin:
+    description: 允许使用BetterMC管理命令
+    default: op
