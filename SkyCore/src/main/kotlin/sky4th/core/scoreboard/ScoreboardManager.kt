@@ -133,50 +133,52 @@ object ScoreboardManager {
                 data.scoreboard.resetScores(entry)
             }
 
-            var score = 15  // 从高分开始，确保显示顺序正确
+            var score = 20 // 从高分开始，确保显示顺序正确
 
             // 标题（始终显示，但可以通过配置控制）
-            if (config.showTitle) {
-                data.objective.displayName = getLangText("scoreboard.title")
-            }
+            data.objective.displayName = getLangText("scoreboard.title")
+            
 
             // 今日游玩时长
-            if (config.showTodayPlayTime) {
-                val line = getLangText("scoreboard.today_playtime", 
+            if ("today_playtime" in config.customFilters) {
+                data.objective.getScore(
+                    getLangText("scoreboard.today_playtime", 
                     "time" to formatTime(identity.todayPlayTime))
-                data.objective.getScore(line).score = score--
+                ).score = score--
             }
 
             // 存活时长
-            if (config.showCurrentLifePlayTime) {
-                val line = getLangText("scoreboard.current_life_playtime",
+            if ("current_life_playtime" in config.customFilters) {
+                data.objective.getScore(
+                    getLangText("scoreboard.current_life_playtime",
                     "time" to formatTime(identity.currentLifePlayTime))
-                data.objective.getScore(line).score = score--
+                ).score = score--
+            }
+
+            // 信用点
+            if ("credits" in config.customFilters) {
+                val economy = playerData.economy
+                data.objective.getScore(
+                    getLangText("scoreboard.credits",
+                    "credits" to String.format("%.2f", economy.credits))
+                ).score = score--
             }
 
             // 总游玩时长
-            if (config.showTotalPlayTime) {
-                val line = getLangText("scoreboard.total_playtime",
+            if ("total_playtime" in config.customFilters) {
+                data.objective.getScore(
+                    getLangText("scoreboard.total_playtime",
                     "time" to formatTime(identity.playTime))
-                data.objective.getScore(line).score = score--
+                ).score = score--
             }
 
             // QQ群信息
-            if (config.showQQGroup) {
-                val line = getLangText("scoreboard.qq_group")
-                data.objective.getScore(line).score = score--
-            }
+            data.objective.getScore(getLangText("scoreboard.qq_group")).score = score--
+            
 
             // 底部信息
-            if (config.showFooter) {
-                val line = getLangText("scoreboard.footer")
-                data.objective.getScore(line).score = score--
-            }
-
-            // 添加空行以美观
-            if (score > 0) {
-                data.objective.getScore("§r").score = score--
-            }
+            data.objective.getScore(getLangText("scoreboard.footer")).score = score--
+            
 
         } catch (e: Exception) {
             e.printStackTrace()

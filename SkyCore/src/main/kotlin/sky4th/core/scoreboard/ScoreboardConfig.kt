@@ -1,4 +1,3 @@
-
 package sky4th.core.scoreboard
 
 import java.util.*
@@ -9,12 +8,7 @@ import java.util.*
  */
 data class ScoreboardConfig(
     val uuid: UUID,
-    val showTitle: Boolean = true,
-    val showTodayPlayTime: Boolean = false,
-    val showCurrentLifePlayTime: Boolean = true,
-    val showTotalPlayTime: Boolean = false,
-    val showQQGroup: Boolean = true,
-    val showFooter: Boolean = true
+    val customFilters: MutableSet<String> = mutableSetOf("current_life_playtime", "credits")
 ) {
     companion object {
         /**
@@ -23,12 +17,7 @@ data class ScoreboardConfig(
         fun createDefault(uuid: UUID): ScoreboardConfig {
             return ScoreboardConfig(
                 uuid = uuid,
-                showTitle = true,
-                showTodayPlayTime = false,
-                showCurrentLifePlayTime = true,
-                showTotalPlayTime = false,
-                showQQGroup = true,
-                showFooter = true
+                customFilters = mutableSetOf("current_life_playtime", "credits")
             )
         }
     }

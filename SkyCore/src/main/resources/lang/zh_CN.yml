@@ -94,5 +94,6 @@ scoreboard:
   today_playtime: "&e今日游玩: &a{time}"
   current_life_playtime: "&e存活时长: &a{time}"
   total_playtime: "&e总游玩时长: &a{time}"
+  credits: "&e信用点: &a{credits}"
   qq_group: "&eQQ群: &a818114237"
   footer: "&6==============="
