@@ -56,6 +56,9 @@ object DatabaseSchema {
                 first_login BIGINT NOT NULL,
                 last_login BIGINT NOT NULL,
                 play_time_minutes BIGINT NOT NULL DEFAULT 0,
+                today_play_time_minutes BIGINT NOT NULL DEFAULT 0,
+                current_life_play_time_minutes BIGINT NOT NULL DEFAULT 0,
+                last_life_start_time BIGINT,
                 INDEX idx_username (username)
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
         """).execute()

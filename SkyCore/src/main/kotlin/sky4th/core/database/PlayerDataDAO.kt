@@ -75,34 +75,52 @@ class PlayerDataDAO(private val databaseManager: DatabaseManager) {
 
     private fun saveIdentity(conn: Connection, identity: PlayerIdentity) {
         conn.prepareStatement("""
-            INSERT INTO player_identity (uuid, username, first_login, last_login, play_time_minutes)
-            VALUES (?, ?, ?, ?, ?)
+            INSERT INTO player_identity (uuid, username, first_login, last_login, play_time_minutes, today_play_time_minutes, current_life_play_time_minutes, last_life_start_time)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
             ON DUPLICATE KEY UPDATE
                 username = VALUES(username),
                 last_login = VALUES(last_login),
-                play_time_minutes = VALUES(play_time_minutes)
+                play_time_minutes = VALUES(play_time_minutes),
+                today_play_time_minutes = VALUES(today_play_time_minutes),
+                current_life_play_time_minutes = VALUES(current_life_play_time_minutes),
+                last_life_start_time = VALUES(last_life_start_time)
         """).use { stmt ->
             stmt.setString(1, identity.uuid.toString())
             stmt.setString(2, identity.username)
             stmt.setLong(3, identity.firstLogin.toEpochMilli())
             stmt.setLong(4, identity.lastLogin.toEpochMilli())
             stmt.setLong(5, identity.playTime.toMinutes())
+            stmt.setLong(6, identity.todayPlayTime.toMinutes())
+            stmt.setLong(7, identity.currentLifePlayTime.toMinutes())
+            if (identity.lastLifeStartTime != null) {
+                stmt.setLong(8, identity.lastLifeStartTime.toEpochMilli())
+            } else {
+                stmt.setNull(8, java.sql.Types.BIGINT)
+            }
             stmt.executeUpdate()
         }
     }
 
     private fun loadIdentity(conn: Connection, uuid: UUID): PlayerIdentity? {
-        conn.prepareStatement("SELECT * FROM player_identity WHERE uuid = ?").use { stmt ->
+        conn.prepareStatement("""
+            SELECT uuid, username, first_login, last_login, play_time_minutes,
+                   today_play_time_minutes, current_life_play_time_minutes, last_life_start_time
+            FROM player_identity WHERE uuid = ?
+        """).use { stmt ->
             stmt.setString(1, uuid.toString())
             stmt.executeQuery().use { rs ->
                 if (!rs.next()) return null
 
+                val lastLifeStartTime = rs.getLong("last_life_start_time")
                 return PlayerIdentity(
                     uuid = UUID.fromString(rs.getString("uuid")),
                     username = rs.getString("username"),
                     firstLogin = Instant.ofEpochMilli(rs.getLong("first_login")),
                     lastLogin = Instant.ofEpochMilli(rs.getLong("last_login")),
-                    playTime = Duration.ofMinutes(rs.getLong("play_time_minutes"))
+                    playTime = Duration.ofMinutes(rs.getLong("play_time_minutes")),
+                    todayPlayTime = Duration.ofMinutes(rs.getLong("today_play_time_minutes")),
+                    currentLifePlayTime = Duration.ofMinutes(rs.getLong("current_life_play_time_minutes")),
+                    lastLifeStartTime = if (rs.wasNull()) null else Instant.ofEpochMilli(lastLifeStartTime)
                 )
             }
         }
@@ -132,7 +150,10 @@ class PlayerDataDAO(private val databaseManager: DatabaseManager) {
     }
 
     private fun loadEconomy(conn: Connection, uuid: UUID): PlayerEconomy? {
-        conn.prepareStatement("SELECT * FROM player_economy WHERE uuid = ?").use { stmt ->
+        conn.prepareStatement("""
+            SELECT uuid, credits, daily_earned, daily_spent, daily_limit, total_earned, total_spent
+            FROM player_economy WHERE uuid = ?
+        """).use { stmt ->
             stmt.setString(1, uuid.toString())
             stmt.executeQuery().use { rs ->
                 if (!rs.next()) return null
@@ -214,7 +235,14 @@ class PlayerDataDAO(private val databaseManager: DatabaseManager) {
     }
 
     private fun loadLocations(conn: Connection, uuid: UUID): PlayerLocations? {
-        conn.prepareStatement("SELECT * FROM player_locations WHERE uuid = ?").use { stmt ->
+        conn.prepareStatement("""
+            SELECT uuid,
+                   last_location_world, last_location_x, last_location_y, last_location_z,
+                   last_location_yaw, last_location_pitch,
+                   base_location_world, base_location_x, base_location_y, base_location_z,
+                   base_location_yaw, base_location_pitch
+            FROM player_locations WHERE uuid = ?
+        """).use { stmt ->
             stmt.setString(1, uuid.toString())
             stmt.executeQuery().use { rs ->
                 if (!rs.next()) return null

@@ -160,6 +160,15 @@ class EquipmentAffix : JavaPlugin() {
     }
 
     override fun onDisable() {
+        // 批量保存所有待更新的玩家属性
+        try {
+            sky4th.core.api.PlayerAttributesAPI.flushPendingUpdates()
+            logger.info("已批量保存所有玩家属性")
+        } catch (e: Exception) {
+            logger.warning("批量保存玩家属性失败: ${e.message}")
+            e.printStackTrace()
+        }
+
         // 清理发光效果工具类
         com.sky4th.equipment.util.GlowingEntityUtil.disable()
 

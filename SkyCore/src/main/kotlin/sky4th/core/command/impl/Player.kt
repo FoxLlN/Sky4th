@@ -48,12 +48,8 @@ fun runPlayer(sender: CommandSender, args: Array<out String>) {
         "attributes" -> {
             val attributes = PlayerAttributesAPI.getAttributes(player.uniqueId)
             sender.sendMessage("§6===== §b玩家属性: ${player.name} §6=====")
-            sender.sendMessage("§a最大生命值: §e${String.format("%.1f", attributes.maxHealth)}")
-            sender.sendMessage("§a护甲值: §e${String.format("%.1f", attributes.armor)}")
             sender.sendMessage("§a闪避率: §e${String.format("%.2f%%", attributes.dodge * 100)}")
-            sender.sendMessage("§a抗击退: §e${String.format("%.2f%%", attributes.knockbackResistance * 100)}")
             sender.sendMessage("§a饥饿消耗倍率: §e${String.format("%.2f", attributes.hungerConsumptionMultiplier)}x")
-            sender.sendMessage("§a移动速度倍率: §e${String.format("%.2f", attributes.movementSpeedMultiplier)}x")
             sender.sendMessage("§a经验获取加成: §e${String.format("%.2f", attributes.expGainMultiplier)}x")
             sender.sendMessage("§a交易折扣: §e${String.format("%.2f%%", attributes.tradeDiscount * 100)}")
             sender.sendMessage("§a锻造成功率: §e${String.format("%.2f%%", attributes.forgingSuccessRate * 100)}")

@@ -8,6 +8,7 @@ import sky4th.core.command.SkyCoreCommandHandler
 import sky4th.core.command.SkyCoreContext
 import sky4th.core.listener.MarkListener
 import sky4th.core.listener.PlayerEnterListener
+import sky4th.core.listener.PlayTimeListener
 import sky4th.core.mark.MarkManager
 
 class SkyCorePlugin : JavaPlugin() {
@@ -27,12 +28,30 @@ class SkyCorePlugin : JavaPlugin() {
 
         // 注册监听器
         server.pluginManager.registerEvents(PlayerEnterListener(), this)
+        server.pluginManager.registerEvents(PlayTimeListener(), this)
         server.pluginManager.registerEvents(MarkListener(), this)
 
         // 注册命令
         getCommand("sky")?.setExecutor(SkyCoreCommandHandler)
         getCommand("sky")?.tabCompleter = SkyCoreCommandHandler
 
+        // 启动统一的定时批量保存任务（每5分钟）
+        server.scheduler.runTaskTimerAsynchronously(
+            this,
+            Runnable {
+                try {
+                    // 批量保存玩家属性
+                    SkyCore.getPlayerAttributesService()?.flushPendingUpdates()
+                    // 批量保存玩家数据
+                    SkyCore.getPlayerService()?.saveAll()
+                } catch (e: Exception) {
+                    logger.warning("批量保存数据失败: ${e.message}")
+                    e.printStackTrace()
+                }
+            },
+            6000L,  // 5分钟后开始
+            6000L   // 每5分钟执行一次
+        )
 
         logger.info("SkyCore 已加载 - 版本 ${pluginMeta.version}")
     }

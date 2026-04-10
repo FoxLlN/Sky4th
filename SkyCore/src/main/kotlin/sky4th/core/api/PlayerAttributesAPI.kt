@@ -29,11 +29,20 @@ object PlayerAttributesAPI {
     }
 
     /**
-     * 保存玩家属性
+     * 保存玩家属性（立即保存）
      * @param attributes 玩家属性
      */
     fun saveAttributes(attributes: PlayerAttributes) {
         getService()?.saveAttributes(attributes)
+            ?: throw IllegalStateException("PlayerAttributesService 未初始化")
+    }
+
+    /**
+     * 队列保存玩家属性（批量保存）
+     * @param attributes 玩家属性
+     */
+    fun queueSave(attributes: PlayerAttributes) {
+        getService()?.queueSave(attributes)
             ?: throw IllegalStateException("PlayerAttributesService 未初始化")
     }
 
@@ -43,26 +52,6 @@ object PlayerAttributesAPI {
      */
     fun saveAttributes(uuid: UUID) {
         getService()?.saveAttributes(uuid)
-            ?: throw IllegalStateException("PlayerAttributesService 未初始化")
-    }
-
-    /**
-     * 更新最大生命值
-     * @param uuid 玩家UUID
-     * @param value 新值
-     */
-    fun updateMaxHealth(uuid: UUID, value: Double) {
-        getService()?.updateMaxHealth(uuid, value)
-            ?: throw IllegalStateException("PlayerAttributesService 未初始化")
-    }
-
-    /**
-     * 更新护甲值
-     * @param uuid 玩家UUID
-     * @param value 新值
-     */
-    fun updateArmor(uuid: UUID, value: Double) {
-        getService()?.updateArmor(uuid, value)
             ?: throw IllegalStateException("PlayerAttributesService 未初始化")
     }
 
@@ -77,32 +66,12 @@ object PlayerAttributesAPI {
     }
 
     /**
-     * 更新击退抗性
-     * @param uuid 玩家UUID
-     * @param value 新值 (0.0-1.0)
-     */
-    fun updateKnockbackResistance(uuid: UUID, value: Double) {
-        getService()?.updateKnockbackResistance(uuid, value)
-            ?: throw IllegalStateException("PlayerAttributesService 未初始化")
-    }
-
-    /**
      * 更新饥饿消耗倍率
      * @param uuid 玩家UUID
      * @param value 新值
      */
     fun updateHungerConsumptionMultiplier(uuid: UUID, value: Double) {
         getService()?.updateHungerConsumptionMultiplier(uuid, value)
-            ?: throw IllegalStateException("PlayerAttributesService 未初始化")
-    }
-
-    /**
-     * 更新移动速度倍率
-     * @param uuid 玩家UUID
-     * @param value 新值
-     */
-    fun updateMovementSpeedMultiplier(uuid: UUID, value: Double) {
-        getService()?.updateMovementSpeedMultiplier(uuid, value)
             ?: throw IllegalStateException("PlayerAttributesService 未初始化")
     }
 
@@ -180,6 +149,14 @@ object PlayerAttributesAPI {
      */
     fun saveAll() {
         getService()?.saveAll()
+            ?: throw IllegalStateException("PlayerAttributesService 未初始化")
+    }
+
+    /**
+     * 批量保存待更新的数据
+     */
+    fun flushPendingUpdates() {
+        getService()?.flushPendingUpdates()
             ?: throw IllegalStateException("PlayerAttributesService 未初始化")
     }
 

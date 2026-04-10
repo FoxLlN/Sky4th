@@ -85,6 +85,32 @@ object PlayerAPI {
     }
 
     /**
+     * 更新玩家游戏时长（每分钟调用一次）
+     * @param player 玩家对象
+     */
+    fun updatePlayTime(player: Player) {
+        getService()?.updatePlayTime(player)
+            ?: throw IllegalStateException("PlayerService 未初始化")
+    }
+
+    /**
+     * 重置玩家单命时长（玩家死亡时调用）
+     * @param player 玩家对象
+     */
+    fun resetLifePlayTime(player: Player) {
+        getService()?.resetLifePlayTime(player)
+            ?: throw IllegalStateException("PlayerService 未初始化")
+    }
+
+    /**
+     * 批量保存待更新的数据
+     */
+    fun flushPendingUpdates() {
+        getService()?.flushPendingUpdates()
+            ?: throw IllegalStateException("PlayerService 未初始化")
+    }
+
+    /**
      * 从缓存中移除玩家数据（玩家退出时调用）
      * @param uuid 玩家 UUID
      */

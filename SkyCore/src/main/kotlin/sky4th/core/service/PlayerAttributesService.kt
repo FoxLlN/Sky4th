@@ -4,6 +4,7 @@ import sky4th.core.database.DatabaseManager
 import sky4th.core.database.PlayerAttributesDAO
 import sky4th.core.model.PlayerAttributes
 import java.util.*
+import java.util.concurrent.CompletableFuture
 import java.util.concurrent.ConcurrentHashMap
 
 /**
@@ -14,6 +15,9 @@ class PlayerAttributesService(private val databaseManager: DatabaseManager) {
 
     private val dao = PlayerAttributesDAO(databaseManager)
     private val attributesCache = ConcurrentHashMap<UUID, PlayerAttributes>()
+    private val pendingUpdates = ConcurrentHashMap<UUID, PlayerAttributes>()
+    private val saveLock = Any()
+    private var isFlushing = false
 
     /**
      * 初始化服务
@@ -38,13 +42,26 @@ class PlayerAttributesService(private val databaseManager: DatabaseManager) {
     }
 
     /**
-     * 保存玩家属性
-     * @param attributes 玩家属性
+     * 保存玩家属性（同步到数据库）- 用于关键操作
+     */
+    fun saveAttributesSync(attributes: PlayerAttributes) {
+        try {
+            dao.saveAttributes(attributes)
+            attributesCache[attributes.uuid] = attributes
+            pendingUpdates.remove(attributes.uuid)
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
+
+    /**
+     * 保存玩家属性（同步到数据库）
      */
     fun saveAttributes(attributes: PlayerAttributes) {
         try {
             dao.saveAttributes(attributes)
             attributesCache[attributes.uuid] = attributes
+            pendingUpdates.remove(attributes.uuid)
         } catch (e: Exception) {
             e.printStackTrace()
         }
@@ -59,23 +76,48 @@ class PlayerAttributesService(private val databaseManager: DatabaseManager) {
     }
 
     /**
-     * 更新最大生命值
-     * @param uuid 玩家UUID
-     * @param value 新值
+     * 将玩家属性加入待保存队列（异步批量保存）
      */
-    fun updateMaxHealth(uuid: UUID, value: Double) {
-        val attributes = getAttributes(uuid).copy(maxHealth = value)
-        saveAttributes(attributes)
+    fun queueSave(attributes: PlayerAttributes) {
+        pendingUpdates[attributes.uuid] = attributes
     }
 
     /**
-     * 更新护甲值
-     * @param uuid 玩家UUID
-     * @param value 新值
+     * 批量保存待更新的数据（异步）
+     * 使用线程池异步执行，避免阻塞主线程
      */
-    fun updateArmor(uuid: UUID, value: Double) {
-        val attributes = getAttributes(uuid).copy(armor = value)
-        saveAttributes(attributes)
+    fun flushPendingUpdates() {
+        synchronized(saveLock) {
+            if (isFlushing || pendingUpdates.isEmpty()) return
+            isFlushing = true
+        }
+
+        val toSave = pendingUpdates.values.toList()
+        pendingUpdates.clear()
+
+        // 使用线程池异步执行
+        CompletableFuture.runAsync {
+            try {
+                // 分批保存，每批100个
+                toSave.chunked(100).forEach { chunk ->
+                    try {
+                        chunk.forEach { attributes ->
+                            dao.saveAttributes(attributes)
+                        }
+                    } catch (e: Exception) {
+                        e.printStackTrace()
+                        // 保存失败，重新加入队列
+                        chunk.forEach { attributes ->
+                            pendingUpdates[attributes.uuid] = attributes
+                        }
+                    }
+                }
+            } finally {
+                synchronized(saveLock) {
+                    isFlushing = false
+                }
+            }
+        }
     }
 
     /**
@@ -85,17 +127,8 @@ class PlayerAttributesService(private val databaseManager: DatabaseManager) {
      */
     fun updateDodge(uuid: UUID, value: Double) {
         val attributes = getAttributes(uuid).copy(dodge = value.coerceIn(0.0, 1.0))
-        saveAttributes(attributes)
-    }
-
-    /**
-     * 更新击退抗性
-     * @param uuid 玩家UUID
-     * @param value 新值 (0.0-1.0)
-     */
-    fun updateKnockbackResistance(uuid: UUID, value: Double) {
-        val attributes = getAttributes(uuid).copy(knockbackResistance = value.coerceIn(0.0, 1.0))
-        saveAttributes(attributes)
+        attributesCache[uuid] = attributes
+        queueSave(attributes)
     }
 
     /**
@@ -105,17 +138,8 @@ class PlayerAttributesService(private val databaseManager: DatabaseManager) {
      */
     fun updateHungerConsumptionMultiplier(uuid: UUID, value: Double) {
         val attributes = getAttributes(uuid).copy(hungerConsumptionMultiplier = value)
-        saveAttributes(attributes)
-    }
-
-    /**
-     * 更新移动速度倍率
-     * @param uuid 玩家UUID
-     * @param value 新值
-     */
-    fun updateMovementSpeedMultiplier(uuid: UUID, value: Double) {
-        val attributes = getAttributes(uuid).copy(movementSpeedMultiplier = value)
-        saveAttributes(attributes)
+        attributesCache[uuid] = attributes
+        queueSave(attributes)
     }
 
     /**
@@ -125,7 +149,8 @@ class PlayerAttributesService(private val databaseManager: DatabaseManager) {
      */
     fun updateExpGainMultiplier(uuid: UUID, value: Double) {
         val attributes = getAttributes(uuid).copy(expGainMultiplier = value)
-        saveAttributes(attributes)
+        attributesCache[uuid] = attributes
+        queueSave(attributes)
     }
 
     /**
@@ -135,7 +160,8 @@ class PlayerAttributesService(private val databaseManager: DatabaseManager) {
      */
     fun updateTradeDiscount(uuid: UUID, value: Double) {
         val attributes = getAttributes(uuid).copy(tradeDiscount = value.coerceIn(0.0, 1.0))
-        saveAttributes(attributes)
+        attributesCache[uuid] = attributes
+        queueSave(attributes)
     }
 
     /**
@@ -145,7 +171,8 @@ class PlayerAttributesService(private val databaseManager: DatabaseManager) {
      */
     fun updateForgingSuccessRate(uuid: UUID, value: Double) {
         val attributes = getAttributes(uuid).copy(forgingSuccessRate = value.coerceIn(0.0, 1.0))
-        saveAttributes(attributes)
+        attributesCache[uuid] = attributes
+        queueSave(attributes)
     }
 
     /**
@@ -155,7 +182,9 @@ class PlayerAttributesService(private val databaseManager: DatabaseManager) {
      */
     fun updateTalents(uuid: UUID, talents: List<String>) {
         val attributes = getAttributes(uuid).copy(talents = talents)
-        saveAttributes(attributes)
+        attributesCache[uuid] = attributes
+        // 关键操作，立即同步保存
+        saveAttributesSync(attributes)
     }
 
     /**
@@ -168,7 +197,10 @@ class PlayerAttributesService(private val databaseManager: DatabaseManager) {
         val newTalents = attributes.talents.toMutableList()
         if (!newTalents.contains(talent)) {
             newTalents.add(talent)
-            saveAttributes(attributes.copy(talents = newTalents))
+            val newAttributes = attributes.copy(talents = newTalents)
+            attributesCache[uuid] = newAttributes
+            // 关键操作，立即同步保存
+            saveAttributesSync(newAttributes)
         }
     }
 
@@ -181,7 +213,10 @@ class PlayerAttributesService(private val databaseManager: DatabaseManager) {
         val attributes = getAttributes(uuid)
         val newTalents = attributes.talents.toMutableList()
         if (newTalents.remove(talent)) {
-            saveAttributes(attributes.copy(talents = newTalents))
+            val newAttributes = attributes.copy(talents = newTalents)
+            attributesCache[uuid] = newAttributes
+            // 关键操作，立即同步保存
+            saveAttributesSync(newAttributes)
         }
     }
 
@@ -190,7 +225,9 @@ class PlayerAttributesService(private val databaseManager: DatabaseManager) {
      * @param uuid 玩家UUID
      */
     fun removeFromCache(uuid: UUID) {
-        // 保存数据后再移除缓存
+        // 先保存待更新的数据
+        pendingUpdates[uuid]?.let { saveAttributesSync(it) }
+        // 再保存并移除缓存
         saveAttributes(uuid)
         attributesCache.remove(uuid)
     }
@@ -199,6 +236,9 @@ class PlayerAttributesService(private val databaseManager: DatabaseManager) {
      * 保存所有缓存中的玩家属性
      */
     fun saveAll() {
+        // 先保存所有待更新的数据
+        flushPendingUpdates()
+        // 再保存所有缓存中的数据
         attributesCache.values.forEach { saveAttributes(it) }
     }
 

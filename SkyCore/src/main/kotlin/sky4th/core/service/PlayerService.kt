@@ -7,6 +7,7 @@ import org.bukkit.entity.Player
 import java.time.Duration
 import java.time.Instant
 import java.util.*
+import java.util.concurrent.CompletableFuture
 import java.util.concurrent.ConcurrentHashMap
 
 /**
@@ -17,6 +18,9 @@ class PlayerService(private val databaseManager: DatabaseManager) {
 
     private val dao = PlayerDataDAO(databaseManager)
     private val playerCache = ConcurrentHashMap<UUID, PlayerData>()
+    private val pendingUpdates = ConcurrentHashMap<UUID, PlayerData>()
+    private val saveLock = Any()
+    private var isFlushing = false
 
     /**
      * 初始化服务
@@ -59,12 +63,26 @@ class PlayerService(private val databaseManager: DatabaseManager) {
     }
 
     /**
+     * 保存玩家数据（同步到数据库）- 用于关键操作
+     */
+    fun savePlayerDataSync(playerData: PlayerData) {
+        try {
+            dao.savePlayerData(playerData)
+            playerCache[playerData.identity.uuid] = playerData
+            pendingUpdates.remove(playerData.identity.uuid)
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
+
+    /**
      * 保存玩家数据（同步到数据库）
      */
     fun savePlayerData(playerData: PlayerData) {
         try {
             dao.savePlayerData(playerData)
             playerCache[playerData.identity.uuid] = playerData
+            pendingUpdates.remove(playerData.identity.uuid)
         } catch (e: Exception) {
             e.printStackTrace()
         }
@@ -82,6 +100,51 @@ class PlayerService(private val databaseManager: DatabaseManager) {
      */
     fun savePlayerData(player: Player) {
         savePlayerData(player.uniqueId)
+    }
+
+    /**
+     * 将玩家数据加入待保存队列（异步批量保存）
+     */
+    fun queueSave(playerData: PlayerData) {
+        pendingUpdates[playerData.identity.uuid] = playerData
+    }
+
+    /**
+     * 批量保存待更新的数据（异步）
+     * 使用线程池异步执行，避免阻塞主线程
+     */
+    fun flushPendingUpdates() {
+        synchronized(saveLock) {
+            if (isFlushing || pendingUpdates.isEmpty()) return
+            isFlushing = true
+        }
+
+        val toSave = pendingUpdates.values.toList()
+        pendingUpdates.clear()
+
+        // 使用线程池异步执行
+        CompletableFuture.runAsync {
+            try {
+                // 分批保存，每批100个
+                toSave.chunked(100).forEach { chunk ->
+                    try {
+                        chunk.forEach { data ->
+                            dao.savePlayerData(data)
+                        }
+                    } catch (e: Exception) {
+                        e.printStackTrace()
+                        // 保存失败，重新加入队列
+                        chunk.forEach { data ->
+                            pendingUpdates[data.identity.uuid] = data
+                        }
+                    }
+                }
+            } finally {
+                synchronized(saveLock) {
+                    isFlushing = false
+                }
+            }
+        }
     }
 
     /**
@@ -104,10 +167,68 @@ class PlayerService(private val databaseManager: DatabaseManager) {
     }
 
     /**
+     * 更新玩家游戏时长（每分钟调用一次）
+     */
+    fun updatePlayTime(player: Player) {
+        val data = getPlayerData(player)
+        val now = Instant.now()
+
+        // 检查是否需要重置今日时长（跨天）
+        val lastLoginDate = data.identity.lastLogin.atZone(java.time.ZoneId.systemDefault()).toLocalDate()
+        val currentDate = now.atZone(java.time.ZoneId.systemDefault()).toLocalDate()
+
+        val newIdentity = if (lastLoginDate != currentDate) {
+            // 跨天了，重置今日时长
+            data.identity.copy(
+                todayPlayTime = Duration.ZERO,
+                currentLifePlayTime = Duration.ZERO,
+                lastLifeStartTime = now
+            )
+        } else {
+            // 同一天，累加时长
+            data.identity.copy(
+                playTime = data.identity.playTime.plusMinutes(1),
+                todayPlayTime = data.identity.todayPlayTime.plusMinutes(1),
+                currentLifePlayTime = data.identity.currentLifePlayTime.plusMinutes(1)
+            )
+        }
+
+        val newData = data.copy(identity = newIdentity)
+        playerCache[player.uniqueId] = newData
+        
+        // 跨天时立即同步保存，否则加入待保存队列
+        if (lastLoginDate != currentDate) {
+            savePlayerDataSync(newData)
+        } else {
+            queueSave(newData)
+        }
+    }
+
+    /**
+     * 重置玩家单命时长（玩家死亡时调用）
+     */
+    fun resetLifePlayTime(player: Player) {
+        val data = getPlayerData(player)
+        val now = Instant.now()
+
+        val newIdentity = data.identity.copy(
+            currentLifePlayTime = Duration.ZERO,
+            lastLifeStartTime = now
+        )
+
+        val newData = data.copy(identity = newIdentity)
+        playerCache[player.uniqueId] = newData
+        // 关键操作，立即同步保存
+        savePlayerDataSync(newData)
+    }
+
+    /**
      * 从缓存中移除玩家数据（玩家退出时调用）
      */
     fun removeFromCache(uuid: UUID) {
-        // 保存数据后再移除缓存
+        // 先保存待更新的数据
+        pendingUpdates[uuid]?.let { savePlayerDataSync(it) }
+        // 再保存并移除缓存
         savePlayerData(uuid)
         playerCache.remove(uuid)
     }
@@ -116,6 +237,9 @@ class PlayerService(private val databaseManager: DatabaseManager) {
      * 保存所有缓存中的玩家数据
      */
     fun saveAll() {
+        // 先保存所有待更新的数据
+        flushPendingUpdates()
+        // 再保存所有缓存中的数据
         playerCache.values.forEach { savePlayerData(it) }
     }
 

@@ -8,8 +8,8 @@ dependencies {
     compileOnly("io.papermc.paper:paper-api:1.21.1-R0.1-SNAPSHOT")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     
-    // 依赖 SkyCore
-    implementation(project(":SkyCore"))
+    // 仅编译时依赖，不打包进地牢 JAR，运行时从 Core 插件获取经济 API
+    compileOnly(project(":SkyCore"))
 }
 
 tasks {
@@ -23,7 +23,11 @@ tasks.shadowJar {
     archiveClassifier.set("")
     mergeServiceFiles()
     configurations = listOf(project.configurations.getByName("runtimeClasspath"))
-    dependsOn(project(":SkyCore").tasks.shadowJar)
+    // 不打包 SkyCore，避免类重复加载导致经济数据不走 Core
+    dependencies {
+        exclude(project(":SkyCore"))
+    }
+    exclude("sky4th/core/**")
 }
 
 tasks.build {

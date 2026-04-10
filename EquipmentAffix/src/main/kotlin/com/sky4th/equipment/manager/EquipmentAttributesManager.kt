@@ -29,7 +29,7 @@ class EquipmentAttributesManager(private val plugin: EquipmentAffix) {
      * 注意：大部分属性现在直接在物品上应用，这里只处理闪避和饥饿惩罚等特殊属性
      */
     fun updatePlayerEquipmentAttributes(player: Player) {
-        com.sky4th.equipment.monitor.PerformanceMonitorHelper.monitor("attribute_update") {
+        com.sky4th.equipment.monitor.PerformanceMonitorHelper.monitor<Unit>("attribute_update") {
             val uuid = player.uniqueId
 
             // 获取SkyCore中的玩家属性
@@ -49,8 +49,8 @@ class EquipmentAttributesManager(private val plugin: EquipmentAffix) {
                 hungerConsumptionMultiplier = hungerConsumptionMultiplier
             )
 
-            // 保存到SkyCore缓存
-            PlayerAttributesAPI.saveAttributes(updatedAttributes)
+            // 使用队列保存，而不是立即保存
+            PlayerAttributesAPI.queueSave(updatedAttributes)
         }
     }
 

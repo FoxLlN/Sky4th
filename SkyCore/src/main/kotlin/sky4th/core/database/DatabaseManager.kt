@@ -63,7 +63,14 @@ class DatabaseManager(private val plugin: Plugin) {
 
         val poolSection = cfg.getConfigurationSection("pool")
         val poolMin = poolSection?.getInt("minimum-idle", DEFAULT_POOL_MIN) ?: DEFAULT_POOL_MIN
-        val poolMax = poolSection?.getInt("maximum-pool-size", DEFAULT_POOL_MAX) ?: DEFAULT_POOL_MAX
+        // 根据服务器最大玩家数量动态调整连接池大小
+        val maxPlayers = plugin.server.maxPlayers
+        val defaultPoolMax = when {
+            maxPlayers <= 50 -> 20
+            maxPlayers <= 200 -> 50
+            else -> 100
+        }
+        val poolMax = poolSection?.getInt("maximum-pool-size", defaultPoolMax) ?: defaultPoolMax
         val connTimeout = poolSection?.getLong("connection-timeout", DEFAULT_CONNECTION_TIMEOUT) ?: DEFAULT_CONNECTION_TIMEOUT
         val idleTimeout = poolSection?.getLong("idle-timeout", DEFAULT_IDLE_TIMEOUT) ?: DEFAULT_IDLE_TIMEOUT
         val maxLifetime = poolSection?.getLong("max-lifetime", DEFAULT_MAX_LIFETIME) ?: DEFAULT_MAX_LIFETIME

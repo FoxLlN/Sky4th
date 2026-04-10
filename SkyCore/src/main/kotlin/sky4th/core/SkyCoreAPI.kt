@@ -21,7 +21,6 @@ import sky4th.core.ui.UIManager
  * SkyCore - Sky4th 服务器核心 API
  *
  * 提供所有模块共享的基础接口和工具类。
- * 当前使用固定数据库参数，仅用于测试连接。
  */
 object SkyCore {
     private var instance: Plugin? = null
