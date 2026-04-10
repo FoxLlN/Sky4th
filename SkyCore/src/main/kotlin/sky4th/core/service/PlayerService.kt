@@ -167,7 +167,7 @@ class PlayerService(private val databaseManager: DatabaseManager) {
     }
 
     /**
-     * 更新玩家游戏时长（每分钟调用一次）
+     * 更新玩家游戏时长（每秒调用一次）
      */
     fun updatePlayTime(player: Player) {
         val data = getPlayerData(player)
@@ -185,11 +185,11 @@ class PlayerService(private val databaseManager: DatabaseManager) {
                 lastLifeStartTime = now
             )
         } else {
-            // 同一天，累加时长
+            // 同一天，累加时长（每秒加1秒）
             data.identity.copy(
-                playTime = data.identity.playTime.plusMinutes(1),
-                todayPlayTime = data.identity.todayPlayTime.plusMinutes(1),
-                currentLifePlayTime = data.identity.currentLifePlayTime.plusMinutes(1)
+                playTime = data.identity.playTime.plusSeconds(1),
+                todayPlayTime = data.identity.todayPlayTime.plusSeconds(1),
+                currentLifePlayTime = data.identity.currentLifePlayTime.plusSeconds(1)
             )
         }
 

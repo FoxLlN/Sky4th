@@ -1,6 +1,6 @@
 # 词条配置
 id: coercion
-display_name: "<underlined><#625859>威压</underlined>"
+display_name: "<#625859>&n威压"
 description: "<#625859>降低来自周围生物的伤害"
 simple_description: "&7降低&a8%&7来自周围&a5格%&7生物的伤害"
 max_level: 1

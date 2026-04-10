@@ -1,6 +1,6 @@
 package sky4th.core.ui
 
-import net.kyori.adventure.text.minimessage.MiniMessage
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer
 import org.bukkit.Bukkit
 import org.bukkit.Material
 import org.bukkit.entity.Player
@@ -15,7 +15,6 @@ import sky4th.core.ui.feature.UIFeatureManager
 class UIPage(private val config: UIConfig, private val pluginName: String = "SkyCore") {
 
     private val inventory: Inventory
-    private val miniMessage = MiniMessage.miniMessage()
     private var currentPlayer: Player? = null
 
     // 保存每个槽位实际使用的template和物品信息
@@ -25,8 +24,11 @@ class UIPage(private val config: UIConfig, private val pluginName: String = "Sky
     init {
         // 根据shape确定箱子大小
         val size = config.shape.size * 9
-        val convertedTitle = sky4th.core.util.ColorUtil.convertLegacyToMiniMessage(config.title)
-        inventory = Bukkit.createInventory(null, size, miniMessage.deserialize(convertedTitle))
+        // 使用 ColorUtil 转换所有格式为 § 格式
+        val convertedTitle = sky4th.core.util.ColorUtil.convertMiniMessageToLegacy(config.title)
+        // 使用 LegacyComponentSerializer 解析 § 格式
+        val titleComponent = LegacyComponentSerializer.legacySection().deserialize(convertedTitle)
+        inventory = Bukkit.createInventory(null, size, titleComponent)
 
         // 不在init时渲染UI，因为此时currentPlayer为null
         // 等到open方法被调用时再渲染
@@ -86,15 +88,15 @@ class UIPage(private val config: UIConfig, private val pluginName: String = "Sky
 
         // 设置显示名称
         if (template.name.isNotEmpty()) {
-            val convertedName = sky4th.core.util.ColorUtil.convertLegacyToMiniMessage(template.name)
-            meta.displayName(miniMessage.deserialize(convertedName).decoration(net.kyori.adventure.text.format.TextDecoration.ITALIC, false))
+            val convertedName = sky4th.core.util.ColorUtil.convertMiniMessageToLegacy(template.name)
+            meta.displayName(LegacyComponentSerializer.legacySection().deserialize(convertedName).decoration(net.kyori.adventure.text.format.TextDecoration.ITALIC, false))
         }
 
         // 设置描述
         if (template.lore.isNotEmpty()) {
             meta.lore(template.lore.map { 
-                val convertedLore = sky4th.core.util.ColorUtil.convertLegacyToMiniMessage(it)
-                miniMessage.deserialize(convertedLore).decoration(net.kyori.adventure.text.format.TextDecoration.ITALIC, false)
+                val convertedLore = sky4th.core.util.ColorUtil.convertMiniMessageToLegacy(it)
+                LegacyComponentSerializer.legacySection().deserialize(convertedLore).decoration(net.kyori.adventure.text.format.TextDecoration.ITALIC, false)
             })
         }
         

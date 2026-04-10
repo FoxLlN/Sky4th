@@ -54,9 +54,7 @@ object DisplayUtil {
         val aiyatsbusEnch = enchantment as? AiyatsbusEnchantment
         val legacyName = aiyatsbusEnch?.rarity?.displayName(aiyatsbusEnch.basicData.name)
             ?: enchantment.key.key.replace('_', ' ')
-        // 将旧版格式转换为 MiniMessage 字符串
-        val component = LegacyComponentSerializer.legacySection().deserialize(legacyName)
-        return MiniMessage.miniMessage().serialize(component)
+        return legacyName
     }
 
     /**
@@ -76,11 +74,6 @@ object DisplayUtil {
 
         // 获得简单描述
         // "§7" + aiyatsbusEnch.displayer.generalDescription
-        return convertLegacyToMiniMessage("§7" + description)
-    }
-
-    fun convertLegacyToMiniMessage(legacyText: String): String {
-        val component = LegacyComponentSerializer.legacySection().deserialize(legacyText)
-        return MiniMessage.miniMessage().serialize(component)
+        return ("§7" + description)
     }
 }

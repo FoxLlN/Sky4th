@@ -1,89 +1,98 @@
 # SkyCore 默认语言文件（中文）
 # 支持参数替换，使用 {参数名} 格式
-# 支持颜色代码，同时支持旧版 & 格式（如 &a、&b）和新版 MiniMessage 格式（如 <gray>、<#FF0000>、<gradient:#55FF55:#AAFFAA>）
+# 支持颜色代码，同时支持旧版 & 格式（如 &a、&b）和新版 MiniMessage 格式（如 &7、<#FF0000>、<gradient:#55FF55:#AAFFAA>）
 
 # 前缀（可选，如果设置了会自动添加到所有消息前）
-prefix: "<gray>[<blue>Sky4th</blue>] </gray>"
+prefix: "&7[&9Sky4th]"
 
 # 通用消息
 common:
-  no-permission: "<red>你没有权限执行此操作！</red>"
-  player-only: "<red>只有玩家可以使用此命令！</red>"
-  unknown-command: "<red>未知命令！</red>"
-  reload-success: "<green>配置已重新加载！</green>"
-  reload-failed: "<red>配置重载失败！</red>"
+  no-permission: "&c你没有权限执行此操作！"
+  player-only: "&c只有玩家可以使用此命令！"
+  unknown-command: "&c未知命令！"
+  reload-success: "&a配置已重新加载！"
+  reload-failed: "&c配置重载失败！"
 
 # 命令相关
 command:
-  usage: "<red>用法: /{command} {args}</red>"
-  unknown: "<red>未知命令: {command}</red>"
-  no-permission: "<red>你没有权限执行此操作！</red>"
-  player-only: "<red>只有玩家可以使用此命令！</red>"
+  usage: "&c用法: /{command} {args}"
+  unknown: "&c未知命令: {command}"
+  no-permission: "&c你没有权限执行此操作！"
+  player-only: "&c只有玩家可以使用此命令！"
   help:
-    - "<gold>===== <blue>SkyCore</blue> <gold>帮助 =====</gold>"
-    - "<yellow>/sky help</yellow> <gray>- 显示帮助信息</gray>"
-    - "<yellow>/sky info</yellow> <gray>- 查看 API 信息</gray>"
-    - "<yellow>/sky status</yellow> <gray>- 查看系统状态</gray>"
-    - "<yellow>/sky player <玩家> <info|economy|time></yellow> <gray>- 查看玩家数据</gray>"
-    - "<yellow>/sky economy <status|balance></yellow> <gray>- 查看经济系统</gray>"
-    - "<yellow>/sky permission <add|remove> <玩家> <权限名></yellow> <gray>- 管理玩家权限</gray>"
-    - "<yellow>/sky reload</yellow> <gray>- 重载配置</gray>"
+    - "&6===== &9SkyCore &6帮助 ====="
+    - "&e/sky help &7- 显示帮助信息"
+    - "&e/sky info &7- 查看 API 信息"
+    - "&e/sky status &7- 查看系统状态"
+    - "&e/sky player <玩家> <info|economy|time> &7- 查看玩家数据"
+    - "&e/sky economy <status|balance> &7- 查看经济系统"
+    - "&e/sky permission <add|remove> <玩家> <权限名> &7- 管理玩家权限"
+    - "&e/sky reload &7- 重载配置"
   info:
-    version: "<gray>版本: <yellow>{version}</yellow></gray>"
-    author: "<gray>作者: <yellow>{author}</yellow></gray>"
-    initialized: "<gray>已初始化: <yellow>{status}</yellow></gray>"
+    version: "&7版本: &e{version}"
+    author: "&7作者: &e{author}"
+    initialized: "&7已初始化: &e{status}"
   reload:
-    success: "<green>配置已重新加载！</green>"
+    success: "&a配置已重新加载！"
   status:
-    header: "<gold>===== <blue>系统状态</blue> <gold>=====</gold>"
-    initialized: "<gray>API 已初始化: <yellow>{status}</yellow></gray>"
-    database: "<gray>数据库: <yellow>{status}</yellow></gray>"
-    player-service: "<gray>玩家服务: <yellow>{status}</yellow></gray>"
-    economy: "<gray>经济系统: <yellow>{status}</yellow></gray>"
-    language: "<gray>语言系统: <yellow>{status}</yellow></gray>"
+    header: "&6===== &9系统状态 &6====="
+    initialized: "&7API 已初始化: &e{status}"
+    database: "&7数据库: &e{status}"
+    player-service: "&7玩家服务: &e{status}"
+    economy: "&7经济系统: &e{status}"
+    language: "&7语言系统: &e{status}"
   player:
-    usage: "<red>用法: /sky player <玩家> <info|economy|time></red>"
-    not-found: "<red>找不到玩家: {player}</red>"
+    usage: "&c用法: /sky player <玩家> <info|economy|time>"
+    not-found: "&c找不到玩家: {player}"
     info:
-      header: "<gold>===== <blue>玩家信息: {player}</blue> <gold>=====</gold>"
-      level: "<gray>等级: <yellow>{level}</yellow></gray>"
-      tier: "<gray>阶段: <yellow>{tier}</yellow></gray>"
-      experience: "<gray>经验值: <yellow>{exp}</yellow></gray>"
-      total-exp: "<gray>总经验: <yellow>{total}</yellow></gray>"
-      skill-points: "<gray>技能点: <yellow>{points}</yellow></gray>"
+      header: "&6===== &9玩家信息: {player} &6====="
+      level: "&7等级: &e{level}"
+      tier: "&7阶段: &e{tier}"
+      experience: "&7经验值: &e{exp}"
+      total-exp: "&7总经验: &e{total}"
+      skill-points: "&7技能点: &e{points}"
     economy:
-      header: "<gold>===== <blue>经济信息: {player}</blue> <gold>=====</gold>"
-      credits: "<gray>信用点: <yellow>{credits}</yellow></gray>"
-      daily-earned: "<gray>今日获得: <yellow>{earned}</yellow></gray>"
-      daily-spent: "<gray>今日消费: <yellow>{spent}</yellow></gray>"
-      daily-limit: "<gray>每日上限: <yellow>{limit}</yellow></gray>"
+      header: "&6===== &9经济信息: {player} &6====="
+      credits: "&7信用点: &e{credits}"
+      daily-earned: "&7今日获得: &e{earned}"
+      daily-spent: "&7今日消费: &e{spent}"
+      daily-limit: "&7每日上限: &e{limit}"
     time:
-      header: "<gold>===== <blue>时间统计: {player}</blue> <gold>=====</gold>"
-      online: "<gray>今日在线: <yellow>{time}</yellow></gray>"
-      consecutive: "<gray>连续登录: <yellow>{days}</yellow> 天</gray>"
-      deaths: "<gray>今日死亡: <yellow>{count}</yellow> 次</gray>"
+      header: "&6===== &9时间统计: {player} &6====="
+      online: "&7今日在线: &e{time}"
+      consecutive: "&7连续登录: &e{days} 天"
+      deaths: "&7今日死亡: &e{count} 次"
   economy:
-    usage: "<red>用法: /sky economy <status|balance></red>"
-    status: "<gray>经济系统状态: <yellow>{status}</yellow></gray>"
-    provider: "<gray>提供者: <yellow>{provider}</yellow></gray>"
-    currency: "<gray>货币名称: <yellow>{currency}</yellow></gray>"
-    balance: "<gray>余额: <yellow>{balance}</yellow> {currency}</gray>"
+    usage: "&c用法: /sky economy <status|balance>"
+    status: "&7经济系统状态: &e{status}"
+    provider: "&7提供者: &e{provider}"
+    currency: "&7货币名称: &e{currency}"
+    balance: "&7余额: &e{balance} {currency}"
   permission:
-    usage: "<red>用法: /sky permission <add|remove> <玩家> <权限名></red>"
+    usage: "&c用法: /sky permission <add|remove> <玩家> <权限名>"
     add:
-      usage: "<red>用法: /sky permission add <玩家> <权限名></red>"
-      success: "<green>已成功给玩家 {player} 添加权限: {permission}</green>"
-      exists: "<yellow>玩家 {player} 已拥有权限: {permission}</yellow>"
+      usage: "&c用法: /sky permission add <玩家> <权限名>"
+      success: "&a已成功给玩家 {player} 添加权限: {permission}"
+      exists: "&e玩家 {player} 已拥有权限: {permission}"
     remove:
-      usage: "<red>用法: /sky permission remove <玩家> <权限名></red>"
-      success: "<green>已成功移除玩家 {player} 的权限: {permission}</green>"
-      not-found: "<yellow>玩家 {player} 没有权限: {permission}</yellow>"
+      usage: "&c用法: /sky permission remove <玩家> <权限名>"
+      success: "&a已成功移除玩家 {player} 的权限: {permission}"
+      not-found: "&e玩家 {player} 没有权限: {permission}"
 
 # 语言系统
 lang:
-  reloaded: "<green>语言文件已重新加载！</green>"
-  not-found: "<red>语言节点不存在: {node}</red>"
+  reloaded: "&a语言文件已重新加载！"
+  not-found: "&c语言节点不存在: {node}"
 
 # 变量系统
 variable:
-  not-found: "<red>变量不存在: {name}</red>"
+  not-found: "&c变量不存在: {name}"
+
+# 计分板系统
+scoreboard:
+  title: "&6&lSky4th"
+  today_playtime: "&e今日游玩: &a{time}"
+  current_life_playtime: "&e存活时长: &a{time}"
+  total_playtime: "&e总游玩时长: &a{time}"
+  qq_group: "&eQQ群: &a818114237"
+  footer: "&6==============="

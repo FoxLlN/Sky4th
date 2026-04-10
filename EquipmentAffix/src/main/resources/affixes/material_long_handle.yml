@@ -1,6 +1,6 @@
 # 长柄材质词条配置
 id: long_handle
-display_name: "<underlined><#6F7676>长柄</underlined>"
+display_name: "<#6F7676>&n长柄"
 description: "<#6F7676>挖掘距离增加"
 simple_description: "&7挖掘距离&a+1%&7"
 max_level: 1

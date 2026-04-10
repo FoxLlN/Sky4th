@@ -5,7 +5,7 @@ import com.sky4th.equipment.manager.RecipeManager
 import com.sky4th.equipment.modifier.AffixConfigManager
 import com.sky4th.equipment.attributes.EquipmentCategory
 import net.kyori.adventure.text.Component
-import net.kyori.adventure.text.minimessage.MiniMessage
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer
 import org.bukkit.Material
 import org.bukkit.NamespacedKey
 import org.bukkit.configuration.file.YamlConfiguration
@@ -80,7 +80,7 @@ object AffixTemplateLoader {
         
         // 获取词条描述
         val affixDescription = if (affixConfig != null) {
-            "<underlined>${affixConfig.displayName}</underlined><gray>: </gray>${affixConfig.description}"
+            "${affixConfig.displayName}: ${affixConfig.description}"
         } else {
             config.getStringList("description").firstOrNull() ?: ""
         }
@@ -143,7 +143,7 @@ object AffixTemplateLoader {
                 }
             }.filter { it.isNotEmpty() }
             if (slotTexts.isNotEmpty()) {
-                "<#5555FF>${slotTexts.joinToString(", ")}</#5555FF>"
+                "<#5555FF>${slotTexts.joinToString(", ")}"
             } else {
                 // 如果没有生成有效的槽位文本，回退到通用描述
                 applicableToList.joinToString(", ") {
@@ -154,7 +154,7 @@ object AffixTemplateLoader {
                         "BOW" -> "<#5555FF>弓, 弩"
                         "TOOL" -> "<#5555FF>工具"
                         "SHIELD" -> "<#5555FF>盾牌" 
-                        else -> "<gray>$it"
+                        else -> "&f$it"
                     }
                 }
             }
@@ -169,7 +169,7 @@ object AffixTemplateLoader {
                     "TOOL" -> "<#5555FF>工具"
                     "SHIELD" -> "<#5555FF>盾牌"
                     "ELYTRA" -> "<#5555FF>鞘翅"
-                    else -> "<gray>$it"
+                    else -> "&7$it"
                 }
             }
         }
@@ -183,15 +183,15 @@ object AffixTemplateLoader {
         }
 
         // 添加"锻造不消耗模板"
-        lore.add("<gray>锻造不消耗模板</gray>")
+        lore.add("&7锻造不消耗模板")
         lore.add("")
 
         // 添加"可应用于"
-        lore.add("<gray>可应用于:</gray>")
+        lore.add("&7可应用于:")
         lore.add(applicableToText)
 
         // 添加"所需原材料"
-        lore.add("<gray>所需原材料:</gray>")
+        lore.add("&7所需原材料:")
 
         // 添加升级材料
         val upgradeMaterialsSection = config.getConfigurationSection("upgrade_materials")
@@ -218,9 +218,9 @@ object AffixTemplateLoader {
 
                         // 获取材料的中文名称
                         val materialDisplayName = getMaterialDisplayName(currentMaterialName)
-                        "<#5555FF>$materialDisplayName × $count</#5555FF>"
+                        "<#5555FF>$materialDisplayName × $count"
                     }
-                    lore.add("<#5555FF>$romanNumeral: $materialsText</#5555FF>")
+                    lore.add("<#5555FF>$romanNumeral: $materialsText")
                 }
             }
         }
@@ -234,15 +234,21 @@ object AffixTemplateLoader {
         val templateItem = ItemStack(Material.NETHERITE_UPGRADE_SMITHING_TEMPLATE)
         val itemMeta = templateItem.itemMeta ?: return
 
+        val loreName = sky4th.core.util.ColorUtil.convertMiniMessageToLegacy(displayName)
+        val nameComponent = LegacyComponentSerializer.legacySection().deserialize(loreName)
         // 设置显示名称(无斜体)
-        itemMeta.displayName(MiniMessage.miniMessage().deserialize(displayName).decoration(net.kyori.adventure.text.format.TextDecoration.ITALIC, false))
+        itemMeta.displayName(nameComponent.decoration(net.kyori.adventure.text.format.TextDecoration.ITALIC, false))
 
         // 隐藏原版描述信息
         itemMeta.addItemFlags(org.bukkit.inventory.ItemFlag.HIDE_ADDITIONAL_TOOLTIP)
 
         // 设置描述(取消斜体)
         if (lore.isNotEmpty()) {
-            itemMeta.lore(lore.map { MiniMessage.miniMessage().deserialize(it).decoration(net.kyori.adventure.text.format.TextDecoration.ITALIC, false) })
+            itemMeta.lore(lore.map { 
+                val loreString = sky4th.core.util.ColorUtil.convertMiniMessageToLegacy(it)
+                val loreComponent = LegacyComponentSerializer.legacySection().deserialize(loreString)
+                loreComponent.decoration(net.kyori.adventure.text.format.TextDecoration.ITALIC, false) 
+            })
         }
 
         // 设置 CustomModelData（原版机制）

@@ -8,6 +8,8 @@ import org.bukkit.Material
 import org.bukkit.entity.Player
 import org.bukkit.inventory.ItemStack
 import sky4th.core.ui.UITemplate
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer
+
 
 /**
  * 词条升级材料处理器
@@ -60,8 +62,9 @@ object AffixUpdate {
         val meta = resultItem.itemMeta ?: return resultItem
 
         // 设置显示名称
-        val displayName = "<yellow>$materialName</yellow>"
-        val nameComponent = net.kyori.adventure.text.minimessage.MiniMessage.miniMessage().deserialize(displayName)
+        val displayName = "&e$materialName"
+        val newName = sky4th.core.util.ColorUtil.convertMiniMessageToLegacy(displayName)
+        val nameComponent = LegacyComponentSerializer.legacySection().deserialize(newName)
         meta.displayName(LanguageUtil.removeItalic(nameComponent))
 
         // 从template的feature中读取lore格式
@@ -80,10 +83,10 @@ object AffixUpdate {
         }
 
         val convertedLore = lore.map {
-            sky4th.core.util.ColorUtil.convertLegacyToMiniMessage(it)
+            sky4th.core.util.ColorUtil.convertMiniMessageToLegacy(it)
         }
         meta.lore(convertedLore.map {
-            val loreComponent = net.kyori.adventure.text.minimessage.MiniMessage.miniMessage().deserialize(it)
+            val loreComponent = LegacyComponentSerializer.legacySection().deserialize(it)
             LanguageUtil.removeItalic(loreComponent)
         })
 

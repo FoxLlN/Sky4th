@@ -25,7 +25,7 @@ class PlayTimeListener : Listener {
         val player = event.player
         val uuid = player.uniqueId
         val plugin = player.server.pluginManager.getPlugin("SkyCore")?: return
-        // 启动定时任务，每分钟更新一次玩家游戏时长
+        // 启动定时任务，每秒更新一次玩家游戏时长
         val taskId = player.server.scheduler.runTaskTimer(
             plugin,
             Runnable {
@@ -35,8 +35,8 @@ class PlayTimeListener : Listener {
                     } catch (_: Exception) { /* 忽略异常 */ }
                 }
             },
-            1200L,  // 1分钟后开始（60秒 * 20 ticks/秒）
-            1200L   // 每1分钟执行一次
+            20L,  // 1秒后开始（1秒 * 20 ticks/秒）
+            20L   // 每1秒执行一次
         ).taskId
         playTimeTasks[uuid] = taskId
         

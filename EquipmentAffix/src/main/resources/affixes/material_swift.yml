@@ -1,6 +1,6 @@
 # 迅捷材质词条配置
 id: swift
-display_name: "<underlined><#C65C35>迅捷</underlined>"
+display_name: "<#C65C35>&n迅捷"
 description: "<#C65C35>攻击速度小幅提升"
 simple_description: "&7攻击速度增加&a10%&7"
 max_level: 1

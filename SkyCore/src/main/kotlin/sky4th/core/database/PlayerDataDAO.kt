@@ -75,23 +75,23 @@ class PlayerDataDAO(private val databaseManager: DatabaseManager) {
 
     private fun saveIdentity(conn: Connection, identity: PlayerIdentity) {
         conn.prepareStatement("""
-            INSERT INTO player_identity (uuid, username, first_login, last_login, play_time_minutes, today_play_time_minutes, current_life_play_time_minutes, last_life_start_time)
+            INSERT INTO player_identity (uuid, username, first_login, last_login, play_time_seconds, today_play_time_seconds, current_life_play_time_seconds, last_life_start_time)
             VALUES (?, ?, ?, ?, ?, ?, ?, ?)
             ON DUPLICATE KEY UPDATE
                 username = VALUES(username),
                 last_login = VALUES(last_login),
-                play_time_minutes = VALUES(play_time_minutes),
-                today_play_time_minutes = VALUES(today_play_time_minutes),
-                current_life_play_time_minutes = VALUES(current_life_play_time_minutes),
+                play_time_seconds = VALUES(play_time_seconds),
+                today_play_time_seconds = VALUES(today_play_time_seconds),
+                current_life_play_time_seconds = VALUES(current_life_play_time_seconds),
                 last_life_start_time = VALUES(last_life_start_time)
         """).use { stmt ->
             stmt.setString(1, identity.uuid.toString())
             stmt.setString(2, identity.username)
             stmt.setLong(3, identity.firstLogin.toEpochMilli())
             stmt.setLong(4, identity.lastLogin.toEpochMilli())
-            stmt.setLong(5, identity.playTime.toMinutes())
-            stmt.setLong(6, identity.todayPlayTime.toMinutes())
-            stmt.setLong(7, identity.currentLifePlayTime.toMinutes())
+            stmt.setLong(5, identity.playTime.seconds)
+            stmt.setLong(6, identity.todayPlayTime.seconds)
+            stmt.setLong(7, identity.currentLifePlayTime.seconds)
             if (identity.lastLifeStartTime != null) {
                 stmt.setLong(8, identity.lastLifeStartTime.toEpochMilli())
             } else {
@@ -103,8 +103,8 @@ class PlayerDataDAO(private val databaseManager: DatabaseManager) {
 
     private fun loadIdentity(conn: Connection, uuid: UUID): PlayerIdentity? {
         conn.prepareStatement("""
-            SELECT uuid, username, first_login, last_login, play_time_minutes,
-                   today_play_time_minutes, current_life_play_time_minutes, last_life_start_time
+            SELECT uuid, username, first_login, last_login, play_time_seconds,
+                   today_play_time_seconds, current_life_play_time_seconds, last_life_start_time
             FROM player_identity WHERE uuid = ?
         """).use { stmt ->
             stmt.setString(1, uuid.toString())
@@ -117,9 +117,9 @@ class PlayerDataDAO(private val databaseManager: DatabaseManager) {
                     username = rs.getString("username"),
                     firstLogin = Instant.ofEpochMilli(rs.getLong("first_login")),
                     lastLogin = Instant.ofEpochMilli(rs.getLong("last_login")),
-                    playTime = Duration.ofMinutes(rs.getLong("play_time_minutes")),
-                    todayPlayTime = Duration.ofMinutes(rs.getLong("today_play_time_minutes")),
-                    currentLifePlayTime = Duration.ofMinutes(rs.getLong("current_life_play_time_minutes")),
+                    playTime = Duration.ofSeconds(rs.getLong("play_time_seconds")),
+                    todayPlayTime = Duration.ofSeconds(rs.getLong("today_play_time_seconds")),
+                    currentLifePlayTime = Duration.ofSeconds(rs.getLong("current_life_play_time_seconds")),
                     lastLifeStartTime = if (rs.wasNull()) null else Instant.ofEpochMilli(lastLifeStartTime)
                 )
             }

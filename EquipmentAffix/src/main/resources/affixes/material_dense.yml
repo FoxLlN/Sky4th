@@ -1,6 +1,6 @@
 # 致密词条配置
 id: dense
-display_name: "<underlined><#7A82C4>致密</underlined>"
+display_name: "<#7A82C4>&n致密"
 description: "<#7A82C4>手持时降低移动速度"
 simple_description: "&7手持时降低&a10%&7移动速度"
 max_level: 1

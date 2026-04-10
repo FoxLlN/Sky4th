@@ -1,6 +1,6 @@
 # 果腹词条配置
 id: satiate
-display_name: "<underlined><#866526>果腹</underlined>"
+display_name: "<#866526>&n果腹"
 description: "<#866526>手持右键空气时，可以消耗工具耐久来恢复饥饿值"
 simple_description: "&7手持右键空气时，可以消耗工具&a10%&7耐久来恢复&a2点&7饥饿值"
 max_level: 1

@@ -8,6 +8,7 @@ import com.sky4th.equipment.util.LanguageUtil
 import org.bukkit.Material
 import org.bukkit.entity.Player
 import org.bukkit.inventory.ItemStack
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer
 
 /**
  * 词条物品构建器
@@ -43,7 +44,7 @@ object AffixItemBuilder {
         // 获取材料名称
         val materialsCache = AffixTemplateLoader.getUpgradeMaterialsCache(affixId)
 
-        // 提取displayName的颜色代码（MiniMessage格式）
+        // 提取displayName的颜色代码
         val displayNameColor = if (affixConfig.displayName.length >= 9 && affixConfig.displayName.startsWith("<#")) {
             affixConfig.displayName.substring(0, 9)
         } else {
@@ -75,16 +76,16 @@ object AffixItemBuilder {
 
         // 设置物品名称为 "词条名字 最大等级"
         val displayName = "${affixConfig.displayName} ${number}"
-        val convertedName = sky4th.core.util.ColorUtil.convertLegacyToMiniMessage(displayName)
-        val nameComponent = net.kyori.adventure.text.minimessage.MiniMessage.miniMessage().deserialize(convertedName)
-        meta.displayName(LanguageUtil.removeItalic(nameComponent))
+        val convertedName = sky4th.core.util.ColorUtil.convertMiniMessageToLegacy(displayName)
+        val finalName = LegacyComponentSerializer.legacySection().deserialize(convertedName)
+        meta.displayName(LanguageUtil.removeItalic(finalName))
 
         // 设置物品描述
         val convertedLore = lore.map {
-            sky4th.core.util.ColorUtil.convertLegacyToMiniMessage(it)
+            sky4th.core.util.ColorUtil.convertMiniMessageToLegacy(it)
         }
         meta.lore(convertedLore.map { 
-            val loreComponent = net.kyori.adventure.text.minimessage.MiniMessage.miniMessage().deserialize(it)
+            val loreComponent = LegacyComponentSerializer.legacySection().deserialize(it)
             LanguageUtil.removeItalic(loreComponent)
         })
 

@@ -6,6 +6,7 @@ import com.sky4th.equipment.util.LanguageUtil
 import org.bukkit.entity.Player
 import org.bukkit.inventory.ItemStack
 import sky4th.core.ui.UITemplate
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer
 
 /**
  * 等级信息处理器
@@ -51,10 +52,10 @@ object LevelInfo {
 
         // 设置lore
         val convertedLore = lore.map {
-            sky4th.core.util.ColorUtil.convertLegacyToMiniMessage(it)
+            sky4th.core.util.ColorUtil.convertMiniMessageToLegacy(it)
         }
         meta.lore(convertedLore.map {
-            val loreComponent = net.kyori.adventure.text.minimessage.MiniMessage.miniMessage().deserialize(it)
+            val loreComponent = LegacyComponentSerializer.legacySection().deserialize(it)
             LanguageUtil.removeItalic(loreComponent)
         })
 

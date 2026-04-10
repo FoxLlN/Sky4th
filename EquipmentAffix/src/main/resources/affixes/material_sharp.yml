@@ -1,6 +1,6 @@
 # 锐利词条配置
 id: sharp
-display_name: "<underlined><#6EECD2>锐利</underlined>"
+display_name: "<#6EECD2>&n锐利"
 description: "<#6EECD2>攻击时，有概率造成额外伤害"
 simple_description: "&7攻击时，有&a10%&7概率造成额外&a30%&7伤害"
 max_level: 1

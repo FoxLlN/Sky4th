@@ -1,6 +1,6 @@
 # 生息词条配置
 id: vitality
-display_name: "<underlined><#866526>生息</underlined>"
+display_name: "<#866526>&n生息"
 description: "<#866526>击杀生物时，有概率恢复少量生命值"
 simple_description: "&7击杀生物时，有&a10%&7概率恢复&a1点&7生命值"
 max_level: 1

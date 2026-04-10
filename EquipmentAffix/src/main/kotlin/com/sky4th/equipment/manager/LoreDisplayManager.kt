@@ -10,6 +10,7 @@ import com.sky4th.equipment.util.LanguageUtil
 import net.kyori.adventure.text.Component
 import org.bukkit.inventory.ItemStack
 import sky4th.core.api.LanguageAPI
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer
 
 /**
  * Lore显示管理器
@@ -433,17 +434,13 @@ object LoreDisplayManager {
         // 获取模板名称
         val patternName = getPatternName(pattern)
 
-        // 将Component转换为MiniMessage格式
-        val miniMessage = net.kyori.adventure.text.minimessage.MiniMessage.miniMessage()
-        val materialMiniMessage = miniMessage.serialize(coloredMaterial)
-
         // 让纹饰也显示相同的颜色
-        val patternMiniMessage = "$materialMiniMessage ${patternName}纹饰"
-
+        val patternLore = sky4th.core.util.ColorUtil.convertMiniMessageToLegacy("$coloredMaterial ${patternName}纹饰")
+        //val patternComponent = LegacyComponentSerializer.legacySection().deserialize(patternLore)
         // 使用语言文件中的格式
         val plugin = com.sky4th.equipment.EquipmentAffix.instance
         val trimText = LanguageUtil.getComponentNoItalic(plugin, "lore.detailed.trim-info",
-            "pattern" to patternMiniMessage)
+            "pattern" to patternLore)
 
         return trimText
     }
@@ -451,7 +448,7 @@ object LoreDisplayManager {
     /**
      * 获取带颜色的材质名称
      */
-    private fun getColoredMaterial(material: Any): Component {
+    private fun getColoredMaterial(material: Any): String {
         val materialName = material.toString()
         val (name, color) = when (materialName) {
             "minecraft:amethyst" -> "紫水晶质" to "#9A5CC6"
@@ -466,8 +463,8 @@ object LoreDisplayManager {
             "minecraft:redstone" -> "红石质" to "#BD2008"
             else -> materialName to "#FFFFFF"
         }
-        // 使用MiniMessage格式：<#颜色>文本
-        return net.kyori.adventure.text.minimessage.MiniMessage.miniMessage().deserialize("<$color>$name")
+        // <#颜色>文本
+        return  "<$color>$name"
     }
 
     /**

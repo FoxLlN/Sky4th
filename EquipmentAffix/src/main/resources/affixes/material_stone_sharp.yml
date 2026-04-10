@@ -1,6 +1,6 @@
 # 砥刃词条配置
 id: stone_sharp
-display_name: "<underlined><#7F7F7F>砥刃</underlined>"
+display_name: "<#7F7F7F>&n砥刃"
 description: "<#7F7F7F>站在石质方块上攻击时，有概率不消耗耐久"
 simple_description: "&7站在石质方块上攻击时，有&a50%&7概率不消耗耐久"
 max_level: 1

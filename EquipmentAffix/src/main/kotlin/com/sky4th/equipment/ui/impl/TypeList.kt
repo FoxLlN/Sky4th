@@ -9,6 +9,7 @@ import org.bukkit.entity.Player
 import org.bukkit.inventory.ItemStack
 import org.bukkit.persistence.PersistentDataType
 import sky4th.core.ui.UITemplate
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer
 
 /**
  * 装备类型列表处理器
@@ -196,11 +197,15 @@ object TypeList {
 
         // 设置显示名称
         val displayName = when {
-            isExcluded -> "<red>${type.displayName}</red>"
-            isSelected -> "<green>${type.displayName}</green>"
-            else -> "<gray>${type.displayName}</gray>"
+            isSelected -> "&a${type.displayName}"
+            isExcluded -> "&c${type.displayName}"
+            else -> "&7${type.displayName}"
         }
-        val nameComponent = net.kyori.adventure.text.minimessage.MiniMessage.miniMessage().deserialize(displayName)
+        // 使用 ColorUtil 转换所有格式为 § 格式
+        val convertedName = sky4th.core.util.ColorUtil.convertMiniMessageToLegacy(displayName)
+        // 使用 LegacyComponentSerializer 解析 § 格式
+        val nameComponent = LegacyComponentSerializer.legacySection().deserialize(convertedName)
+
         meta.displayName(LanguageUtil.removeItalic(nameComponent))
 
         // 获取lore格式
@@ -219,10 +224,10 @@ object TypeList {
 
         // 设置lore
         val convertedLore = lore.map {
-            sky4th.core.util.ColorUtil.convertLegacyToMiniMessage(it)
+            sky4th.core.util.ColorUtil.convertMiniMessageToLegacy(it)
         }
         meta.lore(convertedLore.map {
-            val loreComponent = net.kyori.adventure.text.minimessage.MiniMessage.miniMessage().deserialize(it)
+            val loreComponent = LegacyComponentSerializer.legacySection().deserialize(it)
             LanguageUtil.removeItalic(loreComponent)
         })
 

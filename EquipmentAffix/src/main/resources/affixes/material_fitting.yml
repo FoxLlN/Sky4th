@@ -1,6 +1,6 @@
 # 贴合词条配置
 id: fitting
-display_name: "<underlined><#C65C35>贴合</underlined>"
+display_name: "<#C65C35>&n贴合"
 description: "<#C65C35>移动速度小幅提升"
 simple_description: "&7移动速度提升&a10%&7"
 max_level: 1

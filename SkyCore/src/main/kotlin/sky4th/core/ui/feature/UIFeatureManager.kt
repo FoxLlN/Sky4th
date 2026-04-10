@@ -1,5 +1,6 @@
 package sky4th.core.ui.feature
 
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer
 import org.bukkit.entity.Player
 import org.bukkit.inventory.ItemStack
 import sky4th.core.ui.UITemplate
@@ -192,10 +193,10 @@ object UIFeatureManager {
             // 保留原有的lore
             if (template.lore.isNotEmpty()) {
                 val meta = head.itemMeta ?: return head
-                val miniMessage = net.kyori.adventure.text.minimessage.MiniMessage.miniMessage()
                 meta.lore(template.lore.map {
-                    val convertedLore = sky4th.core.util.ColorUtil.convertLegacyToMiniMessage(it)
-                    miniMessage.deserialize(convertedLore).decoration(net.kyori.adventure.text.format.TextDecoration.ITALIC, false)
+                    val convertedLore = sky4th.core.util.ColorUtil.convertMiniMessageToLegacy(it)
+                    val nameComponent = LegacyComponentSerializer.legacySection().deserialize(convertedLore)
+                    nameComponent.decoration(net.kyori.adventure.text.format.TextDecoration.ITALIC, false)
                 })
                 head.itemMeta = meta
             }

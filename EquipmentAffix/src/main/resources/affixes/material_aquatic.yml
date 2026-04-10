@@ -1,6 +1,6 @@
 # 水生词条配置
 id: aquatic
-display_name: "<underlined><#5AAFA4>水生</underlined>"
+display_name: "<#5AAFA4>&n水生"
 description: "<#5AAFA4>降低来自水生生物的伤害"
 simple_description: "&7降低&a15%&7来自水生生物的伤害"
 max_level: 1

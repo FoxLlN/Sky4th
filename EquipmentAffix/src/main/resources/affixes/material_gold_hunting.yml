@@ -1,6 +1,6 @@
 # 猎金词条配置
 id: gold_hunting
-display_name: "<underlined><#DEB12D>猎金</underlined>"
+display_name: "<#DEB12D>&n猎金"
 description: "<#DEB12D>击杀生物时，有概率获得额外金粒"
 simple_description: "&7击杀生物时，有&a5%&7概率额外获得&a1-5个&7金粒"
 max_level: 1

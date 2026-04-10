@@ -4,6 +4,7 @@ import org.bukkit.entity.Player
 import org.bukkit.inventory.ItemStack
 import sky4th.core.ui.UITemplate
 import com.sky4th.equipment.util.LanguageUtil
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer
 
 /**
  * 材料筛选处理器
@@ -94,10 +95,10 @@ object FilterMaterial {
 
         // 设置lore
         val convertedLore = lore.map {
-            sky4th.core.util.ColorUtil.convertLegacyToMiniMessage(it)
+            sky4th.core.util.ColorUtil.convertMiniMessageToLegacy(it)
         }
         meta.lore(convertedLore.map {
-            val loreComponent = net.kyori.adventure.text.minimessage.MiniMessage.miniMessage().deserialize(it)
+            val loreComponent = LegacyComponentSerializer.legacySection().deserialize(it)
             LanguageUtil.removeItalic(loreComponent)
         })
 

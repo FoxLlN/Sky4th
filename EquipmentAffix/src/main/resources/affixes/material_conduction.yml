@@ -1,6 +1,6 @@
 # 传导词条配置
 id: conduction
-display_name: "<underlined><#A2B0B3>传导</underlined>"
+display_name: "<#A2B0B3>&n传导"
 description: "<#A2B0B3>攻击时，伤害有概率延伸到额外一个目标"
 simple_description: "&7攻击时，&a10%&7概率伤害延伸到额外一个目标"
 max_level: 1

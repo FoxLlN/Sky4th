@@ -1,6 +1,6 @@
 # 铁骨词条配置
 id: iron_bone
-display_name: "<underlined><#A2B0B3>铁骨</underlined>"
+display_name: "<#A2B0B3>&n铁骨"
 description: "<#A2B0B3>受到物理攻击时，有概率减少一定伤害"
 simple_description: "&7受到物理攻击时，有&a20%&7概率减少&a20%&7伤害"
 max_level: 1

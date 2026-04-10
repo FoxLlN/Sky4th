@@ -1,6 +1,6 @@
 # 坚毅词条配置
 id: resilience
-display_name: "<underlined><#6EECD2>坚毅</underlined>"
+display_name: "<#6EECD2>&n坚毅"
 description: "<#6EECD2>生命值高于80%时，受到物理伤害减少"
 simple_description: "&7生命值高于80%时，受到物理伤害减少&a5%&7"
 max_level: 1

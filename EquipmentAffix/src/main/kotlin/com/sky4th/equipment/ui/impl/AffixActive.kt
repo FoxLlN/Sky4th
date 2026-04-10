@@ -7,6 +7,7 @@ import com.sky4th.equipment.util.DisplayUtil
 import org.bukkit.entity.Player
 import org.bukkit.inventory.ItemStack
 import sky4th.core.ui.UITemplate
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer
 
 /**
  * 活跃信息处理器
@@ -86,8 +87,8 @@ object AffixActive {
         val meta = book.itemMeta ?: return null
 
         val enchantName = DisplayUtil.getEnchantmentName(enchantment)
-        val displayName = "<red>$enchantName</red>"
-        val nameComponent = net.kyori.adventure.text.minimessage.MiniMessage.miniMessage().deserialize(displayName)
+        val displayName = "&a$enchantName"
+        val nameComponent = LegacyComponentSerializer.legacySection().deserialize(displayName)
         meta.displayName(com.sky4th.equipment.util.LanguageUtil.removeItalic(nameComponent))
 
         val loreFormat = features?.get("lore") as? List<*> ?: listOf(
@@ -103,10 +104,10 @@ object AffixActive {
         }
 
         val convertedLore = lore.map {
-            sky4th.core.util.ColorUtil.convertLegacyToMiniMessage(it)
+            sky4th.core.util.ColorUtil.convertMiniMessageToLegacy(it)
         }
         meta.lore(convertedLore.map {
-            val loreComponent = net.kyori.adventure.text.minimessage.MiniMessage.miniMessage().deserialize(it)
+            val loreComponent = LegacyComponentSerializer.legacySection().deserialize(it)
             com.sky4th.equipment.util.LanguageUtil.removeItalic(loreComponent)
         })
 

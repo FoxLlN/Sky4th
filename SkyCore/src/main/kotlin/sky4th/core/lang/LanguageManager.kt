@@ -2,6 +2,7 @@ package sky4th.core.lang
 
 import net.kyori.adventure.text.Component
 import net.kyori.adventure.text.minimessage.MiniMessage
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer
 import org.bukkit.command.CommandSender
 import org.bukkit.configuration.file.FileConfiguration
 import org.bukkit.configuration.file.YamlConfiguration
@@ -98,7 +99,7 @@ class LanguageManager(private val plugin: Plugin) {
         val config = getLangConfig()
         val text = config.getString(key) ?: key
         val processed = processText(text, args)
-        return ColorUtil.convertLegacyToMiniMessage(processed)
+        return ColorUtil.convertMiniMessageToLegacy(processed)
     }
     
     /**
@@ -108,7 +109,7 @@ class LanguageManager(private val plugin: Plugin) {
         val config = getLangConfig()
         val raw = config.getString(key) ?: return null
         val processed = processText(raw, args)
-        return ColorUtil.convertLegacyToMiniMessage(processed)
+        return ColorUtil.convertMiniMessageToLegacy(processed)
     }
 
     
@@ -123,12 +124,12 @@ class LanguageManager(private val plugin: Plugin) {
             // 尝试作为单个字符串获取
             val single = config.getString(key)
             if (single != null) {
-                return listOf(ColorUtil.convertLegacyToMiniMessage(processText(single, args)))
+                return listOf(ColorUtil.convertMiniMessageToLegacy(processText(single, args)))
             }
             return listOf(key)
         }
 
-        return rawList.map { line -> ColorUtil.convertLegacyToMiniMessage(processText(line, args)) }
+        return rawList.map { line -> ColorUtil.convertMiniMessageToLegacy(processText(line, args)) }
     }
 
     /**
@@ -150,9 +151,16 @@ class LanguageManager(private val plugin: Plugin) {
 
     /**
      * 将字符串转换为 Component
+     * 智能处理不同格式的颜色代码（§、&、MiniMessage）
      */
     fun toComponent(text: String): Component {
-        return miniMessage.deserialize(text)
+        // 尝试用 MiniMessage 解析
+        return try {
+            miniMessage.deserialize(text)
+        } catch (e: Exception) {
+            // 如果解析失败，使用 LegacyComponentSerializer 解析
+            LegacyComponentSerializer.legacySection().deserialize(text)
+        }
     }
 
     /**

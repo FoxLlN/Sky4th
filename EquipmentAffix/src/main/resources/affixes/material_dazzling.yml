@@ -1,6 +1,6 @@
 # 炫目词条配置
 id: dazzling
-display_name: "<underlined><#DEB12D>炫目</underlined>"
+display_name: "<#DEB12D>&n炫目"
 description: "<#DEB12D>受到攻击时，有概率对攻击者造成眩晕效果"
 simple_description: "&7受到攻击时，有&a5%&7概率对攻击者造成眩晕效果，持续&a2秒"
 max_level: 1

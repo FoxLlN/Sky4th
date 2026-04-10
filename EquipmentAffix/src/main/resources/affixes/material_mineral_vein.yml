@@ -1,6 +1,6 @@
 # 矿脉词条配置
 id: mineral_vein
-display_name: "<underlined><#A2B0B3>矿脉</underlined>"
+display_name: "<#A2B0B3>&n矿脉"
 description: "<#A2B0B3>挖掘自然生成方块时，有概率获得额外矿物"
 simple_description: "&7挖掘自然生成方块时，有&a5%&7概率额外获得随机粗矿"
 max_level: 1

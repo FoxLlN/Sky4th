@@ -1,6 +1,6 @@
 # 自然词条配置
 id: nature
-display_name: "<underlined><#866526>自然</underlined>"
+display_name: "<#866526>&n自然"
 description: "<#866526>处于自然生物群系时，受到伤害减少"
 simple_description: "&7处于自然生物群系时，受到伤害减少&a5%&7"
 max_level: 1

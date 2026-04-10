@@ -10,6 +10,8 @@ import sky4th.core.listener.MarkListener
 import sky4th.core.listener.PlayerEnterListener
 import sky4th.core.listener.PlayTimeListener
 import sky4th.core.mark.MarkManager
+import sky4th.core.scoreboard.ScoreboardListener
+import sky4th.core.scoreboard.ScoreboardManager
 
 class SkyCorePlugin : JavaPlugin() {
 
@@ -26,10 +28,14 @@ class SkyCorePlugin : JavaPlugin() {
         // 初始化标记管理器
         MarkManager.init(this)
 
+        // 初始化计分板系统
+        ScoreboardManager.initialize()
+
         // 注册监听器
         server.pluginManager.registerEvents(PlayerEnterListener(), this)
         server.pluginManager.registerEvents(PlayTimeListener(), this)
         server.pluginManager.registerEvents(MarkListener(), this)
+        server.pluginManager.registerEvents(ScoreboardListener(), this)
 
         // 注册命令
         getCommand("sky")?.setExecutor(SkyCoreCommandHandler)
@@ -59,6 +65,8 @@ class SkyCorePlugin : JavaPlugin() {
     override fun onDisable() {
         // 清理标记管理器
         MarkManager.cleanup()
+        // 关闭计分板系统
+        ScoreboardManager.shutdown()
         // 关闭 API 并清理资源
         SkyCore.shutdown()
         logger.info("SkyCore 已卸载")

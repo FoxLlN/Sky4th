@@ -1,6 +1,6 @@
 # 淘金词条配置
 id: gold_digger
-display_name: "<underlined><#DEB12D>淘金</underlined>"
+display_name: "<#DEB12D>&n淘金"
 description: "<#DEB12D>破坏方块时，有概率获得额外金粒"
 simple_description: "&7破坏方块时，有&a5%&7概率额外获得&a1-5个&7金粒"
 max_level: 1

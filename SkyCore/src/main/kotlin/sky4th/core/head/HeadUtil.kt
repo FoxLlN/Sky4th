@@ -1,7 +1,7 @@
 
 package sky4th.core.head
 
-import net.kyori.adventure.text.minimessage.MiniMessage
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer
 import org.bukkit.Material
 import org.bukkit.inventory.ItemStack
 
@@ -66,8 +66,11 @@ object HeadUtil {
         }
 
         // 设置显示名称
-        val convertedName = sky4th.core.util.ColorUtil.convertLegacyToMiniMessage(name)
-        meta.displayName(MiniMessage.miniMessage().deserialize(convertedName).decoration(net.kyori.adventure.text.format.TextDecoration.ITALIC, false))
+        // 使用 ColorUtil 转换所有格式为 § 格式
+        val convertedName = sky4th.core.util.ColorUtil.convertMiniMessageToLegacy(name)
+        // 使用 LegacyComponentSerializer 解析 § 格式
+        val nameComponent = LegacyComponentSerializer.legacySection().deserialize(convertedName)
+        meta.displayName(nameComponent.decoration(net.kyori.adventure.text.format.TextDecoration.ITALIC, false))
         head.itemMeta = meta
         return head
     }

@@ -1,6 +1,6 @@
 # 双晶词条配置
 id: crystal
-display_name: "<underlined><#6EECD2>双晶</underlined>"
+display_name: "<#6EECD2>&n双晶"
 description: "<#6EECD2>挖掘时，有概率获得双倍掉落物"
 simple_description: "&7挖掘时，有&a10%&7概率获得双倍掉落物"
 max_level: 1
