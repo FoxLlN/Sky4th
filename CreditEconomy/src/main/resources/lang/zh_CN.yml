@@ -1,0 +1,14 @@
+# CreditEconomy 语言文件（中文）
+# 支持参数替换，使用 {参数名} 格式
+# 支持颜色代码，同时支持旧版 & 格式（如 &a、&b）和新版 MiniMessage 格式（如 &7、<#FF0000>、<gradient:#55FF55:#AAFFAA>）
+
+# 前缀
+prefix: "&a[信用经济]"
+
+# 经济消息
+economy:
+  reward: "&e您获得了 &f{amount} {currency} &e({reason})"
+  charge: "&e您消费了 &f{amount} {currency}{rate_text} &e({reason})"
+  charge-with-rate: " &e(扣费比例: {rate}%)"
+  insufficient: "&c余额不足！需要 &f{amount} {currency}{rate_info}"
+  insufficient-with-rate: " &e(原价: {original}, 比例: {rate}%)"

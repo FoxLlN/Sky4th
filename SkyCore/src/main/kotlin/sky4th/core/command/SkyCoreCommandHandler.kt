@@ -14,13 +14,14 @@ import sky4th.core.command.impl.runPermission
 import sky4th.core.command.impl.runStatus
 import sky4th.core.command.impl.runMark
 import sky4th.core.command.impl.runEquipment
+import sky4th.core.command.impl.runTeam
 
 /**
  * SkyCore 主命令处理器
  */
 object SkyCoreCommandHandler : CommandExecutor, TabCompleter {
 
-    private val subCommands = listOf("help", "info", "reload", "player", "economy", "permission", "status", "mark", "equipment")
+    private val subCommands = listOf("help", "info", "reload", "player", "economy", "permission", "status", "mark", "equipment", "team")
 
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>): Boolean {
         val ctx = SkyCoreContext.get() ?: run {
@@ -45,6 +46,7 @@ object SkyCoreCommandHandler : CommandExecutor, TabCompleter {
             "status" -> runStatus(sender)
             "mark" -> runMark(sender, args)
             "equipment" -> runEquipment(sender, args)
+            "team" -> runTeam(sender, args)
             else -> {
                 sender.sendMessage("§c未知命令: $subCommand")
                 runHelp(sender)
@@ -87,6 +89,10 @@ object SkyCoreCommandHandler : CommandExecutor, TabCompleter {
                         listOf("create")
                             .filter { it.startsWith(args[1], ignoreCase = true) }
                     }
+                    "team" -> {
+                        listOf("join", "leave", "create")
+                            .filter { it.startsWith(args[1], ignoreCase = true) }
+                    }
                     else -> emptyList()
                 }
             }
@@ -99,6 +105,15 @@ object SkyCoreCommandHandler : CommandExecutor, TabCompleter {
                     "mark" -> {
                         Material.values().map { it.name }
                             .filter { it.startsWith(args[2], ignoreCase = true) }
+                    }
+                    "team" -> {
+                        when (args[1].lowercase()) {
+                            "join" -> {
+                                sender.server.scoreboardManager.mainScoreboard.teams.map { it.name }
+                                    .filter { it.startsWith(args[2], ignoreCase = true) }
+                            }
+                            else -> emptyList()
+                        }
                     }
                     else -> emptyList()
                 }

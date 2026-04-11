@@ -3,6 +3,9 @@ package sky4th.economy.manager
 import org.bukkit.Bukkit
 import org.bukkit.entity.Player
 import sky4th.core.api.EconomyAPI
+import sky4th.core.api.LanguageAPI
+import sky4th.economy.CreditEconomy
+import sky4th.economy.util.LanguageUtil.sendLang
 import sky4th.economy.event.EconomyChangeEvent
 import java.util.*
 
@@ -334,7 +337,10 @@ object EconomyManager {
         val oldBalance = getBalance(player)
         val actual = EconomyAPI.deposit(player, amount)
         if (actual > 0) {
-            player.sendMessage("§a[经济] §e您获得了 §f${format(actual)} ${getCurrencyName()} §e($reason)")
+            player.sendLang(CreditEconomy.instance, "economy.reward", 
+                "amount" to format(actual), 
+                "currency" to getCurrencyName(), 
+                "reason" to reason)
             fireEvent(
                 player = player,
                 amount = actual,
@@ -357,7 +363,10 @@ object EconomyManager {
         val actual = deposit(uuid, amount)
         Bukkit.getPlayer(uuid)?.let { player ->
             if (actual > 0) {
-                player.sendMessage("§a[经济] §e您获得了 §f${format(actual)} ${getCurrencyName()} §e($reason)")
+                player.sendLang(CreditEconomy.instance, "economy.reward", 
+                    "amount" to format(actual), 
+                    "currency" to getCurrencyName(), 
+                    "reason" to reason)
             }
         }
         return actual
@@ -376,14 +385,25 @@ object EconomyManager {
         val actualAmount = amount * rate
 
         if (!hasEnough(player, actualAmount)) {
-            player.sendMessage("§c[经济] §e余额不足！需要 §f${format(actualAmount)} ${getCurrencyName()} §e(原价: ${format(amount)}, 比例: ${(rate * 100).toInt()}%)")
+            player.sendLang(CreditEconomy.instance, "economy.insufficient", 
+                "amount" to format(actualAmount), 
+                "currency" to getCurrencyName(), 
+                "rate_info" to LanguageAPI.getText(CreditEconomy.instance, "economy.insufficient-with-rate", 
+                    "original" to format(amount), 
+                    "rate" to (rate * 100).toInt()
+                )
+            )
             return false
         }
         val oldBalance = getBalance(player)
         val success = EconomyAPI.withdraw(player, actualAmount)
         if (success) {
-            val rateText = if (rate < 1.0) " §e(扣费比例: ${(rate * 100).toInt()}%)" else ""
-            player.sendMessage("§c[经济] §e您消费了 §f${format(actualAmount)} ${getCurrencyName()}$rateText §e($reason)")
+            val rateText = if (rate < 1.0) LanguageAPI.getText(CreditEconomy.instance, "economy.charge-with-rate", "rate" to (rate * 100).toInt()) else ""
+            player.sendLang(CreditEconomy.instance, "economy.charge", 
+                "amount" to format(actualAmount), 
+                "currency" to getCurrencyName(), 
+                "rate_text" to rateText, 
+                "reason" to reason)
             fireEvent(
                 player = player,
                 amount = -actualAmount,
@@ -432,11 +452,18 @@ object EconomyManager {
     fun charge(uuid: UUID, amount: Double, reason: String = "消费"): Boolean {
         val player = Bukkit.getPlayer(uuid)
         if (!hasEnough(uuid, amount)) {
-            player?.sendMessage("§c[经济] §e余额不足！需要 §f${format(amount)} ${getCurrencyName()}")
+            player?.sendLang(CreditEconomy.instance, "economy.insufficient", 
+                "amount" to format(amount), 
+                "currency" to getCurrencyName(), 
+                "rate_info" to "")
             return false
         }
         if (withdraw(uuid, amount)) {
-            player?.sendMessage("§c[经济] §e您消费了 §f${format(amount)} ${getCurrencyName()} §e($reason)")
+            player?.sendLang(CreditEconomy.instance, "economy.charge", 
+            "amount" to format(amount), 
+            "currency" to getCurrencyName(), 
+            "rate_text" to "", 
+            "reason" to reason)
             return true
         }
         return false

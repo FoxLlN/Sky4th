@@ -27,7 +27,9 @@ class GuardianListener : Listener {
             return
         }
 
-        val team2 = victim.scoreboard.getEntryTeam(victim.name)
+        // 使用主scoreboard而不是玩家自己的scoreboard
+        val mainScoreboard = victim.server.scoreboardManager.mainScoreboard
+        val team2 = mainScoreboard.getEntryTeam(victim.name)
         if (team2 == null) {
             return
         }
@@ -48,8 +50,7 @@ class GuardianListener : Listener {
             }
 
             // 获取两个玩家所在的队伍对象
-            val team1 = guardian.scoreboard.getEntryTeam(guardian.name)
-
+            val team1 = mainScoreboard.getEntryTeam(guardian.name)
             // 判断是否同队：两者都不为 null 且是同一个队伍对象
             if (team1 == null || team1 != team2) {
                 continue
