@@ -31,6 +31,8 @@ object EconomyService {
     fun deposit(uuid: UUID, amount: Double): Double = provider?.deposit(uuid, amount) ?: 0.0
     fun withdraw(player: Player, amount: Double): Boolean = provider?.withdraw(player, amount) ?: false
     fun withdraw(uuid: UUID, amount: Double): Boolean = provider?.withdraw(uuid, amount) ?: false
+    fun forceWithdraw(player: Player, amount: Double): Double = provider?.forceWithdraw(player, amount) ?: 0.0
+    fun forceWithdraw(uuid: UUID, amount: Double): Double = provider?.forceWithdraw(uuid, amount) ?: 0.0
 
     fun setBalance(player: Player, amount: Double) {
         provider?.setBalance(player, amount)

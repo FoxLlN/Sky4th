@@ -19,6 +19,8 @@ interface EconomyProvider {
     fun deposit(uuid: UUID, amount: Double): Double
     fun withdraw(player: Player, amount: Double): Boolean
     fun withdraw(uuid: UUID, amount: Double): Boolean
+    fun forceWithdraw(player: Player, amount: Double): Double
+    fun forceWithdraw(uuid: UUID, amount: Double): Double
     fun setBalance(player: Player, amount: Double)
     fun setBalance(uuid: UUID, amount: Double)
     fun getCurrencyName(): String

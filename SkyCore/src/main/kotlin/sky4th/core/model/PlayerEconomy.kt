@@ -56,6 +56,18 @@ data class PlayerEconomy(
     }
     
     /**
+     * 强制扣除信用点（不检查余额，允许负余额）
+     * @param amount 要扣除的金额
+     * @return 实际扣除的金额
+     */
+    fun forceRemoveCredits(amount: Double): Double {
+        credits -= amount
+        dailySpent += amount
+        totalSpent += amount
+        return amount
+    }
+
+    /**
      * 检查是否有足够的信用点
      */
     fun hasEnough(amount: Double): Boolean {

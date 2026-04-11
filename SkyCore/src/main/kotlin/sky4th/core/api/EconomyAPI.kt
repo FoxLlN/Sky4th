@@ -26,6 +26,8 @@ object EconomyAPI {
     fun deposit(uuid: UUID, amount: Double): Double = EconomyService.deposit(uuid, amount)
     fun withdraw(player: Player, amount: Double): Boolean = EconomyService.withdraw(player, amount)
     fun withdraw(uuid: UUID, amount: Double): Boolean = EconomyService.withdraw(uuid, amount)
+    fun forceWithdraw(player: Player, amount: Double): Double = EconomyService.forceWithdraw(player, amount)
+    fun forceWithdraw(uuid: UUID, amount: Double): Double = EconomyService.forceWithdraw(uuid, amount)
 
     fun setBalance(player: Player, amount: Double) {
         if (!EconomyService.isRegistered()) throw IllegalStateException("经济系统未注册")

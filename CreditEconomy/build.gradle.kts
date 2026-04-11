@@ -6,9 +6,9 @@ plugins {
 
 dependencies {
     compileOnly("io.papermc.paper:paper-api:1.21.1-R0.1-SNAPSHOT")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    compileOnly("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     
-    // 仅编译时依赖，不打包进地牢 JAR，运行时从 Core 插件获取经济 API
+    // 仅编译时依赖，运行时从 Core 插件获取经济 API
     compileOnly(project(":SkyCore"))
 }
 

@@ -1,0 +1,53 @@
+# CreditEconomy 配置文件
+
+# 存活时长扣费配置
+survival:
+  # 新人免费时长（小时）
+  free-hours: 0
+
+  # 扣费比例配置
+  charge-rates:
+    # 9-18小时：25%
+    - min: 0
+      max: 18
+      rate: 0.50
+    # 18-27小时：50%
+    - min: 18
+      max: 27
+      rate: 0.50
+    # 27-36小时：75%
+    - min: 27
+      max: 36
+      rate: 0.75
+    # 36+小时：100%
+    - min: 36
+      max: -1  # -1 表示无上限
+      rate: 1.0
+
+  # 每分钟费用配置
+  minute-rates:
+    # 0-3小时：1.5信用点/分钟
+    - min: 0
+      max: 3
+      rate: 1.5
+    # 4-6小时：1.2信用点/分钟
+    - min: 3
+      max: 6
+      rate: 1.2
+    # 6+小时：1信用点/分钟
+    - min: 6
+      max: -1  # -1 表示无上限
+      rate: 1.0
+
+# 每日时长奖励配置
+daily-rewards:
+  # 每小时奖励配置
+  rewards:
+    - hour: 1
+      amount: 50.0
+    - hour: 3
+      amount: 100.0
+    - hour: 6
+      amount: 150.0
+    - hour: 9
+      amount: 200.0

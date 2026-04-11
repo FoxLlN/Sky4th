@@ -62,6 +62,22 @@ class CoreEconomyProvider(private val playerService: PlayerService) : EconomyPro
         return ok
     }
 
+    override fun forceWithdraw(player: Player, amount: Double): Double {
+        if (amount <= 0) return 0.0
+        val data = playerService.getPlayerData(player)
+        val actual = data.economy.forceRemoveCredits(amount)
+        playerService.savePlayerData(data)
+        return actual
+    }
+
+    override fun forceWithdraw(uuid: UUID, amount: Double): Double {
+        if (amount <= 0) return 0.0
+        val data = playerService.getPlayerData(uuid) ?: return 0.0
+        val actual = data.economy.forceRemoveCredits(amount)
+        playerService.savePlayerData(data)
+        return actual
+    }
+
     override fun setBalance(player: Player, amount: Double) {
         val data = playerService.getPlayerData(player)
         data.economy.credits = amount.coerceAtLeast(0.0)
